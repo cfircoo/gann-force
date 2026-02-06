@@ -1,0 +1,136 @@
+//@version=6
+indicator("צקליסט יום א", shorttitle="צקליסט", overlay=true)
+
+// Input settings for customization
+checklist_title = input.string("", "Checklist Title", group="Display Settings", tooltip="Customize the title to identify different checklists")
+show_title = input.bool(true, "Show Title Header", group="Display Settings")
+show_checklist = input.bool(true, "Show Checklist", group="Display Settings")
+only_on_btcusd = input.bool(true, "Show Only on Specific Symbols (BTCUSD, GOLD, SPX500, USOIL)", group="Display Settings")
+table_position = input.string("top_right", "Position", options=["top_left", "top_center", "top_right", "middle_left", "middle_center", "middle_right", "bottom_left", "bottom_center", "bottom_right"], group="Display Settings")
+text_size = input.string("small", "Text Size", options=["tiny", "small", "normal", "large", "huge"], group="Display Settings")
+bg_color = input.color(color.new(#1E3A5F, 10), "Background Color", group="Display Settings")
+text_color = input.color(color.yellow, "Text Color", group="Display Settings")
+border_color = input.color(color.orange, "Border Color", group="Display Settings")
+
+// Editable checklist items
+line_01 = input.string("", "Line 1", group="Checklist Items", display=display.none)
+line_02 = input.string("", "Line 2", group="Checklist Items", display=display.none)
+line_03 = input.string("", "Line 3", group="Checklist Items", display=display.none)
+line_04 = input.string("", "Line 4", group="Checklist Items", display=display.none)
+line_05 = input.string("", "Line 5", group="Checklist Items", display=display.none)
+line_06 = input.string("", "Line 6", group="Checklist Items", display=display.none)
+line_07 = input.string("", "Line 7", group="Checklist Items", display=display.none)
+line_08 = input.string("", "Line 8", group="Checklist Items", display=display.none)
+line_09 = input.string("", "Line 9", group="Checklist Items", display=display.none)
+line_10 = input.string("", "Line 10", group="Checklist Items", display=display.none)
+line_11 = input.string("", "Line 11", group="Checklist Items", display=display.none)
+line_12 = input.string("", "Line 12", group="Checklist Items", display=display.none)
+line_13 = input.string("", "Line 13", group="Checklist Items", display=display.none)
+line_14 = input.string("", "Line 14", group="Checklist Items", display=display.none)
+line_15 = input.string("", "Line 15", group="Checklist Items", display=display.none)
+line_16 = input.string("", "Line 16", group="Checklist Items", display=display.none)
+line_17 = input.string("", "Line 17", group="Checklist Items", display=display.none)
+line_18 = input.string("", "Line 18", group="Checklist Items", display=display.none)
+line_19 = input.string("", "Line 19", group="Checklist Items", display=display.none)
+line_20 = input.string("", "Line 20", group="Checklist Items", display=display.none)
+
+// Build checklist items from editable inputs
+checklist_items = array.new_string()
+
+// Add main lines (only if not empty)
+if line_01 != ""
+    array.push(checklist_items, line_01)
+if line_02 != ""
+    array.push(checklist_items, line_02)
+if line_03 != ""
+    array.push(checklist_items, line_03)
+if line_04 != ""
+    array.push(checklist_items, line_04)
+if line_05 != ""
+    array.push(checklist_items, line_05)
+if line_06 != ""
+    array.push(checklist_items, line_06)
+if line_07 != ""
+    array.push(checklist_items, line_07)
+if line_08 != ""
+    array.push(checklist_items, line_08)
+if line_09 != ""
+    array.push(checklist_items, line_09)
+if line_10 != ""
+    array.push(checklist_items, line_10)
+if line_11 != ""
+    array.push(checklist_items, line_11)
+if line_12 != ""
+    array.push(checklist_items, line_12)
+if line_13 != ""
+    array.push(checklist_items, line_13)
+if line_14 != ""
+    array.push(checklist_items, line_14)
+if line_15 != ""
+    array.push(checklist_items, line_15)
+if line_16 != ""
+    array.push(checklist_items, line_16)
+if line_17 != ""
+    array.push(checklist_items, line_17)
+if line_18 != ""
+    array.push(checklist_items, line_18)
+if line_19 != ""
+    array.push(checklist_items, line_19)
+if line_20 != ""
+    array.push(checklist_items, line_20)
+
+// Convert table position string to position constant
+get_table_position(pos) =>
+    switch pos
+        "top_left" => position.top_left
+        "top_center" => position.top_center
+        "top_right" => position.top_right
+        "middle_left" => position.middle_left
+        "middle_center" => position.middle_center
+        "middle_right" => position.middle_right
+        "bottom_left" => position.bottom_left
+        "bottom_center" => position.bottom_center
+        "bottom_right" => position.bottom_right
+        => position.top_left
+
+// Convert text size string to size constant
+get_text_size(size_str) =>
+    switch size_str
+        "tiny" => size.tiny
+        "small" => size.small
+        "normal" => size.normal
+        "large" => size.large
+        "huge" => size.huge
+        => size.small
+
+// Check if we're on one of the specified symbols
+is_btcusd = str.contains(syminfo.ticker, "BTC") and str.contains(syminfo.ticker, "USD")
+is_gold = str.contains(syminfo.ticker, "GOLD") or str.contains(syminfo.ticker, "XAU")
+is_spx500 = str.contains(syminfo.ticker, "SPX") or str.contains(syminfo.ticker, "SPX500") or str.contains(syminfo.ticker, "SP500")
+is_usoil = str.contains(syminfo.ticker, "USOIL") or str.contains(syminfo.ticker, "CL") or str.contains(syminfo.ticker, "WTI")
+is_eurousd = str.contains(syminfo.ticker, "EURUSD")
+
+is_target_symbol = is_btcusd or is_gold or is_spx500 or is_usoil or is_eurousd
+
+// Create and populate the table
+should_show = show_checklist and barstate.islast and (not only_on_btcusd or is_target_symbol)
+
+if should_show
+    // Create table with appropriate number of rows and columns (2 columns for right margin)
+    num_items = array.size(checklist_items)
+    total_rows = show_title ? num_items + 1 : num_items
+    checklist_table = table.new(get_table_position(table_position), 2, total_rows, bgcolor=color.new(bg_color, 100), border_color=color.new(border_color, 100), border_width=0, frame_width=0)
+    
+    // Add title header if enabled
+    start_row = 0
+    if show_title
+        table.cell(checklist_table, 0, 0, checklist_title, text_color=text_color, text_size=get_text_size(text_size), bgcolor=color.new(border_color, 70), width=0, height=0)
+        table.cell(checklist_table, 1, 0, "          ", text_color=color.new(text_color, 100), bgcolor=color.new(bg_color, 100), width=0, height=0)
+        start_row := 1
+    
+    // Populate table with checklist items
+    for i = 0 to num_items - 1
+        item_text = array.get(checklist_items, i)
+        table.cell(checklist_table, 0, i + start_row, item_text, text_color=text_color, text_size=get_text_size(text_size), bgcolor=color.new(bg_color, 0), width=0, height=0)
+        table.cell(checklist_table, 1, i + start_row, "", text_color=color.new(text_color, 100), bgcolor=color.new(bg_color, 100), width=0, height=0)
+
