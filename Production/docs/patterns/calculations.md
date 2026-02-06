@@ -371,3 +371,31 @@ passedLongWma = close[wmaCheckIndex] > wmaValue[wmaCheckIndex]
    |
 5. Exit on next MA cross (opposite direction)
 ```
+
+---
+
+## Calculation 17: Bar Lookup Within Time Window
+**Used in:** `GannCycles.pine` (statistics arrows)
+
+```pine
+// Find the highest high and lowest low within 24 hours of a timestamp
+float bar_high = na
+float bar_low = na
+int max_lookback = math.min(500, bar_index)
+int day_ms = 24 * 60 * 60 * 1000
+for j = 0 to max_lookback
+    bar_ts = time[j]
+    if bar_ts >= ts and bar_ts < ts + day_ms
+        if na(bar_high) or high[j] > bar_high
+            bar_high := high[j]
+        if na(bar_low) or low[j] < bar_low
+            bar_low := low[j]
+    if bar_ts < ts
+        break
+```
+
+### Methodology
+- Scans backwards from current bar looking for bars within a 24-hour window starting at the target timestamp
+- Collects the high/low across all bars in that window (handles intraday timeframes where multiple bars fall on the same date)
+- Early exit when bars are before the target timestamp (bars are chronological)
+- Fallback to `close` if no bar found (future dates)

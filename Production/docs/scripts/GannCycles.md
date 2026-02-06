@@ -17,13 +17,13 @@ Uses User-Defined Types (UDT) with methods:
 
 ## Asset Groups
 
-| Group | Tickers | Dates Format |
-|-------|---------|-------------|
-| S&P500 | SP500, SPX, ES1, US500, QQQ, NQ1 | DD.MM.YY comma-separated |
-| GOLD | AUX, GOLD, SILVER | " |
-| OIL | USOIL, MCL1 | " |
-| EUR/USD | EURUSD, M6E1, 6E1 | " |
-| BITCOIN | BTCUSD, BTCUSDT, ETHUSD, ETHUSDT | " |
+| Group | Tickers | Dates Format | Statistics Format |
+|-------|---------|-------------|-------------------|
+| S&P500 | SP500, SPX, ES1, US500, QQQ, NQ1 | DD.MM.YY comma-separated | DD.MM.YY.U/D comma-separated |
+| GOLD | AUX, GOLD, SILVER | " | " |
+| OIL | USOIL, MCL1 | " | " |
+| EUR/USD | EURUSD, M6E1, 6E1 | " | " |
+| BITCOIN | BTCUSD, BTCUSDT, ETHUSD, ETHUSDT | " | " |
 
 ---
 
@@ -40,6 +40,8 @@ Uses User-Defined Types (UDT) with methods:
 | `Target Circle Mode` | "trend" | none / trend (reversal) / both |
 | `Show Pivot Fan` | false | Auto-detect 50-60% corrections |
 | `Min Blocks` | 20 | Minimum bars for valid trend |
+| `Show Statistics Arrows` | true | Up/down arrows from statistics dates |
+| `Statistics Arrow Size` | "huge" | tiny / small / normal / large / huge |
 
 ---
 
@@ -92,7 +94,23 @@ For the **currently active cycle** (time is within cycle boundaries):
 - Diagonal up using reference cycle's price range
 - Diagonal down using reference cycle's price range
 
-### 7. Pivot Trend Detection (Optional)
+### 8. Statistics Arrows
+Per-group input for marking dates with up/down arrows:
+```
+Input format: "DD.MM.YY.U,DD.MM.YY.D"
+  U = up arrow (▲) placed below bar's low
+  D = down arrow (▼) placed above bar's high
+
+Example: "01.01.26.U,03.01.26.D,05.01.26.U"
+```
+- Each group has its own statistics input field
+- Parses up to 50 comma-separated entries
+- Finds the bar at each date's timestamp (within 24h window)
+- Arrow positioned at bar's high/low for proper candle alignment
+- Falls back to current close if date has no bar data (future dates)
+- Configurable arrow size and separate up/down colors
+
+### 9. Pivot Trend Detection (Optional)
 Finds trends with 50-60% correction:
 ```
 1. Detect pivot highs and lows (10 bars left/right)
@@ -130,6 +148,8 @@ Finds trends with 50-60% correction:
 | Target circle | Large circle at projected price target |
 | TREND START/END | Pivot trend markers |
 | CORRECTION | Validated correction point |
+| Statistics ▲ | Up arrow at date (green, below bar) |
+| Statistics ▼ | Down arrow at date (red, above bar) |
 
 ---
 
@@ -140,7 +160,8 @@ All drawing happens on `barstate.islast` (last bar only):
 3. Draw verticals (all cycle boundaries)
 4. Draw double cycle labels
 5. Conditionally: horizontals, magnets, Gann fan, targets, double Gann box
-6. Optionally: pivot trend detection
+6. Conditionally: statistics arrows
+7. Optionally: pivot trend detection
 
 ---
 
@@ -151,6 +172,7 @@ All drawing happens on `barstate.islast` (last bar only):
 | `parse_date()` | DD.MM.YY string to timestamp with UTC offset |
 | `is_ticker_allowed()` | Comma-separated ticker filter |
 | `get_line_style()` | String to line style constant |
+| `get_label_size()` | String to label size constant |
 | `draw_vertical()` | Single vertical line at timestamp |
 | `draw_gann_fan()` | 9-angle fan from origin point |
 | `find_trend_with_correction()` | Pivot analysis with 50-60% correction |
@@ -168,3 +190,4 @@ All drawing happens on `barstate.islast` (last bar only):
 | `VLineGroup.draw_gann_first_cycle()` | Fan from monthly reference cycle |
 | `VLineGroup.draw_all_targets()` | All target lines and circles |
 | `VLineGroup.draw_double_gann_box()` | Active cycle diagonal box |
+| `VLineGroup.draw_statistics()` | Parse statistics string and draw up/down arrows |

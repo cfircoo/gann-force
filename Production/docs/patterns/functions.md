@@ -383,3 +383,63 @@ rawLong5 = (low[2] < low and low[2] < low[1] and low[2] < low[3] and low[2] < lo
 ```
 - Middle candle is the extreme (lowest/highest) of all N candles
 - Surrounding candles confirm direction change (bearish -> bullish or vice versa)
+
+---
+
+## Pattern 18: Statistics Date Parsing with Direction Suffix
+**Used in:** `GannCycles.pine`
+
+```pine
+// Input format: "DD.MM.YY.U,DD.MM.YY.D" - U=up, D=down
+method draw_statistics(VLineGroup g, int utc_offset, int hr, up_col, down_col, string sz) =>
+    if g.statistics != ""
+        remaining = g.statistics
+        for i = 0 to 49
+            pos = str.pos(remaining, ",")
+            string entry = ""
+            if pos >= 0
+                entry := str.substring(remaining, 0, pos)
+                remaining := str.substring(remaining, pos + 1)
+            else
+                entry := remaining
+            clean = str.replace_all(entry, " ", "")
+            if str.length(clean) >= 10
+                date_part = str.substring(clean, 0, 8)       // "DD.MM.YY"
+                direction = str.upper(str.substring(clean, 9, 10))  // "U" or "D"
+                ts = parse_date(date_part, utc_offset, hr)
+                // ... find bar at timestamp, draw label
+            if pos < 0
+                break
+```
+- Extends the DD.MM.YY date format with a `.U` or `.D` suffix (10 chars total)
+- Reuses existing `parse_date()` on the first 8 characters
+- Extracts direction from char index 9
+- Scans bars within a 24h window of the timestamp for price positioning
+- Up arrow: `label.style_label_up` below bar's low
+- Down arrow: `label.style_label_down` above bar's high
+
+---
+
+## Pattern 19: String-to-Enum Helper Functions
+**Used in:** `GannCycles.pine`
+
+```pine
+get_line_style(style_str) =>
+    switch style_str
+        "solid" => line.style_solid
+        "dotted" => line.style_dotted
+        "dashed" => line.style_dashed
+        => line.style_dotted
+
+get_label_size(size_str) =>
+    switch size_str
+        "tiny" => size.tiny
+        "small" => size.small
+        "normal" => size.normal
+        "large" => size.large
+        "huge" => size.huge
+        => size.huge
+```
+- Maps `input.string` dropdown values to Pine Script constants
+- Default fallback handles unexpected values
+- Reusable pattern for any enum-like input (style, size, extend, etc.)
