@@ -1,0 +1,452 @@
+//@version=6
+indicator("Dynamic FVG", overlay=true, max_boxes_count=500, max_lines_count=500, max_labels_count=500, max_bars_back=5000)
+
+blocksToShow = input.int(10, minval=0, title="כמות בלוקים שלמים אחרונים להציג", group="הגדרות כלליות")
+showCurrentFVG = input.bool(true, title="הצג FVG בהתהוות (3 נרות אחרונים)", group="הגדרות כלליות")
+minSizePercent = input.float(0.006, minval=0, title="גודל מינימלי באחוזים מהמחיר", step=0.001, group="הגדרות כלליות")
+
+maxExtendBars = input.int(10, minval=0, title="מקסימום ברים להרחבה ימינה (0=ללא הרחבה)", group="הגדרות הרחבה ומילוי")
+deleteOnFill = input.bool(false, title="מחק מלבן כשהמחיר מכסה אותו", group="הגדרות הרחבה ומילוי")
+stopExtendOnFill = input.bool(true, title="עצור הרחבת מלבן כשהמחיר מכסה אותו", group="הגדרות הרחבה ומילוי")
+gapBehavior = input.string("הצג הכל", title="התחשב ב-GAP בין נרות", options=["הצג הכל", "הצג רק FVG עם GAP", "הצג רק FVG ללא GAP"], tooltip="GAP מוגדר כאשר אין חפיפה בין שני נרות סמוכים.\n\n🔹 הצג הכל: מציג את כל ה-FVG ללא קשר ל-GAP.\n\n🔹 הצג רק FVG עם GAP: מסנן ומציג רק FVG שיש בהם GAP בין הנרות.\n\n🔹 הצג רק FVG ללא GAP: מסנן ומציג רק FVG שאין בהם GAP בין הנרות.", group="הגדרות הרחבה ומילוי")
+
+masterMethod = input.string("Pivot Points - מחפש נקודות מפנה עם נרות משני הצדדים", title="שיטת זיהוי תנועה ל-MASTER-FVG", options=["ללא MASTER-FVG", "Pivot Points - מחפש נקודות מפנה עם נרות משני הצדדים", "Local High/Low - נר גבוה/נמוך משכניו המיידיים", "Swing High/Low - הגבוה/נמוך ביותר בטווח נרות מוגדר"], tooltip="🔹 Pivot Points: בודק X נרות לפני ו-X נרות אחרי. השיטה הכי אמינה אבל עם איחור של X נרות. דורשת אישור משני הכיוונים.\n\n🔹 Local High/Low: בודקת תמיד 3 נרות - הנר הנוכחי וגם 2 נרות אחורה. מזהה נר שהוא הנמוך/גבוה ביותר מבין השלושה (ללא דרישה למגמה). מהירה מאוד אבל עם יותר false signals. לא תלויה בפרמטר 'כמות נרות'.\n\n🔹 Swing High/Low: מחפשת את הנמוך/גבוה ביותר בחלון של X נרות אחורה. בלי איחור אבל פחות אמינה מ-Pivot.", group="MASTER-FVG")
+pivotBars = input.int(3, minval=2, title="כמות נרות לזיהוי Pivot/Swing", group="MASTER-FVG")
+maxFVGsInMove = input.int(3, minval=1, title="מספר FVG מקסימלי בתנועה", group="MASTER-FVG")
+targetZonePercent = input.float(5, minval=0, maxval=100, title="אחוז אזור יעד (0=מכובה)", step=0.5, group="MASTER-FVG")
+masterDeleteCondition = input.string("כשהמחיר נוגע באזור הביטחון", title="מחק MASTER-FVG ישן", options=["כשהמחיר נוגע ביעד", "כשהמחיר נוגע באזור הביטחון"], tooltip="🔹 כשהמחיר נוגע ביעד: MASTER-FVG ימחק כאשר המחיר יגיע לקצה העליון (LONG) או התחתון (SHORT). ללא הצגת אזור ביטחון.\n\n🔹 כשהמחיר נוגע באזור הביטחון: MASTER-FVG ימחק כאשר המחיר יגיע לאזור היעד הצבעוני. אזור הביטחון יוצג על כל ה-MASTERs.", group="MASTER-FVG")
+masterMaxToShow = input.int(5, minval=1, maxval=100, title="כמות MASTER-FVG להציג (100=הכל)", tooltip="כמה MASTER-FVG להציג על המסך. 100 = הצג את כולם.", group="MASTER-FVG")
+targetZoneLongColor = input.color(color.new(color.green, 80), title="צבע אזור יעד SHORT", group="MASTER-FVG")
+targetZoneShortColor = input.color(color.new(color.red, 80), title="צבע אזור יעד LONG", group="MASTER-FVG")
+
+blockBorderWidth = input.int(1, minval=0, title="עובי גבול מלבן FVG (0=ללא)", group="עיצוב - קווים")
+masterBorderWidth = input.int(2, minval=0, title="עובי גבול MASTER-FVG (0=ללא)", group="עיצוב - קווים")
+middleLineWidth = input.int(1, minval=0, title="עובי קו אמצעי (0=ללא)", group="עיצוב - קווים")
+middleLineStyleStr = input.string("מלא", title="סגנון קו אמצעי", options=["מלא", "מקווקוו", "נקודות"], group="עיצוב - קווים")
+
+longBlockBorderColor = input.color(color.rgb(0, 255, 0), title="צבע גבול מלבן LONG", group="עיצוב - צבעים LONG")
+longBlockBgColor = input.color(color.new(color.rgb(0, 255, 0), 90), title="צבע רקע מלבן LONG", group="עיצוב - צבעים LONG")
+
+shortBlockBorderColor = input.color(color.rgb(255, 0, 0), title="צבע גבול מלבן SHORT", group="עיצוב - צבעים SHORT")
+shortBlockBgColor = input.color(color.new(color.rgb(255, 0, 0), 90), title="צבע רקע מלבן SHORT", group="עיצוב - צבעים SHORT")
+
+masterBlockBorderColor = input.color(color.rgb(0, 150, 255), title="צבע גבול MASTER-FVG נוכחי", group="עיצוב - צבעים MASTER-FVG")
+masterBlockBgColor = input.color(color.new(color.rgb(0, 150, 255), 90), title="צבע רקע MASTER-FVG נוכחי", group="עיצוב - צבעים MASTER-FVG")
+oldMasterBorderColor = input.color(color.new(color.gray, 50), title="צבע גבול MASTER-FVG ישן", group="עיצוב - צבעים MASTER-FVG")
+oldMasterBgColor = input.color(color.new(color.gray, 80), title="צבע רקע MASTER-FVG ישן", group="עיצוב - צבעים MASTER-FVG")
+
+showTargetZone = masterDeleteCondition == "כשהמחיר נוגע באזור הביטחון"
+
+getLineStyle(styleStr) =>
+    styleStr == "מקווקוו" ? line.style_dashed : styleStr == "נקודות" ? line.style_dotted : line.style_solid
+
+lineStyle = getLineStyle(middleLineStyleStr)
+
+isAboveMinSize(top, bottom, referencePrice) =>
+    if minSizePercent == 0
+        true
+    else
+        fvgSize = top - bottom
+        minSize = referencePrice * (minSizePercent / 100)
+        fvgSize >= minSize
+
+hasGapBetweenCandles(idx1, idx2) =>
+    low[idx2] > high[idx1] or high[idx2] < low[idx1]
+
+passesGapFilter(offset) =>
+    if gapBehavior == "הצג הכל"
+        true
+    else
+        hasGap1to2 = hasGapBetweenCandles(offset + 2, offset + 1)
+        hasGap2to3 = hasGapBetweenCandles(offset + 1, offset)
+        hasAnyGap = hasGap1to2 or hasGap2to3
+        if gapBehavior == "הצג רק FVG עם GAP"
+            hasAnyGap
+        else
+            not hasAnyGap
+
+var float lastPivotLow = na
+var float lastPivotHigh = na
+var int lastPivotLowBar = na
+var int lastPivotHighBar = na
+
+type PivotRecord
+    int barIdx
+    float price
+    bool isHigh
+
+type Block
+    int barIndex
+    float top
+    float bottom
+    bool isLong
+    bool isFilled
+    bool toShow
+    bool shouldShow
+    int fillBarIndex
+    box theBox
+    line theLine
+
+type MasterFVG
+    int pivotBar
+    float pivotPrice
+    float fvgMiddle
+    int fvgBar
+    bool isLong
+    float masterTop
+    float masterBottom
+    float targetTop
+    float targetBottom
+    int rightBar
+    bool isActive
+    bool isCurrent
+    box theBox
+    line theLine
+    box targetBox
+
+var pivotHistory = array.new<PivotRecord>()
+var blockList = array.new<Block>()
+var array<int> activeFVGIndices = array.new<int>()
+var masterFVGList = array.new<MasterFVG>()
+var box currentLongBox = na
+var line currentLongLine = na
+var box currentShortBox = na
+var line currentShortLine = na
+
+isBlockLong = low[1] > high[3] and passesGapFilter(1)
+isBlockShort = low[3] > high[1] and passesGapFilter(1)
+isCurrentBlockLong = low > high[2] and passesGapFilter(0)
+isCurrentBlockShort = low[2] > high and passesGapFilter(0)
+
+if isBlockLong and isAboveMinSize(low[1], high[3], close[1])
+    newIndex = array.size(blockList)
+    array.push(blockList, Block.new(bar_index, low[1], high[3], true, false, true, false, na, na, na))
+    array.push(activeFVGIndices, newIndex)
+
+if isBlockShort and isAboveMinSize(low[3], high[1], close[1])
+    newIndex = array.size(blockList)
+    array.push(blockList, Block.new(bar_index, low[3], high[1], false, false, true, false, na, na, na))
+    array.push(activeFVGIndices, newIndex)
+
+if array.size(activeFVGIndices) > 0
+    int toRemove = na
+    for i = 0 to array.size(activeFVGIndices) - 1
+        blockIndex = array.get(activeFVGIndices, i)
+        if blockIndex >= 0 and blockIndex < array.size(blockList)
+            block = array.get(blockList, blockIndex)
+            if not block.isFilled
+                if block.isLong
+                    if low <= block.bottom
+                        block.isFilled := true
+                        block.fillBarIndex := bar_index
+                        block.toShow := not deleteOnFill
+                        array.set(blockList, blockIndex, block)
+                        toRemove := i
+                else
+                    if high >= block.top
+                        block.isFilled := true
+                        block.fillBarIndex := bar_index
+                        block.toShow := not deleteOnFill
+                        array.set(blockList, blockIndex, block)
+                        toRemove := i
+    if not na(toRemove)
+        array.remove(activeFVGIndices, toRemove)
+
+if masterMethod != "ללא MASTER-FVG"
+    if masterMethod == "Pivot Points - מחפש נקודות מפנה עם נרות משני הצדדים"
+        pivotLowValue = ta.pivotlow(low, pivotBars, pivotBars)
+        pivotHighValue = ta.pivothigh(high, pivotBars, pivotBars)
+        if not na(pivotLowValue)
+            lastPivotLow := pivotLowValue
+            lastPivotLowBar := bar_index - pivotBars
+            array.push(pivotHistory, PivotRecord.new(bar_index - pivotBars, pivotLowValue, false))
+        if not na(pivotHighValue)
+            lastPivotHigh := pivotHighValue
+            lastPivotHighBar := bar_index - pivotBars
+            array.push(pivotHistory, PivotRecord.new(bar_index - pivotBars, pivotHighValue, true))
+    else if masterMethod == "Local High/Low - נר גבוה/נמוך משכניו המיידיים"
+        isLocalLow = low < low[1] and low < low[2]
+        isLocalHigh = high > high[1] and high > high[2]
+        if isLocalLow
+            lastPivotLow := low
+            lastPivotLowBar := bar_index
+            array.push(pivotHistory, PivotRecord.new(bar_index, low, false))
+        if isLocalHigh
+            lastPivotHigh := high
+            lastPivotHighBar := bar_index
+            array.push(pivotHistory, PivotRecord.new(bar_index, high, true))
+    else if masterMethod == "Swing High/Low - הגבוה/נמוך ביותר בטווח נרות מוגדר"
+        isSwingLow = low == ta.lowest(low, pivotBars)
+        isSwingHigh = high == ta.highest(high, pivotBars)
+        if isSwingLow
+            lastPivotLow := low
+            lastPivotLowBar := bar_index
+            array.push(pivotHistory, PivotRecord.new(bar_index, low, false))
+        if isSwingHigh
+            lastPivotHigh := high
+            lastPivotHighBar := bar_index
+            array.push(pivotHistory, PivotRecord.new(bar_index, high, true))
+    
+    maxPivotHistory = 200
+    while array.size(pivotHistory) > maxPivotHistory
+        array.shift(pivotHistory)
+
+if barstate.islast
+    var array<int> visibleIndices = array.new<int>()
+    array.clear(visibleIndices)
+    if array.size(blockList) > 0
+        for i = 0 to array.size(blockList) - 1
+            block = array.get(blockList, i)
+            block.shouldShow := false
+            if block.toShow
+                array.push(visibleIndices, i)
+            array.set(blockList, i, block)
+    totalVisible = array.size(visibleIndices)
+    startVisibleIndex = math.max(0, totalVisible - blocksToShow)
+    if totalVisible > 0
+        for j = startVisibleIndex to totalVisible - 1
+            i = array.get(visibleIndices, j)
+            block = array.get(blockList, i)
+            block.shouldShow := true
+            array.set(blockList, i, block)
+    if array.size(blockList) > 0
+        for i = 0 to array.size(blockList) - 1
+            block = array.get(blockList, i)
+            if block.shouldShow and na(block.theBox)
+                leftBar = block.barIndex - 3
+                rightBar = maxExtendBars > 0 ? math.min(block.barIndex - 1 + maxExtendBars, bar_index) : block.barIndex - 1
+                if stopExtendOnFill and block.isFilled and not na(block.fillBarIndex)
+                    rightBar := math.min(rightBar, block.fillBarIndex)
+                middlePrice = (block.top + block.bottom) / 2
+                if blockBorderWidth > 0
+                    borderColor = block.isLong ? longBlockBorderColor : shortBlockBorderColor
+                    bgColor = block.isLong ? longBlockBgColor : shortBlockBgColor
+                    block.theBox := box.new(left=leftBar, top=block.top, right=rightBar, bottom=block.bottom, border_color=borderColor, border_width=blockBorderWidth, bgcolor=bgColor, extend=extend.none)
+                    if middleLineWidth > 0
+                        lineColor = block.isLong ? longBlockBorderColor : shortBlockBorderColor
+                        block.theLine := line.new(x1=leftBar, y1=middlePrice, x2=rightBar, y2=middlePrice, color=lineColor, width=middleLineWidth, style=lineStyle)
+                array.set(blockList, i, block)
+            else if block.shouldShow and not na(block.theBox)
+                rightBar = maxExtendBars > 0 ? math.min(block.barIndex - 1 + maxExtendBars, bar_index) : block.barIndex - 1
+                if stopExtendOnFill and block.isFilled and not na(block.fillBarIndex)
+                    rightBar := math.min(rightBar, block.fillBarIndex)
+                box.set_right(block.theBox, rightBar)
+                if not na(block.theLine)
+                    line.set_x2(block.theLine, rightBar)
+            else if not block.shouldShow and not na(block.theBox)
+                box.delete(block.theBox)
+                block.theBox := na
+                if not na(block.theLine)
+                    line.delete(block.theLine)
+                    block.theLine := na
+                array.set(blockList, i, block)
+    
+    if masterMethod != "ללא MASTER-FVG" and array.size(pivotHistory) > 0
+        if array.size(masterFVGList) > 0
+            for i = 0 to array.size(masterFVGList) - 1
+                master = array.get(masterFVGList, i)
+                if not na(master.theBox)
+                    box.delete(master.theBox)
+                    master.theBox := na
+                if not na(master.theLine)
+                    line.delete(master.theLine)
+                    master.theLine := na
+                if not na(master.targetBox)
+                    box.delete(master.targetBox)
+                    master.targetBox := na
+                array.set(masterFVGList, i, master)
+        
+        array.clear(masterFVGList)
+        
+        int maxPivotsToProcess = 100
+        int pivotsToProcess = math.min(array.size(pivotHistory), maxPivotsToProcess)
+        int startPivotIdx = array.size(pivotHistory) - pivotsToProcess
+        
+        for pIdx = startPivotIdx to array.size(pivotHistory) - 1
+            pivot = array.get(pivotHistory, pIdx)
+            
+            if bar_index - pivot.barIdx > 2000
+                continue
+            
+            int nextSamePivotBar = bar_index + 1
+            bool foundSame = false
+            if pIdx < array.size(pivotHistory) - 1
+                for nextIdx = pIdx + 1 to array.size(pivotHistory) - 1
+                    nextPivot = array.get(pivotHistory, nextIdx)
+                    if nextPivot.isHigh == pivot.isHigh
+                        nextSamePivotBar := nextPivot.barIdx
+                        foundSame := true
+                        break
+            
+            float targetFVGMiddle = na
+            int targetFVGBar = na
+            int fvgCount = 0
+            
+            if array.size(blockList) > 0
+                for bIdx = 0 to array.size(blockList) - 1
+                    block = array.get(blockList, bIdx)
+                    if block.barIndex <= pivot.barIdx
+                        continue
+                    if block.barIndex > nextSamePivotBar
+                        break
+                    bool correctDirection = (not pivot.isHigh and block.isLong) or (pivot.isHigh and not block.isLong)
+                    if correctDirection
+                        fvgCount += 1
+                        if fvgCount <= maxFVGsInMove
+                            targetFVGMiddle := (block.top + block.bottom) / 2
+                            targetFVGBar := block.barIndex
+            
+            if not na(targetFVGMiddle)
+                float mTop = na
+                float mBottom = na
+                float mHeight = 0.0
+                bool mIsLong = not pivot.isHigh
+                
+                if mIsLong
+                    mHeight := (targetFVGMiddle - pivot.price) * 2
+                    mTop := pivot.price + mHeight
+                    mBottom := pivot.price
+                else
+                    mHeight := (pivot.price - targetFVGMiddle) * 2
+                    mTop := pivot.price
+                    mBottom := pivot.price - mHeight
+                
+                float tgtTop = na
+                float tgtBottom = na
+                if targetZonePercent > 0
+                    targetZoneHeight = mHeight * (targetZonePercent / 100)
+                    if mIsLong
+                        tgtTop := mTop
+                        tgtBottom := mTop - targetZoneHeight
+                    else
+                        tgtTop := mBottom + targetZoneHeight
+                        tgtBottom := mBottom
+                
+                int mRightBar = foundSame ? nextSamePivotBar : bar_index
+                
+                bool isActive = true
+                bool isLastMove = not foundSame
+                
+                if not isLastMove
+                    int checkStartBar = math.max(pivot.barIdx + 1, bar_index - 500)
+                    int checkEndBar = bar_index
+                    
+                    if masterDeleteCondition == "כשהמחיר נוגע ביעד"
+                        if mIsLong
+                            for checkBar = checkStartBar to checkEndBar
+                                offset = bar_index - checkBar
+                                if offset >= 0 and high[offset] >= mTop
+                                    isActive := false
+                                    break
+                        else
+                            for checkBar = checkStartBar to checkEndBar
+                                offset = bar_index - checkBar
+                                if offset >= 0 and low[offset] <= mBottom
+                                    isActive := false
+                                    break
+                    else
+                        targetLevel = mIsLong ? (targetZonePercent > 0 ? tgtBottom : mTop) : (targetZonePercent > 0 ? tgtTop : mBottom)
+                        if mIsLong
+                            for checkBar = checkStartBar to checkEndBar
+                                offset = bar_index - checkBar
+                                if offset >= 0 and high[offset] >= targetLevel
+                                    isActive := false
+                                    break
+                        else
+                            for checkBar = checkStartBar to checkEndBar
+                                offset = bar_index - checkBar
+                                if offset >= 0 and low[offset] <= targetLevel
+                                    isActive := false
+                                    break
+                
+                newMaster = MasterFVG.new(pivot.barIdx, pivot.price, targetFVGMiddle, targetFVGBar, mIsLong, mTop, mBottom, tgtTop, tgtBottom, mRightBar, isActive, false, na, na, na)
+                array.push(masterFVGList, newMaster)
+        
+        if array.size(masterFVGList) > 0
+            lastMasterIdx = array.size(masterFVGList) - 1
+            lastMaster = array.get(masterFVGList, lastMasterIdx)
+            lastMaster.isCurrent := true
+            lastMaster.rightBar := bar_index
+            array.set(masterFVGList, lastMasterIdx, lastMaster)
+        
+        var array<int> activeIndices = array.new<int>()
+        array.clear(activeIndices)
+        if array.size(masterFVGList) > 0
+            for i = 0 to array.size(masterFVGList) - 1
+                master = array.get(masterFVGList, i)
+                if master.isActive
+                    array.push(activeIndices, i)
+        
+        int totalActive = array.size(activeIndices)
+        int startIdx = math.max(0, totalActive - masterMaxToShow)
+        
+        if totalActive > 0
+            for j = startIdx to totalActive - 1
+                i = array.get(activeIndices, j)
+                master = array.get(masterFVGList, i)
+                
+                int drawLeftBar = master.pivotBar
+                int drawRightBar = master.isCurrent ? bar_index : master.rightBar
+                float masterMiddle = (master.masterTop + master.masterBottom) / 2
+                
+                if master.isCurrent
+                    if masterBorderWidth > 0
+                        master.theBox := box.new(left=drawLeftBar, top=master.masterTop, right=drawRightBar, bottom=master.masterBottom, border_color=masterBlockBorderColor, border_width=masterBorderWidth, bgcolor=masterBlockBgColor, extend=extend.none)
+                        if middleLineWidth > 0
+                            master.theLine := line.new(x1=drawLeftBar, y1=masterMiddle, x2=drawRightBar, y2=masterMiddle, color=masterBlockBorderColor, width=middleLineWidth, style=lineStyle)
+                    if showTargetZone and targetZonePercent > 0 and not na(master.targetTop)
+                        targetColor = master.isLong ? targetZoneShortColor : targetZoneLongColor
+                        master.targetBox := box.new(left=drawLeftBar, top=master.targetTop, right=drawRightBar, bottom=master.targetBottom, border_color=color.new(color.white, 100), border_width=0, bgcolor=targetColor, extend=extend.none)
+                else
+                    master.theBox := box.new(left=drawLeftBar, top=master.masterTop, right=drawRightBar, bottom=master.masterBottom, border_color=oldMasterBorderColor, border_width=masterBorderWidth, bgcolor=oldMasterBgColor, extend=extend.none)
+                    if middleLineWidth > 0
+                        master.theLine := line.new(x1=drawLeftBar, y1=masterMiddle, x2=drawRightBar, y2=masterMiddle, color=oldMasterBorderColor, width=middleLineWidth, style=lineStyle)
+                    if showTargetZone and targetZonePercent > 0 and not na(master.targetTop)
+                        targetColor = master.isLong ? targetZoneShortColor : targetZoneLongColor
+                        master.targetBox := box.new(left=drawLeftBar, top=master.targetTop, right=drawRightBar, bottom=master.targetBottom, border_color=color.new(color.white, 100), border_width=0, bgcolor=targetColor, extend=extend.none)
+                
+                array.set(masterFVGList, i, master)
+    
+    if showCurrentFVG
+        if isCurrentBlockLong and isAboveMinSize(low, high[2], close)
+            currentLongMiddle = (low + high[2]) / 2
+            currentRightBar = maxExtendBars > 0 ? math.min(bar_index - 2 + maxExtendBars, bar_index) : bar_index
+            if blockBorderWidth > 0
+                if na(currentLongBox)
+                    currentLongBox := box.new(left=bar_index - 2, top=low, right=currentRightBar, bottom=high[2], border_color=longBlockBorderColor, border_width=blockBorderWidth, bgcolor=longBlockBgColor, extend=extend.none)
+                    if middleLineWidth > 0
+                        currentLongLine := line.new(x1=bar_index - 2, y1=currentLongMiddle, x2=currentRightBar, y2=currentLongMiddle, color=longBlockBorderColor, width=middleLineWidth, style=lineStyle)
+                else
+                    box.set_lefttop(currentLongBox, bar_index - 2, low)
+                    box.set_rightbottom(currentLongBox, currentRightBar, high[2])
+                    if not na(currentLongLine)
+                        line.set_xy1(currentLongLine, bar_index - 2, currentLongMiddle)
+                        line.set_xy2(currentLongLine, currentRightBar, currentLongMiddle)
+        else
+            if not na(currentLongBox)
+                box.delete(currentLongBox)
+                currentLongBox := na
+            if not na(currentLongLine)
+                line.delete(currentLongLine)
+                currentLongLine := na
+        if isCurrentBlockShort and isAboveMinSize(low[2], high, close)
+            currentShortMiddle = (low[2] + high) / 2
+            currentRightBar = maxExtendBars > 0 ? math.min(bar_index - 2 + maxExtendBars, bar_index) : bar_index
+            if blockBorderWidth > 0
+                if na(currentShortBox)
+                    currentShortBox := box.new(left=bar_index - 2, top=low[2], right=currentRightBar, bottom=high, border_color=shortBlockBorderColor, border_width=blockBorderWidth, bgcolor=shortBlockBgColor, extend=extend.none)
+                    if middleLineWidth > 0
+                        currentShortLine := line.new(x1=bar_index - 2, y1=currentShortMiddle, x2=currentRightBar, y2=currentShortMiddle, color=shortBlockBorderColor, width=middleLineWidth, style=lineStyle)
+                else
+                    box.set_lefttop(currentShortBox, bar_index - 2, low[2])
+                    box.set_rightbottom(currentShortBox, currentRightBar, high)
+                    if not na(currentShortLine)
+                        line.set_xy1(currentShortLine, bar_index - 2, currentShortMiddle)
+                        line.set_xy2(currentShortLine, currentRightBar, currentShortMiddle)
+        else
+            if not na(currentShortBox)
+                box.delete(currentShortBox)
+                currentShortBox := na
+            if not na(currentShortLine)
+                line.delete(currentShortLine)
+                currentShortLine := na

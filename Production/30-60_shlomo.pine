@@ -1,0 +1,489 @@
+//@version=6
+indicator("Meni method 30-60", shorttitle="Meni method 30-60", overlay=true, max_boxes_count=500, max_labels_count=500, max_lines_count=500)
+
+// ============================================================================
+// SETTINGS
+// ============================================================================
+
+WMA_FAST = 30
+SMA_SLOW = 60
+FVG_TIMEOUT = 46
+STOP_BUFFER_PCT = 5.0
+MIN_FVG_PCT = 0.006
+
+MAX_PENETRATION = 0.5
+
+i_use_htf_trend = input.bool(true, "השתמש במגמת 4H ויומי", group="כללי", tooltip="דרוש שמגמת 4H או יומי תתאים למגמה השעתית לאישור סיגנל")
+i_show_table = input.bool(false, "הצג טבלה", group="כללי", tooltip="הצג טבלת תנאים להצגת סרגל עסקה")
+i_text_size = input.string("small", "גודל כתב", options=["small", "normal"], group="כללי", tooltip="גודל הכתב בטבלה ובתוויות העסקה")
+
+i_alert_0 = input.bool(true, "התראה בסגירת הנר", group="הגדרות התראות", tooltip="התראה כשהנר נסגר ומאושר")
+i_alert_5 = input.bool(false, "התראה 5 דקות לפני סגירה", group="הגדרות התראות", tooltip="התראה 5 דקות לפני סגירת הנר")
+i_alert_15 = input.bool(false, "התראה 15 דקות לפני סגירה", group="הגדרות התראות", tooltip="התראה 15 דקות לפני סגירת הנר")
+i_alert_20 = input.bool(false, "התראה 20 דקות לפני סגירה", group="הגדרות התראות", tooltip="התראה 20 דקות לפני סגירת הנר")
+i_alert_25 = input.bool(false, "התראה 25 דקות לפני סגירה", group="הגדרות התראות", tooltip="התראה 25 דקות לפני סגירת הנר")
+i_alert_30 = input.bool(false, "התראה 30 דקות לפני סגירה", group="הגדרות התראות", tooltip="התראה 30 דקות לפני סגירת הנר")
+i_alert_45 = input.bool(false, "התראה 45 דקות לפני סגירה", group="הגדרות התראות", tooltip="התראה 45 דקות לפני סגירת הנר")
+i_alert_60 = input.bool(false, "התראה 60 דקות לפני סגירה", group="הגדרות התראות", tooltip="התראה בתחילת הנר (שעה לפני סגירה)")
+
+// ============================================================================
+// CALCULATIONS
+// ============================================================================
+
+is_valid_tf = timeframe.period == "60"
+
+wma_fast = ta.wma(close, WMA_FAST)
+sma_slow = ta.sma(close, SMA_SLOW)
+
+wma_fast_4h = request.security(syminfo.tickerid, "240", ta.wma(close, WMA_FAST))
+sma_slow_4h = request.security(syminfo.tickerid, "240", ta.sma(close, SMA_SLOW))
+wma_fast_daily = request.security(syminfo.tickerid, "D", ta.wma(close, WMA_FAST))
+sma_slow_daily = request.security(syminfo.tickerid, "D", ta.sma(close, SMA_SLOW))
+
+trend_1h_bull = wma_fast > sma_slow
+trend_1h_bear = wma_fast < sma_slow
+trend_4h_bull = wma_fast_4h > sma_slow_4h
+trend_4h_bear = wma_fast_4h < sma_slow_4h
+trend_daily_bull = wma_fast_daily > sma_slow_daily
+trend_daily_bear = wma_fast_daily < sma_slow_daily
+
+htf_confirms_bull = not i_use_htf_trend or trend_4h_bull or trend_daily_bull
+htf_confirms_bear = not i_use_htf_trend or trend_4h_bear or trend_daily_bear
+
+tp_box_color = color.rgb(38, 166, 154, 50)
+sl_box_color = color.rgb(103, 58, 58, 50)
+
+// Font size based on setting
+font_size = i_text_size == "normal" ? size.normal : size.small
+
+// ============================================================================
+// CROSS DETECTION
+// ============================================================================
+
+cross_up = ta.crossover(wma_fast, sma_slow)
+cross_down = ta.crossunder(wma_fast, sma_slow)
+
+// ============================================================================
+// FVG DETECTION
+// ============================================================================
+
+fvg_bull_gap = low - high[2]
+fvg_bear_gap = low[2] - high
+fvg_bull_pct = (fvg_bull_gap / close) * 100
+fvg_bear_pct = (fvg_bear_gap / close) * 100
+
+// GAP detection and size calculation
+// Gap between candle 1 and 2
+gap_1_2_up = low[1] > high[2]
+gap_1_2_down = high[1] < low[2]
+gap_1_2_size = gap_1_2_up ? low[1] - high[2] : gap_1_2_down ? low[2] - high[1] : 0.0
+
+// Gap between candle 2 and 3
+gap_2_3_up = low > high[1]
+gap_2_3_down = high < low[1]
+gap_2_3_size = gap_2_3_up ? low - high[1] : gap_2_3_down ? low[1] - high : 0.0
+
+// Middle candle body for comparison
+middle_body_for_gap = math.abs(close[1] - open[1])
+
+// GAP is allowed if gap size <= middle candle body
+gap_1_2_ok = gap_1_2_size <= middle_body_for_gap
+gap_2_3_ok = gap_2_3_size <= middle_body_for_gap
+gap_allows_fvg = gap_1_2_ok and gap_2_3_ok
+
+// ============================================================================
+// CANDLE PENETRATION CHECK
+// ============================================================================
+
+// Middle candle body calculation
+middle_candle_body = math.abs(close[1] - open[1])
+middle_candle_top = math.max(close[1], open[1])
+middle_candle_bottom = math.min(close[1], open[1])
+
+// For bullish FVG: third candle should not close too far below middle candle top
+bull_penetration_limit = middle_candle_top - (middle_candle_body * MAX_PENETRATION)
+bull_penetration_ok = close >= bull_penetration_limit
+
+// For bearish FVG: third candle should not close too far above middle candle bottom
+bear_penetration_limit = middle_candle_bottom + (middle_candle_body * MAX_PENETRATION)
+bear_penetration_ok = close <= bear_penetration_limit
+
+// ============================================================================
+// FVG FINAL CONDITIONS
+// ============================================================================
+
+fvg_bull = fvg_bull_gap > 0 and fvg_bull_pct >= MIN_FVG_PCT and gap_allows_fvg and bull_penetration_ok
+fvg_bear = fvg_bear_gap > 0 and fvg_bear_pct >= MIN_FVG_PCT and gap_allows_fvg and bear_penetration_ok
+
+var float entry_price = na
+var float exit_price = na
+var float stop_price = na
+var float ma60_at_entry = na
+var bool in_long_trade = false
+var bool in_short_trade = false
+
+var line tp_line = na
+var line sl_line = na
+
+var bool waiting_for_bull_fvg = false
+var bool waiting_for_bear_fvg = false
+var int bars_since_cross = 0
+var int cross_bar = 0
+
+if cross_up
+    waiting_for_bull_fvg := true
+    waiting_for_bear_fvg := false
+    bars_since_cross := 0
+    cross_bar := bar_index
+    in_long_trade := false
+    in_short_trade := false
+    if not na(tp_line)
+        line.set_extend(tp_line, extend.none)
+        line.set_x2(tp_line, bar_index)
+    if not na(sl_line)
+        line.set_extend(sl_line, extend.none)
+        line.set_x2(sl_line, bar_index)
+
+if cross_down
+    waiting_for_bear_fvg := true
+    waiting_for_bull_fvg := false
+    bars_since_cross := 0
+    cross_bar := bar_index
+    in_long_trade := false
+    in_short_trade := false
+    if not na(tp_line)
+        line.set_extend(tp_line, extend.none)
+        line.set_x2(tp_line, bar_index)
+    if not na(sl_line)
+        line.set_extend(sl_line, extend.none)
+        line.set_x2(sl_line, bar_index)
+
+if waiting_for_bull_fvg or waiting_for_bear_fvg
+    bars_since_cross := bars_since_cross + 1
+
+if bars_since_cross > FVG_TIMEOUT
+    waiting_for_bull_fvg := false
+    waiting_for_bear_fvg := false
+
+fvg_after_cross_bull = waiting_for_bull_fvg and fvg_bull and bar_index[1] > cross_bar
+fvg_after_cross_bear = waiting_for_bear_fvg and fvg_bear and bar_index[1] > cross_bar
+
+position_open = in_long_trade or in_short_trade
+// All 3 FVG candles must be on correct side of SMA60
+all_candles_above_sma = low[2] > sma_slow and low[1] > sma_slow and low > sma_slow
+all_candles_below_sma = high[2] < sma_slow and high[1] < sma_slow and high < sma_slow
+
+first_bull_fvg = is_valid_tf and fvg_after_cross_bull and all_candles_above_sma and not position_open and htf_confirms_bull
+first_bear_fvg = is_valid_tf and fvg_after_cross_bear and all_candles_below_sma and not position_open and htf_confirms_bear
+
+if first_bull_fvg
+    entry_price := close
+    ma60_at_entry := sma_slow
+    float base_stop_size = close - sma_slow
+    float stop_buffer = base_stop_size * STOP_BUFFER_PCT / 100
+    stop_price := sma_slow - stop_buffer
+    exit_price := close + (close - stop_price) * 2
+    in_long_trade := true
+    in_short_trade := false
+    waiting_for_bull_fvg := false
+
+if first_bear_fvg
+    entry_price := close
+    ma60_at_entry := sma_slow
+    float base_stop_size = sma_slow - close
+    float stop_buffer = base_stop_size * STOP_BUFFER_PCT / 100
+    stop_price := sma_slow + stop_buffer
+    exit_price := close + (close - stop_price) * 2
+    in_short_trade := true
+    in_long_trade := false
+    waiting_for_bear_fvg := false
+
+if first_bull_fvg
+    box.new(bar_index[2], low, bar_index, high[2], border_color=color.green, border_width=1, bgcolor=color.new(color.green, 70))
+    fvg_mid = (low + high[2]) / 2
+    line.new(bar_index[2], fvg_mid, bar_index, fvg_mid, color=color.yellow, width=1, style=line.style_dashed)
+
+if first_bear_fvg
+    box.new(bar_index[2], low[2], bar_index, high, border_color=color.red, border_width=1, bgcolor=color.new(color.red, 70))
+    fvg_mid = (low[2] + high) / 2
+    line.new(bar_index[2], fvg_mid, bar_index, fvg_mid, color=color.yellow, width=1, style=line.style_dashed)
+
+if first_bull_fvg
+    float base_stop_size = close - sma_slow
+    float stop_buffer = base_stop_size * STOP_BUFFER_PCT / 100
+    float sl_price = sma_slow - stop_buffer
+    float tp_price = close + (close - sl_price) * 2
+    box.new(bar_index, close, bar_index + 5, tp_price, border_color=na, border_width=0, bgcolor=tp_box_color)
+    box.new(bar_index, sl_price, bar_index + 5, close, border_color=na, border_width=0, bgcolor=sl_box_color)
+    label.new(bar_index + 5, close, "Entry: " + str.tostring(close, format.mintick), style=label.style_label_left, color=color.yellow, textcolor=color.black, size=font_size)
+    label.new(bar_index + 5, sl_price, "SL: " + str.tostring(sl_price, format.mintick), style=label.style_label_left, color=color.red, textcolor=color.white, size=font_size)
+    label.new(bar_index + 5, tp_price, "TP: " + str.tostring(tp_price, format.mintick), style=label.style_label_left, color=color.lime, textcolor=color.black, size=font_size)
+    tp_line := line.new(bar_index, tp_price, bar_index + 1, tp_price, color=color.new(color.lime, 50), width=1, style=line.style_dotted, extend=extend.right)
+    sl_line := line.new(bar_index, sl_price, bar_index + 1, sl_price, color=color.new(color.red, 50), width=1, style=line.style_dotted, extend=extend.right)
+
+if first_bear_fvg
+    float base_stop_size = sma_slow - close
+    float stop_buffer = base_stop_size * STOP_BUFFER_PCT / 100
+    float sl_price = sma_slow + stop_buffer
+    float tp_price = close + (close - sl_price) * 2
+    box.new(bar_index, tp_price, bar_index + 5, close, border_color=na, border_width=0, bgcolor=tp_box_color)
+    box.new(bar_index, close, bar_index + 5, sl_price, border_color=na, border_width=0, bgcolor=sl_box_color)
+    label.new(bar_index + 5, close, "Entry: " + str.tostring(close, format.mintick), style=label.style_label_left, color=color.yellow, textcolor=color.black, size=font_size)
+    label.new(bar_index + 5, sl_price, "SL: " + str.tostring(sl_price, format.mintick), style=label.style_label_left, color=color.red, textcolor=color.white, size=font_size)
+    label.new(bar_index + 5, tp_price, "TP: " + str.tostring(tp_price, format.mintick), style=label.style_label_left, color=color.lime, textcolor=color.black, size=font_size)
+    tp_line := line.new(bar_index, tp_price, bar_index + 1, tp_price, color=color.new(color.lime, 50), width=1, style=line.style_dotted, extend=extend.right)
+    sl_line := line.new(bar_index, sl_price, bar_index + 1, sl_price, color=color.new(color.red, 50), width=1, style=line.style_dotted, extend=extend.right)
+
+// Exit on next MA cross (regardless of TP/SL)
+exit_long_on_cross = in_long_trade[1] and cross_down
+exit_short_on_cross = in_short_trade[1] and cross_up
+
+if exit_long_on_cross
+    in_long_trade := false
+    if not na(tp_line)
+        line.set_extend(tp_line, extend.none)
+        line.set_x2(tp_line, bar_index)
+    if not na(sl_line)
+        line.set_extend(sl_line, extend.none)
+        line.set_x2(sl_line, bar_index)
+
+if exit_short_on_cross
+    in_short_trade := false
+    if not na(tp_line)
+        line.set_extend(tp_line, extend.none)
+        line.set_x2(tp_line, bar_index)
+    if not na(sl_line)
+        line.set_extend(sl_line, extend.none)
+        line.set_x2(sl_line, bar_index)
+
+long_signal = first_bull_fvg
+short_signal = first_bear_fvg
+
+// ============================================================================
+// PLOTTING
+// ============================================================================
+
+plot(wma_fast, "WMA 30 (Gann)", color=color.blue, linewidth=2)
+plot(sma_slow, "SMA 60 (Meni)", color=color.orange, linewidth=2)
+
+// ============================================================================
+// CONDITIONS TABLE
+// ============================================================================
+
+// Saved values for when position is open (frozen at signal time)
+var bool saved_trend_1h_bull = false
+var bool saved_trend_4h_bull = false
+var bool saved_trend_daily_bull = false
+var int saved_bars_since_cross = 0
+var float saved_fvg_pct = 0.0
+var float saved_gap_pct = 0.0
+var bool saved_gap_allows = true
+var float saved_penetration = 0.0
+var bool saved_penetration_ok = true
+var bool saved_wma_above_sma = true
+var bool saved_price_confirms = true
+var string saved_price_display = "מעל"
+
+// Save values when signal is triggered
+if first_bull_fvg or first_bear_fvg
+    saved_trend_1h_bull := trend_1h_bull
+    saved_trend_4h_bull := trend_4h_bull
+    saved_trend_daily_bull := trend_daily_bull
+    saved_bars_since_cross := bars_since_cross
+    saved_fvg_pct := first_bull_fvg ? fvg_bull_pct : fvg_bear_pct
+    gap_1_2_pct_temp = middle_body_for_gap > 0 ? (gap_1_2_size / middle_body_for_gap) * 100 : 0.0
+    gap_2_3_pct_temp = middle_body_for_gap > 0 ? (gap_2_3_size / middle_body_for_gap) * 100 : 0.0
+    saved_gap_pct := math.max(gap_1_2_pct_temp, gap_2_3_pct_temp)
+    saved_gap_allows := gap_allows_fvg
+    actual_pen_bull = middle_candle_body > 0 ? ((middle_candle_top - close) / middle_candle_body) * 100 : 0.0
+    actual_pen_bear = middle_candle_body > 0 ? ((close - middle_candle_bottom) / middle_candle_body) * 100 : 0.0
+    saved_wma_above_sma := wma_fast > sma_slow
+    saved_penetration := saved_wma_above_sma ? actual_pen_bull : actual_pen_bear
+    saved_penetration_ok := saved_wma_above_sma ? bull_penetration_ok : bear_penetration_ok
+    price_bull_temp = low[2] > sma_slow and low[1] > sma_slow and low > sma_slow
+    price_bear_temp = high[2] < sma_slow and high[1] < sma_slow and high < sma_slow
+    saved_price_confirms := (saved_wma_above_sma and price_bull_temp) or (not saved_wma_above_sma and price_bear_temp)
+    saved_price_display := saved_wma_above_sma ? (price_bull_temp ? "מעל" : "מתחת") : (price_bear_temp ? "מתחת" : "מעל")
+
+if i_show_table and is_valid_tf
+    var table conditions_table = table.new(position.top_right, 4, 9, bgcolor=color.new(color.black, 70), border_width=1)
+    
+    // Calculate GAP percentages for display (real-time)
+    gap_1_2_pct = middle_body_for_gap > 0 ? (gap_1_2_size / middle_body_for_gap) * 100 : 0.0
+    gap_2_3_pct = middle_body_for_gap > 0 ? (gap_2_3_size / middle_body_for_gap) * 100 : 0.0
+    max_gap_pct = math.max(gap_1_2_pct, gap_2_3_pct)
+    
+    // Calculate actual penetration percentage (real-time)
+    actual_penetration_bull = middle_candle_body > 0 ? ((middle_candle_top - close) / middle_candle_body) * 100 : 0.0
+    actual_penetration_bear = middle_candle_body > 0 ? ((close - middle_candle_bottom) / middle_candle_body) * 100 : 0.0
+    
+    // Use saved or real-time values based on position status
+    display_trend_1h_bull = position_open ? saved_trend_1h_bull : trend_1h_bull
+    display_trend_4h_bull = position_open ? saved_trend_4h_bull : trend_4h_bull
+    display_trend_daily_bull = position_open ? saved_trend_daily_bull : trend_daily_bull
+    display_bars_since_cross = position_open ? saved_bars_since_cross : bars_since_cross
+    
+    fvg_exists_bull = fvg_bull_gap > 0
+    fvg_exists_bear = fvg_bear_gap > 0
+    current_fvg_pct = fvg_exists_bull ? fvg_bull_pct : fvg_exists_bear ? fvg_bear_pct : 0.0
+    display_fvg_pct = position_open ? saved_fvg_pct : current_fvg_pct
+    
+    display_gap_pct = position_open ? saved_gap_pct : max_gap_pct
+    display_gap_allows = position_open ? saved_gap_allows : gap_allows_fvg
+    
+    wma_above_sma = wma_fast > sma_slow
+    display_wma_above_sma = position_open ? saved_wma_above_sma : wma_above_sma
+    
+    fvg_size_ok = display_fvg_pct >= MIN_FVG_PCT
+    has_valid_fvg = fvg_size_ok and (fvg_exists_bull or fvg_exists_bear or position_open)
+    current_penetration = has_valid_fvg ? (display_wma_above_sma ? actual_penetration_bull : actual_penetration_bear) : 0.0
+    penetration_ok_rt = has_valid_fvg ? (display_wma_above_sma ? bull_penetration_ok : bear_penetration_ok) : true
+    display_penetration = position_open ? saved_penetration : current_penetration
+    display_penetration_ok = position_open ? saved_penetration_ok : penetration_ok_rt
+    
+    price_check_bull = low[2] > sma_slow and low[1] > sma_slow and low > sma_slow
+    price_check_bear = high[2] < sma_slow and high[1] < sma_slow and high < sma_slow
+    price_confirms_rt = (display_wma_above_sma and price_check_bull) or (not display_wma_above_sma and price_check_bear)
+    price_display_rt = display_wma_above_sma ? (price_check_bull ? "מעל" : "מתחת") : (price_check_bear ? "מתחת" : "מעל")
+    display_price_confirms = position_open ? saved_price_confirms : price_confirms_rt
+    display_price_text = position_open ? saved_price_display : price_display_rt
+    
+    // Header row - merge columns 1-3, dynamic title based on position status
+    header_title = position_open ? "תנאים לפתיחת הסרגל האחרון" : "תנאי זמן אמת"
+    table.cell(conditions_table, 0, 0, "מצב", text_color=color.white, text_size=font_size, bgcolor=color.gray)
+    table.cell(conditions_table, 1, 0, header_title, text_color=color.white, text_size=font_size, bgcolor=color.gray)
+    table.merge_cells(conditions_table, 1, 0, 3, 0)
+    
+    // Row 1: Trends in 4 separate columns with text labels (no merge)
+    // If HTF check is disabled, show entire row in gray
+    trend_1h_color = i_use_htf_trend ? (display_trend_1h_bull ? color.green : color.red) : color.gray
+    trend_4h_color = i_use_htf_trend ? (display_trend_4h_bull ? color.green : color.red) : color.gray
+    trend_daily_color = i_use_htf_trend ? (display_trend_daily_bull ? color.green : color.red) : color.gray
+    
+    // HTF approved if 1H color matches 4H color OR 1H color matches Daily color
+    htf_approved = (display_trend_1h_bull == display_trend_4h_bull) or (display_trend_1h_bull == display_trend_daily_bull)
+    htf_status_color = i_use_htf_trend ? (htf_approved ? color.green : color.red) : color.gray
+    htf_status_text = i_use_htf_trend ? (htf_approved ? "מאושר" : "לא מאושר") : "מבוטל"
+    
+    table.cell(conditions_table, 0, 1, htf_status_text, text_color=htf_status_color, text_size=font_size)
+    table.cell(conditions_table, 1, 1, "יומי", text_color=trend_daily_color, text_size=font_size)
+    table.cell(conditions_table, 2, 1, "4-שעתי", text_color=trend_4h_color, text_size=font_size)
+    table.cell(conditions_table, 3, 1, "שעתי", text_color=trend_1h_color, text_size=font_size)
+    
+    // Row 2: Bars since cross - merge columns 1-3
+    bars_ok = display_bars_since_cross <= FVG_TIMEOUT and display_bars_since_cross > 0
+    table.cell(conditions_table, 0, 2, str.tostring(display_bars_since_cross) + " / " + str.tostring(FVG_TIMEOUT), text_color=bars_ok ? color.green : color.red, text_size=font_size)
+    table.cell(conditions_table, 1, 2, "נרות מחציה", text_color=color.white, text_size=font_size)
+    table.merge_cells(conditions_table, 1, 2, 3, 2)
+    
+    // Row 3: FVG size - merge columns 1-3
+    table.cell(conditions_table, 0, 3, str.tostring(display_fvg_pct, "#.####") + "%", text_color=fvg_size_ok ? color.green : color.red, text_size=font_size)
+    table.cell(conditions_table, 1, 3, "גודל FVG (מינימום 0.006%)", text_color=color.white, text_size=font_size)
+    table.merge_cells(conditions_table, 1, 3, 3, 3)
+    
+    // Row 4: GAP approved - merge columns 1-3
+    table.cell(conditions_table, 0, 4, str.tostring(display_gap_pct, "#.#") + "%", text_color=display_gap_allows ? color.green : color.red, text_size=font_size)
+    table.cell(conditions_table, 1, 4, "GAP מאושר", text_color=color.white, text_size=font_size)
+    table.merge_cells(conditions_table, 1, 4, 3, 4)
+    
+    // Row 5: Penetration - merge columns 1-3
+    table.cell(conditions_table, 0, 5, str.tostring(display_penetration, "#.#") + "%", text_color=display_penetration_ok ? color.green : color.red, text_size=font_size)
+    table.cell(conditions_table, 1, 5, "חדירה לנר אמצעי", text_color=color.white, text_size=font_size)
+    table.merge_cells(conditions_table, 1, 5, 3, 5)
+    
+    // Row 6: WMA30 vs SMA60 - merge columns 1-3
+    // Always green - this defines the direction we're looking for
+    table.cell(conditions_table, 0, 6, display_wma_above_sma ? "מעל" : "מתחת", text_color=color.green, text_size=font_size)
+    table.cell(conditions_table, 1, 6, "ממוצע 30 מול ממוצע 60", text_color=color.white, text_size=font_size)
+    table.merge_cells(conditions_table, 1, 6, 3, 6)
+    
+    // Row 7: Price vs SMA60 - merge columns 1-3
+    table.cell(conditions_table, 0, 7, display_price_text, text_color=display_price_confirms ? color.green : color.red, text_size=font_size)
+    table.cell(conditions_table, 1, 7, "מחיר מול ממוצע 60", text_color=color.white, text_size=font_size)
+    table.merge_cells(conditions_table, 1, 7, 3, 7)
+    
+    // Row 8: Position open - merge columns 1-3
+    // Green if NO position open (allows new signal)
+    table.cell(conditions_table, 0, 8, position_open ? "כן" : "לא", text_color=position_open ? color.red : color.green, text_size=font_size)
+    table.cell(conditions_table, 1, 8, "פוזיציה פתוחה", text_color=color.white, text_size=font_size)
+    table.merge_cells(conditions_table, 1, 8, 3, 8)
+
+// ============================================================================
+// ALERTS
+// ============================================================================
+
+// Get current minute from 1-minute timeframe
+currentMinute = minute(timenow)
+
+// Track which hour we last sent alerts for (to reset flags each hour)
+var int lastAlertHour = -1
+currentHour = hour(timenow)
+
+// Array to track which alerts were triggered this hour (8 alerts: 60,45,30,25,20,15,5,0)
+var bool[] alertsTriggered = array.new_bool(8, false)
+
+// Reset all flags at start of new hour
+if currentHour != lastAlertHour
+    for i = 0 to 7
+        array.set(alertsTriggered, i, false)
+    lastAlertHour := currentHour
+
+// Check if FVG conditions are met
+fvg_conditions_met = is_valid_tf and (fvg_after_cross_bull or fvg_after_cross_bear) and ((fvg_after_cross_bull and all_candles_above_sma and htf_confirms_bull) or (fvg_after_cross_bear and all_candles_below_sma and htf_confirms_bear)) and not position_open
+
+// 60 min before close = minute 0 (start of hour)
+if currentMinute == 0 and i_alert_60 and not array.get(alertsTriggered, 0) and fvg_conditions_met
+    array.set(alertsTriggered, 0, true)
+    alert("התראה מוקדמת (60 דק') | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar)
+
+// 45 min before close = minute 15
+if currentMinute == 15 and i_alert_45 and not array.get(alertsTriggered, 1) and fvg_conditions_met
+    array.set(alertsTriggered, 1, true)
+    alert("התראה מוקדמת (45 דק') | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar)
+
+// 30 min before close = minute 30
+if currentMinute == 30 and i_alert_30 and not array.get(alertsTriggered, 2) and fvg_conditions_met
+    array.set(alertsTriggered, 2, true)
+    alert("התראה מוקדמת (30 דק') | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar)
+
+// 25 min before close = minute 35
+if currentMinute == 35 and i_alert_25 and not array.get(alertsTriggered, 3) and fvg_conditions_met
+    array.set(alertsTriggered, 3, true)
+    alert("התראה מוקדמת (25 דק') | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar)
+
+// 20 min before close = minute 40
+if currentMinute == 40 and i_alert_20 and not array.get(alertsTriggered, 4) and fvg_conditions_met
+    array.set(alertsTriggered, 4, true)
+    alert("התראה מוקדמת (20 דק') | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar)
+
+// 15 min before close = minute 45
+if currentMinute == 45 and i_alert_15 and not array.get(alertsTriggered, 5) and fvg_conditions_met
+    array.set(alertsTriggered, 5, true)
+    alert("התראה מוקדמת (15 דק') | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar)
+
+// 5 min before close = minute 55
+if currentMinute == 55 and i_alert_5 and not array.get(alertsTriggered, 6) and fvg_conditions_met
+    array.set(alertsTriggered, 6, true)
+    alert("התראה מוקדמת (5 דק') | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar)
+
+// Confirmed alert on bar close
+if (first_bull_fvg or first_bear_fvg) and i_alert_0 and not array.get(alertsTriggered, 7)
+    array.set(alertsTriggered, 7, true)
+    alert("כניסה לעסקה | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar_close)
+
+// ============================================================================
+// ALERTS - COMMENTED FOR FUTURE USE
+// ============================================================================
+
+// alertcondition(exit_hit_long or exit_hit_short, "יציאה מעסקה", "יציאה מעסקה | {{ticker}} | 1 שעה")
+
+// alertcondition(long_signal, "Long Signal (Confirmed)", "30-60: Long signal confirmed - FVG bull created on candle close")
+// alertcondition(short_signal, "Short Signal (Confirmed)", "30-60: Short signal confirmed - FVG bear created on candle close")
+// alertcondition(long_signal or short_signal, "Any Signal (Confirmed)", "30-60: Signal confirmed on candle close")
+// alertcondition(target_hit_long, "Long Target Hit", "30-60: Long position hit take profit")
+// alertcondition(target_hit_short, "Short Target Hit", "30-60: Short position hit take profit")
+// alertcondition(stop_hit_long, "Long Stop Hit", "30-60: Long position hit stop loss")
+// alertcondition(stop_hit_short, "Short Stop Hit", "30-60: Short position hit stop loss")
+// alertcondition(ma_cross_exit_long, "Long MA Cross Exit", "30-60: Long position closed - WMA crossed below SMA")
+// alertcondition(ma_cross_exit_short, "Short MA Cross Exit", "30-60: Short position closed - WMA crossed above SMA")
+

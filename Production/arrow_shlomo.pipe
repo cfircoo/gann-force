@@ -1,0 +1,246 @@
+//@version=6
+indicator("תבנית חץ 3/5 נרות עם סינון WMA והייקן-אשי", overlay=true) // 26/10/2025
+
+// ================================
+// קבוצה: הגדרות תבנית
+// ================================
+patternMode = input.string("3 נרות", title="מצב תבנית", options=["3 נרות", "5 נרות"], group="הגדרות תבנית")
+marker_location = input.string("אמצעי", "נר להצגת החץ", options=["אמצעי", "ימני ביותר"], group="הגדרות תבנית")
+
+// ================================
+// קבוצה: סינונים
+// ================================
+haExitFilterMode = input.string("שניהם", title="סינון Heikin Ashi ליציאה", options=["ללא", "2 פתילים בלבד", "סגירה בלבד", "שניהם"], group="סינונים")
+wmaFilterMode = input.string("שניהם", title="סינון WMA", options=["ללא", "מיקום בלבד", "כיוון בלבד", "שניהם"], group="סינונים")
+wmaLength = input.int(30, minval=1, title="אורך WMA", group="סינונים")
+
+useLongHaFilter = input.bool(true, title="סינון Heikin ל‑LONG", group="סינונים")
+useShortHaFilter = input.bool(true, title="סינון Heikin ל‑SHORT", group="סינונים")
+useLongWmaFilter = input.bool(true, title="סינון WMA ל‑LONG", group="סינונים")
+useShortWmaFilter = input.bool(true, title="סינון WMA ל‑SHORT", group="סינונים")    
+    
+// ================================
+// קבוצה: קווי תמיכה והתנגדות
+// ================================
+showPivots = input.bool(true, title="הצג קווי תמיכה והתנגדות", group="קווי תמיכה והתנגדות")
+pivotLeftBars = input.int(5, title="נרות משמאל לאישרור תמיכה והתנגדות", minval=1, group="קווי תמיכה והתנגדות")
+pivotRightBars = input.int(5, title="נרות מימין לאישרור תמיכה והתנגדות", minval=1, group="קווי תמיכה והתנגדות")
+pivotLineType = input.string("קו עד שבירה", title="משך הצגת קווים", options=["קו עד שבירה", "קו אינסופי", "ללא קווים"], group="קווי תמיכה והתנגדות")
+pivotLineWidth = input.int(1, title="עובי קווים", minval=1, maxval=5, group="קווי תמיכה והתנגדות")
+
+// ================================
+// קבוצה: התראות
+// ================================
+alertConfirmedLong = input.bool(true, title="התראה על חץ LONG מאושר", group="התראות")
+alertHeikinLong = input.bool(true, title="התראה על סינון Heikin ב‑LONG", group="התראות")
+alertWmaLong = input.bool(true, title="התראה על סינון WMA ב‑LONG", group="התראות")
+alertConfirmedShort = input.bool(true, title="התראה על חץ SHORT מאושר", group="התראות")
+alertHeikinShort = input.bool(true, title="התראה על סינון Heikin ב‑SHORT", group="התראות")
+alertWmaShort = input.bool(true, title="התראה על סינון WMA ב‑SHORT", group="התראות")
+
+// ================================
+// חישובי Heikin Ashi
+// ================================
+haClose = (open + high + low + close) / 4
+var float haOpen = na
+haOpen := na(haOpen[1]) ? (open + close) / 2 : (haOpen[1] + haClose[1]) / 2
+
+// ================================
+// חישוב WMA ומגמתו
+// ================================
+wmaValue = ta.wma(close, wmaLength)
+
+wmaRising3 = (wmaValue > wmaValue[1]) and (wmaValue[1] > wmaValue[2])
+wmaFalling3 = (wmaValue < wmaValue[1]) and (wmaValue[1] < wmaValue[2])
+
+wmaRising5 = (wmaValue > wmaValue[1]) and (wmaValue[1] > wmaValue[2]) and (wmaValue[2] > wmaValue[3]) and (wmaValue[3] > wmaValue[4])
+wmaFalling5 = (wmaValue < wmaValue[1]) and (wmaValue[1] < wmaValue[2]) and (wmaValue[2] < wmaValue[3]) and (wmaValue[3] < wmaValue[4])
+
+wmaRising = patternMode == "3 נרות" ? wmaRising3 : wmaRising5
+wmaFalling = patternMode == "3 נרות" ? wmaFalling3 : wmaFalling5
+
+// ================================
+// תבניות 3 נרות
+// ================================
+isMiddleLowest3 = low[1] < low and low[1] < low[2]
+isLeftRed3 = close[2] < open[2]
+isRightGreen3 = close > open
+rawLong3 = isMiddleLowest3 and isLeftRed3 and isRightGreen3
+
+isMiddleHighest3 = high[1] > high and high[1] > high[2]
+isLeftGreen3 = close[2] > open[2]
+isRightRed3 = close < open
+rawShort3 = isMiddleHighest3 and isLeftGreen3 and isRightRed3
+
+// ================================
+// תבניות 5 נרות
+// ================================
+isMiddleLowest5 = low[2] < low and low[2] < low[1] and low[2] < low[3] and low[2] < low[4]
+isLeft1Red5 = close[4] < open[4]
+isLeft2Red5 = close[3] < open[3]
+isRight1Green5 = close[1] > open[1]
+isRight2Green5 = close > open
+rawLong5 = isMiddleLowest5 and isLeft1Red5 and isLeft2Red5 and isRight1Green5 and isRight2Green5
+
+isMiddleHighest5 = high[2] > high and high[2] > high[1] and high[2] > high[3] and high[2] > high[4]
+isLeft1Green5 = close[4] > open[4]
+isLeft2Green5 = close[3] > open[3]
+isRight1Red5 = close[1] < open[1]
+isRight2Red5 = close < open
+rawShort5 = isMiddleHighest5 and isLeft1Green5 and isLeft2Green5 and isRight1Red5 and isRight2Red5
+
+rawLong = patternMode == "3 נרות" ? rawLong3 : rawLong5
+rawShort = patternMode == "3 נרות" ? rawShort3 : rawShort5
+
+// ================================
+// חישוב offset לחץ
+// ================================
+marker_offset = patternMode == "3 נרות" ? (marker_location == "אמצעי" ? -1 : 0) : (marker_location == "אמצעי" ? -2 : 0)
+
+// ================================
+// פונקציות Heikin Ashi
+// ================================
+hasTwoWicks() =>
+    haUpperWick = high - math.max(open, close)
+    haLowerWick = math.min(open, close) - low
+    haUpperWick > 0 and haLowerWick > 0
+
+hasTwoWicks1() =>
+    haUpperWick = high[1] - math.max(open[1], close[1])
+    haLowerWick = math.min(open[1], close[1]) - low[1]
+    haUpperWick > 0 and haLowerWick > 0
+
+// ================================
+// סינון WMA
+// ================================
+wmaCheckIndex = patternMode == "3 נרות" ? 1 : 2
+passedLongWma = wmaFilterMode == "ללא" ? true : wmaFilterMode == "מיקום בלבד" ? close[wmaCheckIndex] > wmaValue[wmaCheckIndex] : wmaFilterMode == "כיוון בלבד" ? wmaRising : wmaFilterMode == "שניהם" ? (wmaRising and close[wmaCheckIndex] > wmaValue[wmaCheckIndex]) : true
+
+passedShortWma = wmaFilterMode == "ללא" ? true : wmaFilterMode == "מיקום בלבד" ? close[wmaCheckIndex] < wmaValue[wmaCheckIndex] : wmaFilterMode == "כיוון בלבד" ? wmaFalling : wmaFilterMode == "שניהם" ? (wmaFalling and close[wmaCheckIndex] < wmaValue[wmaCheckIndex]) : true
+
+// ================================
+// סינון Heikin Ashi
+// ================================
+passedLongHa3 = haExitFilterMode == "ללא" ? true : haExitFilterMode == "2 פתילים בלבד" ? not hasTwoWicks() : haExitFilterMode == "סגירה בלבד" ? not (haClose < haClose[1]) : not (hasTwoWicks() and (haClose < haClose[1]))
+
+passedLongHa5 = haExitFilterMode == "ללא" ? true : haExitFilterMode == "2 פתילים בלבד" ? (not hasTwoWicks() and not hasTwoWicks1()) : haExitFilterMode == "סגירה בלבד" ? not ((haClose < haClose[1]) or (haClose[1] < haClose[2])) : not ((hasTwoWicks() and (haClose < haClose[1])) or (hasTwoWicks1() and (haClose[1] < haClose[2])))
+
+passedLongHa = patternMode == "3 נרות" ? passedLongHa3 : passedLongHa5
+
+passedShortHa3 = haExitFilterMode == "ללא" ? true : haExitFilterMode == "2 פתילים בלבד" ? not hasTwoWicks() : haExitFilterMode == "סגירה בלבד" ? not (haClose > haClose[1]) : not (hasTwoWicks() and (haClose > haClose[1]))
+
+passedShortHa5 = haExitFilterMode == "ללא" ? true : haExitFilterMode == "2 פתילים בלבד" ? (not hasTwoWicks() and not hasTwoWicks1()) : haExitFilterMode == "סגירה בלבד" ? not ((haClose > haClose[1]) or (haClose[1] > haClose[2])) : not ((hasTwoWicks() and (haClose > haClose[1])) or (hasTwoWicks1() and (haClose[1] > haClose[2])))
+
+passedShortHa = patternMode == "3 נרות" ? passedShortHa3 : passedShortHa5
+
+// ================================
+// חצים מאושרים
+// ================================
+confirmedLong = rawLong and (not useLongHaFilter or passedLongHa) and (not useLongWmaFilter or passedLongWma)
+confirmedShort = rawShort and (not useShortHaFilter or passedShortHa) and (not useShortWmaFilter or passedShortWma)
+
+// ================================
+// צבעים לחיצים
+// ================================
+colConfirmed = color.green
+colWmaFiltered = color.orange
+colHeikinFiltered = color.purple
+colDoubleFiltered = color.red
+
+// ================================
+// ציור חיצים
+// ================================
+plotshape(confirmedLong, title="חץ LONG מאושר", location=location.belowbar, color=colConfirmed, style=shape.triangleup, offset=marker_offset, size=size.small)
+plotshape(rawLong and not passedLongHa and passedLongWma, title="חץ LONG סונן Heikin", location=location.belowbar, color=colHeikinFiltered, style=shape.triangleup, offset=marker_offset, size=size.small)
+plotshape(rawLong and passedLongHa and not passedLongWma, title="חץ LONG סונן WMA", location=location.belowbar, color=colWmaFiltered, style=shape.triangleup, offset=marker_offset, size=size.small)
+plotshape(rawLong and not passedLongHa and not passedLongWma, title="חץ LONG סונן כפול", location=location.belowbar, color=colDoubleFiltered, style=shape.triangleup, offset=marker_offset, size=size.small)
+
+plotshape(confirmedShort, title="חץ SHORT מאושר", location=location.abovebar, color=colConfirmed, style=shape.triangledown, offset=marker_offset, size=size.small)
+plotshape(rawShort and not passedShortHa and passedShortWma, title="חץ SHORT סונן Heikin", location=location.abovebar, color=colHeikinFiltered, style=shape.triangledown, offset=marker_offset, size=size.small)
+plotshape(rawShort and passedShortHa and not passedShortWma, title="חץ SHORT סונן WMA", location=location.abovebar, color=colWmaFiltered, style=shape.triangledown, offset=marker_offset, size=size.small)
+plotshape(rawShort and not passedShortHa and not passedShortWma, title="חץ SHORT סונן כפול", location=location.abovebar, color=colDoubleFiltered, style=shape.triangledown, offset=marker_offset, size=size.small)
+
+// ================================
+// קווי תמיכה והתנגדות - זיהוי
+// ================================
+pivotHigh = ta.pivothigh(high, pivotLeftBars, pivotRightBars)
+pivotLow = ta.pivotlow(low, pivotLeftBars, pivotRightBars)
+
+// ================================
+// קווי תמיכה והתנגדות - ציור סימונים
+// ================================
+plotshape(showPivots and not na(pivotHigh), title="תחילת תנועה כלפי מטה", location=location.abovebar, color=color.red, style=shape.triangledown, size=size.tiny, offset=-pivotRightBars)
+plotshape(showPivots and not na(pivotLow), title="תחילת תנועה כלפי מעלה", location=location.belowbar, color=color.green, style=shape.triangleup, size=size.tiny, offset=-pivotRightBars)
+
+// ================================
+// קווי תמיכה והתנגדות - קווים אופקיים
+// ================================
+var line[] highLines = array.new_line()
+var line[] lowLines = array.new_line()
+
+if showPivots and pivotLineType != "ללא קווים"
+    // Pivot High - קו התנגדות
+    if not na(pivotHigh)
+        // מחיקת כל קווי ההתנגדות הקודמים
+        if array.size(highLines) > 0
+            for i = array.size(highLines) - 1 to 0
+                line.delete(array.get(highLines, i))
+            array.clear(highLines)
+        // יצירת קו חדש
+        newLine = line.new(bar_index - pivotRightBars, pivotHigh, bar_index + 500, pivotHigh, color=color.new(color.red, 50), width=pivotLineWidth, style=line.style_solid, extend=pivotLineType == "קו אינסופי" ? extend.right : extend.none)
+        array.push(highLines, newLine)
+    
+    // Pivot Low - קו תמיכה
+    if not na(pivotLow)
+        // מחיקת כל קווי התמיכה הקודמים
+        if array.size(lowLines) > 0
+            for i = array.size(lowLines) - 1 to 0
+                line.delete(array.get(lowLines, i))
+            array.clear(lowLines)
+        // יצירת קו חדש
+        newLine = line.new(bar_index - pivotRightBars, pivotLow, bar_index + 500, pivotLow, color=color.new(color.green, 50), width=pivotLineWidth, style=line.style_solid, extend=pivotLineType == "קו אינסופי" ? extend.right : extend.none)
+        array.push(lowLines, newLine)
+    
+    // מחיקת קווים בגלל שבירה - רק במצב "קו עד שבירה"
+    if pivotLineType == "קו עד שבירה"
+        // בדיקת שבירת קווי התנגדות
+        if array.size(highLines) > 0
+            for i = array.size(highLines) - 1 to 0
+                ln = array.get(highLines, i)
+                if not na(ln)
+                    linePrice = line.get_y1(ln)
+                    if close > linePrice
+                        line.delete(ln)
+                        array.remove(highLines, i)
+        // בדיקת שבירת קווי תמיכה
+        if array.size(lowLines) > 0
+            for i = array.size(lowLines) - 1 to 0
+                ln = array.get(lowLines, i)
+                if not na(ln)
+                    linePrice = line.get_y1(ln)
+                    if close < linePrice
+                        line.delete(ln)
+                        array.remove(lowLines, i)
+
+// ================================
+// התראות
+// ================================
+if confirmedLong and alertConfirmedLong
+    alert("חץ LONG מאושר הופיע ב-" + syminfo.ticker + " (" + timeframe.period + ") - " + patternMode, alert.freq_once_per_bar_close)
+
+if rawLong and not passedLongHa and alertHeikinLong
+    alert("סינון Heikin ב‑LONG הופעל ב-" + syminfo.ticker + " (" + timeframe.period + ") - " + patternMode, alert.freq_once_per_bar_close)
+
+if rawLong and not passedLongWma and alertWmaLong
+    alert("סינון WMA ב‑LONG הופעל ב-" + syminfo.ticker + " (" + timeframe.period + ") - " + patternMode, alert.freq_once_per_bar_close)
+
+if confirmedShort and alertConfirmedShort
+    alert("חץ SHORT מאושר הופיע ב-" + syminfo.ticker + " (" + timeframe.period + ") - " + patternMode, alert.freq_once_per_bar_close)
+
+if rawShort and not passedShortHa and alertHeikinShort
+    alert("סינון Heikin ב‑SHORT הופעל ב-" + syminfo.ticker + " (" + timeframe.period + ") - " + patternMode, alert.freq_once_per_bar_close)
+
+if rawShort and not passedShortWma and alertWmaShort
+    alert("סינון WMA ב‑SHORT הופעל ב-" + syminfo.ticker + " (" + timeframe.period + ") - " + patternMode, alert.freq_once_per_bar_close)
+
+
