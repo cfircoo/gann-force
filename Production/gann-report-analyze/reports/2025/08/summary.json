@@ -1,0 +1,247 @@
+{
+  "report": "Cycles Trading Monthly Report - August 2025",
+  "generated": "2025-08-01",
+  "overall_theme": "August 2025 is a transitional month where long-term geopolitical cycles (84-year global wars, 45-year Iran, 250-year empires) opened in July continue to build. The concentrated volatility window is Aug 13-18 where S&P and Gold daily cycles converge. Seasonal bias is negative for S&P/EUR/USD and Bitcoin, positive for Gold and Oil. September approaches as statistically the worst month for equities.",
+  "key_dates_calendar": {
+    "2025-08-01": [
+      "S&P500 (turning point)",
+      "EUR/USD (turning point)",
+      "Oil (turning point, stat: 73% up)"
+    ],
+    "2025-08-04": [
+      "Gold (stat: 70% down)"
+    ],
+    "2025-08-05": [
+      "Gold (turning point)"
+    ],
+    "2025-08-06": [
+      "S&P500 (stat: 67% up)",
+      "Gold (stat: 67% up)"
+    ],
+    "2025-08-07": [
+      "Bitcoin (turning point, weekly cycle)",
+      "Oil (turning point)"
+    ],
+    "2025-08-08": [
+      "EUR/USD (turning point, weekly cycle end)"
+    ],
+    "2025-08-12": [
+      "Gold (turning point)",
+      "Oil (stat: 70% up vs Aug 7)",
+      "Gold (stat: 70% up vs Aug 5)"
+    ],
+    "2025-08-13-18": [
+      "S&P500 (CONCENTRATED VOLATILITY WINDOW - S&P and Gold daily cycles converge)"
+    ],
+    "2025-08-14": [
+      "S&P500 (turning point)",
+      "Bitcoin (turning point 14-15)",
+      "Gold (stat: 73% down)",
+      "Oil (turning point, strong)"
+    ],
+    "2025-08-15": [
+      "S&P500 (stat: 73% up, strongest date in window)",
+      "EUR/USD (turning point)"
+    ],
+    "2025-08-17": [
+      "EUR/USD (stat: 70% down vs Aug 5)"
+    ],
+    "2025-08-19": [
+      "S&P500 (stat: 67% higher vs Aug 9)"
+    ],
+    "2025-08-20": [
+      "Bitcoin (turning point)",
+      "EUR/USD (stat: 71% up)",
+      "Oil (turning point 20-21)"
+    ],
+    "2025-08-21": [
+      "Gold (turning point)",
+      "EUR/USD (turning point)"
+    ],
+    "2025-08-22": [
+      "Bitcoin (stat: 86% lower vs Aug 10)"
+    ],
+    "2025-08-25": [
+      "S&P500 (turning point)",
+      "EUR/USD (turning point)"
+    ],
+    "2025-08-26": [
+      "Gold (stat: 74% up)"
+    ],
+    "2025-08-27": [
+      "Bitcoin (turning point)"
+    ],
+    "2025-08-28": [
+      "S&P500 (turning point, stat: 68% up)",
+      "Oil (turning point, stat: 73% up, decade pattern peak)"
+    ],
+    "2025-08-29": [
+      "EUR/USD (stat: 80% down)",
+      "Gold (turning point)"
+    ]
+  },
+  "assets": {
+    "sp500": {
+      "bias": "Slightly negative seasonally. September worst month approaching.",
+      "key_dates": [
+        "Aug 1",
+        "Aug 14",
+        "Aug 18 (within critical window)",
+        "Aug 25",
+        "Aug 28"
+      ],
+      "critical_window": "Aug 13-18 (dense S&P and Gold daily cycle convergence)",
+      "support": [
+        "6,203",
+        "6,147",
+        "6,091",
+        "5,961",
+        "5,823"
+      ],
+      "resistance": [
+        "6,575",
+        "6,505"
+      ],
+      "top_insights": [
+        "84/45/250-year geopolitical cycles continue from July",
+        "RSP and Dow not breaking highs - narrow mega-cap rally",
+        "MACD negative divergence persisting on weekly chart",
+        "CNN Fear/Greed at 61, declining from 66",
+        "Below 5,961 at month end = fundamental change"
+      ],
+      "summary": "Five turning points with concentrated volatility Aug 13-18. Trend positive but participation weakening. MACD divergence present."
+    },
+    "bitcoin": {
+      "bias": "Bearish seasonally (66.7% negative Augusts in 15-year history)",
+      "key_dates": [
+        "Aug 7 (weekly cycle)",
+        "Aug 14-15",
+        "Aug 20",
+        "Aug 27"
+      ],
+      "support": [
+        "$101,500",
+        "$98,500",
+        "$91,350",
+        "$87,500",
+        "$74,000"
+      ],
+      "resistance": [
+        "$109,300",
+        "$112,000",
+        "$114,000"
+      ],
+      "top_insights": [
+        "MACD/RSI negative divergence on weekly - momentum weakening",
+        "Volume not expanding despite price rise",
+        "Aug 10-22: 86% historical downward probability",
+        "Large holders reducing supply could override bearish technicals",
+        "$74,000 critical long-term support"
+      ],
+      "summary": "Bearish seasonality with MACD/RSI divergence. ATH breakout quality uncertain. Aug 10-22 window strongly bearish historically."
+    },
+    "eurusd": {
+      "bias": "Bearish seasonally. Two monthly + two weekly cycles support decline.",
+      "key_dates": [
+        "Aug 1",
+        "Aug 8 (weekly cycle)",
+        "Aug 15",
+        "Aug 21",
+        "Aug 25"
+      ],
+      "support": [
+        "1.1070",
+        "1.1390 (61.8% Fib)",
+        "1.1576-1.1625"
+      ],
+      "resistance": [
+        "1.1625",
+        "1.1920"
+      ],
+      "top_insights": [
+        "Aug 29: 80% decline probability",
+        "Aug 5-17: 70% down bias",
+        "61.8% Fibonacci at 1.1390 major level",
+        "Weekly cycles ending Aug 8/22 are key turning points",
+        "Break below 1.1576-1.1625 = reversal signal"
+      ],
+      "summary": "Bearish with strong statistical support for decline. 80% down probability on Aug 29. Support at 1.1576-1.1625 critical."
+    },
+    "gold": {
+      "bias": "Positive (bullish) seasonally. August favorable for Gold.",
+      "key_dates": [
+        "Aug 5",
+        "Aug 12 (dense zone)",
+        "Aug 21",
+        "Aug 29"
+      ],
+      "support": [
+        "$3,250",
+        "$3,134 (38.2% Fib)",
+        "$3,080"
+      ],
+      "resistance": [
+        "$3,782 (Fib extension)",
+        "$3,965",
+        "$3,375-3,655"
+      ],
+      "top_insights": [
+        "Elliott Wave 5 potentially ending 2022 uptrend",
+        "ATH zone - precise top hard to estimate",
+        "Fib 38.2% at $3,134 held in May bounce",
+        "Inverted N on weekly = deepest decline in 2.5 years",
+        "Aug 14: 73% decline probability"
+      ],
+      "summary": "Bullish seasonal bias but at ATH in Elliott Wave 5. Mixed stats with both up and down probabilities. Support $3,250/$3,134 critical."
+    },
+    "oil": {
+      "bias": "Positive (bullish) seasonally. August favorable for Oil.",
+      "key_dates": [
+        "Aug 1 (73% up)",
+        "Aug 7",
+        "Aug 14 (strong)",
+        "Aug 20-21",
+        "Aug 28 (73% up, decade peak)"
+      ],
+      "support": [
+        "$55.30-$56 (major)",
+        "$51-$52.70",
+        "$43.40",
+        "$64.10-$64.85"
+      ],
+      "resistance": [
+        "$64.40-$66.50 (ceiling)",
+        "$69.655",
+        "$80 (trend change)"
+      ],
+      "top_insights": [
+        "Trapped between $55-56 and $64-66 since September",
+        "Two decade patterns point to August highs around Aug 28-31",
+        "Above $80 = significant trend change confirmed",
+        "NO open positions over weekends",
+        "Weekly cycles ending Aug 22/29 could create sharp moves"
+      ],
+      "summary": "Bullish seasonal bias. Trapped in range. Decade patterns suggest peak Aug 28-31 then possible reversal. Above $80 = trend change."
+    }
+  },
+  "cross_asset_themes": [
+    "Aug 1 is a turning point for S&P500, EUR/USD, and Oil simultaneously - expect cross-market movement",
+    "Aug 13-18 is the critical volatility window with S&P and Gold daily cycles converging",
+    "Aug 28 clusters turning points for S&P500 and Oil with strong statistical backing (68-73% up)",
+    "Geopolitical catalysts: 84-year wars cycle, 45-year Iran cycle, 250-year empires cycle all active from July",
+    "90/144-year identity/migration cycles adding geopolitical pressure through currencies, gold, crypto",
+    "Seasonal bias split: bearish for equities/EUR/Bitcoin, bullish for Gold and Oil",
+    "September approaching as worst month for equities - August positioning critical"
+  ],
+  "risk_management_rules": [
+    "Tighten stops on all existing positions",
+    "Avoid new long positions without clear correction first",
+    "Avoid leveraged ETF positions during volatile windows",
+    "Oil: NO open positions over weekends",
+    "Short trades require dual confirmation from turning point date AND chart",
+    "All dates may deviate +/- 1 trading day",
+    "Do not act automatically on dates - wait for price confirmation",
+    "Below S&P 5,961 at month end = fundamental change signal",
+    "Maintain vigilance through defense, energy, gold, and currency sectors"
+  ]
+}

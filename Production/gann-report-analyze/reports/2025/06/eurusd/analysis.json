@@ -1,0 +1,46 @@
+{
+  "asset": "EUR/USD",
+  "key_dates": [
+    {"date": "2025-06-05", "description": "Cycle turning point"},
+    {"date": "2025-06-12", "description": "Cycle turning point"},
+    {"date": "2025-06-20", "description": "Cycle turning point"},
+    {"date": "2025-06-30", "description": "Cycle turning point"}
+  ],
+  "seasonal": "June is generally a positive month for the Euro. Out of the two decades of patterns examined, one ended in declines and the other in gains, so there is no clear directional seasonal indication. However, seasonality leans positive overall.",
+  "statistics": [
+    {"date": "2025-06-03", "probability": "77%", "direction": "up", "description": "Over the last 20 years, EUR/USD closed higher around June 3 approximately 77% of the time"},
+    {"date": "2025-06-20", "probability": "75%", "direction": "up", "description": "Over the last 20 years, EUR/USD closed higher around June 20 approximately 75% of the time"},
+    {"date": "2025-06-23", "probability": "77%", "direction": "up", "description": "Over the last 20 years, EUR/USD closed higher around June 23 approximately 77% of the time"},
+    {"date": "2025-06-12", "probability": "75%", "direction": "up", "description": "In the last 20 years, the Euro closed HIGHER on June 12 compared to June 6 in 75% of cases"}
+  ],
+  "insights": [
+    "After the Euro's bullish trend halted in March and April, May opened with a decline in the first third but the trend reversed into a positive trajectory - the weekly trend continues to be considered bullish",
+    "The weekly chart remains above a key trend structure around the 1.1275-1.1190 area, with the chart forming a flag/pennant pattern consolidation. Fibonacci 38.2% retracement at the 1.1070 level served as support",
+    "When examining all recent upward movement in the context of Fibonacci patterns, multiple support levels and potential levels align, creating optimal conditions for a long trade ideally",
+    "There is one monthly cycle that could point to a possible reversal downward at some point during the month - key level is 1.070",
+    "A weekly cycle ending around June 27 and several daily dates between June 20-30 suggest volatility expectations in the last third of the month",
+    "The daily chart shows a constructive upward structure with higher peaks and Fibonacci support alignment - conditions for a long entry when combined with cycle date"
+  ],
+  "technical": {
+    "support": [
+      {"level": "1.1190", "description": "First support - part of the previous resistance zone that was broken and should now serve as support"},
+      {"level": "1.1275", "description": "Key level within the support cluster from the previous advance"},
+      {"level": "1.1070", "description": "Critical support - Fibonacci 38.2% level; a monthly cycle reversal key level. Break below signals potential trend change"},
+      {"level": "1.0700", "description": "Deep support level - monthly cycle reversal point"}
+    ],
+    "resistance": [
+      {"level": "1.1500+", "description": "Upper area - recent peak zone where the Euro stalled"},
+      {"level": "Recent highs", "description": "The weekly chart shows the pair has been consolidating below recent highs with a flag pattern"}
+    ],
+    "indicators": "Weekly chart shows a bullish flag/pennant consolidation above the 1.1275-1.1190 zone. Fibonacci 38.2% at 1.1070 is the critical support level. Daily chart confirms constructive pattern with higher lows. Moving averages on the weekly timeframe remain supportive of the uptrend. A potential monthly cycle reversal could push the pair lower at some point, with 1.070 as the key reversal level."
+  },
+  "summary": "EUR/USD maintains a positive bias heading into June 2025 with key turning dates on June 5, 12, 20, and 30. Seasonal statistics favor upward movement (77% bullish around June 3 and 23, 75% around June 20). The weekly chart shows a bullish flag formation above 1.1190-1.1275 support, with Fibonacci 38.2% at 1.1070 as the critical level. A potential monthly cycle reversal could temporarily push the pair lower, but the overall trend structure remains constructive.",
+  "previous_month_review": "May 2025 had four turning dates with three capturing the high or low of the cycle: May 2 - arrived exactly on time, marked the low of the cycle and an upward move began; May 8 (arrived on May 7) - marked the high and triggered a 300 pip decline, though a missing mid-month date around May 13 would have improved capture; May 19-20 - double cycle that failed to produce a direction change, price continued up (continuing cycle); May 28 (arrived one day early) - served only temporarily as the high of the previous cycle, then a ~200 pip decline developed, stopped at May 29.",
+  "risk_notes": [
+    "A break below 1.070 would signal a fundamental shift in the bullish thesis for the Euro",
+    "Monthly cycle suggests potential for a reversal at some point during the month - remain vigilant",
+    "Last third of the month (June 20-30) expected to be volatile with multiple cycle convergences",
+    "The two decade patterns examined show conflicting signals - one bearish, one bullish - reducing seasonal reliability",
+    "Currency positions require awareness of leverage and margin requirements - manage risk accordingly"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "report": "Cycles Trading Monthly Report - April 2025",
+  "month": "April",
+  "year": 2025,
+  "report_date": "2025-04-01",
+  "source_url": "https://cyclestrading-course.com/%d7%93%d7%95%d7%97-%d7%97%d7%95%d7%93%d7%a9%d7%99-%d7%90%d7%a4%d7%a8%d7%99%d7%9c-2025/",
+  "assets": [
+    {
+      "name": "S&P500",
+      "folder": "sp500",
+      "key_dates_count": 6,
+      "seasonal_bias": "Bullish (one of the 3 strongest months)",
+      "overall_outlook": "Bearish correction expected despite bullish seasonality. Multiple Gann cycles converge. Potential trend change precursor."
+    },
+    {
+      "name": "Bitcoin",
+      "folder": "bitcoin",
+      "key_dates_count": 4,
+      "seasonal_bias": "Mildly Bullish (64.3% positive)",
+      "overall_outlook": "First half of April expected more positive. Broken support at $89,500-$93,300 needs to be reclaimed for bullish resumption."
+    },
+    {
+      "name": "EUR/USD",
+      "folder": "eurusd",
+      "key_dates_count": 4,
+      "seasonal_bias": "Bullish",
+      "overall_outlook": "Positive outlook after breaking multi-year resistance at 1.0936. Retests provide buying opportunities."
+    },
+    {
+      "name": "Gold",
+      "folder": "gold",
+      "key_dates_count": 3,
+      "seasonal_bias": "Mildly Bullish",
+      "overall_outlook": "Strong uptrend after all-time high breakout. Retest of $3,050 could provide entry. April 14 key date aligns with weekly cycle."
+    },
+    {
+      "name": "Oil",
+      "folder": "oil",
+      "key_dates_count": 5,
+      "seasonal_bias": "Strongly Bullish (historically best month)",
+      "overall_outlook": "Strongest seasonal month. $62.50-$65.50 support holding for 3 years. Daily resistance at $71.50-$73.00 is the key level."
+    }
+  ],
+  "cross_asset_calendar": [
+    {"date": "2025-04-01", "assets": ["Bitcoin", "Oil"], "description": "Dual turning point: Bitcoin and Oil both have cycle turns on April 1."},
+    {"date": "2025-04-03", "assets": ["S&P500"], "description": "S&P500 turning point date (3-4.4 range). 77% probability of decline."},
+    {"date": "2025-04-04", "assets": ["S&P500", "EUR/USD"], "description": "S&P500 turning point end (3-4.4 range) + EUR/USD turning point date."},
+    {"date": "2025-04-07", "assets": ["Oil", "EUR/USD (stats)", "Gold (stats)"], "description": "Oil turning point + EUR/USD 69% up stat + Gold 70% up stat. Significant multi-asset confluence date."},
+    {"date": "2025-04-09", "assets": ["S&P500 (stats)", "Gold"], "description": "S&P 74% up stat + Gold turning point (68% up stat). Potential coordinated bounce."},
+    {"date": "2025-04-10", "assets": ["S&P500 (stats)", "Gold (stats)"], "description": "S&P 81% up stat + Gold 67% up stat. Strong bullish statistical confluence."},
+    {"date": "2025-04-11", "assets": ["S&P500", "EUR/USD"], "description": "S&P500 turning point + EUR/USD turning point. Both on same day."},
+    {"date": "2025-04-14", "assets": ["Bitcoin", "Gold"], "description": "Bitcoin turning point (71% up) + Gold turning point aligning with stronger weekly cycle. High-impact date."},
+    {"date": "2025-04-15", "assets": ["Oil"], "description": "Oil turning point date."},
+    {"date": "2025-04-18", "assets": ["S&P500"], "description": "S&P500 turning point. Weekly cycle ending - stronger significance."},
+    {"date": "2025-04-21", "assets": ["Bitcoin"], "description": "Bitcoin turning point date."},
+    {"date": "2025-04-22", "assets": ["Oil", "EUR/USD"], "description": "Oil turning point (22-23.4 range, 76% up stat) + EUR/USD turning point."},
+    {"date": "2025-04-23", "assets": ["Oil", "EUR/USD (stats)"], "description": "Oil turning point range end (22-23.4) + EUR/USD 71% up stat."},
+    {"date": "2025-04-24", "assets": ["S&P500"], "description": "S&P500 turning point (24-25.4 range start)."},
+    {"date": "2025-04-25", "assets": ["S&P500", "Bitcoin", "Gold"], "description": "Triple confluence: S&P500 (24-25.4 end) + Bitcoin + Gold turning points. Major multi-asset turning date."},
+    {"date": "2025-04-29", "assets": ["EUR/USD"], "description": "EUR/USD turning point date. Month-end turning."}
+  ],
+  "themes": [
+    {
+      "theme": "Historical Cycle Convergence",
+      "description": "April 2025 is identified as a critical month where multiple Gann time cycles (15, 30, 45, 60, 75, and 90 year cycles) converge simultaneously. Historical April events include the Oklahoma City bombing (1995), Iraq-Iran wars (1980), Vietnam War escalation (1965), and the Stresa Front (1935). This convergence suggests elevated probability of significant global events."
+    },
+    {
+      "theme": "Geopolitical Escalation Risk",
+      "description": "Current reports indicate extraordinary concentration of American military power in the Middle East (7 B-2A bombers, dozens of KC-135 tankers, C-17A transports, F-35 fighters plus carrier groups). The cyclical pattern suggests this is not coincidental and aligns with the historical pattern of escalation during these time windows."
+    },
+    {
+      "theme": "Seasonal Bullishness vs Cyclical Bearishness",
+      "description": "Most assets show positive seasonal bias for April (S&P one of top 3 months, Oil best month, EUR/USD positive, Bitcoin 64% positive). However, the cyclical analysis warns of potential trend changes and deterioration. This creates a tension between seasonal expectations and deeper cyclical patterns."
+    },
+    {
+      "theme": "Dollar Weakness / Euro Strength",
+      "description": "EUR/USD broke above multi-year resistance at 1.0936, gold is at all-time highs, and the overall pattern suggests dollar weakness. This theme connects EUR/USD strength, gold's breakout, and potential S&P vulnerability."
+    },
+    {
+      "theme": "Support/Resistance Confluence Zones",
+      "description": "Multiple assets show key technical levels converging with cycle dates: S&P at 5,120-5,140, Bitcoin at $89,500-$93,300, Gold at $3,050, Oil at $62.50-$65.50. These represent high-probability reaction zones when hit in conjunction with turning dates."
+    }
+  ],
+  "risk_rules": [
+    "Never label turning dates as 'high' or 'low' in advance - the direction only becomes clear as price approaches the date.",
+    "Each turning date has a tolerance of +/- 1 trading day from the marked date.",
+    "When two dates appear close together (double cycle), the first typically creates a correction and the second restores the original trend.",
+    "A 'continuing cycle' date means the date does not reverse the trend but confirms continuation - this requires different positioning.",
+    "Maintain 30-40% of portfolio in liquid non-equity assets during periods of uncertainty.",
+    "Use stop-losses at significant support/resistance levels. Lock in partial profits at resistance zones.",
+    "The combination of turning date + technical level alignment + dominant trend direction produces the highest probability setups.",
+    "Avoid leveraged ETF positions during elevated uncertainty periods.",
+    "Stay connected to the Discord community for real-time updates as market conditions evolve throughout the month.",
+    "These reports are for educational purposes only and do not constitute investment advice."
+  ],
+  "previous_month_performance": {
+    "sp500": "4 dates, 2 successful turning points (6.3 and 25.3), 1 continuing cycle (18-19.3), 1 partial (14.3 low but continuation). Net: successful identification of key extremes.",
+    "bitcoin": "4 dates, all arrived on time. 3.3 marked high, 7.3 marked high with 16% decline, 17-18.3 marked low with 8% rally, 26.3 marked high. Very effective month.",
+    "eurusd": "3 dates, 2 successful (13-14.3 low with 120 pip rally, 19-20.3 high with 210 pip decline), 1 non-classical but profitable (6-7.3). Strong performance.",
+    "gold": "4 dates, 3 successful turning points + 1 continuing cycle. 7.3 low (+4%), 14.3 continuation, 20.3 high, 27.3 low (+4%). Exceptionally strong.",
+    "oil": "3 dates, 1 clear success (6.3 low +4%), 2 continuing cycles (21.3 and 28.3). Decent but less precise than other assets."
+  }
+}

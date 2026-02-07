@@ -1,0 +1,42 @@
+{
+  "asset": "EUR/USD",
+  "key_dates": [
+    {"date": "2025-04-04", "description": "Turning point date. Potential cycle turn within +/- 1 day."},
+    {"date": "2025-04-11", "description": "Turning point date. Potential cycle turn within +/- 1 day."},
+    {"date": "2025-04-22", "description": "Turning point date. Potential cycle turn within +/- 1 day."},
+    {"date": "2025-04-29", "description": "Turning point date. Potential cycle turn within +/- 1 day."}
+  ],
+  "seasonal": "April is typically a positive month for EUR/USD (Euro). Seasonal cyclical analysis of the last 20 years confirms this, as both cycles ended with rate increases - supporting expectation for a stronger move in support of this trend.",
+  "statistics": [
+    {"date": "2025-04-07", "probability": "69%", "direction": "up", "description": "Over the last 20 years, EUR/USD rose around April 7 approximately 69% of the time."},
+    {"date": "2025-04-23", "probability": "71%", "direction": "up", "description": "Over the last 20 years, EUR/USD rose around April 23 approximately 71% of the time."},
+    {"date": "2025-04-18", "probability": "79%", "direction": "up", "description": "In the last 20 years, Euro closed higher on April 18 than on April 6 in 79% of cases."}
+  ],
+  "insights": [
+    "The sharp first-half rise of the month in March was powerful and seemed unlikely given the time and conditions, but the EUR/USD broke above the 1.0936 resistance area into multi-year highs.",
+    "The technical picture on the daily chart shows a potential retest of the breakout at approximately 1.0520, which could provide a buying opportunity if confirmed as support.",
+    "Various Fibonacci levels create a resistance zone around 1.0570-1.0626 that may serve as a pivot point - a break above signals continuation higher, while rejection signals short-term pullback.",
+    "Weekly chart shows the breakout resistance area converted to support, matching with Fibonacci levels for potential entry opportunities.",
+    "The EUR/USD's strong dynamism and frequent changes make it essential to stay updated through the Discord community for real-time market developments."
+  ],
+  "technical": {
+    "support": [
+      {"level": "1.0520", "description": "Potential retest level of the breakout. Previously resistance now acting as support. Loss of this level would be a negative signal."},
+      {"level": "1.0587", "description": "Fibonacci 61.8% correction level and minor support zone."},
+      {"level": "1.0603", "description": "Key support level that could function as a springboard for continued upside."}
+    ],
+    "resistance": [
+      {"level": "1.0936", "description": "Previous multi-year resistance level that was broken to the upside during March. Now serving as a reference point."},
+      {"level": "1.0570-1.0626", "description": "Fibonacci resistance zone that may serve as pivot for direction."}
+    ],
+    "indicators": "Daily chart shows strong uptrend with the breakout above 1.0936 being the dominant development. The 200-day moving average has been surpassed. The minor bearish retracement trend from the high is potentially ending, with a reversal pattern (N-shape) forming. Weekly chart confirms bullish structure with former resistance converting to support."
+  },
+  "summary": "EUR/USD (Euro) has a positive seasonal bias for April, supported by both cyclical and statistical evidence (69-79% bullish probabilities). The strong March rally broke above key multi-year resistance at 1.0936, and the pair is now expected to continue its uptrend with possible retests providing entry opportunities. Key turning dates around April 4, 11, 22, and 29 should be monitored for potential directional changes.",
+  "previous_month_review": "In March 2025 there were three turning point dates, with two working successfully in identifying extremes and one not performing classically. March 6-7 (double cycle): price stalled on the first day and reversed upward on the second day - classified as a non-working date classically but the trade was profitable. March 13-14 (double cycle): arrived exactly on time, first date marked the low of the correction, serving as a buying opportunity with a ~120 pip rally to the cycle high. March 20 (preceded by one day to March 19): served as the high of the previous cycle and the monthly high, followed by a ~210 pip decline.",
+  "risk_notes": [
+    "EUR/USD is highly dynamic with frequent market changes - positions require active monitoring.",
+    "Stay connected to the Discord community for real-time updates on significant market developments.",
+    "When trading against the dominant trend, be extra cautious with position sizing and use tight stops.",
+    "The breakout above 1.0936 is bullish but requires confirmation - a failed retest would change the outlook."
+  ]
+}

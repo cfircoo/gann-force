@@ -1,0 +1,44 @@
+{
+  "asset": "Bitcoin",
+  "key_dates": [
+    {"date": "2025-04-01", "description": "Turning point date. Potential cycle turn within +/- 1 day."},
+    {"date": "2025-04-14", "description": "Turning point date. Potential cycle turn within +/- 1 day."},
+    {"date": "2025-04-21", "description": "Turning point date. Potential cycle turn within +/- 1 day."},
+    {"date": "2025-04-25", "description": "Turning point date. Potential cycle turn within +/- 1 day."}
+  ],
+  "seasonal": "Bitcoin finished April positively in 9 out of the last 14 years (approximately 64.3%). Seasonal bias is mildly positive but less attractive than other assets in the report due to Bitcoin's shorter price history.",
+  "statistics": [
+    {"date": "2025-04-14", "probability": "71%", "direction": "up", "description": "In the last 7 years, Bitcoin tended to trade at a higher price on April 14 than on April 2, in 5 out of 7 years (approximately 71%)."}
+  ],
+  "insights": [
+    "After a period of approximately three months of sideways consolidation, Bitcoin's movement in February brought a new development with the breakdown below the support band between $90,750 and $92,350.",
+    "From the February report, two key observations were noted: First, key Fibonacci target zones in a breakdown scenario fall between $68,300-$72,000 to $86,000, with additional retest support between $73,800. Second, geometric pattern analysis (AB=CD symmetry) projects point D at approximately $107,832, which serves as a target if the symmetry holds.",
+    "Bitcoin reached $78,200 during the downtrend after the support breakdown, confirming the Fibonacci zone analysis.",
+    "Bitcoin has recovered from most of the decline but still faces resistance. The support-turned-resistance level must be broken above for a bullish resumption.",
+    "Only a stabilization back above the weekly bullish candle close would signal true recovery - otherwise it may retest and fail.",
+    "Two weekly cycles end in weeks ending April 4 and April 25, so turning point dates appearing this month at those dates may signal more significant trend changes.",
+    "Crypto market is more dynamic and requires real-time tracking. Discord community recommended for live updates."
+  ],
+  "technical": {
+    "support": [
+      {"level": "68300-72000", "description": "Key Fibonacci target zone on a breakdown. Lower boundary of the support band."},
+      {"level": "73800", "description": "Additional Fibonacci retest support level based on candle body bottoms and wick analysis."},
+      {"level": "78200", "description": "Recent swing low reached during March decline."},
+      {"level": "86000", "description": "Upper boundary of the Fibonacci support zone."}
+    ],
+    "resistance": [
+      {"level": "89500-93300", "description": "Previous support zone now acting as resistance after the breakdown. Critical zone to reclaim for bullish continuation."},
+      {"level": "107832", "description": "AB=CD symmetry target (point D), representing the completion of the geometric pattern if Bitcoin resumes its uptrend."}
+    ],
+    "indicators": "Weekly chart shows a broken support level around $90,750-$92,350 that now acts as resistance. The 50-day moving average and Fibonacci 50% retracement of the decline from wave AB also converge as resistance. Daily chart shows potential for short-term bounce with N-wave pattern forming, but overall trend remains cautious. Only a confirmed break above resistance with volume would signal bullish reversal."
+  },
+  "summary": "Bitcoin tends to be more positive in the first half of April with seasonal stats showing 64% positive closing. Two weekly cycles ending in weeks of April 4 and April 25 create potential for significant trend changes at those turning point dates. The current technical picture shows Bitcoin recovering from a decline to $78,200 but facing resistance at the broken $89,500-$93,300 support zone, and long-term investors should monitor whether this zone is reclaimed or rejected.",
+  "previous_month_review": "In March 2025, Bitcoin had four turning point dates and the dynamics between them functioned in a non-classical high-low-high pattern. March 3: arrived exactly on time, marked the high, followed by a ~14% drop within two days but did not sustain the downward movement. March 7: arrived on time, again marked the high of the movement, triggering a strong ~16% decline. March 17-18 (double cycle): arrived on time, marked the low of the cycle, initiating an ~8% rally. March 26: arrived on time, marked the high of the previous cycle, with a decline starting from it reaching approximately April 1 potentially marking the low.",
+  "risk_notes": [
+    "Bitcoin is one of the highest potential volatility assets - long-term investors must be cautious about attempting to time entries and exits based on turning dates alone.",
+    "Missing a significant move may negate the timing advantages of the method for short-term traders.",
+    "For long-term investors, review monthly support levels and overall trend direction - as long as prices are rising in a structured manner, direction is positive.",
+    "When a support level breaks, change your base assumption and separate from the investment to protect against significant further downside.",
+    "Important to stay connected to the Discord community for real-time crypto updates throughout the month."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "asset": "Bitcoin",
+  "key_dates": [
+    {"date": "2025-07-04", "description": "Cycle turning point date for potential trend reversal"},
+    {"date": "2025-07-11", "description": "Cycle turning point date; weekly cycle ending here coincides with daily cycle - could serve as more significant turning point"},
+    {"date": "2025-07-18", "description": "Cycle turning point date for potential trend reversal"},
+    {"date": "2025-07-24", "description": "Cycle turning point date for potential trend reversal"},
+    {"date": "2025-07-30", "description": "Cycle turning point date for potential trend reversal"}
+  ],
+  "seasonal": "Bitcoin closed July positively in 9 out of the last 14 years (approximately 64.3% of the time), tending to climb mainly in the second half of the month. However, Bitcoin has limited history compared to other assets in the report, so seasonal statistics are less attractive.",
+  "statistics": [
+    {"date": "2025-07-10", "probability": "86%", "direction": "up", "description": "In the last 7 years, Bitcoin tended to trade at a higher price on 10.08 than on 10.07 in 6 out of 7 years (approximately 86%)"}
+  ],
+  "insights": [
+    "Bitcoin is at an all-time high area but with warning signs",
+    "During June, Bitcoin repeatedly revisited its ATH zone as prices kept pressing higher with selling pressure at resistance",
+    "On two occasions during June (around 09.06 and again at 30.06), price reached resistance from the chart and turned around",
+    "Trading cycles in Bitcoin show no significant expansion in volume during recent months, raising questions about the strength of the uptrend - absence of 'smart money'",
+    "MACD and RSI both showing negative divergence - a classic signal for possible correction ahead; however momentum is weakening not collapsing",
+    "In a more negative scenario, Bitcoin could drop back to the significant support zone around $74,000",
+    "Key Fibonacci levels: resistance around $101,000 (38.2% Fibonacci extension), and targets at $97,000-$98,000 level as well as $91,350-$87,500 support area",
+    "The crypto market is more dynamic and following real-time developments through the Discord community is highly recommended",
+    "Weekly cycle ending on July 11 that coincides with a daily cycle on the same day could serve as a more significant price turning point"
+  ],
+  "technical": {
+    "support": [
+      {"level": "97000", "description": "Near-term support zone; also Fibonacci level"},
+      {"level": "98000", "description": "Near-term support zone; retest area from previous breakout"},
+      {"level": "91350", "description": "Lower support zone based on Fibonacci analysis"},
+      {"level": "87500", "description": "Significant support level from Fibonacci analysis"},
+      {"level": "74000", "description": "Major support zone for negative scenario; deep correction target"}
+    ],
+    "resistance": [
+      {"level": "101000", "description": "38.2% Fibonacci extension resistance level from the full uptrend"},
+      {"level": "111000", "description": "All-time high area; consistent selling pressure zone"}
+    ],
+    "indicators": "Weekly chart shows trading cycles with no meaningful volume expansion during recent rally - questioning uptrend strength. Both MACD and RSI showing negative divergence, classic signals for potential correction. However, momentum is weakening gradually rather than collapsing. Daily chart shows consistent attempts to break ATH but selling pressure remains. Before a genuine breakout to new ATH, expect a meaningful technical correction. Fibonacci retracement from the full uptrend provides key support and resistance levels."
+  },
+  "summary": "Bitcoin is near its all-time highs but accompanied by warning signs including negative divergence on RSI and MACD, and lack of volume expansion ('smart money absence'). The seasonal bias is modestly positive at 64.3% for July, primarily in the second half. The weekly cycle ending on July 11 that coincides with a daily cycle could serve as a significant turning point. While the long-term uptrend remains intact, a meaningful technical correction before any genuine new ATH breakout appears increasingly probable, with potential pullback targets ranging from $97,000-$98,000 down to $74,000 in a negative scenario.",
+  "previous_month_review": "In June 2025, Bitcoin had five turning point dates with three providing price turns and one still active (and appearing to work). The first date (June 4-5) stopped the downward move and initiated a ~9% upswing to the next turning point. The second date (June 9) arrived right on time and marked the 'high' of the previous cycle, from which a downward move began. The third date (June 15) saw the price stop and briefly climb the next day but then reversed, becoming a 'continuing cycle' confirming the downward move continuation. The fourth date (June 21) arrived with a one-day deviation combining with a retest to the $98,000 level, marked the 'low' of the previous cycle, and initiated a 10% upward move to the next turning point. The fifth date (June 30) appears to serve as the 'high' of the previous cycle and at the time of writing seemed to be working.",
+  "risk_notes": [
+    "Negative divergence on both RSI and MACD indicators suggests weakening momentum despite price near highs",
+    "Lack of volume expansion ('smart money absence') during recent rally raises red flags about sustainability",
+    "Bitcoin has limited historical data (14 years) making seasonal statistics less reliable than other assets",
+    "In a negative scenario, price could drop back to the $74,000 support zone",
+    "Crypto markets are highly dynamic - real-time updates via Discord community are critical for timely decisions",
+    "Leveraged exposure during potential correction phases is especially dangerous given crypto's inherent volatility"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "asset": "Bitcoin",
+  "key_dates": [
+    {"date": "2026-01-03", "description": "First turning point date for January 2026"},
+    {"date": "2026-01-16", "description": "Second turning point date for January 2026"},
+    {"date": "2026-01-22", "description": "Third turning point date for January 2026"},
+    {"date": "2026-01-27", "description": "Fourth turning point date (range: Jan 27-28)"}
+  ],
+  "seasonal": "Bitcoin tends to be bullish in January. In 9 out of the last 15 years, Bitcoin finished January in positive territory (60% of years). However, Bitcoin has a shorter history compared to other assets, making seasonal statistics less reliable. Seasonally, in 7 out of the last 8 years (approximately 87%), Bitcoin closed higher on Jan 6 than on Jan 1. Two weekly cycles exist, with weeks ending on Jan 16 and Jan 23, where the cycle ending Jan 23 is considered very strong.",
+  "statistics": [
+    {"date": "2026-01-06", "probability": "87%", "direction": "up", "description": "In 7 out of the last 8 years, Bitcoin traded higher on Jan 6 than on Jan 1 (approximately 87%)"}
+  ],
+  "insights": [
+    "Bitcoin is at a pause before either a decline or a return to rally - after the sharp move in November, December turned into a corrective month of consolidation and digestion",
+    "The month started with a sharp decline, but the price quickly stabilized and began building a tightening consolidation (narrowing range)",
+    "Bitcoin has a pattern unique to itself: rallies of 35 months upward followed by 14 months of decline - currently we may be near the third occurrence of this pattern, with wave 5 of the rally possibly nearing completion since October 2025",
+    "Even within a strong downtrend, the initial rebound often looks like an upside bounce first, and only afterward does the primary trend full reversal to the key support zone between $70,000-$78,000 reveal itself",
+    "The $70,000-$78,000 zone is the central support area for a full reversal of the primary trend - this is a critical zone",
+    "As long as the price holds above this area, there is no reason to panic; it creates buying opportunities for medium-term positions with clear risk management",
+    "If Bitcoin reaches the $95,000+ area, this would signal renewed upward momentum and potential for further upside toward the resistance zone at $98,384-$104,349",
+    "Conversely, a break below $84,400 and then below $80,600 would signal increasing weakness and higher probability of continued decline to the weekly support zones",
+    "D9 indicator, used for identifying extreme zones, registered a reading of 7, which in the context of the weekly chart suggests the uptrend type N pattern may be timing its transition point",
+    "RSI (2 time units) also shows signs of a potential bottom forming, similar to indicators seen in the past",
+    "The 100-week moving average continues to serve as significant support and price has been leaning on it consistently",
+    "The daily chart shows Bitcoin stabilizing within a narrowing consolidation - building a choppy structure that tightens over time, making the breakout direction unclear but defining clear decision points",
+    "Breakout above $95,000 signals bullish momentum renewal; breakdown below $84,400 then $80,600 signals bearish continuation",
+    "Daily turning point dates in the Jan 15-16 window align with the weekly cycles, making this area worth watching for a significant trend change",
+    "Dates between Jan 2-4 and Jan 26-29 are likely to produce heightened volatility sequences",
+    "Crypto market is characterized by high dynamics and fast volatility, requiring real-time monitoring via the Discord community for proper decision-making"
+  ],
+  "technical": {
+    "support": [
+      {"level": "84400", "description": "First key breakdown level - a break below signals growing weakness"},
+      {"level": "80600", "description": "Second breakdown level - break below this leads to weekly chart support zones"},
+      {"level": "70000-78000", "description": "Central support zone for a full primary trend reversal - the key area to watch if a major decline develops"}
+    ],
+    "resistance": [
+      {"level": "95000", "description": "Breakout level - establishing above this signals renewed upward momentum"},
+      {"level": "98384-104349", "description": "Resistance zone on the weekly chart - daily chart resistance levels appear in this range"}
+    ],
+    "indicators": "D9 indicator at 7, signaling potential extreme zone. RSI (2 time units) showing signs of potential bottom. 100-week moving average serving as consistent support. Weekly chart showing N-type wave pattern. Daily chart shows tightening consolidation with narrowing range. The weekly Elliot wave structure suggests we may be in wave 5 of the primary rally from the 2022 lows, and an AB=CD pattern comparison is being watched."
+  },
+  "summary": "Bitcoin enters January 2026 in a consolidation phase after a sharp November rally and a corrective December. The price is building a tightening range (choppy/sideways) between approximately $84,400 support and $95,000 resistance. Seasonally, January tends to be bullish (60% of years positive), with key turning points on Jan 3, 16, 22, and 27-28. The most critical zone to watch is the $70,000-$78,000 support, which represents the full reversal point of the primary trend.",
+  "previous_month_review": "December 2025 had four turning point dates for Bitcoin. The first (Dec 1) worked - provided the 'low' of the previous move. The second (Dec 11) arrived one day early - served as the 'high' of the previous cycle. The third (Dec 18) worked - provided the 'low' of the previous cycle. The fourth (Dec 27) did not work - however, it was not traded because Bitcoin was in a tight choppy range making it impractical.",
+  "risk_notes": [
+    "Bitcoin may be nearing the end of a 35-month rally cycle (the third occurrence of this historical pattern), suggesting potential for a 14-month decline phase",
+    "Crypto markets are characterized by extreme dynamics and fast volatility - real-time monitoring is essential",
+    "A break below $84,400 and then $80,600 would signal a significant shift toward the downside",
+    "The $70,000-$78,000 zone represents the full primary trend reversal area - a break below would be extremely bearish",
+    "Even initial rebounds within a developing downtrend can look like rallies, creating false confidence",
+    "This is not investment advice - the content is for educational purposes only"
+  ]
+}

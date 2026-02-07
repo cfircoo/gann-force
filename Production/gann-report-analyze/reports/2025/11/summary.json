@@ -1,0 +1,117 @@
+{
+  "report_title": "Cycles Trading Monthly Report - November 2025",
+  "report_month": "November",
+  "report_year": 2025,
+  "assets_covered": ["S&P 500", "Bitcoin", "EUR/USD", "Gold", "Oil"],
+  "cross_asset_calendar": [
+    {
+      "date": "2025-11-03",
+      "assets": ["EUR/USD", "Gold"],
+      "description": "EUR/USD turning date with 65% up probability; Gold turning date - first of the month"
+    },
+    {
+      "date": "2025-11-04",
+      "assets": ["Bitcoin", "EUR/USD", "Oil"],
+      "description": "Shared turning date across three assets - Bitcoin (double with Nov 5), EUR/USD, and Oil. High cross-asset significance."
+    },
+    {
+      "date": "2025-11-05",
+      "assets": ["S&P 500", "Bitcoin"],
+      "description": "S&P 500 turning date (82% up seasonal probability); Bitcoin double date with Nov 4. Major cross-asset moment."
+    },
+    {
+      "date": "2025-11-07",
+      "assets": ["S&P 500", "Oil"],
+      "description": "S&P 500 seasonal 68% up; Oil seasonal 70% up. Bitcoin first weekly cycle ends around this date."
+    },
+    {
+      "date": "2025-11-09",
+      "assets": ["Bitcoin"],
+      "description": "Bitcoin turning date aligning with first weekly cycle"
+    },
+    {
+      "date": "2025-11-10",
+      "assets": ["Gold"],
+      "description": "Gold turning date - cluster with Nov 11"
+    },
+    {
+      "date": "2025-11-11",
+      "assets": ["S&P 500", "EUR/USD", "Gold", "Oil"],
+      "description": "Four-asset convergence date. S&P turning; EUR/USD 65% down; Gold cluster; Oil 82% down (strongest signal in report). CRITICAL DATE."
+    },
+    {
+      "date": "2025-11-12",
+      "assets": ["S&P 500", "Bitcoin", "Oil"],
+      "description": "S&P 500 - 87% statistic for higher close by month end vs this date; Bitcoin turning date; Oil double date cluster with Nov 11"
+    },
+    {
+      "date": "2025-11-13",
+      "assets": ["S&P 500", "EUR/USD", "Gold"],
+      "description": "S&P double date (13-14); EUR/USD double date (13-14); Gold turning"
+    },
+    {
+      "date": "2025-11-14",
+      "assets": ["S&P 500", "EUR/USD"],
+      "description": "S&P double date (13-14); EUR/USD double date (13-14)"
+    },
+    {
+      "date": "2025-11-17",
+      "assets": ["EUR/USD", "Gold"],
+      "description": "EUR/USD 71% up probability; Gold double date cluster (17-18)"
+    },
+    {
+      "date": "2025-11-18",
+      "assets": ["S&P 500", "EUR/USD", "Gold"],
+      "description": "S&P 500 turning date; EUR/USD turning date; Gold turning date (marked as key date). Three-asset convergence."
+    },
+    {
+      "date": "2025-11-19",
+      "assets": ["Bitcoin", "Oil"],
+      "description": "Bitcoin turning date; Oil seasonal 67% up"
+    },
+    {
+      "date": "2025-11-20",
+      "assets": ["Gold", "Oil"],
+      "description": "Gold turning date; Oil turning date aligned with strong weekly cycle peak (Nov 21). Critical for oil direction."
+    },
+    {
+      "date": "2025-11-24",
+      "assets": ["S&P 500", "EUR/USD"],
+      "description": "S&P 500 turning date; EUR/USD turning date"
+    },
+    {
+      "date": "2025-11-26",
+      "assets": ["Bitcoin", "Gold", "Oil"],
+      "description": "Bitcoin turning date (aligns with second weekly cycle ending Nov 28); Gold turning date; Oil turning date. Three-asset convergence at month end."
+    }
+  ],
+  "key_themes": [
+    "Historic cycle convergence: November 2025 marks an extraordinary alignment of 45, 50, 75, 90, and 100-year historical cycles for the S&P 500, creating a rare macro turning point environment not seen in generations",
+    "Seasonal divergence: S&P 500 and Gold have positive seasonal bias while Oil has a strongly negative seasonal bias - positioning across assets needs to account for these opposing tendencies",
+    "Mid-month density: The Nov 11-14 period sees turning dates across nearly all five assets simultaneously, creating a high-probability zone for correlated cross-market moves",
+    "Weekly cycle importance for Bitcoin and Gold: Both assets have no monthly cycles active in November but have two significant weekly cycles (ending around Nov 7 and Nov 28), making these assets more responsive to shorter-term timing",
+    "Correction risk in equities: Despite strong momentum and bullish seasonality, the S&P has risen nearly uninterrupted since April, and internal measures (RSI, momentum, Fear & Greed declining from 64 to 35) warn that a correction is a matter of when, not if",
+    "Oil bearish dominance: Oil has the strongest statistical signals in the report (82% down on Nov 11, 73% lower by month end vs Nov 10) and is in a structural downtrend - the path of least resistance is down unless $70 is reclaimed",
+    "The Gann approach: Time is more important than price, but price must confirm the turn - the professional observes price behavior at the turning date rather than predicting direction in advance"
+  ],
+  "risk_rules": [
+    "Always have a stop loss in place - use the daily chart lows/highs near turning dates as reference points",
+    "When the overall trend is bullish but you are trading a turning date expecting a correction, keep position sizes smaller and stops tighter",
+    "Double dates (two turning dates 1-2 days apart) typically: in an uptrend, the first date creates a pullback correction and the second resumes the uptrend; in a downtrend the opposite applies",
+    "A 'continuing date/cycle' means the current trend is expected to persist to the next turning date - do not fight momentum between turning dates",
+    "When CNN Fear & Greed is in the Fear zone (below 25) it often signals a buying opportunity; when in Extreme Greed (above 75) it signals caution - currently at 35 (Fear)",
+    "For leveraged products (2x, 3x ETFs), even an 11% market correction creates a 22-33% drawdown - size positions accordingly",
+    "Do not enter counter-trend trades without clear reversal confirmation from the price chart - the turning date alone is an indication, not a guarantee",
+    "The classic price movement pattern is high-low-high-low between turning dates, but exceptions exist (high-after-high or low-after-low) - always be prepared for both scenarios",
+    "All turning dates have a tolerance of +/- one day",
+    "When multiple assets have turning dates on the same day, the cross-asset confirmation increases confidence but also volatility risk",
+    "Keep tracking the Discord community during the month for real-time updates as the report provides the framework but live market conditions require adaptation"
+  ],
+  "asset_summaries": {
+    "sp500": "Historically strongest month (87% higher close by month end), but century-scale cycle convergence in 2025 creates unique risk. Four key turning dates: Nov 5, Nov 13-14, Nov 18, Nov 24. Trend is bullish but momentum weakening. Support at 6,567 and 6,094-6,147; resistance at 6,760 and 6,879.",
+    "bitcoin": "Consolidating after 18% decline from peak. Two weekly cycles (ending Nov 7 and Nov 28) are the primary timing tools. Six turning dates provide dense coverage. Support at $98,400-$104,350; resistance at $115,344-$124,713. Seasonal probability 66.7% bullish but short history reduces reliability.",
+    "eurusd": "Generally positive seasonal month. Five turning dates matching several S&P dates. Statistics: 65% up on Nov 3, 65% down on Nov 11, 71% up on Nov 17. No detailed technical levels provided - traders should apply their own analysis.",
+    "gold": "In Elliott Wave 5 correction (sub-wave 4), still bullish long-term with $4,637-$4,995 targets. Seven turning dates with dense Nov 17-20 cluster. Current pivot at $3,895. Two weekly cycles active. Seasonally positive but strong cycle may challenge.",
+    "oil": "One of the two most bearish seasonal months. Five turning dates. Strongest statistical signal: 82% down on Nov 11. Structural downtrend with $70 needed for any reversal signal. Strong weekly cycle peaks Nov 21 aligned with Nov 20 turning date. Support at $55.30; resistance at $66-$70."
+  }
+}

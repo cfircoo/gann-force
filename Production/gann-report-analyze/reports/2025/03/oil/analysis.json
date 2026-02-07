@@ -1,0 +1,48 @@
+{
+  "asset": "Oil (Crude)",
+  "key_dates": [
+    {"date": "2025-03-06", "description": "Turning point date - potential reversal in price movement"},
+    {"date": "2025-03-21", "description": "Turning point date - potential reversal in price movement"},
+    {"date": "2025-03-28", "description": "Turning point date - potential reversal in price movement"}
+  ],
+  "seasonal": "March is generally a positive month for Oil. Seasonally bullish. Historical cycle analysis supports a positive end to the month, providing at least enough probability for the last 10 days to finish positively.",
+  "statistics": [
+    {"date": "2025-03-03", "probability": "75%", "direction": "up", "description": "Over the last 30 years, around March 3 approximately 75% probability of rise"},
+    {"date": "2025-03-06", "probability": "73%", "direction": "up", "description": "Over the last 30 years, around March 6 approximately 73% probability of rise"},
+    {"date": "2025-03-25", "probability": "80%", "direction": "up", "description": "Over the last 30 years, around March 25 approximately 80% probability of rise"},
+    {"date": "2025-03-20", "probability": "74%", "direction": "up", "description": "In the last 30 years, Oil closed on March 26 at a higher price than on March 20 in approximately 74% of cases (22 out of 30 years)"}
+  ],
+  "insights": [
+    "The strength of turning point dates is maximized when they align harmoniously with support and resistance levels. Beyond that, they provide additional meaningful value in trade management - preventing premature closure of positions, except in rare cases of meeting with critical key levels.",
+    "This is reinforced in Oil across all recent months. Despite behavior not always following classic patterns between cycles, significant movements are also provided when catching a single cycle operating in a classic fashion between transitions.",
+    "The effectiveness of turning point dates is clearly reflected in the performance of the last seven months: February cumulative movement of approximately 13.5%, January over 20%, December approximately 12%, November approximately 11.5% (based on two cycles only), October approximately 20% (based on two cycles only), September approximately 32%, August approximately 30%.",
+    "Cumulative movements of over 133% in seven months - capturing just half of these movements on a single asset alone, with a small number of trades, would have yielded exceptional returns.",
+    "Remarkably, if we examine Oil's price movement during those seven months, its price as of early March 2025 is nearly identical to its price in August 2024. In other words, while a long-term investor essentially stayed in place, we are in the midst of the cycles - celebrate!",
+    "Weekly cycle ending around March 14 is considered strong. Turning point dates of March 6 and March 21 appear stronger because they appeared in multiple verification checks, so we can expect stronger movement at those dates.",
+    "In the transition to the current month, from a seasonal standpoint, March is generally a positive month for Oil. The weekly chart support zone is between $62.50-$65.50, with the support area concentrated at the $71.50-$73.00 level. If breaks below this, further decline is possible.",
+    "Resistance on the weekly chart is found between $71.50-$73.50, and when price reaches this zone the movement is expected to reverse downward. The turning point on Feb 20 marked this zone as resistance. Currently this can be viewed as both resistance and support from the weekly chart.",
+    "On the daily chart, a broad consolidation/choppy pattern is visible, but with the possibility of short trades within combining with turning point dates in the $71.50-$73.00 area."
+  ],
+  "technical": {
+    "support": [
+      {"level": "$71.50-$73.00", "description": "Key support/resistance zone on the weekly chart. At beginning of February, Oil reached this area and attempted to hold it, repeatedly returning to this level on Feb 4 and Feb 14 before breaking downward."},
+      {"level": "$62.50-$65.50", "description": "Weekly chart support zone - deeper support level. Support area has not been broken in the last three years."},
+      {"level": "$78.40-$80.00", "description": "Weekly chart meaningful support that has not been broken in three years, approximately at this range."}
+    ],
+    "resistance": [
+      {"level": "$71.50-$73.50", "description": "Resistance from the weekly chart and from the Feb 20 turning point area. Every approach to this zone or beyond, combined with a turning point date, is expected to provide indication for a trade."},
+      {"level": "$78.40-$80.00", "description": "Upper resistance level from the weekly chart. If price reaches this area, it is expected to act as resistance to all rally attempts and as an area for this movement to reverse downward."}
+    ],
+    "indicators": "Weekly chart still shows meaningful support area that has not been broken in three years, roughly between $78.40-$80.00. Daily chart shows broad consolidation/choppy pattern but with opportunity for short trades within, combined with turning point dates in the $71.50-$73.00 area. Historical cycles of the last 3 decades indicate that two ended positively and one negatively, consistent with seasonal positive bias for Oil. Combining this data with seasonal statistics and the 'knowledge' category statistics provides at least enough probability for a positive finish in the last 10 days."
+  },
+  "summary": "Oil in March 2025 benefits from a seasonally positive month with strong statistical probabilities (75-80% for upward movement around key dates). Three turning point dates on March 6, 21, and 28 frame the month's trading opportunities. The weekly cycle ending around March 14 is considered strong. Despite broad consolidation on the daily chart, the cycle-based approach has delivered cumulative movements exceeding 133% over the past seven months. Support at $71.50-$73.00 and resistance at $78.40-$80.00 define the key trading range.",
+  "previous_month_review": "February 2025 had three turning point dates for Oil, and when there are three dates it indicates one of two things: high volatility between dates with significant movements, or one date was missing. In hindsight, a date around Feb 11 was missing, as at that date a high was created between two other dates. Despite that, in subsequent months the dates in Oil continue to deliver the commodity's extreme zones during the month. Date 1 (Feb 4): Arrived exactly on time, marked the 'low' of the declines starting from the last turning point in January. Already on that day the price started to climb, dropped again and returned to rise until approximately Feb 11 with an upward movement of 4%. At this date there was a resistance level that helped us go long, but unfortunately there was no turning point date, so we could also have taken a short from it since it started declining on its own until the next turning date. Date 2 (Feb 14): Arrived exactly on time and again served as a low creating a double bottom in support. From this date emerged a movement that provided approximately 3.50% at its peak and was stopped at the next turning date on Feb 20. Date 3 (Feb 20-21): Double cycle. Arrived exactly on time, marked the 'high' of the movement from the previous turning date, combined with the resistance zone around $72.60 (identified in the previous month's report as support and turned into resistance) and also in the weekly live broadcast, provided a downward movement of approximately 6% by the time of writing.",
+  "risk_notes": [
+    "The $71.50-$73.00 zone acts as both support and resistance - be prepared for volatile price action in this area.",
+    "Despite seasonal positive bias, the broad daily chart shows consolidation/choppy pattern requiring careful trade management.",
+    "The experience of the past three years shows every attempt to break support at these levels resulted in relatively low decline and worthy of observing all such attempts over the 3 years.",
+    "Support and resistance levels on higher timeframes (weekly and monthly) carry much more weight and strength than the daily chart.",
+    "Although there is no guarantee that these levels will hold absolutely, the historical experience teaches that the probability of their breakout downward is relatively low.",
+    "This is not a trading recommendation - information is for educational and learning purposes only."
+  ]
+}

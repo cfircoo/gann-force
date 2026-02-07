@@ -1,0 +1,65 @@
+{
+  "asset": "Oil (Crude)",
+  "key_dates": [
+    {"date": "2025-09-05", "description": "Turning point date - cycle pivot"},
+    {"date": "2025-09-17", "description": "Turning point date - beginning of strong cluster zone (17-18 Sep)"},
+    {"date": "2025-09-18", "description": "Turning point date - end of strong cluster zone (17-18 Sep), strong - expect important reversal in this window"},
+    {"date": "2025-09-24", "description": "Turning point date - cycle pivot"}
+  ],
+  "seasonal": "September is a positive month for Oil from a seasonal perspective. However, from the other side, all decade patterns of recent decades point downward. A strong monthly cycle combined with two weekly cycles ending on weeks of Sep 5 and Sep 12 is present. The dates Sep 17 and Sep 18 are particularly strong - expect an important reversal in this time window.",
+  "statistics": [
+    {"date": "2025-09-03", "probability": "70%", "direction": "down", "description": "Over the last 30 years, approximately 70% probability of downward movement on Sep 3"},
+    {"date": "2025-09-05", "probability": "67%", "direction": "up", "description": "Over the last 30 years, approximately 67% probability of upward movement on Sep 5"},
+    {"date": "2025-09-16", "probability": "67%", "direction": "down", "description": "Over the last 30 years, approximately 67% probability of downward movement on Sep 16"},
+    {"date": "2025-09-19", "probability": "68%", "direction": "down", "description": "Over the last 30 years, approximately 68% probability of downward movement on Sep 19"},
+    {"date": "2025-09-15", "probability": "70%", "direction": "down", "description": "In the last 30 years, Oil closed lower on Sep 20 than on Sep 15 in approximately 70% of cases (21 out of 30)"}
+  ],
+  "insights": [
+    "Time cycles in Oil are signaling sharp changes in September",
+    "September is positive for Oil seasonally, but from the other side, all recent decade patterns point downward",
+    "The dates September 17 and 18 are particularly strong - expect an important reversal in this time window",
+    "In July, Oil managed to hold above the multi-year support band between $64.40-$66.50",
+    "With the opening of August, price dropped back below this band - in recent weeks corrected upward and returned to it - but trading cycles remain low",
+    "As of writing, three weekly candles closed below this band, and as long as the price stays below it, the probability increases that it will serve as resistance and renew the declining trend",
+    "First target in case of such a scenario is the previous low area around $55.30, followed by the $51-$52.70 range",
+    "Breaking this range would open a path to decline to the next significant support at $43.40",
+    "From the weekly chart: 20-week moving average (blue) can add another layer to sellers' momentum",
+    "50-week moving average currently acts as resistance alongside the support band",
+    "For an overall trend change from downtrend to uptrend, a clear breakout above the $80 resistance area would be needed - only such a move could signal the end of the downtrend",
+    "All key support and resistance levels are marked on the attached daily chart",
+    "Oil continues to move downward and is expected to face difficulties on any upward correction attempt"
+  ],
+  "technical": {
+    "support": [
+      {"level": "64.10", "description": "Technical support from bullish pattern breakout in July"},
+      {"level": "64.85", "description": "Confirmed bullish pattern range top"},
+      {"level": "60.44", "description": "Support level on daily chart - potential target if downward move intensifies"},
+      {"level": "55.30", "description": "Previous low area - first downside target"},
+      {"level": "52.70", "description": "Upper range of second support zone ($51-$52.70)"},
+      {"level": "51.00", "description": "Lower range of second support zone"},
+      {"level": "43.40", "description": "Next significant support if $51 breaks"}
+    ],
+    "resistance": [
+      {"level": "66.50", "description": "Upper range of multi-year support band now acting as resistance"},
+      {"level": "64.40", "description": "Lower range of multi-year support band"},
+      {"level": "69.62", "description": "Fibonacci 0.382 retracement resistance on daily chart"},
+      {"level": "66.89", "description": "Fibonacci 0.5 resistance on daily chart"},
+      {"level": "77.59", "description": "Resistance level on weekly chart"},
+      {"level": "78.48", "description": "Major resistance - 50-week moving average area"},
+      {"level": "80.00", "description": "Critical resistance - breakout above would signal end of downtrend"},
+      {"level": "70.00", "description": "Psychological resistance - breakout above $70 would confirm upside possibility"}
+    ],
+    "indicators": "Weekly chart: Oil is in a clear downtrend. Three weekly candles closed below the multi-year support band ($64.40-$66.50), turning it into resistance. 20-week and 50-week moving averages both act as overhead resistance. The overall trend is bearish. Daily chart: Shows support around $60.44. Fibonacci retracement levels from the last move provide resistance at $66.89 (0.5) and $69.62 (0.382). Recent upward corrections have been met with selling pressure at the old support band. Time cycles point to September 17-18 as the key reversal window."
+  },
+  "summary": "Oil enters September 2025 in a clear downtrend with the multi-year support band ($64.40-$66.50) now acting as resistance after three weekly candles closed below it. Despite September being seasonally positive for Oil, all recent decade patterns point downward. Key turning points are Sep 5, 17-18, and 24, with Sep 17-18 being especially strong for a potential reversal. Statistics show 67-70% probability of downward movement around Sep 3, 16, and 19, with 70% probability that Oil closes lower on Sep 20 than Sep 15. Downside targets are $55.30, $51-$52.70, and $43.40. Only a breakout above $80 would signal a trend change.",
+  "previous_month_review": "August 2025 had five turning point dates for Oil - one captured a classic quality move, one captured additional quality movement, and the month ended in a classic fashion. First date (Aug 1): Price arrived alongside the last date of July (Jul 31) which marked the high of the movement - from it a declining movement of approximately 10% developed to the next turning point. Second date (Aug 7/8): Worked with a one-day deviation (Aug 8) as the 'low' - stopped the price, but there was subsequent 'sliding' to a new low and a one-day bounce upward - marked as a red date that did not work clearly. Third date (Aug 14): Arrived in a rally combined with resistance level (retest from chart) and thereby marked the high of the movement - from it a decline began to the next turning point. Fourth date (Aug 20-21 double cycle): Arrived via decline and provided the low of the movement (slightly above the low) - from it a rise of approximately 5% began to the last turning point on Aug 28. Fifth date (Aug 28): Arrived in a rally combined with resistance level - at time of writing, appears to mark the high of the cycle and a possible descending cycle.",
+  "risk_notes": [
+    "Oil is in a clear downtrend - upside corrections will face strong resistance",
+    "Multi-year support band ($64.40-$66.50) has been broken and now acts as resistance",
+    "Decade patterns all point downward despite seasonal positive bias",
+    "Breaking $55.30 could accelerate decline to $43.40",
+    "For overall trend change, $80 must be broken - current price is far from this level",
+    "Recent upward bounces have been shallow - trading cycles remain low and sellers dominate",
+    "This is not investment advice - content is for educational purposes only"
+  ]
+}

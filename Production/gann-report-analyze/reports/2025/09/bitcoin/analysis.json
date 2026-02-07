@@ -1,0 +1,54 @@
+{
+  "asset": "Bitcoin",
+  "key_dates": [
+    {"date": "2025-09-03", "description": "Turning point date - cycle pivot"},
+    {"date": "2025-09-07", "description": "Turning point date - cycle pivot"},
+    {"date": "2025-09-14", "description": "Turning point date - cycle pivot, part of range with Sep 9"},
+    {"date": "2025-09-22", "description": "Turning point date - beginning of cluster zone (22-23 Sep)"},
+    {"date": "2025-09-23", "description": "Turning point date - end of cluster zone (22-23 Sep)"},
+    {"date": "2025-09-28", "description": "Turning point date - cycle pivot"}
+  ],
+  "seasonal": "In 10 out of the last 15 years, Bitcoin ended September negatively (66.7%). Seasonal bias is bearish. However, Bitcoin does not have a long enough history compared to other assets in the report, so seasonal statistics are less attractive/reliable.",
+  "statistics": [
+    {"date": "2025-09-18", "probability": "86%", "direction": "down", "description": "In the last 8 years, Bitcoin tended to trade at a lower price on Sep 24 than on Sep 18 in 6 out of 8 years (approximately 86%)"}
+  ],
+  "insights": [
+    "Expect volatility between Sep 21-24 based on multiple cycle convergences",
+    "Bitcoin after breaking its all-time high is at a key moment - remains in range but with warning signs",
+    "The weekly chart shows RSI and MACD with 2 negative divergences from highs - a bearish signal. The secondary indicator 'money flow' in the trend zone was also negative",
+    "Expected trading range for September: possible to see levels between $98,500 and $105,000, with an average breakout target of around $107,200",
+    "Bitcoin also has the potential to reach new highs but the path remains challenging",
+    "The main trend is still bullish but if correction ends we should see Bitcoin climbing back toward the all-time high and potentially beyond",
+    "Need to be aware that September is also influenced by macro events - rising interest rates, regulation changes, and institutional activity could impact the cryptocurrency's movement",
+    "Important support zone on daily chart at $107,500-$109,300 with Fibonacci 61.8% confluence",
+    "Break of support zones at $107,500-$109,300 increases probability of continued correction to $98,230 and then $87,500",
+    "Long-term investors should not fear corrections as opportunities to add, but short-term traders must respect the turning point dates",
+    "The critical support level known for a long-term turning point sits at $74,000"
+  ],
+  "technical": {
+    "support": [
+      {"level": "109300", "description": "Upper range of daily chart support zone with Fibonacci 61.8% confluence"},
+      {"level": "107500", "description": "Lower range of daily chart support zone"},
+      {"level": "98230", "description": "Next support zone if $107,500 breaks"},
+      {"level": "87500", "description": "Deep support if correction accelerates"},
+      {"level": "74000", "description": "Critical long-term support - known level for potential major turning point"}
+    ],
+    "resistance": [
+      {"level": "114000", "description": "Fibonacci 0.382 retracement resistance from daily chart"},
+      {"level": "111500", "description": "Fibonacci 0.5 resistance level"},
+      {"level": "122000", "description": "Area near all-time high region from August"},
+      {"level": "105000", "description": "Potential range resistance within September"}
+    ],
+    "indicators": "Weekly chart: RSI and MACD showing 2 negative divergences from highs - bearish warning. Money flow indicator also negative. The weekly chart is presenting several warning signs. Daily chart: Support zone at $107,500-$109,300 with 61.8% Fibonacci confluence. The minor trend on the daily chart is currently in a tug-of-war with slight upside bias but not a confirmed breakout. Overall: Bitcoin needs to hold above $107,500 for bullish scenario to continue."
+  },
+  "summary": "Bitcoin enters September 2025 with bearish seasonal bias (66.7% of years end September negative). Key turning points are clustered around Sep 3, 7, 14, 22-23, and 28, with an especially strong statistical signal showing 86% probability of downward movement between Sep 18-24. Despite the long-term bullish trend, the weekly chart shows negative divergences on RSI and MACD, and the daily chart highlights a critical support zone at $107,500-$109,300. Expected volatility window is Sep 21-24. A break below $107,500 could trigger a correction toward $98,230 and potentially $87,500.",
+  "previous_month_review": "August 2025 had four turning point dates for Bitcoin - one did not work, two worked partially. First date (Aug 7): Did not work - price stopped there for two days but then broke upward, becoming a continuing cycle. Second date (Aug 14-15 double cycle): Despite the breakout to highs on Aug 14, price reversed powerfully downward (approximately -10%) and continued declining to the next turning point. Third date (Aug 20): Worked partially - stopped the declining move and within several days climbed upward, then reversed back to declines after approximately 4.5% rise. Fourth date (Aug 27): Also worked partially - stopped the declining move and climbed for several days, then reversed back to declines after approximately 3.5% rise.",
+  "risk_notes": [
+    "September has 66.7% bearish seasonal probability for Bitcoin",
+    "Weekly RSI and MACD show negative divergences - warning of potential trend exhaustion",
+    "Breaking $107,500 support zone opens door to $98,230 and then $87,500",
+    "Bitcoin has shorter historical data than other assets - seasonal statistics less reliable",
+    "Leverage in crypto is extremely dangerous during cycle turning points",
+    "This is not investment advice - content is for educational purposes only"
+  ]
+}

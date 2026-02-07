@@ -1,0 +1,54 @@
+{
+  "asset": "S&P500",
+  "key_dates": [
+    {"date": "2025-04-03", "description": "Turning point date range start (3-4.4). Potential cycle turn within +/- 1 day."},
+    {"date": "2025-04-04", "description": "Turning point date range end (3-4.4). Potential cycle turn within +/- 1 day."},
+    {"date": "2025-04-11", "description": "Turning point date. Potential cycle turn within +/- 1 day."},
+    {"date": "2025-04-18", "description": "Turning point date. Weekly cycle ending around this date - stronger cycle."},
+    {"date": "2025-04-24", "description": "Turning point date range start (24-25.4). Weekly cycle ending - stronger cycle."},
+    {"date": "2025-04-25", "description": "Turning point date range end (24-25.4). Weekly cycle ending - stronger cycle."}
+  ],
+  "seasonal": "April is historically one of the three strongest bullish months of the year. Out of four relevant decades (10, 20, 30, and 60 years), three ended with gains - giving April a distinctly bullish character. Seasonal bias is strongly positive.",
+  "statistics": [
+    {"date": "2025-04-03", "probability": "77%", "direction": "down", "description": "Over the last 30 years, around April 3 the index declined approximately 77% of the time."},
+    {"date": "2025-04-09", "probability": "74%", "direction": "up", "description": "Over the last 30 years, around April 9 the index rose approximately 74% of the time."},
+    {"date": "2025-04-10", "probability": "81%", "direction": "up", "description": "Over the last 30 years, around April 10 the index rose approximately 81% of the time."},
+    {"date": "2025-04-27", "probability": "83%", "direction": "up", "description": "Over the last 30 years, the index closed higher on April 27 than on April 14 in 83% of cases (25 out of 30 years)."}
+  ],
+  "insights": [
+    "April 2025 represents a critical cyclical turning point according to Gann time cycles. Overlapping cycles at 15, 45, 60, 75 and 90 years all converge into a single time window.",
+    "Historical cyclical analysis shows April has been a month of dramatic events: Oklahoma City bombing (1995, 30-year cycle), Iraq-Iran conflicts (1980, 45-year cycle), Vietnam War events (1965, 60-year cycle), Stresa Front against Nazi Germany (1935, 90-year cycle).",
+    "The CNN Fear & Greed Index stood at 20/100 (Extreme Fear) at time of writing, on the edge of reversal. Previously at 46 (end of February) and 20 (January).",
+    "The March decline was not random - it is a movement signaling a deeper correction ahead. The primary uptrend is still intact but correction is expected to deepen.",
+    "A 'double cycle' (two turning dates close together) suggests the first date creates a correction and the second restores the original trend direction.",
+    "Elliott Wave analysis suggests we are in wave C of a correction, with target zone (point D) around 5,140 points based on symmetry with wave AB.",
+    "Additional support from Fibonacci 50% retracement at 5,131 and historical weekly support at 5,120.",
+    "Institutional players do not sell under panic pressure - they need sufficient time to distribute positions at highs, creating artificial calm before reversals.",
+    "This month may not feature a dramatic crash but rather a trend change - a precursor to deterioration that accelerates in the coming months."
+  ],
+  "technical": {
+    "support": [
+      {"level": "5140", "description": "Wave symmetry target - point D where CD equals AB in Elliott correction. Major potential bottom for current correction."},
+      {"level": "5131", "description": "Fibonacci 50% retracement from November 2023 low to the all-time high."},
+      {"level": "5120", "description": "Historical weekly support level."},
+      {"level": "5260-5140", "description": "Broader support zone for potential reversal."}
+    ],
+    "resistance": [
+      {"level": "5726", "description": "Area of supply zone on weekly chart above which a breakout would negate the bearish scenario."},
+      {"level": "5650", "description": "Significant resistance zone on weekly chart. Containment area if price attempts a rebound."},
+      {"level": "5858", "description": "Previous consolidation zone and multi-week range highs."}
+    ],
+    "indicators": "Weekly chart shows bearish structure with broken support at 5,650-5,726 zone. The AB=CD symmetry pattern projects correction target near 5,140. Daily chart shows short-term range with potential for bounce but overall bearish bias. Fibonacci retracement and historical support converge around 5,120-5,140 creating a triple-confirmation target zone. Fear & Greed Index at extreme fear (20/100)."
+  },
+  "summary": "April 2025 is identified as a historically critical month where multiple Gann time cycles (15, 45, 60, 75, and 90 year cycles) converge simultaneously, pointing to potential for significant global events and market turbulence. While the seasonal bias is strongly bullish (one of the top 3 months), the cyclical analysis warns of a trend change rather than a dramatic crash - a precursor to deeper deterioration in coming months. Key support target is 5,120-5,140 zone based on Elliott wave symmetry, Fibonacci, and historical levels.",
+  "previous_month_review": "In March 2025 there were four turning point dates. Two of them successfully identified extremes and significant movements throughout the month. The March 6 date: price stopped the next day and began rising but did not serve as a turning point - after breaking down it continued the downtrend (continuing cycle). March 14: the low arrived exactly on schedule, initiating a 3.5% rally. March 18-19 (double cycle): did not serve as a turning point but as a continuing double cycle, with March 18 seeing a decline and March 19 starting a rebound. March 25: arrived exactly on time, marked the high, followed by approximately 5% decline to month end.",
+  "risk_notes": [
+    "April 2025 is not a normal month - multiple historical time cycles converge, suggesting elevated probability of significant global confrontations.",
+    "Wars and geopolitical conflicts do not arrive overnight - they start quietly and escalate over a period of accumulation.",
+    "Avoid leveraged ETF positions during periods of market uncertainty. Maintain 30-40% of portfolio in liquid, non-equity assets.",
+    "In long positions, it is recommended to lock in partial profits at resistance zones.",
+    "At significant resistance levels, consider reducing leverage and setting tight stop-losses.",
+    "If confirmed price reversal to the downside, use short trading opportunities with proper risk management.",
+    "The true trend change indicator is a shift in perception by large institutional investors, not daily price action."
+  ]
+}

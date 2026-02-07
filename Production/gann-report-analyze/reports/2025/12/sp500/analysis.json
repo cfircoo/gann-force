@@ -1,0 +1,54 @@
+{
+  "asset": "S&P 500",
+  "key_dates": [
+    {"date": "2025-12-02", "description": "Turning date (+/- 1 day). First cycle date of December, part of double date range 2-3.12"},
+    {"date": "2025-12-03", "description": "Turning date (+/- 1 day). Second part of opening range turning point"},
+    {"date": "2025-12-12", "description": "Turning date (+/- 1 day). Mid-month cycle turning point"},
+    {"date": "2025-12-19", "description": "Turning date (+/- 1 day). Week ending Dec 19 is a strong weekly cycle; strong weekly cycle ends here synchronized with daily turning dates"},
+    {"date": "2025-12-30", "description": "Turning date (+/- 1 day). End-of-month turning point, near year-end"}
+  ],
+  "seasonal": "December is historically one of the strongest months for the S&P 500 (bullish). Decades-long patterns (10, 20, 30, 60-year cycles) indicate positive movement at the start of the month, but also volatility and reversals around mid-December and end-of-December. In the last 30 years, the index closed higher on Dec 28 than on Dec 19 in approximately 77% of cases (23 out of 30 years).",
+  "statistics": [
+    {"date": "2025-12-22", "probability": "75%", "direction": "up", "description": "Multi-decade seasonal statistical significance: approximately 75% probability of upward movement on this date"},
+    {"date": "2025-12-24", "probability": "80%", "direction": "up", "description": "Multi-decade seasonal statistical significance: approximately 80% probability of upward movement on this date"},
+    {"date": "2025-12-28", "probability": "77%", "direction": "up", "description": "In the last 30 years, the index closed higher on Dec 28 compared to Dec 19 in about 77% of cases"}
+  ],
+  "insights": [
+    "December is historically a bullish month but this year the combination of cycles and patterns suggests more volatility than usual, especially around mid-month and end-of-month",
+    "Two strong weekly time cycles exist: one ending around Dec 19 and another ending around Jan 2 2026. The second cycle is stronger and turning dates synchronized with these weeks deserve extra attention",
+    "The daily chart has transitioned from a clear uptrend to a 'choppy' or sideways state - unlike previous months where major/minor/minor trends all pointed up, the minor trend is now uncertain",
+    "The CNN Fear & Greed Index stood at 24 (Extreme Fear) at end of September, rose to 52 by end of October, dropped to 35 by end of November - currently at 24 points",
+    "The uptrend from October 2023 (point A) to February 2024 peak (point B) covered 2,043 points. Current rally from April (point C) has nearly replicated this move (~2,085 points), suggesting Fibonacci AB=CD pattern completion near 7,434",
+    "It is important to combine a clear technical structure with turning dates. The combination of price level, timing, and dominant trend creates the highest-probability trading opportunities",
+    "Gann's cyclical approach: 'Watch for a change in trend near the end of time cycles.' Time is more important than price, but price must confirm the direction",
+    "Deep macro cycles: 18.6-year real estate, 36-year and 72-year cycles around the Panama Canal, oil, and the 250-year empire cycle all converge in this period toward 2028",
+    "When trading against the overall direction, entry should only happen after a clear reversal signal, and even then the move tends to be slow and uncomfortable",
+    "November started with notable weakness and rises in trading cycles with declines, but in the last third of the month the picture reversed and the index closed back in green with a rebound"
+  ],
+  "technical": {
+    "support": [
+      {"level": "6536", "description": "Key support level on daily chart; a clear break below this level would be the first signal of a transition from correction to deeper pullback"},
+      {"level": "6550", "description": "Support zone on weekly chart around 6,550 points, coinciding with the last weekly support level"},
+      {"level": "6094-6147", "description": "Retest zone from weekly chart representing approximately 11% decline from current price; aligns with the 38.2% Fibonacci retracement + 50-week moving average"},
+      {"level": "6053-6120", "description": "Confluence zone: First Fibonacci retracement of the entire rally from April (38.2%) aligns with area around 6,120 (unchanged from last month)"}
+    ],
+    "resistance": [
+      {"level": "6870-6920", "description": "Current resistance zone on the daily chart; price is hovering in this area"},
+      {"level": "7434", "description": "Next upside target if continuation: Fibonacci 1.272 projection of wave AB applied to point C, representing the AB=CD pattern completion"}
+    ],
+    "indicators": "Weekly chart continues to show clear uptrend. The main direction is still upward and every decline is initially considered a technical correction. Daily chart has moved to 'choppy' mode - both long and short trades are now valid around turning dates with defined resistances. The 50-week moving average serves as dynamic support. Fibonacci ratios and time cycles are the primary analytical tools. The 100-day moving average also acts as a support indicator on the daily chart."
+  },
+  "summary": "December 2025 is historically a bullish month for the S&P 500, but this year a combination of deep time cycles and chart patterns suggests more volatility than usual, especially around mid-month and month-end. Key turning dates are Dec 2-3, Dec 12, Dec 19, and Dec 30, with strong seasonal statistics favoring upward movement from Dec 22-24 (~75-80% probability). The AB=CD pattern projects a potential target near 7,434 if the rally continues, while major support lies in the 6,536-6,550 zone.",
+  "previous_month_review": "November 2025 had four S&P turning dates. The first (Nov 5) worked only as a timing signal, failing to block the price movement. The second (Nov 13-14, double date) correctly marked the high, leading to a ~4% decline to the next turning date. The third (Nov 18) marked the low of the declining move, from which a ~2.8% rally began that reversed course in a non-classic fashion. The fourth (Nov 24, arrived 1 day early on Nov 21) marked a support level, from which a 4.5% upward move began continuing into December.",
+  "risk_notes": [
+    "The method allows +/- 1 day deviation from noted turning dates - be prepared for this",
+    "When a 'double date' or 'continuing cycle' appears, the first date may cause a correction while the second restores the original direction",
+    "Turning dates alone are not the full picture - deep analysis of the surrounding context, trends, and chart patterns is essential",
+    "When the market seems unstoppable, that is precisely when to stop and think - every rally eventually needs to breathe",
+    "When long on a position, it is recommended to lock in or realize partial profits at resistance zones",
+    "If reversal confirmation is received with price moving down, use the opportunity to trade in the opposite direction (short)",
+    "Leverage in stocks or ETFs is a common mistake - leverage works going up but falls sharply when the market begins to cool",
+    "In sensitive time windows, especially when the market is at highs, ask yourself whether each trade justifies the additional risk",
+    "The 250-year American empire cycle, the 90-year conflict cycle, and the 18.6-year GDP cycle all converge around 2026-2028, signaling elevated structural risks for global markets"
+  ]
+}

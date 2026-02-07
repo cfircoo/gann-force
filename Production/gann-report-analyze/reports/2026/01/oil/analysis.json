@@ -1,0 +1,61 @@
+{
+  "asset": "Oil (WTI Crude)",
+  "key_dates": [
+    {"date": "2026-01-02", "description": "First turning point date for January 2026"},
+    {"date": "2026-01-16", "description": "Second turning point date for January 2026"},
+    {"date": "2026-01-22", "description": "Third turning point date for January 2026"},
+    {"date": "2026-01-27", "description": "Fourth turning point date for January 2026"}
+  ],
+  "seasonal": "January is a slightly bullish month for Oil seasonally. However, two out of the three cyclical patterns from the last two decades actually point downward, suggesting caution despite the mild seasonal bias. There is a very strong weekly cycle in the week ending Jan 2, and the daily turning point of Jan 2 aligns with it, suggesting a significant turning point early in the month. A second weekly cycle ends in the week of Jan 23, and the turning point at Jan 22 aligns with this weekly cycle, potentially providing another significant turning point.",
+  "statistics": [
+    {"date": "2026-01-07", "probability": "71%", "direction": "down", "description": "Multi-year seasonal statistic over 30 years: approximately 71% probability of a decline on this date in January"},
+    {"date": "2026-01-23", "probability": "68%", "direction": "up", "description": "Multi-year seasonal statistic over 30 years: approximately 68% probability of an upward move on this date in January"},
+    {"date": "2026-01-27", "probability": "71%", "direction": "down", "description": "Multi-year seasonal statistic over 30 years: approximately 71% probability of a decline on this date in January"},
+    {"date": "2026-01-12", "probability": "60%", "direction": "down", "description": "In the last 30 years, Oil closed lower on Jan 12 than it traded on Jan 6 in 60% of cases"}
+  ],
+  "insights": [
+    "Oil continues to move within a compressed range but later dropped more sharply downward in early December",
+    "Oil paused only at the support level that held since April and May of this year",
+    "The bias for Oil continues to be downward, and it appears that it is a matter of time until it breaks below support at $55.30",
+    "Within this scenario, the next price target is the low area between $52.70-$51, and if that also does not hold, it opens toward the next significant support at $43.40 area",
+    "Key resistance levels: the historical support band between $64.40 to $66.50 continues to be the critical area - this zone, untested for months now, should serve as resistance for any rally attempt in the medium-term. As long as the price remains below, Oil will remain in a downtrend or sideways-to-lower pattern",
+    "A genuine bullish trend change requires a return and sustained close above $70. This is only the first step",
+    "Only a strong and sustained breakout above $80 would confirm that Oil has ended its decline trend and entered a new rally cycle",
+    "Until that happens, the probability of further declines remains elevated",
+    "An additional perspective from the weekly chart: the 20-week moving average acts as a consistent pattern - serving as support-turned-resistance, with the 50-week moving average continuing to decline and acting as a dynamic resistance cap on any rally",
+    "December also showed Oil continuing its sideways movement with a downward bias after the first third of the month, as the 50-day moving average continues to serve as an intra-move resistance boundary",
+    "Resistance currently at $58.90 and between $61.45-$62.60",
+    "Support at $55.14-$55.97",
+    "A bullish scenario of significance would only materialize if price returns and breaks above $66.00, opening the path toward the $70 area",
+    "Even above $70, only a clear breakout above $70 has potential for a broader and more meaningful upward move",
+    "The monthly cycle from December is still developing and signals potential directional reversal"
+  ],
+  "technical": {
+    "support": [
+      {"level": "55.14-55.97", "description": "Current support zone on the daily chart"},
+      {"level": "55.30", "description": "Key support from weekly chart - expected to eventually break"},
+      {"level": "52.70-51.00", "description": "Next low target zone if $55.30 support breaks"},
+      {"level": "43.40", "description": "Next significant support if $51 area also fails to hold"}
+    ],
+    "resistance": [
+      {"level": "58.90", "description": "Near-term resistance on the daily chart"},
+      {"level": "61.45-62.60", "description": "Resistance zone on the daily chart - also near the weekly chart resistance from the 50-week MA area"},
+      {"level": "64.40-66.50", "description": "Critical resistance zone - historical support band that has not been tested for months, should serve as major resistance for any rally"},
+      {"level": "70.00", "description": "Key level for genuine trend change - first step toward bullish reversal"},
+      {"level": "78.48", "description": "50-week moving average - dynamic resistance cap on the weekly chart"},
+      {"level": "80.00", "description": "Only a sustained breakout above $80 would confirm end of the decline and beginning of a new rally cycle"}
+    ],
+    "indicators": "20-week moving average acting as support-turned-resistance. 50-week moving average declining, serving as a dynamic resistance cap. 50-day moving average serves as an intra-move resistance boundary on the daily chart. The weekly chart shows a consistent downtrend pattern with lower highs and lower lows since mid-2025. The 20-week MA acts as alternating support/resistance zone."
+  },
+  "summary": "Oil enters January 2026 with a bearish overall bias despite a mildly bullish seasonal tendency. Key turning points are Jan 2, 16, 22, and 27, with strong weekly cycle alignments on Jan 2 and Jan 22-23. The price remains trapped below major resistance at $64.40-$66.50, with support at $55.14-$55.97 appearing increasingly vulnerable. The two out of three cyclical patterns pointing downward, combined with the persistent decline of the 50-week moving average and the 20-week MA acting as resistance, suggest the path of least resistance remains to the downside with targets at $52.70-$51.00 and potentially $43.40.",
+  "previous_month_review": "December 2025 had four turning point dates for Oil. The first (Dec 2) worked partially - stopped for one day but returned to its previous trend shortly after. The second (Dec 8) worked - created the high of the move, and from it a significant decline of approximately 8.5% developed until the next turning point. The third (Dec 19) worked, though it did not capture the exact low of the move from the previous cycle - from it an upward move of approximately 5% began to the peak. The fourth (Dec 30-31, double date) - at time of writing, appears to have worked, with a downward cycle beginning that is still active until the next turning point around Jan 3.",
+  "risk_notes": [
+    "Two out of three cyclical patterns point downward, conflicting with the mild seasonal bullish bias",
+    "The $55.30 support level appears increasingly fragile and a break would accelerate the decline",
+    "If $51 area fails, the next support is significantly lower at $43.40 - a substantial potential drop",
+    "The 50-week moving average continues to decline, reinforcing the bearish technical backdrop",
+    "A genuine bullish reversal requires not just one but multiple resistance levels to be cleared ($66.50, $70, $80)",
+    "The monthly cycle from December is still developing, adding uncertainty to near-term direction",
+    "This is not investment advice - the content is for educational purposes only"
+  ]
+}

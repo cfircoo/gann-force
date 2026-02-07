@@ -1,0 +1,47 @@
+{
+  "asset": "EUR/USD",
+  "key_dates": [
+    {"date": "2025-07-04", "description": "Cycle turning point date for potential trend reversal; next 'low' turning point expected around this date"},
+    {"date": "2025-07-11", "description": "Cycle turning point date for potential trend reversal"},
+    {"date": "2025-07-18", "description": "Cycle turning point date; coincides with daily cycle and weekly cycle ending around 27.06 still effective until 04.07, plus another cycle at 18.07 - could provide more significant turning point"},
+    {"date": "2025-07-30", "description": "Cycle turning point date for potential trend reversal"}
+  ],
+  "seasonal": "July is generally a slightly positive month for EUR/USD. Seasonally neutral to mildly bullish for the Euro.",
+  "statistics": [
+    {"date": "2025-07-10", "probability": "67%", "direction": "up", "description": "Multi-seasonal statistic over last 20 years shows ~67% bullish bias (Euro up) around this date"},
+    {"date": "2025-07-15", "probability": "69%", "direction": "down", "description": "Multi-seasonal statistic over last 20 years shows ~69% bearish bias (Euro down) around this date"},
+    {"date": "2025-07-23", "probability": "71%", "direction": "down", "description": "Multi-seasonal statistic over last 20 years shows ~71% bearish bias (Euro down) around this date"},
+    {"date": "2025-07-28", "probability": "74%", "direction": "up", "description": "In the last 20 years, the Euro closed higher on 28.07 than on 08.07 in 74% of cases"}
+  ],
+  "insights": [
+    "EUR/USD is in a well-defined uptrend, with the weekly chart continuing to make higher highs after breakout above 1.1070 resistance from May",
+    "Current positioning at the 38.2% Fibonacci extension of the full uptrend, establishing it as significant long-term resistance level",
+    "The uptrend since May is strong - positioning above a horizontal level that served as strong resistance for years, the trend remains bullish",
+    "Between the two relevant 20-year cycles, one closed down and one closed up - so there is no strong one-directional seasonal bias",
+    "There is a monthly cycle in the next month that could point to a potential reversal and correction downward, connecting to significant resistance levels on the weekly chart",
+    "A weekly cycle ending around June 27 is still effective until end of first week of July (around July 4), plus another cycle at July 18 that coincides with a daily cycle",
+    "Daily chart technically shows a structure of higher highs on two consecutive peak points, evidence supporting an uptrend that remains intact",
+    "Daily chart shows an ABCD pattern where point D arrived in the area of chart resistance from April ($1.1920 area approximately), from which correction may come",
+    "Technically, breakout above the resistance from the weekly chart together with the turning date should create optimal conditions for ideal trading opportunities"
+  ],
+  "technical": {
+    "support": [
+      {"level": "1.1070", "description": "Former resistance now support; the level from which the May breakout occurred - this is the Fibonacci 38.2% retracement of the full uptrend"},
+      {"level": "1.1375", "description": "Fibonacci level; intermediate support"},
+      {"level": "1.1655", "description": "More recent Fibonacci support level"}
+    ],
+    "resistance": [
+      {"level": "1.1920", "description": "ABCD pattern point D area; chart resistance from April; where daily corrections may initiate"},
+      {"level": "1.1800", "description": "Approximate area of recent highs and potential resistance area on weekly chart"}
+    ],
+    "indicators": "Weekly chart shows clear bullish structure after breaking above 1.1070 (which served as the May resistance and Fibonacci 38.2% of the full uptrend). Daily chart displays ABCD harmonic pattern with point D reaching the April resistance area around 1.1920. The weekly trend remains bullish but corrections are expected at key resistance levels. Both the weekly and daily chart breakouts are constructive for continuation upward."
+  },
+  "summary": "EUR/USD remains in a bullish uptrend with the weekly chart maintaining higher highs after the significant breakout above the 1.1070 resistance level. Seasonally, July is a neutral-to-slightly positive month. However, there is a potential monthly cycle reversal pointing to correction downward toward significant resistance-turned-support levels on the weekly chart. The period between week ending June 27 through July 4 still carries an active weekly cycle, and the July 18 date coinciding with a daily cycle could serve as a more significant turning point.",
+  "previous_month_review": "In June 2025, there were four turning point dates for EUR/USD with two capturing the high or low within the same cycle, one arriving on time but then reversing, and one arriving at end of month with outcome still pending. The first date (June 5) arrived on time, marked the high for several days before breaking out and becoming a continuing cycle. The second date (June 12) arrived exactly on time, marking the 'high' of the uptrend from the previous date, and from there a decline of about 160 pips began to the next turning point. The third date (June 20) arrived one day early, combining with a retest level; marked the lowest price of the downward move, from which the most significant upward move of about 330 pips developed. The fourth date (June 30) at writing time appeared it could serve as the 'high' of the previous cycle, but also the next 'low' turning point was already expected around July 4.",
+  "risk_notes": [
+    "Despite bullish trend, monthly cycle in the coming month could signal reversal and correction downward",
+    "Resistance from the weekly chart at significant levels could create sharp reversals",
+    "The high dynamism and frequent changes characterizing FX markets make real-time Discord community updates essential",
+    "Break below 1.1070 would negate the entire bullish setup from May onwards"
+  ]
+}

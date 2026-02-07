@@ -1,0 +1,48 @@
+{
+  "asset": "Bitcoin",
+  "key_dates": [
+    {"date": "2025-06-04", "description": "Cycle turning point (range June 4-5)"},
+    {"date": "2025-06-05", "description": "Cycle turning point (range June 4-5)"},
+    {"date": "2025-06-09", "description": "Cycle turning point"},
+    {"date": "2025-06-15", "description": "Cycle turning point"},
+    {"date": "2025-06-21", "description": "Cycle turning point"},
+    {"date": "2025-06-30", "description": "Cycle turning point"}
+  ],
+  "seasonal": "In 8 out of the last 14 years, Bitcoin ended June positively (57.1%). The seasonal statistic is less attractive compared to other assets in the report due to Bitcoin's shorter trading history. Bitcoin tends to be more positive in the second half of the month.",
+  "statistics": [
+    {"date": "2025-06-05", "probability": "86%", "direction": "down", "description": "In the last 7 years, Bitcoin traded at a LOWER price on June 18 compared to June 5, in 6 out of 7 years (~86%)"},
+    {"date": "2025-06-06", "probability": "86%", "direction": "down", "description": "Weekly cycles ending around June 6 and June 13 suggest potential for meaningful direction change"},
+    {"date": "2025-06-13", "probability": "86%", "direction": "down", "description": "Weekly cycles ending around June 6 and June 13 suggest potential for meaningful direction change"}
+  ],
+  "insights": [
+    "Bitcoin is at an all-time high area, but showing signs of caution. The weekly chart shows lower highs in declining peaks - evidence of potential bullish exhaustion",
+    "The rally in May was fueled by momentum following liquidations of short positions. Before rushing to buy at the peak, examine the signs of weakness in the pattern",
+    "Two key trading scenarios: (1) Trading cycle - continuation: if MACD and RSI indicators on weekly timeframe confirm upward momentum, look for entry on pullbacks; (2) Swing trade short: if there's a break of the rising trendline - do not rush to short, wait for confirmation",
+    "Long-term investors need to be cautious of attempts to time entries and exits based on cycle dates - missing a significant move while waiting would neutralize the timing advantages",
+    "At the moment the price breaks $74,000 support, reassess the base assumption and separate from the investment if facing significant downside risk",
+    "The crypto market is more dynamic than traditional markets - follow real-time developments through the Discord community",
+    "There are two weekly cycles ending in the week of June 6 and June 13 respectively; combined with the daily turning point, this could provide a significant movement change"
+  ],
+  "technical": {
+    "support": [
+      {"level": "101000", "description": "First key support level - Fibonacci level with additional support nearby"},
+      {"level": "98000-97000", "description": "Support zone including Fibonacci 38.2% level from the last wave of the rally"},
+      {"level": "74000", "description": "Critical base level - break below this would signal fundamental change in trend assumption"}
+    ],
+    "resistance": [
+      {"level": "114000-115000", "description": "All-time high area - current resistance zone with declining peaks on weekly chart"},
+      {"level": "ATH zone", "description": "Weekly chart shows the Bitcoin daily is forming higher points with peaks and valleys, but with signs of slowing momentum"}
+    ],
+    "indicators": "Weekly chart shows declining peaks suggesting potential exhaustion despite new highs. MACD and RSI on weekly timeframe need to be monitored for momentum confirmation. The 20-day moving average is above current price, indicating positive short-term trend. However, volume patterns and Fibonacci analysis suggest the 101,000 level and 97,000-98,000 zone as critical support. Daily chart shows a constructive uptrend pattern with higher lows but the structure needs Fibonacci supports to hold."
+  },
+  "summary": "Bitcoin enters June 2025 near all-time highs but showing signs of momentum exhaustion. Key cycle dates are June 4-5, 9, 15, 21, and 30. The statistical edge suggests Bitcoin may trade lower by mid-month (86% probability of decline from June 5 to June 18), with a positive bias in the second half. Seasonal statistics are modest (57.1% positive Junes). Two weekly cycles ending around June 6 and June 13 combined with daily turning point dates could trigger a meaningful movement. Support at 101,000 and 97,000-98,000 are critical.",
+  "previous_month_review": "May 2025 had five turning dates for Bitcoin with three delivering strong signals: May 1 - blocked the upward move temporarily, triggered a ~4% drop then reversed upward; May 9 (arrived +1 day on May 10) - marked the high of the move; May 16 (arrived -1 day on May 15) - marked the low, and from it a 10% upward move developed to the next turning point; May 22 - arrived exactly on time, marked the high and triggered a 6% decline. May 28 - did not work as expected.",
+  "risk_notes": [
+    "Bitcoin's seasonal data covers only 14 years making statistical conclusions less reliable than other assets",
+    "At all-time high area, declining peaks on weekly chart suggest potential distribution/exhaustion phase",
+    "Break below $74,000 would fundamentally change the bullish thesis",
+    "Crypto market is highly dynamic - cycle dates provide guidance but real-time monitoring via community is critical",
+    "Avoid oversized positions - the leverage effect in crypto can amplify both gains and losses significantly",
+    "Missing a significant move due to timing attempts could neutralize portfolio advantages"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "asset": "Gold",
+  "key_dates": [
+    {"date": "2025-12-04", "description": "Turning date (+/- 1 day). Early-month turning point"},
+    {"date": "2025-12-11", "description": "Turning date (+/- 1 day). First mid-month turning point, aligning with gold cycle"},
+    {"date": "2025-12-16", "description": "Turning date (+/- 1 day). Second mid-month turning point"},
+    {"date": "2025-12-23", "description": "Turning date (+/- 1 day). Pre-holiday turning point with 75% statistical upward bias"},
+    {"date": "2025-12-29", "description": "Turning date (+/- 1 day). End-of-month double date (29-30.12)"},
+    {"date": "2025-12-30", "description": "Turning date (+/- 1 day). End-of-month double date continuation"}
+  ],
+  "seasonal": "December is a positive month for Gold. In the last 30 years, Gold closed higher on Dec 27 compared to Dec 14 in approximately 70% of cases (21 out of 30 years). Seasonal patterns favor strength particularly in the second half of December.",
+  "statistics": [
+    {"date": "2025-12-12", "probability": "68%", "direction": "up", "description": "Multi-decade seasonal statistical significance: approximately 68% probability of upward movement on this date"},
+    {"date": "2025-12-17", "probability": "73%", "direction": "up", "description": "Multi-decade seasonal statistical significance: approximately 73% probability of upward movement on this date"},
+    {"date": "2025-12-23", "probability": "75%", "direction": "up", "description": "Multi-decade seasonal statistical significance: approximately 75% probability of upward movement on this date"},
+    {"date": "2025-12-27", "probability": "70%", "direction": "up", "description": "In the last 30 years, Gold closed higher on Dec 27 than on Dec 14 in approximately 70% of cases (21 out of 30 years)"}
+  ],
+  "insights": [
+    "The basic fundamentals are clear in technical analysis: the trend continues to rise, the chart does not show a real reversal. Even after an approximately 11% correction from the October average, Gold still operates within a broad uptrend",
+    "The important question every analyst must ask is whether something in the movement structure has changed or whether this is just a temporal decline that depresses prices before the continuation of the trend upward",
+    "As long as there is no clear downward pattern, the direction continues to be bullish - do not rush to sell before the continuation of the upward movement",
+    "After a long period of consolidation and settling, Gold broke upward powerfully. The rally that began in the summer rose one level after another until early October, where a deeper correction began",
+    "Elliott Wave theory (Gliott/wave analysis) is still relevant - wave 5 is still active. The current wave structure indicates we are in wave 4 of the inner waves (or that we have recently completed wave 4 in late October)",
+    "The preferred scenario (second option): according to wave spiral rules, wave 3 is the longest and most powerful. It contains up to five inner waves. The current spiral, updated from previous months, shows wave 3 continuing to the $3,500 area (previously estimated $2,790). From point C marked on the current chart, wave 5 has started, in which we are currently in wave 4 of the 5 inner waves",
+    "If this scenario breaks upward, Fibonacci targets are: first target at $4,637 (1.618 ratio of wave AB) and second target at $4,995 (2.0 ratio of wave AB)",
+    "These levels represent potential key turning stations in the current wave - areas where significant profit-taking or the beginning of a deep correction at the weekly chart level could occur",
+    "The daily chart momentum is being worn down, the delicate balance is shaking. After October declines, the daily chart stabilized in November and began to rebuild a minor upward pattern with rising highs and lows",
+    "The current test level is at $4,245. In order for Gold to appear to be returning to attack the high level, this level needs to be broken upward",
+    "Support at $3,886 represents the last weekly support level and if it breaks downward, a deeper correction into Fibonacci levels would follow",
+    "The time window around Dec 5 is a weekly cycle that marks a central junction that could indicate the continuation of the trend"
+  ],
+  "technical": {
+    "support": [
+      {"level": "3886", "description": "Last weekly support; the level set on Oct 27 at $3,886. This represents weekly support and if broken, deeper correction into Fibonacci levels follows"},
+      {"level": "3959-4001", "description": "Support level on the daily chart (0.382 Fibonacci retracement at $3,958.67 and round number $4,000)"},
+      {"level": "3827", "description": "0.5 Fibonacci retracement on the daily chart ($3,827.34); also visible as weekly support"},
+      {"level": "3693-3696", "description": "0.618 Fibonacci retracement on the daily chart ($3,692.73 / $3,696.01)"},
+      {"level": "3500", "description": "Major support at $3,500 level, coinciding with wave spiral analysis estimate of old wave 3 completion"},
+      {"level": "3271", "description": "1.0 Fibonacci extension on the daily chart ($3,270.87) - deep correction target"}
+    ],
+    "resistance": [
+      {"level": "4245", "description": "Current test level on daily chart; needs to be broken upward for Gold to resume attacking the highs"},
+      {"level": "4383", "description": "0 (high) on the daily Fibonacci retracement; the recent peak area"},
+      {"level": "4637", "description": "Fibonacci 1.618 ratio of wave AB; first major upside target"},
+      {"level": "4995", "description": "Fibonacci 2.0 ratio of wave AB; second major upside target at approximately $5,000"}
+    ],
+    "indicators": "The weekly chart shows a strong bullish Elliott Wave structure with wave 5 still active. A key Fibonacci-based spiral is being tracked. The daily chart shows minor uptrend rebuilding after October correction. The 50-day moving average acts as dynamic support. The momentum on daily is fading but the delicate balance has not yet broken. The key test level is $4,245 for confirming upward continuation. The time window around Dec 5 is a weekly cycle junction of significance."
+  },
+  "summary": "December is seasonally positive for Gold, with the second half of the month showing particularly strong upward bias (70-75% probability). Key turning dates are Dec 4, Dec 11, Dec 16, Dec 23, and Dec 29-30. The broader Elliott Wave structure remains bullish with wave 5 still active and potential Fibonacci targets at $4,637 and $4,995. However, the daily momentum is weakening and the $4,245 resistance must be broken to confirm continued upward movement. Weekly support at $3,886 is critical - a break below would trigger a deeper correction.",
+  "previous_month_review": "November had four Gold turning dates. The first (Nov 3) worked partially for one day and then reversed. The second (Nov 10-11, double date) - we expected a high that actually arrived on Nov 13; a downward movement followed until the Nov 18 turning date. The third (Nov 18) worked and served as the low of the price movement from the previous cycle; from it an upward move began to the next turning date. The fourth (Nov 26) did not work.",
+  "risk_notes": [
+    "While the November uptrend is relevant, the daily chart shows a momentum that is being worn down - caution is warranted",
+    "Turning dates may deviate by +/- 1 day from the noted date",
+    "The rise seen in November could indicate wave 4 completion (bullish) but could also be an exhaustion move",
+    "A break of $3,886 weekly support would trigger a deeper correction into Fibonacci levels of $3,693-$3,827",
+    "The probability of further declines remains elevated until a strong and sustained break above $80 (the $4,245 level) is confirmed",
+    "The wave spiral rules present two scenarios: a less likely one where wave 5 ends at ~$4,400 (Fibonacci 1.272 of AB), and a preferred scenario where it extends to $4,637-$4,995"
+  ]
+}

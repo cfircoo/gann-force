@@ -1,0 +1,93 @@
+{
+  "asset": "EUR/USD",
+  "key_dates": [
+    {
+      "date": "2025-08-01",
+      "description": "First turning point (+/- 1 day)."
+    },
+    {
+      "date": "2025-08-08",
+      "description": "Second turning point. Aligns with cyclical timing."
+    },
+    {
+      "date": "2025-08-15",
+      "description": "Third turning point (+/- 1 day)."
+    },
+    {
+      "date": "2025-08-21",
+      "description": "Fourth turning point (+/- 1 day)."
+    },
+    {
+      "date": "2025-08-25",
+      "description": "Fifth turning point (+/- 1 day)."
+    }
+  ],
+  "seasonal": "August generally negative for EUR/USD. Bearish bias. Two strong monthly cycles and two weekly cycles (ending ~Aug 8 and ~Aug 22) support bearish view.",
+  "statistics": [
+    {
+      "date": "2025-08-20",
+      "probability": "71%",
+      "direction": "up",
+      "description": "~71% up probability from 20-year data."
+    },
+    {
+      "date": "2025-08-29",
+      "probability": "80%",
+      "direction": "down",
+      "description": "~80% down probability from 20-year data."
+    },
+    {
+      "date": "2025-08-17",
+      "probability": "70%",
+      "direction": "down",
+      "description": "EUR/USD closed lower on Aug 17 vs Aug 5 in ~70% of 20 years."
+    }
+  ],
+  "insights": [
+    "Bearish month with two monthly and two weekly cycles supporting decline.",
+    "Recovery from 50%+ correction over 20 weeks - potential for continuation or reversal.",
+    "61.8% Fibonacci retracement not yet broken - significant resistance.",
+    "Support at 1.1576-1.1625 holding. Break below = reversal signal.",
+    "Weekly uptrend shifting to potential decline phase.",
+    "Daily in consolidation. Key levels: resistance 1.1625, support 1.1070-1.1390.",
+    "Two strong monthly cycles support decline. Weekly cycles ending Aug 8/22 are key.",
+    "Aug 17 vs Aug 5: 70% probability Euro closed lower."
+  ],
+  "technical": {
+    "support": [
+      {
+        "level": "1.1070",
+        "description": "Lower weekly chart support."
+      },
+      {
+        "level": "1.1390",
+        "description": "Fibonacci 61.8% - major level."
+      },
+      {
+        "level": "1.1576-1.1625",
+        "description": "Recent support. Break below = reversal."
+      }
+    ],
+    "resistance": [
+      {
+        "level": "1.1625",
+        "description": "Recent support-turned-resistance."
+      },
+      {
+        "level": "1.1920",
+        "description": "Higher resistance from previous price action."
+      }
+    ],
+    "indicators": "Weekly potential for continuation or reversal. 61.8% Fib at 1.1390 critical. Daily in consolidation. Two monthly + two weekly cycles align around Aug 8 and Aug 22-25."
+  },
+  "summary": "EUR/USD August 2025: bearish seasonality with five turning points (Aug 1, 8, 15, 21, 25). 80% decline probability on Aug 29. 70% down bias Aug 5-17. Support 1.1576-1.1625 critical. 61.8% Fib at 1.1390 major level.",
+  "previous_month_review": "July: 4 dates. 04.07=near high (-1 day), no sharp decline followed. 11.07=failed, became continuation. 18.07=low (-1 day), quality reversal to 24.07. 30.07=possible low, still in question.",
+  "risk_notes": [
+    "Bearish seasonality for August.",
+    "80% decline probability on Aug 29.",
+    "Two monthly + two weekly cycles align for significant moves around Aug 8/22.",
+    "61.8% Fib at 1.1390 key level.",
+    "Break below 1.1576-1.1625 = reversal.",
+    "Daily cycles Aug 8/25 align with weekly - amplified reversals."
+  ]
+}

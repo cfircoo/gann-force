@@ -1,0 +1,50 @@
+{
+  "asset": "Gold",
+  "key_dates": [
+    {"date": "2025-06-06", "description": "Cycle turning point"},
+    {"date": "2025-06-11", "description": "Cycle turning point (range June 11-12)"},
+    {"date": "2025-06-12", "description": "Cycle turning point (range June 11-12)"},
+    {"date": "2025-06-20", "description": "Cycle turning point"},
+    {"date": "2025-06-25", "description": "Cycle turning point (range June 25-26)"},
+    {"date": "2025-06-26", "description": "Cycle turning point (range June 25-26)"}
+  ],
+  "seasonal": "June is generally a slightly negative month for gold. Seasonal statistics show mixed results over the past 30 years.",
+  "statistics": [
+    {"date": "2025-06-18", "probability": "67%", "direction": "up", "description": "Over the last 30 years, gold closed higher around June 18 approximately 67% of the time"},
+    {"date": "2025-06-24", "probability": "68%", "direction": "up", "description": "Over the last 30 years, gold closed higher around June 24 approximately 68% of the time"},
+    {"date": "2025-06-26", "probability": "73%", "direction": "up", "description": "Over the last 30 years, gold closed higher around June 26 approximately 73% of the time"},
+    {"date": "2025-06-07", "probability": "73%", "direction": "down", "description": "In the last 30 years, gold closed LOWER on June 7 compared to June 18 in 73% of cases (22 out of 30)"}
+  ],
+  "insights": [
+    "Gold dropped to Fibonacci 38.2% level ($3,134 approximately) in May and immediately bounced back - textbook Fibonacci support reaction",
+    "Using Elliott Wave theory, the current upward spiral appears to be completing Wave 5 (the final wave of a longer-term uptrend) - suggesting the long uptrend from October 2022 may be approaching a significant corrective phase",
+    "In the Fibonacci width analysis from May report, the AB to CD move suggests $3,782 as the next Fibonacci target if the uptrend continues",
+    "Every decline is a technical correction before a potential continuation of gains - until proven otherwise. Breaking the N-pattern flag on the weekly chart would signal the beginning of a deeper correction",
+    "When the market is in an uptrend at all-time highs, it is difficult to estimate precise targets from above. The correction (since we are discussing a 'blue sky' scenario) would be the deepest seen in gold in the last two and a half years",
+    "In the May report, geometric analysis (Fibonacci widths) was used: the AB to CD move by Fibonacci suggests point D arrived in the area around April ($3,516 approximately), and gold indeed dropped to Fibonacci 38.2% ($3,134) then immediately bounced",
+    "Historical cycle data: in 3 of the last 30 years, a pattern of three historical cycles of the most significant type concludes within a few days between June 18 and June 22, combined with the fact that ~73% of times since 1995, gold peaked in June then declined by June 6 - June is historically an important month for gold"
+  ],
+  "technical": {
+    "support": [
+      {"level": "3134", "description": "Fibonacci 38.2% retracement level - held in May as critical support"},
+      {"level": "2960", "description": "Fibonacci support level from the previous major wave - last line of defense for the bull thesis"},
+      {"level": "3137-3175", "description": "Support zone combining Fibonacci and previous structural support"}
+    ],
+    "resistance": [
+      {"level": "3516", "description": "Point D of the Fibonacci AB=CD pattern - significant resistance; area where gold reversed in April"},
+      {"level": "3782", "description": "Next Fibonacci target based on widths analysis if uptrend continues"},
+      {"level": "ATH zone", "description": "Current all-time high area - psychological resistance"}
+    ],
+    "indicators": "Weekly chart shows an Elliott Wave 5 completion pattern - the final push of the long-term uptrend from October 2022. The current formation shows red spiraling lines (gann/Elliott) suggesting we are near a significant correction. If the N-pattern (inverted flag) forms on the weekly chart, it would signal a potential deep correction - the deepest in 2.5 years. Fibonacci 38.2% at $3,134 held as support in May. The daily chart shows higher prices with Fibonacci targets and support confluence zones. The 50-day moving average acts as dynamic support."
+  },
+  "summary": "Gold enters June 2025 near all-time highs with significant cycle dates on June 6, 11-12, 20, and 25-26. The report suggests June is historically an important month where three major historical cycles converge between June 18-22. Elliott Wave analysis points to a potential Wave 5 completion, meaning a significant correction could follow. Fibonacci analysis sets $3,782 as the upside target and $3,134 (Fibonacci 38.2%) as critical support. The statistical edge suggests buying around June 7 with a 73% probability of gold being higher by June 18.",
+  "previous_month_review": "May 2025 had four turning dates in gold, all of which worked with one having a one-day gap - overall a 'perfect month': May 2 (or one day early) arrived on time and marked the low of the movement, starting a ~6.5% upward move; May 7 was effectively missing from the original dates but there should have been a date around May 7 to mark the high; May 13 (arrived one day early) - delivered a ~5.5% move to the next turning date; May 22 (arrived one day early) - marked the high price, and from it a declining cycle began that ended at May 29-30; May 29-30 (double cycle) - marked the low and began an upward cycle expected to continue to the first turning date of June (June 6).",
+  "risk_notes": [
+    "Elliott Wave 5 completion suggests the long-term uptrend from October 2022 may be nearing a major corrective phase",
+    "A break below $3,134 (Fibonacci 38.2%) would confirm the start of a significant correction",
+    "Gold at all-time highs in 'blue sky' territory means corrections could be the deepest in 2.5 years",
+    "When the inverted N-flag pattern appears on the weekly chart, expect a potential deep correction opening",
+    "June is seasonally mixed for gold - not a strong directional month",
+    "The convergence of three major historical cycles between June 18-22 makes this period particularly high-risk for unexpected moves"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "asset": "Oil (Light Crude)",
+  "key_dates": [
+    {"date": "2025-11-04", "description": "Turning point date for potential trend reversal (+/- 1 day)"},
+    {"date": "2025-11-11", "description": "Turning point date - part of a double date cluster with Nov 12 (+/- 1 day)"},
+    {"date": "2025-11-12", "description": "Turning point date - double date cluster with Nov 11 (+/- 1 day)"},
+    {"date": "2025-11-20", "description": "Turning point date - aligns with a strong weekly cycle peaking around Nov 21, also coincides with daily turning date (+/- 1 day)"},
+    {"date": "2025-11-26", "description": "Turning point date for potential trend reversal (+/- 1 day)"}
+  ],
+  "seasonal": "November is one of the two most bearish months of the year for oil seasonally. In the last 30 years, oil closed on Nov 29 at a price LOWER than on Nov 10 in approximately 73% of cases (22 out of 30 years). Seasonal downward bias is strong.",
+  "statistics": [
+    {"date": "2025-11-07", "probability": "70%", "direction": "up", "description": "Multi-decade seasonal statistic over the last 30 years: approximately 70% probability of upward movement on Nov 7"},
+    {"date": "2025-11-11", "probability": "82%", "direction": "down", "description": "Multi-decade seasonal statistic over the last 30 years: approximately 82% probability of downward movement on Nov 11 - strongest statistical signal in the entire report"},
+    {"date": "2025-11-19", "probability": "67%", "direction": "up", "description": "Multi-decade seasonal statistic over the last 30 years: approximately 67% probability of upward movement on Nov 19"},
+    {"date": "2025-11-10", "probability": "73%", "direction": "down", "description": "In the last 30 years, oil closed on Nov 29 at a LOWER price than on Nov 10 in 73% of cases (22 out of 30). Strong end-of-month bearish statistic."}
+  ],
+  "insights": [
+    "No monthly cycles are active for November oil, but a strong weekly cycle is peaking around the week ending Nov 21 - this is the dominant cycle and turning date Nov 20 aligns with it",
+    "The daily turning date of Nov 20 coincides with the weekly cycle, which should be considered for potential significant direction change or notable volatility",
+    "Multi-year support band between $64.40-$66.50 per barrel continues to serve as a turning point for the current month as well",
+    "The picture for the medium-term remains a swing between consolidation and decline - not yet a challenged support on the weekly chart, but price remains below key structure",
+    "In the weekly view, conditions for a true reversal from decline to rally remain unfulfilled: a move above $70 per barrel is the first step, and only a strong sustained move above $80 would confirm the end of the bearish trend and open the door for a new bullish phase",
+    "As long as this does not happen, continuation downward remains the more probable scenario",
+    "In a bearish scenario, the first target is around the previous low near $55.30, and in continuation between $51-$52.70 per barrel - a clear break of these levels opens potential for deeper decline to the central support area near $43.40 per barrel",
+    "An additional observation from the weekly chart reveals a persistent pattern: the 20-week moving average continues to function as a buffer alternating between support and resistance against every attempt by oil to return to a bullish trend",
+    "While the 50-week moving average continues to decline and serves as a dynamic barrier against any attempt to shift to a positive trend",
+    "All key levels are marked on the attached charts"
+  ],
+  "technical": {
+    "support": [
+      {"level": "59.68-60.44", "description": "Immediate support zone on the daily chart"},
+      {"level": "55.30-55.36", "description": "Previous low area and next significant support target on the daily chart"},
+      {"level": "51-52.70", "description": "Deeper support zone if the $55 area breaks"},
+      {"level": "43.40", "description": "Central multi-year support area - the major floor for oil prices"}
+    ],
+    "resistance": [
+      {"level": "62.00-62.61", "description": "First resistance area on the daily chart"},
+      {"level": "66.02", "description": "Resistance zone from the weekly chart / multi-year support-turned-resistance"},
+      {"level": "69.60-70.53", "description": "Key resistance with 50-day moving average area - clearing this is the first step toward bullish reversal"},
+      {"level": "80.00", "description": "Major resistance - only a sustained break above confirms end of bearish trend"}
+    ],
+    "indicators": "Weekly chart shows a persistent downtrend with the 20-week moving average acting as dynamic resistance and the 50-week moving average declining. The daily chart shows the 50-day moving average around $69-70 acting as resistance. Price is in a range between $59-$66 support/resistance band. No monthly cycles are active but a strong weekly cycle peaks around Nov 21. Overall bearish structure remains intact unless $70+ is reclaimed, and the Nov 20 turning date aligning with the weekly cycle peak makes it a critical observation point."
+  },
+  "summary": "Oil enters November 2025 with a strong seasonal bearish bias - historically one of the two worst months of the year, with a 73% probability of closing lower at month end compared to Nov 10. No monthly cycles are active but a strong weekly cycle peaking around Nov 21 aligns with the daily turning date of Nov 20, making this a critical juncture. The multi-year support band at $64.40-$66.50 continues to be relevant, while a move above $70 is needed for any bullish reversal signal. The Nov 11 date carries the strongest statistical signal in the entire report with 82% probability of decline.",
+  "previous_month_review": "October 2025 had five turning dates for oil. First date (Oct 3) served as the low and initiated a rally of approximately 5% to the next date. Second date (Oct 10) arrived one day early (Oct 9) and served as the high - an approximately 8% decline began from there to the next date at peak. Third date (Oct 15) did not work - failed to serve as a turning point and price continued declining. Fourth date (Oct 22) arrived one day early (Oct 21) and served as the low - from there a rally of approximately 10% began at peak though it reversed before the next date. Fifth date (Oct 29-30) was a double date - arrived with a decline and began a rally toward the first November turning date (Nov 4).",
+  "risk_notes": [
+    "November is seasonally one of the two most bearish months for oil - countertrend long positions carry elevated risk",
+    "Nov 11 carries the highest probability signal in the entire report at 82% for decline - be particularly cautious with long exposure around this date",
+    "A break below $55.30 previous lows could accelerate declines toward $43.40 - a potential 30%+ drop from current levels",
+    "Geopolitical events can override seasonal and cyclical patterns in oil - maintain awareness of Middle East and OPEC+ developments",
+    "The 20-week and 50-week moving averages both acting as resistance confirms the bearish structure - avoid fighting this trend without clear reversal signals",
+    "Even the Oct 22 turning date that triggered a 10% rally from the low reversed before the next turning date - rallies in a downtrend tend to be sharp but short-lived"
+  ]
+}

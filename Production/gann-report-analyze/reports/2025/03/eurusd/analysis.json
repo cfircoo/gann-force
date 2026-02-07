@@ -1,0 +1,47 @@
+{
+  "asset": "EUR/USD",
+  "key_dates": [
+    {"date": "2025-03-06", "description": "Turning point date (range with 7.3) - potential reversal in price movement"},
+    {"date": "2025-03-07", "description": "Turning point date (range with 6.3) - potential reversal in price movement"},
+    {"date": "2025-03-13", "description": "Turning point date (range with 14.3) - potential reversal"},
+    {"date": "2025-03-14", "description": "Turning point date (range with 13.3) - potential reversal"},
+    {"date": "2025-03-20", "description": "Turning point date - potential reversal in price movement"}
+  ],
+  "seasonal": "March is a slightly positive month for the Euro. Seasonally, the Euro ended the previous month (February) without significant change, within bidirectional volatility in both halves of the month. Over the last 20 years, the Euro closed lower on March 17 than it traded on March 7 in 70% of cases.",
+  "statistics": [
+    {"date": "2025-03-05", "probability": "71%", "direction": "up", "description": "Over the last 20 years, around March 5 approximately 71% probability of rise (Euro goes up)"},
+    {"date": "2025-03-18", "probability": "77%", "direction": "down", "description": "Over the last 20 years, around March 18 approximately 77% probability of decline (Euro goes down)"},
+    {"date": "2025-03-07", "probability": "70%", "direction": "up", "description": "In the last 20 years, the Euro closed lower on March 17 than it traded on March 7 in 70% of cases - implying March 7 area is a relative high"}
+  ],
+  "insights": [
+    "Despite the seasonal slightly negative characteristics of February, the Euro ended the month without meaningful change, within bidirectional volatility in both halves of the month.",
+    "The weekly chart shows an interesting picture. In November, a temporal support zone around 1.0520-1.0455 was broken, which had served as an anchor since May 2023. Although buyers managed to stabilize the price above support immediately after, the first break in January provided stronger confirmation for downward movement, and when we approached this level near month end, we received a retest with a significant decline.",
+    "The situation in February and March ahead remains the same. Every approach to this zone is expected to invite sell-side pressure. The combination of the exponential (red) and regular (blue) 20-week moving averages, both positioned at this level, strengthens the resistance zone.",
+    "The negative momentum strengthened since September, together with the break of significant support at the beginning of January, signals a new phase in the downtrend. The preferred trading strategy would be searching for short trades due to the downtrend.",
+    "The resistance zone that should block every rally attempt is found at the 38.2% Fibonacci retracement level (1.0574) of the AB decline wave, combined with the resistance level around 1.0606 (also a round number).",
+    "Uniquely, there is no weekly cycle during the month, so the consolidation at the daily chart level will continue in the current month as well.",
+    "The daily turning point dates on March 6-7 are stronger because they appeared in multiple checks of their value, as did March 20 which repeated itself several times, so we can expect a stronger movement at those dates."
+  ],
+  "technical": {
+    "support": [
+      {"level": "1.0530", "description": "Key level from weekly chart. The low established at the beginning of February remained in this area throughout the month. This is where the price stabilized and consolidated."},
+      {"level": "1.0455-1.0520", "description": "Temporal support zone that was broken in November, originally serving as an anchor since May 2023."}
+    ],
+    "resistance": [
+      {"level": "1.0574", "description": "38.2% Fibonacci retracement level of the AB decline wave. Key resistance that should block rallies."},
+      {"level": "1.0603", "description": "Additional resistance found near this level."},
+      {"level": "1.0606", "description": "Resistance level (also a round number) combined with the Fibonacci zone."},
+      {"level": "1.0665", "description": "Resistance from the weekly chart - higher resistance level from the pattern."},
+      {"level": "1.0523", "description": "Former support area now potentially acting as resistance on retests from below."}
+    ],
+    "indicators": "Weekly chart shows 20-week exponential (red) and regular (blue) moving averages both positioned at the resistance zone, strengthening it. Negative momentum has strengthened since September. No weekly cycle during March means daily chart consolidation will continue. The preferred bias is short/downward. Daily chart approaching resistance combined with turning point dates provides trade indications for short entries with favorable risk-reward ratios."
+  },
+  "summary": "EUR/USD in March 2025 remains in a bearish phase after breaking key support in January. The preferred strategy is looking for short trades at resistance levels combined with turning point dates. Key dates are March 6-7 (strong), 13-14, and 20 (strong), with the March 18 statistic showing 77% probability of Euro decline. The resistance zone around 1.0574-1.0606 is expected to cap rallies, with no weekly cycle this month meaning daily-level consolidation should persist.",
+  "previous_month_review": "February 2025 had four turning point dates for EUR/USD, all delivered the expected outcome though one was slightly late. Date 1 (Feb 3): Arrived on time, served as the low of the movement that started in the last cycle of January, providing a movement of 220 basis points at its peak before declining to the next turning date (not a classic cycle). In hindsight, there was a missing date around Feb 5 which would have been a perfect additional classic entry - also enabling a short position entry. Date 2 (Feb 7): Was late by one trading day (arrived Feb 10), served as the 'low' and absorbed the downward movement. From it, an upward movement of approximately 240 pips developed to the move's peak. Date 3 (Feb 20): Arrived exactly on time, served again as 'low' of the correction and provided 100 pips until the turning date on Feb 25. Date 4 (Feb 25): Arrived exactly on time, served as the 'high' of the last rising cycle. Price reached it on the rise and combined with the resistance level at approximately 1.0523, declined approximately 160 pips by month end.",
+  "risk_notes": [
+    "Every approach to the resistance zone around 1.0574-1.0606 combined with a turning point date is expected to provide indication for a short trade with favorable risk-reward ratio.",
+    "The combination of turning point dates with chart formations and trading with the dominant trend provides the best success rates and enables profitable trades with tight stop-loss and good risk-reward ratio.",
+    "When trading against the dominant trend, as we are working for a few days at a time, we need to wait and look for the reversal and join an intraday movement like a 4-hour or 30-minute chart at minimum.",
+    "Forex markets are dynamic with frequent changes - stay updated through the Discord community."
+  ]
+}

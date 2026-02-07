@@ -1,0 +1,114 @@
+{
+  "report_title": "Cycles Trading Monthly Report - December 2025",
+  "report_month": "December 2025",
+  "report_language": "Hebrew (translated to English)",
+  "assets": ["S&P 500", "Bitcoin", "EUR/USD", "Gold", "Oil"],
+  "cross_asset_calendar": {
+    "2025-12-01": {
+      "assets": ["Bitcoin"],
+      "notes": "Bitcoin turning date opens the month"
+    },
+    "2025-12-02": {
+      "assets": ["S&P 500", "EUR/USD", "Oil"],
+      "notes": "Triple convergence day. S&P turning date (start of 2-3 range), EUR/USD turning date (85% up stats), Oil turning date (81% up stats). High-significance cluster."
+    },
+    "2025-12-03": {
+      "assets": ["S&P 500"],
+      "notes": "S&P turning date (second part of 2-3 range)"
+    },
+    "2025-12-04": {
+      "assets": ["Gold"],
+      "notes": "Gold turning date"
+    },
+    "2025-12-05": {
+      "assets": ["S&P 500", "Bitcoin", "Gold", "Oil"],
+      "notes": "Weekly cycle ending for multiple assets. Key weekly junction - not a daily turning date but a significant cycle boundary"
+    },
+    "2025-12-08": {
+      "assets": ["EUR/USD", "Oil"],
+      "notes": "EUR/USD and Oil turning dates. Oil has 70% DOWN statistical bias - one of the few bearish stats in the report"
+    },
+    "2025-12-11": {
+      "assets": ["Bitcoin", "Gold"],
+      "notes": "Bitcoin critical turning date and Gold turning date. Bitcoin's Dec 11 is defined as having potential for significant trend change"
+    },
+    "2025-12-12": {
+      "assets": ["S&P 500"],
+      "notes": "S&P turning date; Gold 68% up statistical date"
+    },
+    "2025-12-16": {
+      "assets": ["EUR/USD", "Gold"],
+      "notes": "EUR/USD and Gold turning dates"
+    },
+    "2025-12-18": {
+      "assets": ["Bitcoin", "Oil"],
+      "notes": "Bitcoin and Oil turning dates (Oil 18-19 double)"
+    },
+    "2025-12-19": {
+      "assets": ["S&P 500", "Oil"],
+      "notes": "S&P strong weekly cycle ends. Oil second part of 18-19 double. S&P 77% up statistic (Dec 19-28 window)"
+    },
+    "2025-12-22": {
+      "assets": ["S&P 500", "EUR/USD", "Oil"],
+      "notes": "S&P turning date adjacent (75% up stats), EUR/USD turning date, Oil 75% up stats. Triple asset convergence"
+    },
+    "2025-12-23": {
+      "assets": ["Gold"],
+      "notes": "Gold turning date with 75% up statistical bias"
+    },
+    "2025-12-24": {
+      "assets": ["S&P 500"],
+      "notes": "S&P 80% up seasonal statistical date"
+    },
+    "2025-12-27": {
+      "assets": ["Bitcoin"],
+      "notes": "Bitcoin turning date"
+    },
+    "2025-12-29": {
+      "assets": ["Gold"],
+      "notes": "Gold turning date (29-30 double range)"
+    },
+    "2025-12-30": {
+      "assets": ["S&P 500", "EUR/USD", "Gold", "Oil"],
+      "notes": "Massive convergence: S&P, EUR/USD, Gold (second of double), Oil (30-31 double). Quad-asset turning date cluster at year-end"
+    },
+    "2025-12-31": {
+      "assets": ["Oil"],
+      "notes": "Oil second part of 30-31 double"
+    }
+  },
+  "themes": [
+    "December is seasonally positive for most assets: S&P (strong), Gold (positive), EUR/USD (most bullish month of the year), Bitcoin (mildly positive, 53.3%), Oil (slightly positive)",
+    "Deep macro cycles converge: the 250-year American empire cycle, 90-year conflict cycle (Ethiopia 1935 to Ukraine 2025), 18.6-year real estate cycle, and 36/72-year Panama Canal cycles all point toward 2026-2028 as a period of major structural change",
+    "Britain 1825-1925-2025: a 100-year banking crisis cycle appears to be repeating, with the pound weakening, the middle class eroding, fiscal burden increasing, and millionaires fleeing",
+    "The week ending around December 5 is a significant weekly cycle junction for multiple assets (S&P, Bitcoin, Gold, Oil)",
+    "A second important weekly cycle ends around January 2, 2026, for multiple assets - turning dates synchronized with this week could lead to more significant direction changes",
+    "The CNN Fear & Greed Index at 24 (Extreme Fear) reflects the sentiment backdrop for December",
+    "The Gann principle guides this report: 'Watch for a change in trend near the end of time cycles' - time is more important than price, but price confirms the direction",
+    "The minor trend for S&P has shifted from clear uptrend to choppy, suggesting both long and short trades are now valid around turning dates",
+    "Bitcoin may have entered a 14-month decline phase after completing a 35-month up-cycle in October 2025",
+    "Oil is trapped in a compressed range with macro cycles converging around 2028 for a potentially major move"
+  ],
+  "risk_rules": [
+    "All turning dates may deviate by +/- 1 day from the noted date - be prepared",
+    "Never identify the start of every cycle - sometimes it is better to join a movement already in progress using intraday charts (no less than 30-minute timeframe)",
+    "The combination of a turning date + a clear technical level (support or resistance) + dominant trend alignment creates the highest probability trade setups",
+    "When the trend is unclear or against you, only enter after a clear reversal signal, and know that profits will be slower and harder to come by",
+    "When holding a long position, it is recommended to lock in or realize partial profits at resistance zones",
+    "In a 'continuing date/cycle' scenario: if arriving at a turning date on a rise, it should serve as a turning point; in 75% of historical cases the movement continues in the same direction to the next turning date",
+    "In a 'double date/cycle' scenario: the first date (usually) changes direction, while the second restores the original trend direction",
+    "Do not flee the market, but be aware that major macro processes take time - do not panic, but also do not be naive",
+    "Work with clear stops based on both time cycles and price levels",
+    "When a geopolitical or economic event arrives during a sensitive time zone, the market reacts to it more strongly",
+    "Timing is not magic - it is a system. Whoever works this way over a long time discovers that timing is not luck but methodology",
+    "Listen to the market, not to your ego. Be sharp but not dramatic. Remember that the goal is first to preserve capital and only then to win the game",
+    "The key is not to fear the decline, nor to cling to the rise, but to let the market signal when it itself is planning the next turn"
+  ],
+  "previous_month_summary": {
+    "sp500": "4 turning dates. Nov 5 timing only. Nov 13-14 (double) marked the high correctly with ~4% decline. Nov 18 marked the low, ~2.8% rise began. Nov 24 (arrived Nov 21) marked support, 4.5% rise into December.",
+    "bitcoin": "5 turning dates. Nov 4-5 (double) provided the low. Nov 9 did not work. Nov 12 (arrived Nov 11) produced the most significant move. Nov 19 paused briefly then broke down. Nov 26 did not work. Last two dates hurt statistics by arriving 2 days early.",
+    "eurusd": "4 turning dates. Nov 4 worked as low with significant rise. Nov 13-14 (double) worked as high, decline followed. Nov 18 did not work. Nov 24 worked as cycle low, rise began toward Dec 2.",
+    "gold": "4 turning dates. Nov 3 partially worked for one day. Nov 10-11 (double) expected high arrived Nov 13, decline to Nov 18. Nov 18 worked as low, upward move began. Nov 26 did not work.",
+    "oil": "4 turning dates with declining bias. Nov 4 high, ~3.5% decline then reversal. Nov 11-12 (double) - first as high, second as low with reversal to rises. Nov 20 (arrived Nov 19) high, short opportunity. Nov 26 low, upward move began toward Dec 2."
+  }
+}

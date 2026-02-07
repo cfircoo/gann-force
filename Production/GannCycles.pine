@@ -59,7 +59,7 @@ i_stats_size = input.string("huge", "Statistics Arrow Size", options=["tiny", "s
 const string G1_NAME = "S&P500"
 const string G1_TICKERS = "SP500,SPX,ES1,US500,QQQ,NQ1"
 const string G1_DATES = "02.12.25,03.12.25,12.12.25,19.12.25,30.12.25,05.01.26,12.01.26,16.01.26,28.01.26,04.02.26,13.02.26,20.02.26,27.02.26"
-const string G1_STATS = "03.02.26.U,10.02.12.U,11.02.26.U"
+const string G1_STATS = "03.02.26.U,10.02.26.U,11.02.26.U"
 
 // Group 2 defaults
 const string G2_NAME = "GOLD"

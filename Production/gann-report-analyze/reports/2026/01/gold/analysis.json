@@ -1,0 +1,61 @@
+{
+  "asset": "Gold",
+  "key_dates": [
+    {"date": "2026-01-02", "description": "First turning point date for January 2026"},
+    {"date": "2026-01-08", "description": "Second turning point date for January 2026"},
+    {"date": "2026-01-16", "description": "Third turning point date for January 2026"},
+    {"date": "2026-01-23", "description": "Fourth turning point date for January 2026"},
+    {"date": "2026-01-29", "description": "Fifth turning point date for January 2026"}
+  ],
+  "seasonal": "January is a bullish month for Gold. Seasonally, Gold tends to be positive in January. All three cyclical patterns from the last two decades are bullish, with two pointing to rapid upward moves. In the last 30 years, Gold closed higher on Feb 1 than it traded on Jan 8 in 83% of cases (25 out of 30 years). There is a weekly cycle ending Jan 16, and also a daily turning point at Jan 16, both aligning with cyclical patterns from the last two decades. A significant turning point is expected around Jan 16. Also, dates Jan 8 and Jan 23 have appeared multiple times as potential turning points, making them more likely to develop significant moves.",
+  "statistics": [
+    {"date": "2026-01-14", "probability": "65%", "direction": "down", "description": "Multi-year seasonal statistic over 30 years: approximately 65% probability of a decline on this date in January"},
+    {"date": "2026-01-19", "probability": "71%", "direction": "up", "description": "Multi-year seasonal statistic over 30 years: approximately 71% probability of an upward move on this date in January"},
+    {"date": "2026-01-23", "probability": "68%", "direction": "up", "description": "Multi-year seasonal statistic over 30 years: approximately 68% probability of an upward move on this date in January"},
+    {"date": "2026-01-08", "probability": "83%", "direction": "up", "description": "In the last 30 years, Gold closed higher on Feb 1 compared to Jan 8 in 83% of cases (25 out of 30 years), indicating a strong seasonal bias for Gold to rise from Jan 8 through the end of the month"}
+  ],
+  "insights": [
+    "Are we near the end of the primary rally wave? From a technical standpoint, the chart does not yet show a genuine reversal - the trend remains ongoing and continuing upward",
+    "After an 11% correction from the average October level, Gold is still operating within a broad rally, and who is watching the chart professionally sees natural profit-taking, not a directional change",
+    "As long as there is no clear decline pattern, the direction remains bullish regardless of headline drama",
+    "At the start of January, when examining the actual results dimension, Gold mostly breaks out upward - in the majority of cases the primary trend is confirmed",
+    "Gold continues to climb in line with its December seasonals - it broke to new all-time highs and its January seasonals also support continuation",
+    "The week after the breakout, it materialized a black cloud pattern and returned below resistance levels - looking like a possible false breakout",
+    "It would not be surprising to continue seeing it drift slightly lower with one more leg down before seasonals carry it back up",
+    "The rally that started in summer climbed floor by floor until early October, where a deeper correction began - the sharp one-directional rally created no weekly swing lows along the way, which now reduces potential support levels",
+    "Main and strong support at $3,886, and then at $3,500 - a level that could serve as a correction target if the downside move continues",
+    "Elliott Wave analysis suggests we are in the primary Wave 5 (the final wave of the bull move) - composed of three push waves (1, 3, 5) and two correction waves (2, 4)",
+    "According to Elliott spiral count, Wave 3 is typically the longest and most powerful, and currently the updated spiral shows Wave 3 extending to $3,500 (previously estimated at $2,790)",
+    "From Point C, the chart began Wave 5 - we are currently in this wave, which is where we stand now",
+    "If the resistance level at $4,637 (1.618 Fibonacci of Wave AB) breaks, the next target is around $4,995 (2x Fibonacci ratio of Wave AB)",
+    "These are levels where significant profit-taking opportunities may develop, or the beginning of a deeper correction at the weekly chart level",
+    "Daily chart shows a bullish minor trend building since November, with rising lows and highs appearing in a rising price structure",
+    "Resistance areas that were previously breached upward and then the all-time high, the Gold materializes an extreme pattern with a daily drop of approximately 4.5% with a red engulfing candle absorbing the entire preceding 5-day range",
+    "We have reached the 38.2% Fibonacci level of the last rally wave, with the 50% retracement also found between $4,201-$4,264",
+    "A break of this zone would signal a more significant downward correction"
+  ],
+  "technical": {
+    "support": [
+      {"level": "4201-4264", "description": "38.2% and 50% Fibonacci retracement of the latest rally wave - current demand zone being tested"},
+      {"level": "3886", "description": "Weekly support - the last weekly support level. A break below triggers deeper Fibonacci-level corrections"},
+      {"level": "3500", "description": "Major correction target - could serve as correction destination if break below $3,886 occurs. Also 1.272 Fibonacci level"},
+      {"level": "3692", "description": "0.618 Fibonacci retracement level on the weekly chart"}
+    ],
+    "resistance": [
+      {"level": "4549", "description": "All-time high area / recent peak"},
+      {"level": "4637", "description": "1.618 Fibonacci extension of the AB wave - first upside target if rally resumes"},
+      {"level": "4995", "description": "2x Fibonacci ratio of the AB wave - second major upside target"}
+    ],
+    "indicators": "Elliott Wave structure suggests we are in primary Wave 5, the final wave of the bull move. The updated spiral count puts Wave 3 extending to $3,500 level. Daily chart building a minor bullish trend since November. 20-day and 50-day moving averages serve as dynamic support/resistance on the daily chart. The 38.2% Fibonacci of the last rally wave has been reached, with the 50% retracement at $4,201-$4,264 being the current critical area. A break below signals more significant correction."
+  },
+  "summary": "Gold enters January 2026 with a bullish seasonal bias (83% of the last 30 years saw higher prices from Jan 8 through month-end). Five turning points are identified: Jan 2, 8, 16, 23, and 29, with Jan 16 being especially significant due to alignment of weekly cycles, daily turning points, and cyclical patterns. The current structure shows an extreme reversal candle after hitting the all-time high zone, with the 38.2%-50% Fibonacci retracement area ($4,201-$4,264) being tested as support. Key support below sits at $3,886 and $3,500, while upside targets are $4,637 and $4,995.",
+  "previous_month_review": "December 2025 had five turning point dates for Gold. The first (Dec 4) worked partially. The second (Dec 11) was a low, close to the low of the previous cycle from the last turning point. The third (Dec 16) worked - the movement reached it as a decline toward the retest level, and from it an upward move of approximately 5% developed until the next turning point. The fourth (Dec 23) did not work. The fifth (Dec 29-30, double date) - we arrived at the first date with a rally and from there Gold dropped approximately 4.5% within a single day.",
+  "risk_notes": [
+    "We may be in primary Wave 5 (final wave) of the Elliott structure - this wave eventually leads to a significant correction",
+    "The extreme daily reversal candle (4.5% drop absorbing 5 days of gains) signals potential exhaustion at the highs",
+    "A break below the $4,201-$4,264 Fibonacci zone would signal a more significant downward correction",
+    "The sharp rally from summer created no weekly swing lows along the way, meaning there are few proven support levels if a decline accelerates",
+    "If the $3,886 weekly support breaks, the next meaningful support is $3,500 - a significant distance lower",
+    "This is not investment advice - the content is for educational purposes only"
+  ]
+}

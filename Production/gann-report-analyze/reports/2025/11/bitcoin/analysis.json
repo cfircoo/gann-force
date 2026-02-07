@@ -1,0 +1,51 @@
+{
+  "asset": "Bitcoin",
+  "key_dates": [
+    {"date": "2025-11-04", "description": "Turning point date - part of a double date with Nov 5 (+/- 1 day)"},
+    {"date": "2025-11-05", "description": "Turning point date - part of a double date with Nov 4 (+/- 1 day)"},
+    {"date": "2025-11-09", "description": "Turning point date - aligns with first weekly cycle ending around Nov 7 (+/- 1 day)"},
+    {"date": "2025-11-12", "description": "Turning point date for potential trend reversal (+/- 1 day)"},
+    {"date": "2025-11-19", "description": "Turning point date for potential trend reversal (+/- 1 day)"},
+    {"date": "2025-11-26", "description": "Turning point date for potential trend reversal (+/- 1 day)"}
+  ],
+  "seasonal": "Bitcoin finished November positively in 10 out of the last 15 years (66.7%). However, Bitcoin's history is short so seasonal statistics are less reliable than other assets in this report. In the last 7 years, Bitcoin traded at a HIGHER price on Nov 7 compared to Nov 3 in 5 out of 7 years (approximately 71%).",
+  "statistics": [
+    {"date": "2025-11-03", "probability": "71%", "direction": "up", "description": "In 7 of the last years, Bitcoin traded higher on Nov 7 than on Nov 3 - approximately 71% probability of upward move in this window"},
+    {"date": "2025-11-03", "probability": "67%", "direction": "up", "description": "Bitcoin ended November positively in 10 out of 15 years - 66.7% seasonal bullish probability for the month overall"}
+  ],
+  "insights": [
+    "No monthly cycles are active for November, but two significant weekly cycles exist - the first ending around Nov 7 (considered especially strong) and the second ending around Nov 28",
+    "The daily turning dates align with these weekly cycles: Nov 9 with the first weekly cycle and Nov 26 with the second weekly cycle - this combination increases the probability of significant turning points during the month",
+    "The time window between Nov 18-20 may be characterized by especially high volatility due to multiple cycle overlaps",
+    "After a positive October opening, Bitcoin appeared set for further gains and possibly a new all-time high, but the move reversed and ended the month with a decline - the return to the $104,000 support area at this stage creates a wide consolidation pattern",
+    "Bitcoin has already declined 18% from its peak during October - even if short-term declines continue, they are expected to be considered technical corrections within the primary uptrend, not a trend reversal",
+    "Central support zone is between $98,400-$104,350 - a band where buying interest is expected and the 50-week moving average also resides, serving as useful support for declines twice in the past year",
+    "A clear break below $98,000 could deepen the decline toward the next support area around $70,000-$74,000 - this level is considered critical for a long-term trend change",
+    "Important: Many large Bitcoin holders are interested in maintaining the coin for the long term, and accordingly the supply available for trading is diminishing in recent rallies - this could support prices even without visible trading volume expansion",
+    "Long-term investors should be cautious about timing entries/exits based on turning dates - missing a significant move may neutralize the potential advantages of short-term timing for long-term hold positions",
+    "The crypto market is characterized by high dynamics and fast volatility, making real-time tracking through the Discord community essential for correct decisions"
+  ],
+  "technical": {
+    "support": [
+      {"level": "103497-106360", "description": "Central support zone on the daily chart - key demand area"},
+      {"level": "98400-104350", "description": "Wide support band where buying is expected, also contains the 50-week moving average that served as useful support twice in the past year"},
+      {"level": "98000", "description": "Break below this level could trigger deeper decline"},
+      {"level": "70000-74000", "description": "Critical long-term support level - a break here would signal potential major trend change"}
+    ],
+    "resistance": [
+      {"level": "115344-117400", "description": "First resistance zone on the daily chart"},
+      {"level": "123285-124713", "description": "Upper resistance zone near all-time high area on the daily chart"}
+    ],
+    "indicators": "Bitcoin shows a wide consolidation pattern on the daily chart after declining 18% from highs. Large cycle volumes on declines are lower than on rallies - a sign of distribution rather than capitulation. Price structure from the ordered higher-highs and higher-lows perspective remains intact for now on the medium-term timeframe. Two weekly cycles are the dominant timing tools this month. The first weekly cycle ends around Nov 7 and is considered especially strong; the second ends around Nov 28."
+  },
+  "summary": "Bitcoin enters November 2025 in a consolidation phase after declining 18% from its October highs, with the central support zone between $98,400-$104,350 still holding. Seasonally November has a 66.7% historical bullish probability but Bitcoin's short history makes these statistics less reliable. Two significant weekly cycles (ending around Nov 7 and Nov 28) are the primary timing tools this month, with the Nov 18-20 window potentially seeing elevated volatility from multiple cycle overlaps.",
+  "previous_month_review": "October 2025 had four turning dates for Bitcoin. First date (Oct 4) arrived one day late (Oct 5) and represented the monthly and all-time high - from there a significant decline of approximately 12% ensued. Second date (Oct 11) worked partially initially blocking the downward movement but broke down after 4 days and continued falling to the next date. Third date (Oct 17-18) was a double cycle that successfully blocked the downtrend and climbed to the next turning date. Fourth date (Oct 22) appeared to capture the low but worked only partially - it initially blocked the upward movement then reversed again during the month, suggesting a missing additional date was needed.",
+  "risk_notes": [
+    "Bitcoin has no long historical record - seasonal statistics based on only 15 years are less reliable than other assets with 30+ year records",
+    "High volatility characteristic of crypto markets means turning dates may trigger sharp moves in either direction - use tight stops",
+    "A clear break below $98,000 could trigger a deep decline to $70,000-$74,000 - a potential 30%+ drop from current levels",
+    "Declining trading volumes on rallies suggests diminishing momentum even if large holders are keeping coins off exchanges",
+    "Real-time tracking via Discord community is strongly recommended due to Bitcoin's fast-moving nature - monthly report dates alone may not capture intra-week opportunities",
+    "The consolidation pattern after a sharp decline from the peak creates uncertainty about whether the next major move is up or down"
+  ]
+}

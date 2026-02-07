@@ -1,0 +1,50 @@
+{
+  "asset": "Oil",
+  "key_dates": [
+    {"date": "2025-04-01", "description": "Turning point date. Potential cycle turn within +/- 1 day."},
+    {"date": "2025-04-07", "description": "Turning point date. Potential cycle turn within +/- 1 day."},
+    {"date": "2025-04-15", "description": "Turning point date. Potential cycle turn within +/- 1 day."},
+    {"date": "2025-04-22", "description": "Turning point date range start (22-23.4). Potential cycle turn within +/- 1 day."},
+    {"date": "2025-04-23", "description": "Turning point date range end (22-23.4). Potential cycle turn within +/- 1 day."}
+  ],
+  "seasonal": "April is historically the most positive month of the year for oil. Seasonal bias is strongly bullish.",
+  "statistics": [
+    {"date": "2025-04-02", "probability": "71%", "direction": "up", "description": "Over the last 30 years, oil rose around April 2 approximately 71% of the time."},
+    {"date": "2025-04-22", "probability": "76%", "direction": "up", "description": "Over the last 30 years, oil rose around April 22 approximately 76% of the time."},
+    {"date": "2025-04-28", "probability": "70%", "direction": "up", "description": "Over the last 30 years, oil rose around April 28 approximately 70% of the time."},
+    {"date": "2025-04-14", "probability": "77%", "direction": "up", "description": "Over the last 30 years, oil closed higher on April 14 than on April 1 in 77% of cases (23 out of 30 times)."}
+  ],
+  "insights": [
+    "When there are three turning point dates in oil and they are close together, it indicates one of two things: high volatility during the month between the dates, and/or sometimes one or two dates may be missing.",
+    "Oil has consistently provided significant moves between cycle turning dates over recent months, with cumulative moves over 100% in accumulated movements.",
+    "The effectiveness of the turning point dates is clearly reflected in the last seven months' performance: February ~13.5%, January >20%, December ~12%, November ~11.5%, October ~20%, September ~32%, August ~30%.",
+    "Despite not being able to capture every market move, precise and measured utilization of even one asset (out of the five in the report) over a few months can produce phenomenal results.",
+    "The price of oil in April 2025 is nearly identical to its price in August 2024. Despite the ups and downs, working with cycle-based timing allows identification of trading opportunities regardless of overall direction.",
+    "When price approaches a significant support area, the combination of the turning point date and technical alignment with the dominant trend direction gives the highest success probability.",
+    "The $62.50-$65.50 support zone on the weekly chart has held firmly for three years and provides a reliable floor.",
+    "Daily chart shows a broadening range/consolidation pattern with opportunities for short trades within the resistance zone of $71.50-$73.00 when combined with turning point dates."
+  ],
+  "technical": {
+    "support": [
+      {"level": "62.50-65.50", "description": "Major weekly support zone that has held for three years. Any test of this level is likely to produce a bounce."},
+      {"level": "71.50", "description": "Lower boundary of daily consolidation range and key intraday support."},
+      {"level": "73.00", "description": "Previous resistance zone now acting as support after reclaim."}
+    ],
+    "resistance": [
+      {"level": "71.50-73.00", "description": "Key daily resistance/consolidation zone. Price is hovering between $71.50 and $73.00 with potential for breakout or rejection."},
+      {"level": "73.60", "description": "Resistance level on daily chart - clearing this would suggest further upside."},
+      {"level": "77.55-80.00", "description": "Next major resistance zone on weekly chart based on Fibonacci retracement levels."},
+      {"level": "78.40-80.00", "description": "Weekly chart resistance area - Fibonacci and prior pivot zone."}
+    ],
+    "indicators": "Weekly chart shows significant support zone at $62.50-$65.50 unbroken for three years. The daily chart displays a broad consolidation pattern (choppy range) with the 200-day moving average acting as overhead resistance. The overall trend on the daily is neutral-to-mildly-bearish but with potential for short-term upside, especially from the key support zone combined with turning point dates. Support and resistance zones from the daily chart are clearly visible on the attached charts."
+  },
+  "summary": "Oil has the strongest seasonal bias of all assets in April (historically the most bullish month of the year). Combined with statistical probabilities of 70-77% for rises and two weekly cycle endings around April 11 and April 18, the first half of the month is expected to be notably positive. Key support at $62.50-$65.50 (3-year weekly support) provides a reliable floor, while resistance at $71.50-$73.00 on the daily chart must be cleared for further upside toward $77.55-$80.00.",
+  "previous_month_review": "In March 2025 there were three turning point dates. For the first time in several months, only one turning point date worked to produce a clear trend reversal. March 6 (arrived exactly on time, slightly one day early): marked the low of the decline from the previous February cycle and triggered a ~4% rally to the next date. March 21: did not provide the expected reversal - merely halted the upward movement for one day then broke higher, becoming a continuing cycle. March 28: the upward price movement stopped upon reaching this date, but on the last day of the month (March 31) it broke upward, also becoming a continuing cycle.",
+  "risk_notes": [
+    "Despite the bullish seasonal setup, oil remains highly sensitive to geopolitical events and OPEC decisions.",
+    "When operating with cycle-based timing in a passive investment, the ability to identify opportunities both long and short makes real profit possible regardless of direction.",
+    "This method combines patience with precision - not every date will produce a trade, but when dates align with technical levels and trend, the results compound.",
+    "Two weekly cycles end this month (around April 11 and April 18). Both dates should be watched carefully as they may generate more significant-than-usual volatility.",
+    "In all cases, each turning point date may provide a turning point in the trend, but be prepared for heightened volatility around these dates."
+  ]
+}

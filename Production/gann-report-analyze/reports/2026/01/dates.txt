@@ -1,0 +1,25 @@
+January 2026 - Key Dates by Asset
+
+S&P500
+key_dates: 05.01.26, 12.01.26, 16.01.26, 28.01.26
+statistics: 23.01.26.U, 27.01.26.D
+statistics: 05.01.26-14.01.26.U
+
+Bitcoin
+key_dates: 03.01.26, 16.01.26, 22.01.26, 27.01.26
+statistics: 01.01.26-06.01.26.U
+
+EUR/USD
+key_dates: 07.01.26, 16.01.26, 21.01.26, 27.01.26
+statistics: 05.01.26.D, 16.01.26.D
+statistics: 05.01.26-14.01.26.U
+
+Gold
+key_dates: 02.01.26, 08.01.26, 16.01.26, 23.01.26, 29.01.26
+statistics: 14.01.26.D, 19.01.26.U, 23.01.26.U
+statistics: 08.01.26-01.02.26.U
+
+Oil
+key_dates: 02.01.26, 16.01.26, 22.01.26, 27.01.26
+statistics: 07.01.26.D, 23.01.26.U, 27.01.26.D
+statistics: 06.01.26-12.01.26.D

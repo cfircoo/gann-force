@@ -1,0 +1,63 @@
+{
+  "asset": "Gold",
+  "key_dates": [
+    {"date": "2025-09-03", "description": "Turning point date - cycle pivot"},
+    {"date": "2025-09-11", "description": "Turning point date - cycle pivot"},
+    {"date": "2025-09-18", "description": "Turning point date - cycle pivot"},
+    {"date": "2025-09-24", "description": "Turning point date - cycle pivot"}
+  ],
+  "seasonal": "September is generally the most positive month of the year for Gold from a seasonal perspective. Statistics over 30 years show that turning point dates have specific directional probabilities. The seasonal bias is bullish for Gold.",
+  "statistics": [
+    {"date": "2025-09-03", "probability": "76%", "direction": "down", "description": "Over the last 30 years, approximately 76% probability of downward movement on this date"},
+    {"date": "2025-09-09", "probability": "76%", "direction": "down", "description": "Over the last 30 years, approximately 76% probability of downward movement on Sep 9"},
+    {"date": "2025-09-12", "probability": "71%", "direction": "down", "description": "Over the last 30 years, approximately 71% probability of downward movement on Sep 12"},
+    {"date": "2025-09-12", "probability": "70%", "direction": "up", "description": "In the last 30 years, Gold closed higher on Sep 18 than on Sep 12 in approximately 70% of cases (21 out of 30)"}
+  ],
+  "insights": [
+    "September is the most positive month seasonally for Gold - bullish bias",
+    "Gold hit all-time highs on April 21 and currently appears to be in wave 5 (the final wave of the rising trend), before the start of a meaningful correction downward",
+    "Using Elliott Wave theory: the uptrend consists of three pushing waves (1, 3, 5) and two corrective waves (2, 4), where wave 3 is typically the strongest; wave 5 is completing",
+    "Each wave itself contains five internal secondary waves (marked in blue)",
+    "Based on the current spiral shown on the weekly chart with red lines, we appear to be currently in wave 5 which is expected to be the final wave of the rising trend",
+    "According to Fibonacci extensions from the AB to CD pattern, point D arrived in the zone where we got resistance from the chart itself during April ($3,516 area)",
+    "Gold dropped in May to the 38.2% Fibonacci level ($3,134) and immediately bounced back up",
+    "The possibility of an inverted N pattern on the weekly chart exists - if confirmed, it would signal the opening for one-sided declines",
+    "Such a correction, if it materializes, could be the deepest seen in Gold in two and a half years",
+    "Key support at $3,250 has held Gold already twice - a strong defense zone",
+    "If Gold breaks upward, the next target via Fibonacci extensions sits at $3,782",
+    "Essential support for a deep correction sits at $3,080",
+    "September turning points on Sep 9 and Sep 15 are strong and align with weekly cycle endings - expect trend reversals around these dates",
+    "Weekly cycles ending on weeks of Sep 12-19 and Sep 26 are the strongest in September",
+    "Expect high volatility and strong movement between the dates Sep 12-10 and Sep 24 as multiple cycles converge"
+  ],
+  "technical": {
+    "support": [
+      {"level": "3250", "description": "Strong support - has held Gold twice already, last strong defense zone"},
+      {"level": "3175", "description": "Support on weekly chart (Fibonacci 0.382 area)"},
+      {"level": "3137", "description": "Weekly chart support approximately at previous Fibonacci 0.382 retracement from May correction"},
+      {"level": "3080", "description": "Essential support for deep correction scenario"},
+      {"level": "3021", "description": "Fibonacci 0.5 retracement on weekly chart"},
+      {"level": "2908", "description": "Fibonacci 0.618 retracement on weekly chart - deep correction support"},
+      {"level": "2789", "description": "Support in deep correction zone on weekly chart"}
+    ],
+    "resistance": [
+      {"level": "3516", "description": "All-time high area from April - Fibonacci AB=CD completion zone (point D)"},
+      {"level": "3470", "description": "Current weekly chart price area"},
+      {"level": "3782", "description": "Next upside target if Gold breaks above all-time highs (Fibonacci extension)"},
+      {"level": "3360", "description": "Support-turned-resistance area on daily chart"},
+      {"level": "3300", "description": "Resistance level on daily chart"}
+    ],
+    "indicators": "Weekly chart: Gold in long-term uptrend but showing signs of wave 5 completion (Elliott Wave). Fibonacci AB=CD extension reached point D near $3,516. An inverted N pattern on the weekly chart could signal the start of a deeper correction. 20-week moving average visible as dynamic support. Daily chart: 100-day moving average serves as support. Support zone around $3,250 area. Minor trend still bullish with upside bias. The combination of turning point dates with support/resistance levels provides the best trading setups."
+  },
+  "summary": "Gold enters September 2025 with its most positive seasonal month of the year. Key turning points are Sep 3, 11, 18, and 24. Statistics show 76% probability of downward movement around Sep 3 and 9, and 70% probability of Gold rising between Sep 12-18. However, the bigger picture shows Gold may be completing Elliott Wave 5 of its long-term uptrend, with the possibility of a significant correction. Support at $3,250 has held twice and remains critical. Weekly cycles ending around Sep 12-19 and Sep 26 are particularly strong. If Gold breaks above $3,516 (all-time high), the next target is $3,782; if it breaks below $3,080, a deeper correction could unfold.",
+  "previous_month_review": "August 2025 had four turning point dates for Gold - two worked well (though both were early by one day), one did not work, and the fourth occurred on the last trading day of the month with results still unknown. First date (Aug 5): Price stopped and dropped for one day, but then broke through and continued to the next turning point - became a 'continuing cycle'. Second date (Aug 12): Was early by one day (Aug 11) - marked the high of the move and from it price began falling to the next turning point. Third date (Aug 21): Was early by one day (Aug 20) - marked the low of the move and from it a classic quality rise of approximately 4% began until the last turning point on Aug 29. Fourth date (Aug 29): Price arrived via decline onto support level - as of writing, appeared to create a possible 'low'.",
+  "risk_notes": [
+    "Despite bullish seasonal bias, Gold may be completing Elliott Wave 5 - the final wave before major correction",
+    "An inverted N pattern on the weekly chart would signal deep correction ahead",
+    "If correction materializes, it could be the deepest in Gold in 2.5 years",
+    "Break below $3,080 opens the door to significantly deeper correction ($2,908 and below)",
+    "Gold remains in 'open sky' territory when rising - difficult to estimate exact highs in advance",
+    "Wave 5 corrections can be sudden and violent",
+    "This is not investment advice - content is for educational purposes only"
+  ]
+}

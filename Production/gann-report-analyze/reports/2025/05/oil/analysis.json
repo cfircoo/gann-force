@@ -1,0 +1,58 @@
+{
+  "asset": "Oil (Crude)",
+  "key_dates": [
+    {"date": "2025-05-07", "description": "Turning point date (range: May 7-8). First key cycle date. Market should settle direction early in the month."},
+    {"date": "2025-05-16", "description": "Turning point date - second cycle date. Coincides with broad market volatility window identified across multiple assets."},
+    {"date": "2025-05-21", "description": "Turning point date (range: May 21-22). Third cycle date in the month."},
+    {"date": "2025-05-30", "description": "Turning point date - final cycle date of the month."}
+  ],
+  "seasonal": "May is generally a positive month for oil. Over the last 30 years, multi-seasonal statistics show: May 9 approximately 68% probability of upward movement, May 13 approximately 71% probability of upward movement, May 23 approximately 70% probability of upward movement, May 27 approximately 69% probability of decline, May 28 approximately 71% probability of upward movement. Oil closed at a higher price on May 13 compared to May 6 in approximately 73% of cases (22 out of 30 years).",
+  "statistics": [
+    {"date": "2025-05-09", "probability": "68%", "direction": "up", "description": "Over the last 30 years, approximately 68% probability of upward movement around May 9."},
+    {"date": "2025-05-13", "probability": "71%", "direction": "up", "description": "Over the last 30 years, approximately 71% probability of upward movement around May 13."},
+    {"date": "2025-05-23", "probability": "70%", "direction": "up", "description": "Over the last 30 years, approximately 70% probability of upward movement around May 23."},
+    {"date": "2025-05-27", "probability": "69%", "direction": "down", "description": "Over the last 30 years, approximately 69% probability of decline around May 27."},
+    {"date": "2025-05-28", "probability": "71%", "direction": "up", "description": "Over the last 30 years, approximately 71% probability of upward movement around May 28."},
+    {"date": "2025-05-06", "probability": "73%", "direction": "up", "description": "In the last 30 years, oil closed higher on May 13 compared to its price on May 6 in approximately 73% of cases (22 out of 30)."}
+  ],
+  "insights": [
+    "Oil stands at a crossroads in May 2025 as a conjunction of seasonal and historical time cycles converge - providing strong reference points but with mixed directional signals.",
+    "Not every month is a parade of success - but when viewed through the right lens, the methodology reveals the footprints behind it. April restored order in grand fashion.",
+    "April demonstrated that even with 50% hit rate on turning point dates, significant profit was achievable because the moves that did work (from the dates that were captured) delivered the month's significant movements.",
+    "Oil turning point dates, especially combined with oil's strong price volatility, reveal time after time the power of key levels - support, resistance, and cyclical structures working together for risk management and sometimes holding positions exactly to the right moment.",
+    "In the last nine months, oil has provided a fascinating testing ground. Even when not every cycle responded to the classical pattern, capturing the right cycle timing delivered substantial results: April approximately 30%, February approximately 13.5%, January over 20%, December approximately 12%, November approximately 11.5% (on two cycles only), October approximately 20% (also on two cycles), September approximately 32%, August approximately 30%.",
+    "Over 163% cumulative movement - not from bets or gambling but from dates provided in advance, as part of an orderly, measured, and methodical process.",
+    "On the weekly chart, the overall trend in oil has reversed to bearish after a clear break of a support zone that held for three years in the weekly range between $65.50 and $62.50.",
+    "A correction attempt was noted around $64.85 but was rejected, powerfully reinforcing the bearish case with the turning point date at April 23.",
+    "Relevant resistance levels on the weekly timeframe are positioned between $64.40 and $66.50. The fact that oil has been below this zone for more than five weekly candles points to continued selling pressure on any rally attempt.",
+    "Historical support break strengthens the probability for continued decline toward $51. If that level also settles, the next significant support area is around $43.40.",
+    "The daily chart shows support and resistance levels from the attached chart. Key price zones for the daily timeframe are marked on the chart.",
+    "Oil in May 2025 is expected to present a continuation of the bearish trend with seasonal and historical cycles converging. The pattern suggests a stabilization on strength, based on the broader environment. May could mark a turning point from decline to a new phase or the beginning of a deeper decline.",
+    "Specific attention to the May 16-18 window (aligning with the broader geopolitical/seismic cycle window across assets) and the time period of May 21-22 where another cycle date could accelerate or reverse the trend."
+  ],
+  "technical": {
+    "support": [
+      {"level": "$62.50", "description": "Lower boundary of three-year weekly support range that was recently broken. Now serves as reference point."},
+      {"level": "$55.12", "description": "First significant historical support level below the broken range. Potential target based on Fibonacci extensions."},
+      {"level": "$51.00", "description": "Deeper historical support level. Breaking this would confirm the bear case significantly."},
+      {"level": "$43.40", "description": "Next significant support zone if $51 breaks. Major long-term support level."},
+      {"level": "$61.60", "description": "Current zone of interest combined with 20-day moving average. Represents a potential short-term support."}
+    ],
+    "resistance": [
+      {"level": "$64.40-$66.50", "description": "Relevant resistance levels on the weekly timeframe. Oil has been below this zone for over 5 weekly candles - any rally expected to face strong selling pressure here."},
+      {"level": "$64.85", "description": "Level where the correction attempt was rejected in April, coinciding with the turning point date at April 23. Strong immediate resistance."}
+    ],
+    "indicators": "The weekly trend has clearly reversed to bearish after the break of the $62.50-$65.50 three-year support range. Five consecutive weekly candles below this zone confirm the breakdown. The rejection at $64.85 combined with the April 23 turning point date confirmed the bearish thesis. Trading cycles and high-volume patterns from the cycle methodology reinforce the view that any rally is an opportunity to sell rather than a trend reversal. The daily chart key support and resistance areas are plotted with Fibonacci levels from the attached chart in the report."
+  },
+  "summary": "Oil enters May 2025 with a confirmed bearish weekly trend after breaking through a three-year support zone ($62.50-$65.50). Key turning point dates are May 7-8, 16, 21-22, and 30. Despite a generally positive seasonal bias for May (73% probability of higher prices from May 6 to 13), the technical breakdown dominates the outlook. Resistance at $64.40-$66.50 is expected to cap rallies, while downside targets extend to $55.12, $51.00, and potentially $43.40 if the bearish momentum accelerates.",
+  "previous_month_review": "April had four turning point dates with 50% hit rate, yet the captured moves were highly profitable. Date 1 (April 1) arrived exactly on time, marked the high of the preceding cycle, and delivered an approximately 18% decline to the next turning point at April 7 - a textbook cycle delivering a significant move. Date 2 (April 7) did not deliver the expected reversal - the price continued falling for two more trading days, effectively missing the exact bottom by a day or two. Date 3 (April 15) did not serve as a turning point for a move that was otherwise building - also marked as one that did not provide a trading opportunity. Date 4 (April 22-23, double cycle) arrived exactly on time, marked the high of the movement, and in combination with the retest of the previous resistance level around $65.20, initiated a decline of approximately 12.5% that is expected to continue through the first turning point date of May. Note: it is recommended to lock in profits before reaching the last low around $55.30 in case the gap between the two end-of-April/early-May dates creates a potential bounce.",
+  "risk_notes": [
+    "The confirmed bearish weekly trend means any long positions carry significant counter-trend risk.",
+    "Resistance at $64.40-$66.50 is well-established and expected to trigger selling pressure on any rally.",
+    "Historical support at $51 is a major level - if broken, decline could accelerate toward $43.40.",
+    "Despite positive seasonal statistics, the technical breakdown takes precedence in the current environment.",
+    "Geopolitical factors (Iran, Panama Canal, global tensions) could create sudden supply shocks in either direction.",
+    "Even with a 50% hit rate, the methodology delivered substantial returns in oil - but proper risk management is essential.",
+    "Not investment advice - educational purposes only."
+  ]
+}

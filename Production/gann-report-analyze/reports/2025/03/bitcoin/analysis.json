@@ -1,0 +1,46 @@
+{
+  "asset": "Bitcoin",
+  "key_dates": [
+    {"date": "2025-03-03", "description": "Turning point date - potential reversal in price movement"},
+    {"date": "2025-03-07", "description": "Turning point date - potential reversal in price movement"},
+    {"date": "2025-03-17", "description": "Turning point date (range with 18.3) - potential reversal"},
+    {"date": "2025-03-18", "description": "Turning point date (range with 17.3) - potential reversal"},
+    {"date": "2025-03-26", "description": "Turning point date - potential reversal in price movement"}
+  ],
+  "seasonal": "In the last 14 years, March was statistically divided such that in 7 years there was a rise and in 7 years there was a decline. Bitcoin does not have a long history of years so the seasonal statistics are less attractive compared to other assets in the report. Slightly positive bias based on 7-year data showing Bitcoin tended to trade at a higher price on April 2 than on March 6 in 5 out of 7 years (approximately 71%).",
+  "statistics": [
+    {"date": "2025-03-06", "probability": "71%", "direction": "up", "description": "In the last 7 years, Bitcoin tended to trade at a higher price on April 2 than on March 6 in 5 out of 7 years (approximately 71% of the time)"}
+  ],
+  "insights": [
+    "After a period of roughly three months of sideways consolidation, Bitcoin's movement in February brought significant downside with the break below the support band between $90,750-$92,350.",
+    "In the previous month's report, two key observations were noted: First, if support breaks downward, the central target zones are between $86,000-$72,000, with an additional support area for possible reset between $68,300-$73,800 (based on candle body at bottom and wick at top). Bitcoin indeed reached $78,200 during the downward movement following the break.",
+    "Second, the weekly chart Fibonacci-based geometric patterns (wide Fibonacci's) were applied. The rally wave AB ran from November 2022 through March 2024. The parallel line was placed on point C, showing point D terminating wave CD at equivalent length to AB, converging at the $107,832 level as a target zone.",
+    "Whether Bitcoin's price will mark this symmetry or is it a phenomenon beyond understanding remains to be seen. For now it appears so, as it has dropped approximately 28%.",
+    "On the daily chart, the break downward is clear with resistance zones appearing sharply higher. In the short term, the 20-day moving average at the 50% Fibonacci level of the AB decline acts as resistance. These indicators combined with a turning point date could provide indication of a potential short-term reversal that could occur only after the actual moment of the turning point.",
+    "Long-term investors should examine monthly support levels and existing holding positions. For the second perspective, in a long-range view of investors, check support levels in a rising price structure and bullish direction. Once a level like this breaks, we need to change the fundamental assumption and separate from the investment due to fear of more significant decline.",
+    "The crypto market is more dynamic, and tracking real-time developments is critical. It is recommended to stay updated through the Discord community where you can find real-time updates."
+  ],
+  "technical": {
+    "support": [
+      {"level": "$86,000-$72,000", "description": "Central target zone if support breaks downward. Key Fibonacci retracement and geometric pattern area."},
+      {"level": "$68,300-$73,800", "description": "Additional support area for possible reset based on candle body bottom and wick top analysis."},
+      {"level": "$78,200", "description": "Level reached during February's downward movement after breaking the support band."}
+    ],
+    "resistance": [
+      {"level": "$90,750-$92,350", "description": "Former support band now acting as resistance after being broken in February's decline."},
+      {"level": "$107,832", "description": "Target point D from geometric pattern (wave CD equivalent to AB). This is where the Fibonacci-based parallel converges."},
+      {"level": "20-day MA at 50% Fibonacci", "description": "Short-term resistance on the daily chart from the 50% level of the AB decline wave combined with the 20-day moving average."}
+    ],
+    "indicators": "Daily chart shows clear break downward with resistance zones appearing sharply above. The 20-day moving average at the 50% Fibonacci level of the AB decline is resistance. Weekly chart geometric patterns show wave AB=CD convergence at $107,832. Combined with turning point dates, these resistance indicators could provide short trade indications. The AB=CD pattern from the Fibonacci geometric analysis on the weekly chart suggests a 1:1 relationship between the rally waves."
+  },
+  "summary": "Bitcoin in March 2025 faces uncertainty after a significant breakdown from its three-month consolidation range. The February break below $90,750-$92,350 support led to a decline reaching $78,200, and recovery attempts will likely struggle at former support turned resistance. Key turning dates are March 3, 7, 17-18, and 26, with the seasonal data being statistically neutral (50/50 over 14 years). Long-term target of $107,832 from geometric patterns remains but requires recapturing broken support levels first.",
+  "previous_month_review": "February 2025 had four turning point dates for Bitcoin. Date 1 (Feb 3): Arrived exactly on time, marked the low of the movement and jumped the same day from the daily low to the daily high by approximately 11%. Date 2 (Feb 11): Arrived exactly on time but did not mark the 'high' of the preceding rising cycle. From it began a sideways movement that did not allow understanding of the cycle. Date 3 (Feb 18): Arrived exactly on time, marked the 'low' of the sideways movement. After a two-day rise, the cycle reversed and broke downward, turning into a continuing/extending cycle date. Date 4 (Feb 27): Arrived exactly on time. Despite the sharp decline in Bitcoin, at this date the downward movement ended and from it began a rising cycle of approximately 20% until the first turning date in March (March 3).",
+  "risk_notes": [
+    "Bitcoin is among the assets with the highest potential for sharp movements in both directions.",
+    "Long-term investors should be cautious about timing entries and exits based on turning point dates.",
+    "Missing a significant movement could neutralize the advantage that short-term traders have in timing the market.",
+    "When a support level breaks, the fundamental assumption must be changed and positions should be re-evaluated for potential further significant decline.",
+    "The crypto market is more dynamic than others, and real-time tracking of developments is critical.",
+    "Statistical data for Bitcoin is limited (only 14 years of history) making seasonal analysis less reliable compared to other assets."
+  ]
+}

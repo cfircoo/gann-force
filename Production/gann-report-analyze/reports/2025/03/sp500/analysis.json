@@ -1,0 +1,54 @@
+{
+  "asset": "S&P 500",
+  "key_dates": [
+    {"date": "2025-03-06", "description": "Turning point date - potential reversal in price movement"},
+    {"date": "2025-03-14", "description": "Turning point date - potential reversal in price movement"},
+    {"date": "2025-03-18", "description": "Turning point date (double cycle with 19.3) - potential reversal, aligns with weekly cycle end and spring equinox on 21.3"},
+    {"date": "2025-03-19", "description": "Turning point date (double cycle with 18.3) - combined with weekly cycle turning point on 19.03"},
+    {"date": "2025-03-25", "description": "Turning point date - potential reversal in price movement"}
+  ],
+  "seasonal": "March is generally a positive month for the S&P 500. Seasonally bullish bias. However, historical cycle analysis from the last 3 decades indicates the current period is at a crossroads between seasonal positivity and signs of a potential correction.",
+  "statistics": [
+    {"date": "2025-03-06", "probability": "68%", "direction": "down", "description": "Over the last 30 years, around March 6 approximately 68% probability of decline"},
+    {"date": "2025-03-17", "probability": "65%", "direction": "up", "description": "Over the last 30 years, around March 17 approximately 65% probability of rise"},
+    {"date": "2025-03-25", "probability": "65%", "direction": "up", "description": "Over the last 30 years, around March 25 approximately 65% probability of rise"},
+    {"date": "2025-03-28", "probability": "65%", "direction": "up", "description": "Over the last 30 years, around March 28 approximately 65% probability of rise"},
+    {"date": "2025-03-12", "probability": "80%", "direction": "up", "description": "In the last 30 years, the index closed on April 5 at a higher price than on March 12 in approximately 80% of cases (24 out of 30)"}
+  ],
+  "insights": [
+    "The current moment represents a unique crossroads in the market, characterized by multiple long-range monthly cycles overlapping, signaling potential for significant economic changes and a deep correction - even if it appears as just the secondary trend for now.",
+    "Multiple indicators (both technical) point to approaching a significant correction: the index has stalled at the geometric pattern trigger zone for several months, monthly cycles active since December-January have not managed to break above their highs, and 3 out of 4 significant decades' cycles point to a negative bias in March.",
+    "Gann's 'time circle' with the spring equinox date of March 21 combined with the double cycle on March 18-19 with a weekly cycle turning point creates a significant potential turning point.",
+    "The CNN Fear & Greed Index stood at 20 (Extreme Fear) at end of December, 28 at end of January, 46 at end of February. When the index reads 'extreme fear' we should look for markets to start recovering. When it reads 'greed' we need to be cautious.",
+    "Trump's trade war steps could significantly impact the global economy and financial markets, with potential for economic slowdown, rising prices, and increased volatility.",
+    "A significant technical correction is expected soon. The fact that we expect it in the coming month/months, combined with the economic/policy trigger, is described in detail in the February report in the personal section.",
+    "Short-term trades for a few days should only be considered when two conditions are met: an N-pattern downward on the daily/4-hour chart combined with a turning point date at a resistance level, or within a cycle-to-cycle downward movement.",
+    "There is a strong and important support zone on the weekly chart between 5,650-5,726 points (unchanged from previous month). If these levels break, the next significant support lies between 5,142-5,260 points, and beyond that in the 4,820-4,778 zone and then around 4,965.",
+    "The geometric pattern from the monthly chart shows price consistently hitting point D at the upper part of the parallel line to wave AB - each breakout above turned out to be a false breakout. This is definitely significant."
+  ],
+  "technical": {
+    "support": [
+      {"level": "5,650-5,726", "description": "Strong and important support zone on the weekly chart, unchanged from previous month. Downside movement found between these levels."},
+      {"level": "5,142-5,260", "description": "Next significant support if 5,650-5,726 breaks. Located near Fibonacci retracement areas and previous monthly support levels."},
+      {"level": "4,820-4,778", "description": "Deep support zone, followed by area around 4,965 points."},
+      {"level": "5,858-5,780", "description": "Significant support zone on the daily chart. On the last Friday of February, the index touched the upper part of this support zone and buyers immediately jumped in."},
+      {"level": "5,640-5,697", "description": "Effective decision level for short-term. If broken downward, would already be at weekly chart level between the weekly and daily charts."}
+    ],
+    "resistance": [
+      {"level": "6,108", "description": "Recent high area. Price structure from the geometric pattern suggests this level is near the target point D, signaling possible start of a technical correction."},
+      {"level": "5,653", "description": "Approximate area of potential reset level on the weekly chart. If the market corrects beyond this, we would already be in a significant hit territory."}
+    ],
+    "indicators": "Weekly chart MACD and RSI showing minor negative divergences suggesting possible correction or at minimum a trend change direction. Price has been moving within a channel since November 2023. A break of the lower trend line (black lines) could lead to a significant technical correction. Fibonacci retracement levels of 38%-62% of the ruler are near/overlapping with the last significant support area. Monthly chart analysis shows a 1:2 ratio between wave BC (last decline) and wave CD (last rally), with wave CD being twice as large as BC. The overlap at target point D from two independent analysis methods strengthens the technical significance of this level."
+  },
+  "summary": "March 2025 for S&P 500 represents a critical juncture where seasonal positivity meets multiple long-range cyclical signals pointing to an approaching significant technical correction. Key turning dates are March 6, 14, 18-19, and 25, with the March 18-19 double cycle aligned with the spring equinox being particularly noteworthy. The primary trend remains up but multiple correction indicators from geometric patterns, divergences, and historical cycles suggest preparing for increased volatility and potential deep pullback toward the 5,142-5,260 zone.",
+  "previous_month_review": "February 2025 had four turning point dates, of which three successfully captured all extreme points and significant movements throughout the month. Date 1 (Feb 3): Arrived on time, marked the low, and a 3% rally began from it to the next turning date. Date 2 (Feb 13): Did not serve as a turning point - price paused for one day then broke upward, continuing the uptrend (cycle continues after breakout) by 0.25% until the next date. Date 3 (Feb 18): Was late by one day (arrived Feb 19), marked the high of the movement that started at the previous turning date, from which a strong downward movement of approximately 5% developed, stopping only at the next turning date (Feb 27). Date 4 (Feb 27): Double cycle (Feb 26-27), arrived exactly on time, marked the low of the movement, and from it a rally of approximately 1.6% began on the last trading day of the month.",
+  "risk_notes": [
+    "Update stop-loss orders at a reasonable distance from current price - below the daily or weekly resistance level broken in September, or a few percent below the resistance level.",
+    "Exercise extreme caution with leveraged long positions (ETFs x2 or x3) - absolutely avoid entering leveraged long positions; consider closing existing leveraged positions and switching to 1:1 index-tracking ETF.",
+    "Leveraged financial instruments contain inherent significant risk that can lead to substantial losses in a relatively short time, requiring meticulous risk management strategy.",
+    "Keep 30%-40% of portfolio in liquid assets not invested in equity markets during periods of market uncertainty.",
+    "A clear breakout of the index upward would require checking the fundamental underpinnings and if confirmed, look to join at higher but safer prices.",
+    "Do not exit the market automatically just due to fear - it is more correct to weigh several alternative action strategies.",
+    "Historical March events including the 2015 Greek debt crisis, 2005 pre-crash bubble, 1995 globalization start, 1985 Gorbachev rise, and 1975 end of wars - all suggest March has historically been a month of trend change across economic, political and geopolitical dimensions."
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "asset": "S&P 500",
+  "key_dates": [
+    {"date": "2026-01-05", "description": "First turning point date for January 2026"},
+    {"date": "2026-01-12", "description": "Second turning point date for January 2026"},
+    {"date": "2026-01-16", "description": "Third turning point date for January 2026"},
+    {"date": "2026-01-28", "description": "Fourth turning point date for January 2026"}
+  ],
+  "seasonal": "January is considered a bullish month for the S&P 500. Two decade-long patterns point upward, with two additional patterns also tending to close flat to higher. No monthly cycles are present. Two weekly cycles exist: weeks ending on Jan 2 and Jan 30, with the first considered stronger. The turning point date of Jan 3 aligns with this weekly cycle, suggesting a potentially significant turning point. The second weekly cycle ending Jan 30 aligns with daily turning point dates between Jan 27-29 (turning point date is Jan 28), suggesting potential volatility and a turning point in that window.",
+  "statistics": [
+    {"date": "2026-01-23", "probability": "68%", "direction": "up", "description": "Multi-year seasonal statistic over 30 years: approximately 68% probability of an upward move on this date in January"},
+    {"date": "2026-01-27", "probability": "67%", "direction": "down", "description": "Multi-year seasonal statistic over 30 years: approximately 67% probability of a downward move on this date in January"},
+    {"date": "2026-01-14", "probability": "70%", "direction": "up", "description": "In the last 30 years, the index closed higher on Jan 14 than on Jan 5 in approximately 70% of cases (21 out of 30)"}
+  ],
+  "insights": [
+    "January may set the tone for the entire year - according to Gann, a low formed in January often holds until July-August or even the entire year, and a high in January with a decline afterward may mark the year's peak",
+    "In Europe, UK, and Israel, January 2026 may trigger geopolitical events - a political/legal dramatic event, one-sided escalation, terror attack, or currency/bond disruption could create the 'signature' for the entire year",
+    "The Gann quote: 'Watch for a change in trend near the end of time cycles. Time is more important than price, but price must confirm the turn'",
+    "The uptrend has been running since April with very few disruptions - when months pass without meaningful correction, position management must change to be less aggressive and prepared for a shift",
+    "Fear & Greed Index at 46 (neutral) at end of December, down from 35 in October and 24 in November - gradual recovery but risk building quietly",
+    "The rally continues but risk accumulates silently - an 8-month consecutive run of gains is unsustainable and will eventually need a 'breather'",
+    "A correction of 10-15% would not cancel the bullish trend but rather refresh it - the danger is when price climbs without giving the market a chance to release pressure",
+    "Leverage feels like genius when the market climbs but becomes cruel the moment the market starts to correct",
+    "Work with a clear head, not high pulse - whoever holds long positions since April has seen a beautiful move with minimal disruption",
+    "The minor trend has shifted from clear uptrend to choppy/sideways - previously all three trends (primary, secondary, minor) pointed up, favoring long-only trades; now both directions are available near support/resistance around turning point dates"
+  ],
+  "technical": {
+    "support": [
+      {"level": "6760", "description": "Significant support level on the daily chart"},
+      {"level": "6567", "description": "Significant support level on the daily chart"},
+      {"level": "6536", "description": "Key support - a clear break below this level signals transition from shallow correction to a deeper pullback that could affect the weekly chart as well"},
+      {"level": "6500", "description": "Round number support near 6536 level"},
+      {"level": "6147-6094", "description": "Weekly retest zone - the 38.2% Fibonacci retracement of the entire rally from April combined with the 50-week moving average"}
+    ],
+    "resistance": [
+      {"level": "6870-6920", "description": "Current resistance zone on the daily chart - resistance levels are found in the 6,870-6,920 range"},
+      {"level": "7434", "description": "Next Fibonacci extension target at 1.272 ratio of the AB=CD pattern if the market continues to rally and break levels"}
+    ],
+    "indicators": "Minor negative divergence exists on RSI and MACD on the weekly chart. During the latest rally from mid-November to end of December, the MACD line remained below the signal line, which is a weakness signal similar to what occurred in January-February 2025 before a strong decline. RSI negative divergence visible. On the daily chart, negative divergences present on both RSI and MACD. The weekly chart shows the overall uptrend from point A (October 2023) through point B (February 2024 high) and current wave from point C (April) potentially completing an AB=CD pattern near 7,434. The 50-week moving average serves as support. The weekly trend remains bullish but showing signs of fatigue."
+  },
+  "summary": "S&P 500 enters January 2026 after eight consecutive months of gains, with the primary and weekly trends still bullish but showing increasing signs of exhaustion. Key turning points are Jan 5, 12, 16, and 28, with seasonal statistics favoring an upward move around Jan 23 (68%) and a downward move around Jan 27 (67%). The market is at a critical juncture where continued upside is possible toward the 7,434 Fibonacci target, but technical divergences on RSI and MACD warn of potential correction toward the 6,536 support zone or deeper to the 6,147-6,094 weekly retest area.",
+  "previous_month_review": "December 2025 had four turning point dates. The first (Dec 2-3, double date) did not work - neither changed the rising trend. The second (Dec 12) worked - marked the high, followed by a decline of approximately 2.5% to the next turning point. The third (Dec 19) worked - marked the low of the declining move, followed by a rally of approximately 2.8% to the peak. The fourth (Dec 30) appeared to work two trading days early - a declining move began that is expected to continue until the next turning point around Jan 3. The rally continues but risk accumulates quietly - the market advanced for a long period in an uptrend with very few real disruptions, and even the mid-December decline was quickly reversed.",
+  "risk_notes": [
+    "Eight consecutive months of gains is historically unsustainable - a correction of some significance is increasingly likely",
+    "Negative divergences on RSI and MACD on both weekly and daily charts signal weakening momentum",
+    "The MACD remaining below the signal line during the latest rally wave mirrors conditions seen in January-February 2025, before a strong decline",
+    "A break below 6,536 would signal transition to a deeper correction affecting the weekly chart",
+    "The 38.2% Fibonacci retracement zone at 6,120 coincides with key support levels from previous months - overlap of Fibonacci, 50-week average, and retest zone creates a significant potential demand area if reached",
+    "January may serve as a trigger for a broader geopolitical or market-disrupting event according to Gann cycles",
+    "Leverage risk is elevated - a return to the retest area would mean approximately 11.5% decline from highs, and approximately 35% in leveraged products (3x)",
+    "This is not investment advice - the content is for educational purposes only"
+  ]
+}

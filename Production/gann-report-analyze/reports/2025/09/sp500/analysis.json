@@ -1,0 +1,65 @@
+{
+  "asset": "S&P 500",
+  "key_dates": [
+    {"date": "2025-09-03", "description": "Turning point date - cycle pivot"},
+    {"date": "2025-09-09", "description": "Turning point date - cycle pivot"},
+    {"date": "2025-09-15", "description": "Turning point date - cycle pivot, daily turning point exposed on Sep 15 overlaps seasonal peak period"},
+    {"date": "2025-09-24", "description": "Turning point date - beginning of cluster zone"},
+    {"date": "2025-09-25", "description": "Turning point date - end of cluster zone (24-25 Sep)"}
+  ],
+  "seasonal": "September is historically the most negative month for the S&P 500 index. Multi-seasonal statistics over the last 30 years show strong statistical significance for specific dates. Seasonal bias is bearish overall.",
+  "statistics": [
+    {"date": "2025-09-10", "probability": "76%", "direction": "up", "description": "Over the last 30 years, multi-seasonal statistic shows approximately 76% probability of upward movement on this date"},
+    {"date": "2025-09-11", "probability": "71%", "direction": "up", "description": "Over the last 30 years, approximately 71% probability of upward movement on this date"},
+    {"date": "2025-09-12", "probability": "76%", "direction": "up", "description": "Over the last 30 years, approximately 76% probability of upward movement on this date"},
+    {"date": "2025-09-23", "probability": "76%", "direction": "down", "description": "Over the last 30 years, approximately 76% probability of downward movement on this date"},
+    {"date": "2025-09-15", "probability": "73%", "direction": "down", "description": "In the last 30 years, the index closed lower on Sep 26 than on Sep 15 in approximately 73% of cases (22 out of 30)"}
+  ],
+  "insights": [
+    "September is the most negative month historically for S&P 500 - caution required",
+    "A significant monthly cycle has been received signaling possibility of decline; two weekly cycles end around Sep 12 and Sep 26",
+    "The daily turning point on Sep 15 overlaps with the seasonal peak period, making it especially strong for potential trend reversal",
+    "The market is currently at all-time highs - continue rallying but with weakening momentum indicators",
+    "CNN Fear & Greed Index stands at 64 (Greed zone) - not extreme but approaching levels where reversals occur; when reading 'more greed' we should be prepared for a shift to fear",
+    "CFTC COT report shows notable institutional hedging - more institutions buying protective PUT options versus CALL options, and VIX futures suggest caution",
+    "45-year cycle: September 2025 also has concerning signals from the 45-year cycle echoing agreements falling apart (Iran-Iraq war 1980)",
+    "90-year Livermore cycle: September is part of the 90-year Livermore echo (September 15, 1935). This has been a month of sustainability collapses historically",
+    "60-year cycle: Internal financial breakdown pattern in the US - echoing patterns from 1965",
+    "The classic movement pattern is high-low-high and variations; be prepared for consecutive highs or lows",
+    "Turning point dates are not magic - they are anchors that help identify direction of price movement when combined with technical analysis",
+    "Time is more important than price, but price must confirm the turn (W.D. Gann)",
+    "When all three trends (primary, secondary, minor) align upward, short trades will be among the most challenging",
+    "Swing trading with turning point dates requires dynamic stops and awareness that +/- 1 day deviation is part of the method"
+  ],
+  "technical": {
+    "support": [
+      {"level": "6345", "description": "Support level on daily chart"},
+      {"level": "6207", "description": "Support zone on daily chart"},
+      {"level": "6147", "description": "Support level - retest zone from weekly chart"},
+      {"level": "6053", "description": "Weekly chart retest support area"},
+      {"level": "6059", "description": "Key support level - drop below this or 5961 would shift overall bullish trend to bearish"},
+      {"level": "5961", "description": "Critical support - break below would signal end of bull market"},
+      {"level": "4835", "description": "Major support - 0 level on Fibonacci from weekly chart"}
+    ],
+    "resistance": [
+      {"level": "6460", "description": "Current all-time high area - possible upside target on weekly chart"},
+      {"level": "6575", "description": "Fibonacci extension target at 200% from Feb 2020 pandemic low (AB=CD)"},
+      {"level": "6505", "description": "127.2% Fibonacci extension of the total AB leg"}
+    ],
+    "indicators": "Weekly chart: Movement continues upward but showing signs of weakness - waning momentum. Daily chart: All three timeframe trends (daily, weekly, monthly) are currently bullish. Support areas on daily chart are at approximately 6,345, 6,203, 6,147. Breakouts to new highs on daily chart combined with negative divergence in oscillators indicate weakness. The slope between highs and lows creating a 'bear divergence' pattern is possible. Fear & Greed Index at 64 (Greed). VIX futures and PUT/CALL ratios indicate institutional hedging for downside."
+  },
+  "summary": "September 2025 is historically the worst month for the S&P 500. Despite the market sitting near all-time highs with all three trend timeframes bullish, multiple cycle and seasonal indicators warn of potential reversal. Key turning points cluster around Sep 3, 9, 15, and 24-25, with strong statistical bias for upward movement around Sep 10-12 (71-76%) and downward pressure around Sep 23 (76% down). The combination of a significant monthly cycle signaling decline, institutional hedging visible in COT data, and 45/60/90-year historical cycle echoes all point to elevated risk of a meaningful correction during September.",
+  "previous_month_review": "August 2025 had five turning point dates for S&P 500: Aug 1 (worked excellently - caught the low with classic move upward, 4% rally to next turning point), Aug 14 (provided the high and start of decline), Aug 18 (did not stop the decline from Aug 14), Aug 25 (preceded by one day - signaled the low on ES futures combined with support levels), Aug 28 (at time of writing, appears to mark the high - uncertain if it will hold).",
+  "risk_notes": [
+    "September is historically the most negative month for S&P 500 - requires extra caution",
+    "When holding long positions showing significant profit since mid-April, consider reducing exposure",
+    "Tighten stops on existing positions - at minimum refine stop-loss mechanisms to below nearby support levels on daily or weekly chart",
+    "Avoid opening new long positions without a deep and clear correction with low cycle alignment",
+    "Avoid opening leveraged ETF positions (basket certificates) - if already in, reduce position sizes",
+    "Short range trades require dual confirmation: from turning point date and from chart after downward movement begins",
+    "Exposure to leveraged instruments (2x-3x) demands particularly cautious consideration, as leverage effect in high volatility periods can cause more damage than opportunity",
+    "Mental and emotional discipline is no less important than the trading plan - avoid impulsive decisions and be selective in trade choices",
+    "Do not leave stops on full positions below distant weekly support levels tens of percent lower",
+    "This is not investment advice - content is for educational purposes only"
+  ]
+}

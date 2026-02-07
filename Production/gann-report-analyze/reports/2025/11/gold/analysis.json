@@ -1,0 +1,55 @@
+{
+  "asset": "Gold",
+  "key_dates": [
+    {"date": "2025-11-03", "description": "Turning point date for potential trend reversal (+/- 1 day)"},
+    {"date": "2025-11-10", "description": "Turning point date - part of a cluster with Nov 11 (+/- 1 day)"},
+    {"date": "2025-11-11", "description": "Turning point date - part of a cluster with Nov 10, coincides with end of first strong weekly cycle ending around Nov 7 (+/- 1 day)"},
+    {"date": "2025-11-17", "description": "Turning point date - double cycle cluster with Nov 18 (+/- 1 day)"},
+    {"date": "2025-11-18", "description": "Turning point date - double cycle cluster with Nov 17, chosen as the marked turning point date (+/- 1 day)"},
+    {"date": "2025-11-20", "description": "Turning point date for potential trend reversal (+/- 1 day)"},
+    {"date": "2025-11-26", "description": "Turning point date - aligns with the second weekly cycle ending around Nov 28 (+/- 1 day)"}
+  ],
+  "seasonal": "November is considered a seasonally bullish month for gold. However, an active monthly cycle is strong and may challenge the seasonal tendency. Two significant weekly cycles operate during November: the first ending around Nov 7 (especially strong), the second ending around Nov 28. Each could provide significant turning points.",
+  "statistics": [
+    {"date": "2025-11-10", "probability": "73%", "direction": "down", "description": "In the last 30 years, oil closed on Nov 29 at a price LOWER than Nov 10 in 73% of cases (22 out of 30) - this is shown in the cover table for cross-reference with gold's timing"}
+  ],
+  "insights": [
+    "Gold is in wave 5 of an Elliott Wave impulse pattern that began in late 2022 - wave 5 is expected to develop five internal sub-waves, currently appearing to be in sub-wave 4",
+    "The updated wave count (preferred scenario): Wave 3 extends to around $3,500 (updated from prior estimate of $2,790), and point C is being marked there - the chart has begun wave 5 which contains us currently",
+    "Fibonacci extension targets if the uptrend continues: 1.618 of AB at approximately $4,637 (first target), and 2.0 of AB at approximately $4,995 (second target)",
+    "After a sharp and powerful rally wave, gold tends to correct with equal force mid-month - this is a key trader principle to remember: what rises quickly also falls quickly",
+    "On the daily chart, the price structure is shifting direction - highs and lows are now trending downward, and the key support level of $3,895 represents the current pivot point",
+    "A break below $3,895 could trigger a continuation toward the Fibonacci 50% retracement around $3,827, and even below that could lead to deeper correction",
+    "Despite the current correction, it is important to understand this does not yet represent a major trend reversal based on the Elliott Wave structure - the previous wave of rallies should retest the last high, and behavior of trading cycles will provide the critical signal",
+    "During the recent rally, short positions were avoided even at time windows of turning dates, favoring the momentum side - but below $4,100 short opportunities return to the table, with great caution",
+    "The Nov 17-20 window is expected to be especially volatile due to multiple cycle overlaps in this zone - turning dates of Nov 17, 18, and 20 create a dense cluster",
+    "Precise timing combined with discipline and patience is the approach - timing is not magic, it is a method and discipline"
+  ],
+  "technical": {
+    "support": [
+      {"level": "3895", "description": "Current pivot/turning point on the daily chart - a break below signals further correction"},
+      {"level": "3827", "description": "Fibonacci 50% retracement level - potential continuation of correction target"},
+      {"level": "3693", "description": "Fibonacci 61.8% retracement level on the weekly chart"},
+      {"level": "3500", "description": "Updated wave C / wave 3 endpoint area - major structural support if reached"},
+      {"level": "3271", "description": "Full (100%) Fibonacci retracement level on the weekly chart"}
+    ],
+    "resistance": [
+      {"level": "4100", "description": "Key short-term resistance - price needs to clear this to resume bullish momentum; below this level short trades become viable with caution"},
+      {"level": "4312", "description": "Fibonacci 1.272 extension level"},
+      {"level": "4399", "description": "Wave 3 top area / 0 (zero) Fibonacci retracement level on the weekly chart"},
+      {"level": "4637", "description": "First major upside target: Fibonacci 1.618 extension of AB wave"},
+      {"level": "4995", "description": "Second major upside target: Fibonacci 2.0 extension of AB wave"}
+    ],
+    "indicators": "Weekly chart shows gold in a powerful Elliott Wave 5 impulse, currently in sub-wave 4 correction. The daily chart shows momentum fading with the price structure shifting to lower highs and lower lows. The 50-day moving average is in the area and may provide dynamic support. The daily chart MACD and RSI have not been specifically detailed but the narrative suggests weakening momentum. Price at approximately $4,001 at the time of the report. The 20-week moving average acts as alternating support/resistance buffer against each attempt by oil to return to positive trend (note: this oil-specific indicator is relevant for oil, not gold)."
+  },
+  "summary": "Gold enters November 2025 in a correction phase within a larger bullish Elliott Wave 5 structure. The preferred wave count places gold in sub-wave 4, with sub-wave 5 still ahead potentially targeting $4,637-$4,995 on Fibonacci extensions. Current price around $4,001 is testing the $3,895 pivot - a break below could deepen the correction to $3,827 or lower. November has a positive seasonal bias for gold, but two strong weekly cycles and a dense cluster of turning dates around Nov 17-20 make this a month requiring precise timing and patience.",
+  "previous_month_review": "October 2025 had five turning dates for gold. First date (Oct 3) served as a low and initiated a significant rally. Second date (Oct 9) marked the high of the previous cycle move. Third date (Oct 17) was the major high of the month at the peak of a powerful rally. Fourth date (Oct 22-23) arrived one day early and was marked as the low, from which a bounce attempt began. Fifth date (Oct 28) served as a turning point. The chart shows gold rallied from approximately $3,900 to above $4,500 and then corrected sharply - the turning dates captured the major swing points effectively.",
+  "risk_notes": [
+    "Gold is in a late-stage Elliott Wave 5 impulse - these waves can extend further than expected but also reverse sharply when complete",
+    "What rises quickly also tends to correct quickly with equal force - gold's sharp rally is susceptible to equally sharp pullbacks",
+    "Below $4,100, short trade opportunities emerge but must be handled with extreme caution as the primary trend remains bullish",
+    "The dense cluster of turning dates Nov 17-20 (three dates in four days) creates heightened uncertainty - consider reducing position sizes during this window",
+    "A break below $3,895 pivot could cascade to $3,827 (50% Fib) and even $3,693 (61.8% Fib) - plan stop losses accordingly",
+    "From the weekly chart, a break below $3,500 would be a major structural change questioning the entire wave 5 thesis"
+  ]
+}

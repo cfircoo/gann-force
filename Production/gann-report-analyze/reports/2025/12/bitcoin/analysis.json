@@ -1,0 +1,50 @@
+{
+  "asset": "Bitcoin",
+  "key_dates": [
+    {"date": "2025-12-01", "description": "Turning date (+/- 1 day). Opening cycle date for December"},
+    {"date": "2025-12-11", "description": "Turning date (+/- 1 day). Critical date defined as having potential for significant trend change; also aligns with a monthly cycle"},
+    {"date": "2025-12-18", "description": "Turning date (+/- 1 day). Mid-month turning point"},
+    {"date": "2025-12-27", "description": "Turning date (+/- 1 day). End-of-month turning point"}
+  ],
+  "seasonal": "December is generally considered a positive month for Bitcoin. In 10 out of the last 15 years, Bitcoin finished December positively (53.3% of years). However, Bitcoin does not have a long enough history for the seasonal statistics to be as attractive as other assets in the report. In the last 7 years, Bitcoin tended to trade at a higher price on Dec 25 compared to Dec 10 in 6 out of 7 years (~86%).",
+  "statistics": [
+    {"date": "2025-12-25", "probability": "86%", "direction": "up", "description": "In the last 7 years, Bitcoin traded at a higher price on Dec 25 than on Dec 10 in approximately 86% of cases (6 out of 7 years)"}
+  ],
+  "insights": [
+    "In the October report, it was signaled that the monthly cycle may hint at a meaningful downward reversal. In practice, Bitcoin continued to decline during November, stopping only near the 100-week moving average",
+    "Bitcoin has a recurring pattern: 35 months of rally followed by 14 months of decline. Currently, the third occurrence of this cycle may be playing out, with the most recent 35-month rally potentially ending in October 2025, marking the start of a new decline phase",
+    "Even within a strong decline, a rising rebound typically appears before the main trend fully reverses. The key support area is in the $70,000-$78,000 range - this is a critical zone in every respect",
+    "If Bitcoin bounces from the support area, the real test will be at the trading cycle levels. Upward movement accompanied by expanding cycles suggests buyer strength and potential return to the highs",
+    "However, upward movement occurring in diminishing and fading cycles suggests weakness and the possibility that price will reverse back down and potentially change the primary trend",
+    "The daily chart shows Bitcoin continues to deliver a sequence of descending highs, which intensified during the month along with a combination of high trading cycles in declines and low ones in rallies",
+    "December 11 is defined as an additional critical date with potential for significant trend change",
+    "The month includes one monthly cycle and two weekly cycles ending on Dec 5 and Jan 2, 2026 respectively - both are considered strong",
+    "Long-range investors must be cautious about being lured by sharp new upward movements; missing one significant move could neutralize the potential advantages of long-term positioning attempts",
+    "The crypto market is characterized by high dynamics and rapid volatility; real-time tracking is essential for making correct decisions"
+  ],
+  "technical": {
+    "support": [
+      {"level": "70000-78000", "description": "Central support zone on weekly chart. This is a key zone in every respect; strong enough to hold if the decline is a correction within the primary trend"},
+      {"level": "70042", "description": "Strong support zone for halting declines if reached on the weekly chart"},
+      {"level": "93220", "description": "Resistance-turned-support level on daily chart"},
+      {"level": "100-week moving average", "description": "Dynamic support where Bitcoin's November decline stopped"}
+    ],
+    "resistance": [
+      {"level": "98951-100000", "description": "First resistance zone on the daily chart"},
+      {"level": "101163", "description": "Second resistance zone on the daily chart"},
+      {"level": "103497-106360", "description": "Upper resistance zone on the daily chart"},
+      {"level": "104349", "description": "Resistance zone on the weekly chart; pink shaded area"}
+    ],
+    "indicators": "Weekly chart shows central support around $70,000-$78,000 with the 100-week moving average as dynamic support. The daily chart reveals a bearish pattern with lower highs in declining cycles. Multiple resistance levels are stacked on the daily chart between $93,220 and $106,360. The direction as of writing is still downward with a realistic possibility to reach the support marked on the weekly chart."
+  },
+  "summary": "December is generally positive for Bitcoin but the cyclical picture is cautious. Bitcoin may have completed a 35-month up-cycle in October 2025 and entered a 14-month decline phase. Key turning dates are Dec 1, Dec 11 (critical), Dec 18, and Dec 27. The central support zone at $70,000-$78,000 is pivotal - a hold here supports a bullish continuation, while a break could confirm a major trend reversal. Two strong weekly cycles end around Dec 5 and Jan 2, 2026.",
+  "previous_month_review": "November 2025 had five Bitcoin turning dates. The first (Nov 4-5, double) worked and provided the low of the previous move. The second (Nov 9) did not work. The third (Nov 12) arrived one day early on Nov 11 and triggered the most significant move of the month which could be caught in combination with chart resistance. The fourth (Nov 19) paused briefly but broke down the next day. The fifth (Nov 26) did not work. Unfortunately, the last two dates that came out 'early' by two trading days hurt the positive statistics of the turning dates for the month.",
+  "risk_notes": [
+    "Bitcoin has high potential for sharp new upward movements even within a broader decline; long-range investors must be cautious about being trapped",
+    "The crypto market has high dynamics and rapid volatility - real-time tracking is essential",
+    "Missing a significant downward move could neutralize potential advantages of the long-term position",
+    "At the moment a level like $70,000 is thought to be broken, it is necessary to reassess the fundamental thesis and separate from the investment",
+    "Turning dates may deviate by +/- 1 day from the noted date",
+    "A declining sequence of highs on the daily chart suggests the bears are in control until proven otherwise"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "asset": "Gold",
+  "key_dates": [
+    {"date": "2025-05-02", "description": "Turning point date - first cycle date of May. Based on April review, price began correcting from the April 25 high toward this date."},
+    {"date": "2025-05-13", "description": "Turning point date - second cycle date. Potential for trend change mid-month."},
+    {"date": "2025-05-22", "description": "Turning point date - third cycle date. Part of the key window period."},
+    {"date": "2025-05-29", "description": "Turning point date (range: May 29-30). Final cycle date cluster for the month."}
+  ],
+  "seasonal": "May is generally a positive month for gold. Over the last 30 years, multi-seasonal statistics show: May 2 approximately 65% probability of upward movement, May 14 approximately 68% probability of upward movement, May 19 approximately 88% probability of upward movement. Gold also closed at a higher price on June 6 compared to May 1 in approximately 70% of cases (21 out of 30 years).",
+  "statistics": [
+    {"date": "2025-05-02", "probability": "65%", "direction": "up", "description": "Over the last 30 years, approximately 65% probability of upward movement around May 2."},
+    {"date": "2025-05-14", "probability": "68%", "direction": "up", "description": "Over the last 30 years, approximately 68% probability of upward movement around May 14."},
+    {"date": "2025-05-19", "probability": "88%", "direction": "up", "description": "Over the last 30 years, approximately 88% probability of upward movement around May 19 - the strongest statistical signal."},
+    {"date": "2025-05-01", "probability": "70%", "direction": "up", "description": "In the last 30 years, gold closed higher on June 6 compared to its price on May 1 in approximately 70% of cases (21 out of 30)."}
+  ],
+  "insights": [
+    "Gold continues to present a fascinating picture from a wave structure perspective in the coming months, based on Elliott Wave Theory.",
+    "According to the theory, an uptrend consists of three impulse waves (waves 1, 3, and 5) and two corrective waves (waves 2 and 4), with wave 3 typically being the strongest and most dominant. The count clearly shows five waves including five internal secondary waves.",
+    "Based on the current count shown in red lines on the chart, it appears we are currently at wave number 5 - which is expected to be the wave completing the entire uptrend that began since late 2022, marking a four-wave structure.",
+    "If an inverted N-pattern forms on the weekly chart, this could signal the beginning of the deepest correction since the start of the entire bull run from October 2022, a significant and meaningful event.",
+    "However, in a market trending upward at all-time highs, it is hard to estimate a precise target from the beginning. The correction represents an 'open sky' situation.",
+    "Using geometric pattern analysis (AB=CD with Fibonacci extensions), point D arrived in the zone where resistance was received from the chart itself during April (approximately $3,516). If the uptrend continues this month, the next Fibonacci extension target is around $3,782.",
+    "Support zones based on Fibonacci spiral: $3,136 / $3,022 / $2,909 (not plotted on the attached chart to avoid visual clutter).",
+    "Gold in March saw the secondary trend return to its rising direction and reunite with the primary trend. The decline that began around May 20.02 should be viewed as a technical correction before continued upside.",
+    "When trading against the overall direction - even when there is alignment with a turning point date - the correction will typically be 'heavy' (slow, non-continuous), which can lead to discomfort and sometimes a sense of emotional toll.",
+    "Two weekly cycles with significant time implications are dated at May 2 and May 23, with several specific daily dates in between that align with the monthly turning point dates."
+  ],
+  "technical": {
+    "support": [
+      {"level": "$3,136", "description": "Fibonacci spiral support level. First major support zone on the downside."},
+      {"level": "$3,022", "description": "Fibonacci spiral support level. Secondary support."},
+      {"level": "$2,909", "description": "Fibonacci spiral support level. Deep correction target."},
+      {"level": "$3,137-$3,165", "description": "Fibonacci retracement zone at 61.8% level - a significant support area. The 50-day moving average also converges near this level."}
+    ],
+    "resistance": [
+      {"level": "$3,516", "description": "Geometric pattern (AB=CD) point D where resistance was received in April. Key resistance level from Fibonacci extension."},
+      {"level": "$3,782", "description": "Next Fibonacci extension target if uptrend continues this month. Based on AB=CD Fibonacci expansion."}
+    ],
+    "indicators": "Elliott Wave count suggests we are in Wave 5 of the broader uptrend from October 2022 - the final wave before a major correction. Fibonacci extensions and geometric AB=CD patterns converge at the $3,516 resistance and $3,782 target. The weekly chart shows the potential for an inverted N-pattern which would signal the beginning of the deepest correction since late 2022. The 50-day moving average and Fibonacci 61.8% retracement converge near $3,137-$3,165 support. Trading volumes and cycle analysis suggest the uptrend remains intact but nearing completion."
+  },
+  "summary": "Gold enters May 2025 with a strongly positive seasonal bias (88% probability of upward movement around May 19) and key turning point dates on May 2, 13, 22, and 29-30. Technically, Elliott Wave analysis suggests we are in the final Wave 5 of the bull run from October 2022, with resistance at $3,516 (AB=CD point D) and $3,782 (next Fibonacci extension). While the primary trend remains bullish, the wave structure warns that a significant correction could begin once this wave completes, potentially the deepest since October 2022.",
+  "previous_month_review": "April had three turning point dates with two successfully marking key moves. Date 1 (April 9) arrived exactly on time, marked the low of the movement, and from there an approximately 9% upward move developed to the next turning point. Date 2 (April 14) halted the movement for one day only and broke out - it failed to lead to a trend change and turned into a continuing cycle (identified in advance in Discord as a possibility). Date 3 (April 25) marked the price high, though the actual high was on April 22; from there, the price began correcting downward toward the next turning point at May 2. Important understanding: it is not necessary to identify the start of every cycle precisely - sometimes the movement begins from one turning point and the next point is several days away, allowing joining the trend after it has already started.",
+  "risk_notes": [
+    "Elliott Wave 5 completion could trigger the deepest correction since October 2022 - timing is uncertain but the structure warns of significant downside risk.",
+    "In an 'open sky' uptrend at all-time highs, it is difficult to set precise price targets - expect volatility.",
+    "When trading against the overall direction (counter-trend corrections), moves tend to be heavy and psychologically challenging.",
+    "An inverted N-pattern on the weekly chart would be the most significant bearish signal since the entire bull run began.",
+    "The $3,516 resistance level from the AB=CD pattern was already tested in April - another approach could trigger significant selling.",
+    "Not investment advice - educational purposes only."
+  ]
+}

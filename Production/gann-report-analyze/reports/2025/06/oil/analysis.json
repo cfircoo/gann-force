@@ -1,0 +1,53 @@
+{
+  "asset": "Oil (Crude)",
+  "key_dates": [
+    {"date": "2025-06-05", "description": "Cycle turning point (range June 5-6)"},
+    {"date": "2025-06-06", "description": "Cycle turning point (range June 5-6) - statistical 76% up"},
+    {"date": "2025-06-13", "description": "Cycle turning point"},
+    {"date": "2025-06-26", "description": "Cycle turning point"},
+    {"date": "2025-06-30", "description": "Cycle turning point"}
+  ],
+  "seasonal": "June is generally a positive month for oil.",
+  "statistics": [
+    {"date": "2025-06-06", "probability": "76%", "direction": "up", "description": "Over the last 30 years, oil closed higher around June 6 approximately 76% of the time"},
+    {"date": "2025-06-18", "probability": "71%", "direction": "down", "description": "Over the last 30 years, oil declined around June 18 approximately 71% of the time"},
+    {"date": "2025-06-26", "probability": "75%", "direction": "up", "description": "Over the last 30 years, oil closed higher around June 26 approximately 75% of the time"},
+    {"date": "2025-06-29", "probability": "73%", "direction": "up", "description": "In the last 30 years, oil closed HIGHER on June 29 compared to June 21 in 73% of cases (22 out of 30)"}
+  ],
+  "insights": [
+    "Oil has been in a significant downtrend - the decline in late April was one of the most substantial drops in the last three years",
+    "A critical support zone between $64.40-$66.50 was broken, and this zone now serves as resistance for a prolonged period",
+    "High volume trading sessions accompanying the breakdown reinforce the assessment that there has been a meaningful behavioral shift in the price",
+    "Oil has been below this zone for two months now, strengthening the likelihood that any rally will be temporary and will eventually roll over to continue the decline",
+    "For a meaningful trend change to occur, even at a secondary level, a convincing and clear breakout of the upper resistance zone is required. Until that happens, all upside in oil should be treated as a technical correction within a downtrend",
+    "If oil continues on its downward trajectory, near-term price targets are in the $51-$52.70 range. If even that zone breaks, the next significant support is around $43.40",
+    "Especially important for oil: every turning date that appears against the backdrop of critical levels (support, resistance) takes on additional significance. Not just for entries, but also for staying in or exiting positions",
+    "The cumulative movement from cycles alone over the last several months has been approximately 178% - not from guessing but from consistent principles, disciplined work and systematic timing/chart understanding",
+    "Monthly results from past months show: May ~15%, April ~30%, February ~13.5%, January >20%, December ~12%, November ~11.5%, October ~20%, September ~32%, August ~30%"
+  ],
+  "technical": {
+    "support": [
+      {"level": "55.12", "description": "Recent area where the daily chart showed signs of 'dead' movement and beginning of cautious recovery"},
+      {"level": "52.70", "description": "Near-term downside target if decline continues"},
+      {"level": "51.00", "description": "Lower end of next target zone if downtrend persists"},
+      {"level": "43.40", "description": "Major deep support level if the $51-52.70 zone also breaks"}
+    ],
+    "resistance": [
+      {"level": "60.50", "description": "Short-term resistance - approximate level of 50-day moving average"},
+      {"level": "64.40", "description": "Lower boundary of the critical former support zone now acting as resistance"},
+      {"level": "64.85", "description": "Resistance with the 50-period moving average convergence"},
+      {"level": "66.50", "description": "Upper boundary of the broken support zone - key resistance level"}
+    ],
+    "indicators": "Oil is in a clear downtrend on the weekly chart. The breakout below the $64.40-$66.50 support zone was accompanied by high volume, confirming the bearish breakout. The 50-day moving average around $60.50 acts as dynamic resistance. Daily chart shows a bearish continuation pattern with lower highs. Between bullish seasonal tendencies and bearish chart structure, there is tension. The weekly chart shows the price approaching key levels where cycles could trigger either a meaningful bounce or continuation of the decline. The zone between June 20-27 with multiple daily dates and the fact that price may be near the end of a weekly cycle creates potential for a significant move."
+  },
+  "summary": "Oil enters June 2025 in a significant downtrend after breaking critical support at $64.40-$66.50. Key cycle dates are June 5-6, 13, 26, and 30. Despite being seasonally positive for oil, the technical picture is bearish with all rallies treated as corrections within the downtrend. Statistical edges show June 6 at 76% up, June 18 at 71% down, and June 26 at 75% up. The report warns that until there is a convincing breakout above the $64.40-$66.50 resistance, the bias remains downward with targets at $51-$52.70 and potentially $43.40.",
+  "previous_month_review": "May 2025 had four turning dates for oil with three capturing key pivot points during the month: May 7-8 (double cycle) - the price reversed at the first cycle date (May 7) but returned higher by the second date. This was a situation described in note 2 of the introduction as a double cycle. Result-wise treated as not fully working but community traded it successfully; May 16 - did not arrive classically (as a high) but upon reaching it, it marked the low of the movement. At the second turning date, they successfully captured the rally from support for a long trade; May 21-22 (double cycle) - arrived during a rally and combined with resistance level, served as the high of the movement; May 30 - arrived exactly on time, represented the low of the movement combined with recent support level.",
+  "risk_notes": [
+    "Oil is in a confirmed downtrend - all rallies should be treated as selling opportunities until proven otherwise",
+    "The broken $64.40-$66.50 zone now acts as heavy resistance - do not assume easy breakouts",
+    "Downside targets of $51-$52.70 and $43.40 represent significant further decline potential",
+    "High volume on the breakdown confirms institutional selling - this is not a temporary dip",
+    "June's positive seasonal tendency conflicts with the technical downtrend - be cautious of seasonal traps",
+    "Each turning date near support/resistance levels is especially significant for oil - use them for entry/exit decisions, not just entries"
+  ]
+}

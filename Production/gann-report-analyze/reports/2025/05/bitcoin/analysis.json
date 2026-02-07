@@ -1,0 +1,46 @@
+{
+  "asset": "Bitcoin",
+  "key_dates": [
+    {"date": "2025-05-01", "description": "Turning point date - first cycle date of May. Watch for reversal or continuation signal."},
+    {"date": "2025-05-09", "description": "Turning point date - second cycle date. Potential for significant trend change."},
+    {"date": "2025-05-16", "description": "Turning point date - weekly cycle ending around this date. One of the monthly cycles concluding in the week of May 16, which could provide a more significant change in direction."},
+    {"date": "2025-05-22", "description": "Turning point date - fourth cycle date. Watch for confirmation of prior move or new reversal."},
+    {"date": "2025-05-28", "description": "Turning point date - final cycle date of the month."}
+  ],
+  "seasonal": "Bitcoin ended May positively in 8 out of the last 14 years (approximately 57.1%). However, Bitcoin's history is shorter than other assets, making the seasonal statistics less attractive/reliable compared to the other assets in this report. The positive bias tends to manifest more in the second half of May.",
+  "statistics": [
+    {"date": "2025-05-11", "probability": "86%", "direction": "down", "description": "Over the last 7 years, Bitcoin tended to trade at a lower price on May 11 compared to May 6. This occurred in 6 out of 7 years (approximately 86%)."}
+  ],
+  "insights": [
+    "The rally in Bitcoin during April brought it to a new phase. The upward move in April was powerful enough to push Bitcoin into a range between $92,350-$95,500, and according to the analysis, given the strength it demonstrated, it could become the basis for the first attempt to reach the all-time highs again (or at least nearby).",
+    "Bitcoin is currently entering a resistance cluster. On the weekly chart, it updated its all-time area around $86,000 (with Fibonacci extension body at approximately $88,700).",
+    "On the daily chart, a clear breakout at the $87,500 level was identified, with candle bodies hitting resistance at that level. The previous level around $91,350 served as significant historical support and is now acting as resistance on every upward attempt.",
+    "Technically, the 20-day moving average is converging near the upper resistance level, while the 50-day moving average points to further Fibonacci support around the lower level.",
+    "If a decline materializes to the lower support area, it represents a level that could serve as a base for a long trade, especially if it coincides with a turning point date (possibly around May 9).",
+    "The crypto market is more dynamic, and tracking real-time developments is critical. Stay updated through the Discord community.",
+    "Important to remember: the crypto market is highly dynamic and following real-time developments is critical for informed decision-making."
+  ],
+  "technical": {
+    "support": [
+      {"level": "$86,000", "description": "Weekly chart Fibonacci extension body level. Updated resistance-turned-potential-support zone."},
+      {"level": "$88,700", "description": "Fibonacci extension level on weekly timeframe. Secondary support within the trading range."},
+      {"level": "$91,350", "description": "Previous significant support level that now acts as resistance on upward attempts. If broken back above, becomes strong support."}
+    ],
+    "resistance": [
+      {"level": "$87,500", "description": "Clear breakout level on the daily chart where candle bodies hit resistance."},
+      {"level": "$91,350", "description": "Former support now serving as resistance on every upward attempt. Key level to watch."},
+      {"level": "$92,350-$95,500", "description": "Target range from the April rally. Upper boundary represents the zone from which Bitcoin could attempt new all-time highs."}
+    ],
+    "indicators": "The 20-day moving average is converging near the upper resistance zone, while the 50-day moving average supports from below at Fibonacci levels. The range between the two key levels ($87,500 - $91,350) is relatively wide, making it difficult to precisely identify the exact reaction point. If a technical correction develops downward before the uptrend continues, a deep pullback could settle around the lower support. Seasonal data supporting a decline from May 6 to May 11 (86% probability over 7 years) adds weight to a potential short-term pullback scenario."
+  },
+  "summary": "Bitcoin enters May 2025 after a powerful April rally, now facing a critical resistance cluster between $87,500 and $95,500. Key turning point dates are May 1, 9, 16, 22, and 28, with the weekly cycle ending around May 16 potentially providing the most significant directional change. While the seasonal bias is marginally positive (57% of years), the strong statistical signal of an 86% probability of decline between May 6-11 suggests a potential pullback before any continuation higher.",
+  "previous_month_review": "In April, Bitcoin had four turning point dates. Date 1 (April 1) arrived with a one-day deviation (April 2), marked the high of the movement, and from there Bitcoin fell approximately 15% over several days - though it lacked an additional date that should have marked the low of the descending cycle (around April 7). Date 2 (April 14) arrived exactly on time, again marking the high of the movement, but the cycle's movement was not 'clean' as the low at the end of the cycle was not achieved during the movement. Date 3 (April 21) marked the low of the last cycle, from which approximately 12% upward movement developed to the next turning point. Date 4 (April 25) arrived exactly on time, marked the high of the previous cycle, but only halted the movement temporarily without opening a clear downward cycle - therefore counted as one that did not work.",
+  "risk_notes": [
+    "The crypto market is significantly more dynamic than traditional markets, requiring real-time monitoring.",
+    "The range between support ($87,500) and resistance ($91,350) is relatively wide, making precise entry/exit difficult.",
+    "Bitcoin's shorter price history makes seasonal statistics less reliable compared to other assets.",
+    "The strong April rally may have exhausted momentum, with the resistance cluster potentially capping further upside.",
+    "Any geopolitical escalation (identified in the S&P section) could trigger rapid de-risking across crypto markets.",
+    "Not investment advice - educational purposes only."
+  ]
+}

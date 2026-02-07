@@ -1,0 +1,43 @@
+{
+  "asset": "EUR/USD",
+  "key_dates": [
+    {"date": "2025-05-02", "description": "Turning point date - first cycle date of May. Watch for reversal in the euro after the April rally."},
+    {"date": "2025-05-08", "description": "Turning point date - second cycle date."},
+    {"date": "2025-05-19", "description": "Turning point date (range: May 19-20). Watch for potential double date creating a cluster with nearby cycle."},
+    {"date": "2025-05-28", "description": "Turning point date - final cycle date of the month."}
+  ],
+  "seasonal": "May is generally a negative month for the euro. Over the last 20 years, the euro closed lower on May 15 compared to its price on May 9 in approximately 71% of cases. Multi-seasonal statistics over 20 years show: May 2 approximately 69% probability of upward movement, May 7 approximately 79% probability of decline.",
+  "statistics": [
+    {"date": "2025-05-02", "probability": "69%", "direction": "up", "description": "Over the last 20 years, approximately 69% probability of upward movement around May 2."},
+    {"date": "2025-05-07", "probability": "79%", "direction": "down", "description": "Over the last 20 years, approximately 79% probability of decline around May 7."},
+    {"date": "2025-05-09", "probability": "71%", "direction": "up", "description": "Over the last 20 years, the euro closed lower on May 15 compared to May 9 in 71% of cases - meaning May 9 tends to be a relative high before a decline to May 15."}
+  ],
+  "insights": [
+    "Continuing the uptrend that began in March, also in April the euro continued to show exceptional strength - something not seen in years. The latest rise was strong enough to change the overall technical picture.",
+    "A clear breakout of the resistance zone between 1.1190 to 1.1275 led to a clear shift to an uptrend on the weekly chart.",
+    "The fact that the breakout was accompanied by high trading cycle volumes strengthens the impression that this is a quality move based on genuine demand and not speculative momentum.",
+    "Accordingly, a possible decline back to the 1.1190-1.1275 area is expected to encounter buyers and serve as a support base for further upside.",
+    "Central Fibonacci levels are converging in that same area, supporting this thesis, and increasing the likelihood of a positive momentum renewal if and when price approaches it.",
+    "Important to emphasize: even if a breach of these levels is seen, it will not immediately change the primary trend, but if it does, the euro will struggle to rise from there again. Ongoing updates via Discord and weekly live sessions.",
+    "The euro is expected to be traded as a three-phase structure during May: an initial decline phase early in the month, followed by two potential turning points around May 2 (in line with the weekly cycle) and May 19-20 (in line with the monthly cycle), and the month should end with relative weakness on the final dates around May 23-28."
+  ],
+  "technical": {
+    "support": [
+      {"level": "1.1190", "description": "Lower boundary of the breakout zone. Previous resistance now turned support. Expected to attract buyers on pullback."},
+      {"level": "1.1275", "description": "Upper boundary of the former resistance zone. Fibonacci levels and trading cycle volumes confirm this as quality support."}
+    ],
+    "resistance": [
+      {"level": "1.1600+", "description": "The upside target based on continuation of the primary uptrend after the breakout. Weekly chart shows room for further appreciation."}
+    ],
+    "indicators": "The breakout above the 1.1190-1.1275 resistance zone was accompanied by high trading volumes from cycle analysis, confirming the quality of the move. Central Fibonacci levels converge in the support zone, reinforcing the bull case. The weekly chart clearly shows a trend shift to bullish. The 20-day moving average combined with the turning point date supports the strength of the expected movements. Remember that the pairing of support level with turning point date enhances the power of the expected reversal for long trades."
+  },
+  "summary": "EUR/USD enters May 2025 after a powerful breakout above the 1.1190-1.1275 resistance zone, confirming a bullish trend shift on the weekly chart. Key turning point dates are May 2, 8, 19-20, and 28. Seasonally, May tends to be a negative month for the euro, and a three-phase trading structure is expected: initial strength around May 2, a pullback phase around May 7-9, and then a potential secondary turn around May 19-20 before ending the month with relative weakness.",
+  "previous_month_review": "April had four turning point dates, with three of them capturing the key moves of the month. Date 1 (April 4) arrived with one-day deviation (April 7), providing approximately 570 pips of movement to the next turning point. Initially assessed as a low, the author changed their mind and eventually returned to long only after the upward journey began. Date 2 (April 11) arrived exactly on time, marked the high of the upward cycle, and from there a decline of approximately 200 pips began - though it did not continue the downtrend and reversed back up, so it is also counted as a date that did not fully work. Date 3 (April 22) arrived one day early (April 21), served as the high of the previous cycle and the monthly high, and from there approximately 230 pips of decline developed to the move's low. Date 4 (April 29) served in a non-classic manner as a high within a head-and-shoulders formation on the 4-hour chart, declining approximately 150 pips to the next turning point at May 2.",
+  "risk_notes": [
+    "Even if the breakout zone holds, short-term seasonal weakness in May could produce pullbacks that test conviction.",
+    "The 79% statistical probability of decline around May 7 should be respected as a potential short-term risk.",
+    "A breach below 1.1190 would challenge the bullish thesis and make it difficult for the euro to resume its uptrend.",
+    "The three-phase structure in May means multiple trend changes are expected, requiring nimble position management.",
+    "Not investment advice - educational purposes only."
+  ]
+}

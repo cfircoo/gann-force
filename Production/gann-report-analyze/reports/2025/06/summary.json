@@ -1,0 +1,194 @@
+{
+  "report": "Cycles Trading Monthly Report - June 2025",
+  "report_hebrew_title": "דוח חודשי יוני 2025",
+  "month": "June",
+  "year": 2025,
+  "assets": ["S&P 500", "Bitcoin", "EUR/USD", "Gold", "Oil"],
+  "cross_asset_calendar": {
+    "2025-06-03": {
+      "events": [
+        {"asset": "EUR/USD", "type": "statistic", "detail": "77% probability of upward move"}
+      ]
+    },
+    "2025-06-04": {
+      "events": [
+        {"asset": "S&P 500", "type": "key_date", "detail": "Cycle turning point"},
+        {"asset": "Bitcoin", "type": "key_date", "detail": "Cycle turning point (range 4-5 June)"}
+      ]
+    },
+    "2025-06-05": {
+      "events": [
+        {"asset": "Bitcoin", "type": "key_date", "detail": "Cycle turning point (range 4-5 June) + 86% down stat"},
+        {"asset": "EUR/USD", "type": "key_date", "detail": "Cycle turning point"},
+        {"asset": "Oil", "type": "key_date", "detail": "Cycle turning point (range 5-6 June)"}
+      ]
+    },
+    "2025-06-06": {
+      "events": [
+        {"asset": "Gold", "type": "key_date", "detail": "Cycle turning point"},
+        {"asset": "Oil", "type": "key_date_and_stat", "detail": "Cycle turning point + 76% up probability"}
+      ]
+    },
+    "2025-06-09": {
+      "events": [
+        {"asset": "Bitcoin", "type": "key_date", "detail": "Cycle turning point"},
+        {"asset": "S&P 500", "type": "cycle_window", "detail": "Weekly cycle window June 9-12 begins"}
+      ]
+    },
+    "2025-06-10": {
+      "events": [
+        {"asset": "S&P 500", "type": "key_date", "detail": "Cycle turning point (range 10-11 June)"}
+      ]
+    },
+    "2025-06-11": {
+      "events": [
+        {"asset": "S&P 500", "type": "key_date", "detail": "Cycle turning point (range 10-11 June)"},
+        {"asset": "Gold", "type": "key_date", "detail": "Cycle turning point (range 11-12 June)"}
+      ]
+    },
+    "2025-06-12": {
+      "events": [
+        {"asset": "EUR/USD", "type": "key_date_and_stat", "detail": "Cycle turning point + 75% up probability"},
+        {"asset": "Gold", "type": "key_date", "detail": "Cycle turning point (range 11-12 June)"}
+      ]
+    },
+    "2025-06-13": {
+      "events": [
+        {"asset": "Oil", "type": "key_date", "detail": "Cycle turning point"},
+        {"asset": "Bitcoin", "type": "cycle_window", "detail": "Weekly cycle ending - potential direction change"}
+      ]
+    },
+    "2025-06-15": {
+      "events": [
+        {"asset": "Bitcoin", "type": "key_date", "detail": "Cycle turning point"}
+      ]
+    },
+    "2025-06-16": {
+      "events": [
+        {"asset": "S&P 500", "type": "key_date_and_stat", "detail": "Cycle turning point + 85% up probability"}
+      ]
+    },
+    "2025-06-18": {
+      "events": [
+        {"asset": "Gold", "type": "statistic", "detail": "67% up probability"},
+        {"asset": "Oil", "type": "statistic", "detail": "71% down probability"},
+        {"asset": "Gold", "type": "cycle_window", "detail": "Major historical cycle convergence window begins (June 18-22)"}
+      ]
+    },
+    "2025-06-20": {
+      "events": [
+        {"asset": "EUR/USD", "type": "key_date_and_stat", "detail": "Cycle turning point + 75% up probability"},
+        {"asset": "Gold", "type": "key_date", "detail": "Cycle turning point"}
+      ]
+    },
+    "2025-06-21": {
+      "events": [
+        {"asset": "Bitcoin", "type": "key_date", "detail": "Cycle turning point"}
+      ]
+    },
+    "2025-06-23": {
+      "events": [
+        {"asset": "S&P 500", "type": "key_date", "detail": "Cycle turning point"},
+        {"asset": "EUR/USD", "type": "statistic", "detail": "77% up probability"}
+      ]
+    },
+    "2025-06-24": {
+      "events": [
+        {"asset": "S&P 500", "type": "statistic", "detail": "71% down probability"},
+        {"asset": "Gold", "type": "statistic", "detail": "68% up probability"}
+      ]
+    },
+    "2025-06-25": {
+      "events": [
+        {"asset": "Gold", "type": "key_date", "detail": "Cycle turning point (range 25-26 June)"}
+      ]
+    },
+    "2025-06-26": {
+      "events": [
+        {"asset": "Gold", "type": "key_date_and_stat", "detail": "Cycle turning point (range 25-26 June) + 73% up probability"},
+        {"asset": "Oil", "type": "key_date_and_stat", "detail": "Cycle turning point + 75% up probability"}
+      ]
+    },
+    "2025-06-27": {
+      "events": [
+        {"asset": "S&P 500", "type": "key_date", "detail": "Cycle turning point"},
+        {"asset": "EUR/USD", "type": "cycle_window", "detail": "Weekly cycle ending around June 27"}
+      ]
+    },
+    "2025-06-30": {
+      "events": [
+        {"asset": "S&P 500", "type": "statistic", "detail": "90% up probability"},
+        {"asset": "Bitcoin", "type": "key_date", "detail": "Cycle turning point"},
+        {"asset": "EUR/USD", "type": "key_date", "detail": "Cycle turning point"},
+        {"asset": "Oil", "type": "key_date", "detail": "Cycle turning point"}
+      ]
+    }
+  },
+  "high_confluence_dates": [
+    {
+      "date": "2025-06-05",
+      "assets_affected": ["Bitcoin", "EUR/USD", "Oil"],
+      "significance": "Three-asset convergence: Bitcoin turning point with 86% down stat, EUR/USD turning point, Oil turning point with 76% up stat next day"
+    },
+    {
+      "date": "2025-06-06",
+      "assets_affected": ["Gold", "Oil", "Bitcoin"],
+      "significance": "Gold cycle date + Oil 76% up stat + Bitcoin weekly cycle influence"
+    },
+    {
+      "date": "2025-06-11",
+      "assets_affected": ["S&P 500", "Gold"],
+      "significance": "S&P 500 and Gold both have turning points in the 10-12 June range"
+    },
+    {
+      "date": "2025-06-12",
+      "assets_affected": ["EUR/USD", "Gold", "S&P 500"],
+      "significance": "EUR/USD turning point + 75% up, Gold turning point, S&P weekly cycle window"
+    },
+    {
+      "date": "2025-06-20",
+      "assets_affected": ["EUR/USD", "Gold"],
+      "significance": "EUR/USD turning point + 75% up, Gold turning point"
+    },
+    {
+      "date": "2025-06-26",
+      "assets_affected": ["Gold", "Oil", "S&P 500"],
+      "significance": "Gold turning point + 73% up, Oil turning point + 75% up, near S&P 500 June 27 date"
+    },
+    {
+      "date": "2025-06-30",
+      "assets_affected": ["S&P 500", "Bitcoin", "EUR/USD", "Oil"],
+      "significance": "Four-asset convergence: S&P 90% up stat, Bitcoin turning point, EUR/USD turning point, Oil turning point. Strongest confluence date of the month."
+    }
+  ],
+  "themes": [
+    "June 2025 is described as one of the most historically significant months in recent memory, sitting at the intersection of 82-year and 164-year revolution/war cycles",
+    "Geopolitical risk is elevated: Trump's birthday (June 14) falls within Fibonacci 61.8 years from JFK assassination, and historical presidential assassination/upheaval cycles cluster in June/July",
+    "Most assets show a pattern of potential strength in early June, weakness/correction mid-month, and recovery late June",
+    "Gold and S&P 500 face potential Wave 5 / double-top technical patterns suggesting major trend changes could be approaching",
+    "Oil remains in a structural downtrend while other assets are near highs - a clear divergence to monitor",
+    "The report heavily emphasizes that cycle dates are turning points (not directional signals) - the actual direction depends on price action, trend, and technical levels at those dates",
+    "Cross-asset trading across all five assets is recommended for higher overall success probability",
+    "The Discord community provides real-time updates and trades that complement the monthly report"
+  ],
+  "risk_rules": [
+    "Cycle dates indicate POTENTIAL turning points with +/- 1 day tolerance - they do NOT guarantee direction",
+    "Always combine cycle dates with technical analysis (support/resistance, chart patterns, indicators) before entering trades",
+    "Take partial profits gradually and trail stops to momentum-based levels on the daily chart, not distant weekly support",
+    "Options traders should consider using puts as hedges on certain positions given the elevated volatility window",
+    "Leverage through 2x-3x ETFs carries amplified risk during cycle convergence periods",
+    "Mental/emotional management is as important as the financial plan - avoid impulsive decisions and be selective in trade choices",
+    "When trading counter-trend, only enter after a clear technical reversal signal on intraday charts (4h, 30min)",
+    "When a 'double cycle' occurs (two dates close together), the first date often causes a reversal and the second reinstates the original direction",
+    "None of the report content constitutes investment advice - it is for educational purposes only. Seek professional financial advice",
+    "Stay connected to the Discord community for real-time updates during the month, as market conditions evolve"
+  ],
+  "previous_month_summary": {
+    "month": "May 2025",
+    "sp500": "5 cycle dates, 4 worked well. Very successful month from cycles perspective.",
+    "bitcoin": "5 cycle dates, 3 delivered strong signals (1st, 2nd arrived +1D, 3rd arrived -1D, 4th exact, 5th failed). Partially successful.",
+    "eurusd": "4 cycle dates, 3 captured high/low. Not classic but partially successful.",
+    "gold": "4 cycle dates, all worked with +/- 1 day tolerance. Perfect month.",
+    "oil": "4 cycle dates, 3 captured key pivots. Very successful. Cumulative ~178% movement from cycles."
+  }
+}

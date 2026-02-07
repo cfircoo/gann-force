@@ -1,0 +1,37 @@
+{
+  "asset": "EUR/USD",
+  "key_dates": [
+    {"date": "2025-11-04", "description": "Turning point date for potential trend reversal (+/- 1 day)"},
+    {"date": "2025-11-13", "description": "Turning point date - part of a double date cluster with Nov 14 (+/- 1 day)"},
+    {"date": "2025-11-14", "description": "Turning point date - double date cluster with Nov 13 (+/- 1 day)"},
+    {"date": "2025-11-18", "description": "Turning point date for potential trend reversal (+/- 1 day)"},
+    {"date": "2025-11-24", "description": "Turning point date for potential trend reversal (+/- 1 day)"}
+  ],
+  "seasonal": "November is generally a positive month for the Euro. In the last 20 years, the Euro closed lower on Nov 11 compared to its price on Nov 4 in approximately 68% of cases. Seasonal bias is generally positive for the Euro in November.",
+  "statistics": [
+    {"date": "2025-11-03", "probability": "65%", "direction": "up", "description": "Multi-decade seasonal statistic over the last 20 years: approximately 65% probability of upward movement on Nov 3"},
+    {"date": "2025-11-11", "probability": "65%", "direction": "down", "description": "Multi-decade seasonal statistic over the last 20 years: approximately 65% probability of downward movement on Nov 11"},
+    {"date": "2025-11-17", "probability": "71%", "direction": "up", "description": "Multi-decade seasonal statistic over the last 20 years: approximately 71% probability of upward movement on Nov 17"},
+    {"date": "2025-11-04", "probability": "68%", "direction": "down", "description": "In the last 20 years, EUR/USD closed lower on Nov 11 compared to Nov 4 in 68% of cases - suggesting a decline between these dates"}
+  ],
+  "insights": [
+    "November is generally a positive month for the Euro - seasonal bias is constructive",
+    "The statistical significance of the Nov 3 up, Nov 11 down, Nov 17 up pattern suggests a potential trading rhythm for the month",
+    "EUR/USD turning dates share several key dates with the S&P 500 (Nov 4, Nov 13-14, Nov 18, Nov 24) suggesting correlated turning points across markets",
+    "All dates have a tolerance of +/- one day from the specified turning date",
+    "The approach is not to predict direction but to observe price behavior as it arrives at the turning date to determine whether a high, low or consolidation is forming"
+  ],
+  "technical": {
+    "support": [],
+    "resistance": [],
+    "indicators": "No detailed technical chart analysis provided in this report for EUR/USD. The focus is on turning dates and seasonal statistics. Traders should apply their own technical analysis framework on the daily and weekly charts in conjunction with the provided turning dates."
+  },
+  "summary": "EUR/USD enters November 2025 with a generally positive seasonal bias. The key turning dates are Nov 4, Nov 13-14 (double date), Nov 18, and Nov 24. Seasonal statistics suggest approximately 65% probability of up on Nov 3, 65% probability of down on Nov 11, and 71% probability of up on Nov 17. In the last 20 years, EUR closed lower on Nov 11 vs Nov 4 in 68% of cases, suggesting a potential sell window between those dates.",
+  "previous_month_review": "October 2025 had four turning dates for EUR/USD. First date (Oct 3) arrived on an upswing and triggered a significant decline to the next turning date. Second date (Oct 10) served as the low of the move and initiated a rally to the next date. Third date (Oct 17) served as the high of the movement - from there a strong decline began, though it briefly reversed higher around Oct 22 (suggesting a missing additional date was needed). Fourth date (Oct 30) arrived one day early (Oct 29) and served as the high - decline began from there toward the first November turning date. All four dates worked effectively in October.",
+  "risk_notes": [
+    "EUR/USD seasonal data is based on 20 years which is a moderate sample size",
+    "Several EUR/USD turning dates overlap with S&P 500 dates - cross-asset correlations could amplify or dampen expected moves",
+    "No detailed technical support/resistance levels were provided in this month's report - traders should supplement with their own analysis",
+    "Currency markets can be heavily influenced by central bank decisions and macroeconomic data releases that may override cycle timing"
+  ]
+}

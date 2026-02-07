@@ -1,0 +1,53 @@
+{
+  "asset": "EUR/USD",
+  "key_dates": [
+    {"date": "2026-01-07", "description": "First turning point date (range: Jan 7-8)"},
+    {"date": "2026-01-16", "description": "Second turning point date for January 2026"},
+    {"date": "2026-01-21", "description": "Third turning point date for January 2026"},
+    {"date": "2026-01-27", "description": "Fourth turning point date (range: Jan 27-28)"}
+  ],
+  "seasonal": "January is the most negative month of the year for the Euro. This is a strong seasonal bias toward EUR/USD weakness (dollar strength). The EUR tends to decline during January based on 20+ years of data. Three cyclical patterns from the last two decades are bullish (pointing up), and with this context the seasonal and cyclical patterns from the last two decades are predominantly bearish for EUR/USD in January. There are two weekly cycles, in weeks ending at Jan 2 and Jan 7. Weekly cycle patterns align with key turning point dates, suggesting Jan 5-7 could mark a significant turning point. Also dates between Jan 26-29 appear to be a cluster for potential volatility.",
+  "statistics": [
+    {"date": "2026-01-05", "probability": "78%", "direction": "down", "description": "Multi-year seasonal statistic over 20 years: approximately 78% probability of a decline on this date in January"},
+    {"date": "2026-01-16", "probability": "80%", "direction": "down", "description": "Multi-year seasonal statistic over 20 years: approximately 80% probability of a decline on this date in January"},
+    {"date": "2026-01-14", "probability": "70%", "direction": "up", "description": "In the last 20 years, EUR/USD closed higher on Jan 14 than on Jan 5 in 70% of cases"}
+  ],
+  "insights": [
+    "As noted in the previous report, December was seasonally the strongest month for the Euro throughout the year",
+    "This month provided the reversal: throughout December, a consistent pattern of lows was observed, with the formation of a series of lower lows",
+    "Highs are rising at the daily chart level but at the weekly chart level the picture has not yet materially changed",
+    "For a confirmed return to an uptrend, EUR/USD needs to establish above the resistance zone between 1.1828 and 1.1920",
+    "Only a clean breakout backed by volume above this zone opens the path to continue higher toward the next resistance at 1.2230",
+    "From a key level perspective, the weekly low from late July/early August around 1.1390 continues to carry special weight",
+    "This level overlaps with the 61.8% Fibonacci retracement of the entire May rally wave, making it a significant level for the continuation scenario",
+    "Support zone stands between 1.1190 and 1.1275, an area defined as the decision zone",
+    "As long as the price holds above this decision zone, one can continue to treat the primary trend as bullish, or at worst a choppy movement with upward bias",
+    "A break below this zone signals entry into a deeper correction, and potentially the crystallization of a new primary downtrend",
+    "In October the daily chart was building a clear downtrend pattern. In November we saw a classic corrective rally. In December the pattern was consistent with a choppy/sideways range",
+    "The 100-day moving average at the 1.1664 level was tested but the rally was quickly capped",
+    "Fibonacci levels at 1.0704-3 remain as deeper targets if a major downtrend develops, with the 50-week and 20-week moving averages providing dynamic reference levels"
+  ],
+  "technical": {
+    "support": [
+      {"level": "1.1190-1.1275", "description": "Decision zone - as long as price holds above, primary trend treated as bullish or choppy with upward bias; break below signals deeper correction"},
+      {"level": "1.1390", "description": "Key level - weekly low from late July/early August, overlaps with 61.8% Fibonacci retracement of the May rally wave"},
+      {"level": "1.0704", "description": "Deeper Fibonacci target if major downtrend develops"}
+    ],
+    "resistance": [
+      {"level": "1.1828-1.1920", "description": "Key resistance zone - EUR/USD must establish above this for a confirmed return to uptrend"},
+      {"level": "1.2230", "description": "Next resistance target after a clean breakout above 1.1828-1.1920"},
+      {"level": "1.1664", "description": "100-day moving average level that served as resistance cap on the recent rally attempt"}
+    ],
+    "indicators": "Short-term trend on daily chart appears to be building lower pattern since October, with November showing corrective rally and December displaying choppy range. Weekly chart structure has not yet materially changed. 100-day moving average at 1.1664 serving as dynamic resistance. The 20-week and 50-week moving averages provide layered dynamic support/resistance. Fibonacci retracement levels from the May rally wave provide key reference points."
+  },
+  "summary": "EUR/USD enters January 2026 with a strong seasonal bearish bias - January is the most negative month of the year for the Euro. Key turning points are Jan 7-8, 16, 21, and 27-28. The pair faces resistance at 1.1828-1.1920 and support at 1.1190-1.1275 (decision zone). Statistical probabilities strongly favor downside moves around Jan 5 (78%) and Jan 16 (80%). The primary structure remains undecided between continuation of the broader uptrend or crystallization of a new downtrend.",
+  "previous_month_review": "December 2025 had five turning point dates for EUR/USD. The first (Dec 2) arrived one day late but served as the 'high' of the previous cycle. The second (Dec 8, double date) worked as the 'low' of the declining move and from it a significant rally developed until the next turning point. The third (Dec 16) hit perfectly and served as the high of the rising cycle from the previous turning point. The fourth (Dec 22) served as the low of the previous cycle, although it did not complete a classic upward cycle to the next turning point and reversed afterward. The fifth (Dec 30) continued to decline even on the following day - if it continues to fall by the next trading day (Jan 2), it will be considered a date that did not work.",
+  "risk_notes": [
+    "January is historically the most negative month for the Euro - strong seasonal headwind",
+    "A break below the 1.1190-1.1275 decision zone would signal a deeper correction and potential new primary downtrend",
+    "Statistical probabilities of 78% and 80% for downside on Jan 5 and Jan 16 respectively are notably strong",
+    "The recovery attempt was capped at the 100-day moving average (1.1664), suggesting supply pressure remains",
+    "Ongoing updates on EUR/USD developments will be shared in the Discord community and weekly livestreams",
+    "This is not investment advice - the content is for educational purposes only"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "asset": "Bitcoin",
+  "key_dates": [
+    {
+      "date": "2025-08-07",
+      "description": "First turning point. Aligns with weekly cycle ending."
+    },
+    {
+      "date": "2025-08-14",
+      "description": "Second turning point (14-15.8 range). Potential reversal."
+    },
+    {
+      "date": "2025-08-20",
+      "description": "Third turning point (+/- 1 day)."
+    },
+    {
+      "date": "2025-08-27",
+      "description": "Fourth turning point (+/- 1 day)."
+    }
+  ],
+  "seasonal": "Bearish: 10 of 15 years (66.7%) Bitcoin finished August negatively. Limited history makes seasonal stats less reliable.",
+  "statistics": [
+    {
+      "date": "2025-08-22",
+      "probability": "86%",
+      "direction": "down",
+      "description": "In 6/7 years (~86%) Bitcoin traded lower on Aug 22 vs Aug 10."
+    },
+    {
+      "date": "2025-08-10",
+      "probability": "86%",
+      "direction": "up",
+      "description": "Reference date for Aug 10-22 downward pattern."
+    }
+  ],
+  "insights": [
+    "Bearish seasonality: 66.7% negative August finishes historically.",
+    "Monthly and weekly cycle ending around Aug 8. Strong daily cycle on Aug 7 aligns - significant reversal possible.",
+    "After ATH breakout attempts at end of July, need to determine if genuine or early correction approaching.",
+    "Weekly chart: no volume expansion despite rise. MACD/RSI negative divergence - momentum weakening.",
+    "Moderate scenario: correction to $105K-$98.5K. Negative scenario: fall to $74K support.",
+    "Large holders shrinking available supply could override bearish technicals.",
+    "Crypto market high dynamics require real-time monitoring via Discord.",
+    "$74,000 critical long-term support determining further direction."
+  ],
+  "technical": {
+    "support": [
+      {
+        "level": "$101,500",
+        "description": "First daily support."
+      },
+      {
+        "level": "$98,500",
+        "description": "Significant consolidation support."
+      },
+      {
+        "level": "$91,350",
+        "description": "Weekly chart support."
+      },
+      {
+        "level": "$87,500",
+        "description": "Lower daily support."
+      },
+      {
+        "level": "$74,000",
+        "description": "Critical long-term support."
+      }
+    ],
+    "resistance": [
+      {
+        "level": "$109,300",
+        "description": "Recent high/breakout zone."
+      },
+      {
+        "level": "$112,000",
+        "description": "Daily MA cluster resistance."
+      },
+      {
+        "level": "$114,000",
+        "description": "50-day MA resistance area."
+      }
+    ],
+    "indicators": "MACD/RSI negative divergence on weekly. Volumes not expanding. No genuine weekly breakout. Daily near key MAs with narrowing pattern."
+  },
+  "summary": "Bitcoin August 2025: bearish seasonality (66.7%) with four turning points (Aug 7, 14-15, 20, 27). ATH breakout attempts face MACD/RSI divergence and non-expanding volume. Aug 10-22 has 86% downward probability. Support $74K critical.",
+  "previous_month_review": "July: 5 dates. 04.07=low, +10% move. 11.07=failed (1 day only). 18.07=high in narrow range. 24.07=low of previous cycle (+1 day deviation). 30.07=appears as low on support.",
+  "risk_notes": [
+    "66.7% bearish seasonality for August.",
+    "MACD/RSI negative divergence on weekly - momentum weakening.",
+    "Volume not expanding despite rise - breakout quality uncertain.",
+    "Aug 10-22: 86% downward probability.",
+    "Real-time monitoring essential for crypto.",
+    "$74K critical long-term support."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "asset": "Gold",
+  "key_dates": [
+    {"date": "2025-04-09", "description": "Turning point date. Potential cycle turn within +/- 1 day."},
+    {"date": "2025-04-14", "description": "Turning point date. Coincides with a weekly cycle ending - stronger significance. Potential for larger trend movement."},
+    {"date": "2025-04-25", "description": "Turning point date. Potential cycle turn within +/- 1 day."}
+  ],
+  "seasonal": "April is generally a mildly positive month for gold. Seasonal statistics show slight upward tendencies but the bias is weaker than for other assets. Seasonal cyclical analysis of the last three decades shows 2 cycles ending in decline and 1 in rise - mixed signal.",
+  "statistics": [
+    {"date": "2025-04-07", "probability": "70%", "direction": "up", "description": "Over the last 30 years, gold rose around April 7 approximately 70% of the time."},
+    {"date": "2025-04-09", "probability": "68%", "direction": "up", "description": "Over the last 30 years, gold rose around April 9 approximately 68% of the time."},
+    {"date": "2025-04-10", "probability": "67%", "direction": "up", "description": "Over the last 30 years, gold rose around April 10 approximately 67% of the time."},
+    {"date": "2025-04-12", "probability": "70%", "direction": "up", "description": "Over the last 30 years, gold closed higher on April 12 than on April 1 in 70% of cases (21 out of 30 years)."}
+  ],
+  "insights": [
+    "Gold returned to its uptrend in the previous month after the correction that began on February 20 proved to be just a technical correction before continuation higher.",
+    "The breakout above the all-time high set in November established a new paradigm - the minor bearish trend has returned to being a bullish trend after the breakout.",
+    "The February report correctly identified that the decline starting February 20 was a technical correction before continuation of the rise - this proved accurate.",
+    "Weekly chart shows continuation of the wave pattern structure with the previous months' analysis remaining valid - N-wave pattern with targets at higher levels.",
+    "The retest to approximately $3,050 appears to have provided a long opportunity and combined with a turning point date would create a high-quality trade setup.",
+    "Support zone on the daily chart between $2,988-$3,008 represents the next key support if the $3,050 retest level fails.",
+    "Important to understand that when trading against the dominant trend (which is up), exercise extra caution with position sizing and wait for clear technical signals before entering.",
+    "Weekly cycle ending around April 4 and April 18 are the more powerful ones - with April 14 turning date aligning with the stronger weekly cycle."
+  ],
+  "technical": {
+    "support": [
+      {"level": "3050", "description": "Retest level after the breakout. Should provide a long entry opportunity if combined with turning point date confirmation."},
+      {"level": "2988-3008", "description": "Key daily support zone. Break below this would signal a more significant correction."},
+      {"level": "3049", "description": "Retest zone visible on the daily chart - former resistance now potential support."}
+    ],
+    "resistance": [
+      {"level": "3115-3150", "description": "Current all-time high area and immediate resistance on daily chart."},
+      {"level": "3160+", "description": "Extension target above the all-time high if the breakout continues."}
+    ],
+    "indicators": "Daily chart shows the minor downtrend has reversed back to uptrend after the breakout above all-time highs. Weekly chart displays a strong N-wave bullish continuation pattern. The wave structure from previous months continues to project higher targets. Three technical confirmations converge (symmetry, Fibonacci, historical support) at the 5,120-5,140 area for S&P which indirectly supports gold as a safe haven. Gold's price action is being driven by both technical breakout and macro-geopolitical uncertainty."
+  },
+  "summary": "Gold is in a strong uptrend having broken above its all-time high from November. The seasonal bias is mildly positive for April, with statistical probabilities of 67-70% for rises around early-to-mid April. The key date to watch is April 14, which aligns with a stronger weekly cycle and could trigger a significant directional move. The retest of $3,050 after the breakout provides a potential long entry, with support at $2,988-$3,008 if the retest fails.",
+  "previous_month_review": "In March 2025 there were four turning point dates and all except one functioned as turning points - an exceptionally strong month. March 7 (arrived 1 trading day late at March 10): served as the turning point for the downtrend, rallying ~4% to the next date. March 14: briefly halted the trend for one day only then broke out - did not lead to a trend change, became a continuing cycle. March 20: arrived exactly on time, served as the high and triggered a correction to the next date. March 27: arrived exactly on time, served as the low of the previous cycle, from which gold bounced ~4% higher at time of writing.",
+  "risk_notes": [
+    "When trading against the dominant uptrend during brief corrections of several days, exercise extra caution.",
+    "In such situations, wait for clear reversal signals on intraday charts (4-hour to 30-minute) before entering.",
+    "When trading in the direction of the overall trend against the immediate correction, the risk-reward is typically more favorable but corrections can still be sharp.",
+    "Trading counter-trend may lead to discomfort during the trade and could also frustrate the trader psychologically.",
+    "The combination of turning point date alignment with technical support/resistance and dominant trend direction produces the highest probability setups."
+  ]
+}

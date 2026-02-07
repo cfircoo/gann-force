@@ -1,0 +1,111 @@
+{
+  "asset": "Gold",
+  "key_dates": [
+    {
+      "date": "2025-08-05",
+      "description": "First turning point (+/- 1 day)."
+    },
+    {
+      "date": "2025-08-12",
+      "description": "Second turning point. Dense zone Aug 12-13."
+    },
+    {
+      "date": "2025-08-21",
+      "description": "Third turning point (+/- 1 day)."
+    },
+    {
+      "date": "2025-08-29",
+      "description": "Fourth turning point (+/- 1 day)."
+    }
+  ],
+  "seasonal": "August generally positive (bullish) for Gold. Seasonally favorable.",
+  "statistics": [
+    {
+      "date": "2025-08-04",
+      "probability": "70%",
+      "direction": "down",
+      "description": "~70% down probability from 30-year data."
+    },
+    {
+      "date": "2025-08-06",
+      "probability": "67%",
+      "direction": "up",
+      "description": "~67% up probability from 30-year data."
+    },
+    {
+      "date": "2025-08-14",
+      "probability": "73%",
+      "direction": "down",
+      "description": "~73% down probability from 30-year data."
+    },
+    {
+      "date": "2025-08-26",
+      "probability": "74%",
+      "direction": "up",
+      "description": "~74% up probability from 30-year data."
+    },
+    {
+      "date": "2025-08-12",
+      "probability": "70%",
+      "direction": "up",
+      "description": "Gold closed higher on Aug 12 vs Aug 5 in ~70% of 30 years."
+    }
+  ],
+  "insights": [
+    "Bullish seasonal month. Four key stat dates with 67-74% probabilities.",
+    "ATH on ~Aug 21.04. Elliott Wave 5 potentially ending 2022 uptrend.",
+    "Market advanced in rally - hard to estimate precise top at ATH.",
+    "Every decline is technical correction before continuation in current uptrend.",
+    "If inverted N-pattern on weekly chart = deepest decline in 2.5 years.",
+    "Fibonacci AB-CD: point D at $3,516 (April resistance). Rally from April may be correction we receive soon.",
+    "Dropped to 38.2% Fib ($3,134) in May, immediate bounce. Symmetric triangle possible.",
+    "Break above: next target $3,782 (Fib extension). Break below: $3,080 support.",
+    "Weekly Elliott Wave: wave 5 ending upward cycle from end 2022. Last strong support $3,250.",
+    "Dates Aug 22 and 29 particularly strong. Aug 19-22 and 29 align with weekly cycles."
+  ],
+  "technical": {
+    "support": [
+      {
+        "level": "$3,250",
+        "description": "Last strong support from recent action."
+      },
+      {
+        "level": "$3,134",
+        "description": "Fibonacci 38.2%. Tested May with bounce."
+      },
+      {
+        "level": "$3,080",
+        "description": "Deeper support if correction extends."
+      },
+      {
+        "level": "$3,516",
+        "description": "April resistance / Fib point D in AB-CD."
+      }
+    ],
+    "resistance": [
+      {
+        "level": "$3,782",
+        "description": "Next Fibonacci extension target."
+      },
+      {
+        "level": "$3,965",
+        "description": "Higher weekly Fib resistance."
+      },
+      {
+        "level": "$3,375-3,655",
+        "description": "Near-term Fib cluster at 61.8%."
+      }
+    ],
+    "indicators": "Elliott Wave 5 on weekly. Fib AB-CD point D at $3,516. 38.2% at $3,134 held May. Symmetric triangle possible. Daily shows clear support/resistance with key dates aligning weekly cycles."
+  },
+  "summary": "Gold August 2025: bullish seasonal bias with four turning points (Aug 5, 12, 21, 29). At ATH in Elliott Wave 5. Mixed stats: Aug 4 (70% down), Aug 6 (67% up), Aug 14 (73% down), Aug 26 (74% up). Support $3,250/$3,134 critical. Upside target $3,782.",
+  "previous_month_review": "July: 4 dates all worked well. 01.07=low (-1 day), upward continuation. 10-11.07=high, narrow range decline 4 days then reversal. 21-22.07=arrived at triangle/square resistance, classic -4.5% decline to month end. 30.07=on support, possible low.",
+  "risk_notes": [
+    "At ATH - precise top hard to estimate.",
+    "Elliott Wave 5 ending risk = significant correction possible.",
+    "Inverted N on weekly = deepest decline in 2.5 years.",
+    "Aug 14: 73% decline probability.",
+    "Fib 38.2% at $3,134 critical. Below = deeper correction to $3,080.",
+    "Dense turning points Aug 13-18 overlap with S&P - cross-asset volatility."
+  ]
+}

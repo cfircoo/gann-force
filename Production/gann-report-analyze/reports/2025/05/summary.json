@@ -1,0 +1,106 @@
+{
+  "report_title": "Cycles Trading Monthly Report - May 2025",
+  "report_month": "May",
+  "report_year": 2025,
+  "original_title": "דוח חודשי מאי 2025",
+  "assets_covered": ["S&P 500", "Bitcoin", "EUR/USD", "Gold", "Oil"],
+  "cross_asset_calendar": {
+    "2025-05-01": {
+      "assets": ["Bitcoin"],
+      "description": "Bitcoin first turning point. Beginning of the month cycle activation."
+    },
+    "2025-05-02": {
+      "assets": ["S&P 500", "EUR/USD", "Gold"],
+      "description": "Triple convergence - S&P, EUR/USD, and Gold all have turning point dates. High probability of significant cross-market moves. Gold 65% up, EUR/USD 69% up seasonally."
+    },
+    "2025-05-07": {
+      "assets": ["EUR/USD", "Oil"],
+      "description": "EUR/USD 79% down probability. Oil first turning point (May 7-8 range). Potential for dollar strength / risk-off."
+    },
+    "2025-05-08": {
+      "assets": ["EUR/USD", "Oil"],
+      "description": "Continuation of May 7 cluster. EUR/USD second turning point, Oil first turning point."
+    },
+    "2025-05-09": {
+      "assets": ["S&P 500", "Bitcoin"],
+      "description": "S&P second turning point, Bitcoin second turning point. Potential for equity/crypto correlation move."
+    },
+    "2025-05-13": {
+      "assets": ["Gold"],
+      "description": "Gold second turning point. Oil statistically 71% up. Gold 68% up."
+    },
+    "2025-05-16": {
+      "assets": ["S&P 500", "Bitcoin", "Oil"],
+      "description": "CRITICAL DATE - Triple convergence with S&P, Bitcoin, and Oil all having turning points. Coincides with 30-year S&P cycle, geopolitical peak window, and earthquake risk window (May 16-18). Highest volatility potential of the month."
+    },
+    "2025-05-19": {
+      "assets": ["S&P 500", "EUR/USD", "Gold"],
+      "description": "S&P 75% down probability. EUR/USD turning point (May 19-20). Gold 88% up probability - the strongest single statistical signal in the entire report."
+    },
+    "2025-05-21": {
+      "assets": ["Oil"],
+      "description": "Oil third turning point (May 21-22 range)."
+    },
+    "2025-05-22": {
+      "assets": ["S&P 500", "Bitcoin", "Gold", "Oil"],
+      "description": "Quad convergence - S&P (double cycle), Bitcoin, Gold, and Oil all have dates around this window. Extremely high cross-market significance."
+    },
+    "2025-05-27": {
+      "assets": ["S&P 500"],
+      "description": "S&P final turning point of the month. Oil statistically 69% down."
+    },
+    "2025-05-28": {
+      "assets": ["Bitcoin", "EUR/USD", "Oil"],
+      "description": "Triple convergence at month end - Bitcoin, EUR/USD, and Oil turning points. Oil 71% up, S&P 71% down statistically."
+    },
+    "2025-05-29": {
+      "assets": ["Gold"],
+      "description": "Gold final turning point (May 29-30 range)."
+    },
+    "2025-05-30": {
+      "assets": ["Gold", "Oil"],
+      "description": "Gold and Oil final turning points of the month."
+    }
+  },
+  "key_themes": [
+    {
+      "theme": "Historic Cycle Convergence",
+      "description": "May 2025 is described as a rare time point where multiple long-term cycles of 45, 60, 75, and 90 years converge simultaneously. This is characterized as potentially one of the most significant months in decades for financial markets."
+    },
+    {
+      "theme": "Geopolitical Escalation Window",
+      "description": "Multiple geopolitical pressure points are converging: Iran approaching confrontation threshold (as predicted in the April report), India-Pakistan regional conflict with 60 and 90-year cycle patterns from 1947, China internal cycles (18 years since Tiananmen, 45 years since economic reforms, 49 years since Mao's death, 72 years of Xi Jinping, 2007-2018 Politburo cycle), and US internal polarization deepening."
+    },
+    {
+      "theme": "The May 16-23 Danger Zone",
+      "description": "The period between May 16 and May 23 is flagged across multiple assets as carrying the highest potential for exceptional market volatility. This window aligns with physical earthquake risk (atmospheric models), the Panama Canal geopolitical flashpoint (May 16-17), and multiple cycle convergences across S&P, Bitcoin, Oil, Gold, and EUR/USD."
+    },
+    {
+      "theme": "Technical Exhaustion Signals",
+      "description": "Several assets show signs of rally exhaustion: S&P 500 expanding trading cycles with weak buyer conviction at 5,700-5,775 resistance, Gold potentially completing Elliott Wave 5, Oil confirmed bearish weekly trend with strong overhead resistance."
+    },
+    {
+      "theme": "History Does Not Just Repeat - It Echoes",
+      "description": "The report's overarching message is that historical cycle patterns are actively manifesting across all tracked asset classes simultaneously. The author emphasizes that 'whoever understands time - stops fearing the future' and that the methodology provides a compass in turbulent markets."
+    }
+  ],
+  "risk_rules": [
+    "The period May 16-23 requires heightened risk management across all positions and asset classes.",
+    "Profitable long positions in stocks/indices should be partially realized or have stops tightened to below the last weekly/daily low.",
+    "Leveraged ETF positions (x2, x3) remain at full risk and should be approached with extreme caution.",
+    "When approaching a double cycle date (two dates close together), the first often creates a correction in the existing trend, and the second returns the trend to its original direction.",
+    "Turning point dates indicate a potential reversal IN the existing trend at the +/- 1 day window - they do not predict direction. Direction must be determined by the price action as the date approaches.",
+    "Never settle for just the turning point dates - read the full review for proper context. The true meaning is embedded in the deep and comprehensive analysis.",
+    "Emotional leverage is as important as financial leverage - not every temporary rise is a return to normal.",
+    "The methodology is time-based, not based on guessing, gut feeling, or news headlines.",
+    "Stay connected to the Discord community for real-time updates as these are monthly guideposts, not daily trading signals.",
+    "All content is for educational purposes only - not investment advice."
+  ],
+  "april_2025_review_summary": {
+    "sp500": "All four turning point dates worked with high precision. Dates: 3-4.4 (double cycle, continuing), 11.4, 18.4, 24-25.4 (double cycle). The 07.04 date marked the major April low, 14.04 was an exact cycle peak, and 21.04 marked the end of the short decline wave. Three highs and lows perfectly captured.",
+    "bitcoin": "Four dates: 1.4 (+1D deviation to 2.4 marked high), 14.4 (marked high), 21.4 (marked low, +12% rally), 25.4 (marked high but only halted movement). Mixed results with the cycle dynamics not being as clean as other assets.",
+    "eurusd": "Four dates: 4.4 (+1D to 7.4, ~570 pips move), 11.4 (high of cycle, ~200 pip decline but did not sustain), 22.4 (-1D to 21.4, monthly high, ~230 pip decline), 29.4 (head-and-shoulders high, ~150 pip decline). Three of four dates captured key turning points.",
+    "gold": "Three dates: 9.4 (exact timing, marked low, ~9% rally), 14.4 (halted for one day only, became continuing cycle), 25.4 (marked high area, actual high 22.4, started correction). Two of three successfully marked key reversals.",
+    "oil": "Four dates: 1.4 (exact, marked high, ~18% decline), 7.4 (did not deliver reversal), 15.4 (no opportunity), 22-23.4 (exact, double cycle, marked high at resistance, ~12.5% decline). Two of four produced significant profitable moves totaling ~30% in April alone."
+  }
+}

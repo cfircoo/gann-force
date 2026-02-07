@@ -1,0 +1,50 @@
+{
+  "asset": "Gold",
+  "key_dates": [
+    {"date": "2025-03-07", "description": "Turning point date - potential reversal in price movement"},
+    {"date": "2025-03-14", "description": "Turning point date - potential reversal, aligns with weekly cycle end and monthly cycle, significant time window for trend change"},
+    {"date": "2025-03-20", "description": "Turning point date - potential reversal in price movement"},
+    {"date": "2025-03-27", "description": "Turning point date (range with 28.3) - strong turning point from multiple indications"},
+    {"date": "2025-03-28", "description": "Turning point date (range with 27.3) - strong turning point from multiple indications leading to potential material change in movement"}
+  ],
+  "seasonal": "March is the most negative month of the year for Gold. Seasonally bearish. Historical cycle analysis of the last three decades indicates 2 out of 3 cycles ended in decline and one in rise. In the last 30 years, Gold closed on March 26 at a higher price than on March 16 in approximately 67% of cases (20 out of 30 years).",
+  "statistics": [
+    {"date": "2025-03-18", "probability": "71%", "direction": "up", "description": "Over the last 30 years, around March 18 approximately 71% probability of rise"},
+    {"date": "2025-03-20", "probability": "68%", "direction": "up", "description": "Over the last 30 years, around March 20 approximately 68% probability of rise"},
+    {"date": "2025-03-28", "probability": "68%", "direction": "down", "description": "Over the last 30 years, around March 28 approximately 68% probability of decline"},
+    {"date": "2025-03-16", "probability": "67%", "direction": "up", "description": "In the last 30 years, Gold closed on March 26 at a higher price than on March 16 in 67% of cases (20 out of 30 years)"}
+  ],
+  "insights": [
+    "In the long-term uptrend, every decline constitutes a technical correction before continuation of rallies, and this remains the case until proven otherwise. Every decline is in the context of a changing resistance pattern forming a downward N-pattern on the weekly chart.",
+    "Gold, which in the previous month saw the secondary trend returning upward and aligning with the direction of the primary trend, has resumed its uptrend across all timeframes following a breakout of the peak level established in November.",
+    "Note that despite the decline starting at the Feb 20 date, here too we catalog this decline as a technical correction before further advances.",
+    "One of the foundational insights of the technical analysis approach (attributed to Charles Dow, the father of the method) is 'Dow Theory' - providing the real ability to operate even when prices decline and the news and environment create 'artificial fear'. This has been working for over 120 years.",
+    "From the weekly chart rally waves since October 2022, examining the wave pattern using Fibonacci extensions: the rally appears to consist of 5 waves total - 3 impulse waves in the trend direction (waves 1, 3, 5) and 2 corrective waves against the trend (waves 2, 4). Wave 3 is typically the longest and strongest. If we are currently in wave 5, Gold in the long term is expected to be in the $3,010-$3,042 range.",
+    "There is one monthly cycle, but it is not strong, and together with the weekly cycle ending around March 14, they point to a significant turning point in that time window. Therefore it is worth watching for a trend change at that time.",
+    "Also on March 28 there is a strong additional turning point date that appeared from multiple different indications that could lead to a material change in movement.",
+    "Pay attention - you do not need to catch the cycle from its beginning. Sometimes when the next turning point date is far away, you can join within a few days' movement in intraday charts (decline to a 30-minute chart level) in order to capture the movement that continues until the next turning date.",
+    "The combination of a turning point date with chart formation and trading with the dominant trend provides the best success rates and most profitable trades with tight stop-loss and good risk-reward ratio."
+  ],
+  "technical": {
+    "support": [
+      {"level": "$2,880", "description": "Immediate support level. If price retreats from the peak, there is a possibility of continued decline to this level."},
+      {"level": "$2,795-$2,705", "description": "Support zone from Fibonacci retracement at 50% of the AB wave. Key reset level."},
+      {"level": "$2,775-$2,735", "description": "Additional Fibonacci support level. Also identified as the 61.8% Fibonacci level to the upside, noted as a specific support zone."},
+      {"level": "$2,165-$2,338", "description": "Deep long-term Fibonacci support for possible retest. Very deep support level unlikely to be reached in this cycle."}
+    ],
+    "resistance": [
+      {"level": "$3,010", "description": "Long-term target zone from Elliott Wave analysis and Fibonacci extensions on the weekly chart."},
+      {"level": "$3,042", "description": "Upper range of the long-term target from Fibonacci analysis of the rally waves supporting previous target area."}
+    ],
+    "indicators": "Weekly chart shows clear uptrend with rally wave pattern from October 2022 consistent with 5-wave Elliott structure. Fibonacci extensions point to $3,010-$3,042 target zone. One monthly cycle exists but is not strong. Weekly cycle ending around March 14 combined with monthly creates significant turning point window. Daily chart shows dominant buy-side momentum. Moving averages on daily chart show 50-day and 100-day creating support below price in the short-to-medium term. The weekly Fibonacci levels at 50% and 61.8% provide key retracement support for any pullback."
+  },
+  "summary": "Gold in March 2025 faces the seasonally most negative month of the year while being in a strong long-term uptrend targeting the $3,010-$3,042 zone. Key turning dates are March 7, 14 (aligned with weekly cycle - significant window for trend change), 20, and 27-28 (strong from multiple indications). The dominant approach is to buy dips in line with the primary uptrend, while being mindful that the seasonal negativity and cycle analysis showing 2 out of 3 decades ending in decline could create temporary pullback opportunities.",
+  "previous_month_review": "February 2025 had three turning point dates for Gold, all of which were successfully traded in the Discord community. Date 1 (Feb 3): Arrived on time. In the community in real-time, after the breakout of the peak, we understood it would serve as a 'low' and took it long. Date 2 (Feb 12): Arrived on time. Given the rising trend, here too in the community in real-time, we identified it as a date that would serve as a 'low' and took it long. Date 3 (Feb 20): Arrived on time. Served as the 'high' of the month and of the movement starting from the previous turning date. In the first stage we avoided taking a short position on Gold given the dominant rising trend characterizing it throughout the month. Subsequently, with the development of a price decline pattern (N downward on 4-hour/hourly chart), we executed a short that allowed us to capitalize on the significant downward movement.",
+  "risk_notes": [
+    "March is seasonally the most negative month for Gold - exercise caution with long positions.",
+    "Despite the strong uptrend, corrections can be sharp and sudden.",
+    "Historical cycle analysis shows 2 out of 3 significant decade-cycles ended in decline.",
+    "When trading counter to the dominant trend, wait and watch for the reversal on intraday charts (4-hour or 30-minute minimum) before entering.",
+    "The turning point on March 28 is strong and from multiple indications - expect potential material change in movement direction around this date."
+  ]
+}

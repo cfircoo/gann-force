@@ -1,0 +1,130 @@
+{
+  "report": "Cycles Trading Monthly Report - January 2026",
+  "report_date": "2026-01",
+  "assets": ["S&P 500", "Bitcoin", "EUR/USD", "Gold", "Oil"],
+  "cross_asset_calendar": {
+    "2026-01-02": {
+      "assets": ["Gold", "Oil"],
+      "description": "Turning point for Gold and Oil. Oil has a very strong weekly cycle alignment here. Gold opens the month with its first turning point."
+    },
+    "2026-01-03": {
+      "assets": ["Bitcoin"],
+      "description": "First Bitcoin turning point. Also near the S&P 500 Jan 5 date - aligns with a weekly cycle."
+    },
+    "2026-01-05": {
+      "assets": ["S&P 500", "EUR/USD"],
+      "description": "S&P 500 first turning point. EUR/USD statistical 78% down probability. Strong cluster day."
+    },
+    "2026-01-07": {
+      "assets": ["EUR/USD", "Oil"],
+      "description": "EUR/USD turning point (range Jan 7-8). Oil statistical 71% down probability."
+    },
+    "2026-01-08": {
+      "assets": ["Gold", "EUR/USD"],
+      "description": "Gold second turning point. EUR/USD range continues. Gold 83% seasonal up stat from this date through month-end."
+    },
+    "2026-01-12": {
+      "assets": ["S&P 500"],
+      "description": "S&P 500 second turning point."
+    },
+    "2026-01-16": {
+      "assets": ["S&P 500", "Bitcoin", "EUR/USD", "Gold", "Oil"],
+      "description": "MAJOR CONVERGENCE DATE - All five assets have turning points or significant levels on this date. S&P third turning point. Bitcoin second turning point. EUR/USD second turning point with 80% down statistic. Gold third turning point with weekly cycle alignment. Oil second turning point. This is the most significant single date in January 2026."
+    },
+    "2026-01-21": {
+      "assets": ["EUR/USD"],
+      "description": "EUR/USD third turning point."
+    },
+    "2026-01-22": {
+      "assets": ["Bitcoin", "Oil"],
+      "description": "Bitcoin third turning point. Oil third turning point with weekly cycle alignment."
+    },
+    "2026-01-23": {
+      "assets": ["S&P 500", "Gold", "Oil"],
+      "description": "S&P 500 statistical 68% up probability. Gold fourth turning point with 68% up statistic. Oil statistical 68% up probability. A bullish cluster date."
+    },
+    "2026-01-27": {
+      "assets": ["S&P 500", "Bitcoin", "EUR/USD", "Oil"],
+      "description": "S&P 500 statistical 67% down probability. Bitcoin fourth turning point (range 27-28). EUR/USD fourth turning point (range 27-28). Oil fourth turning point with 71% down statistic. A bearish cluster date."
+    },
+    "2026-01-28": {
+      "assets": ["S&P 500"],
+      "description": "S&P 500 fourth turning point. Aligns with the second weekly cycle ending around Jan 30."
+    },
+    "2026-01-29": {
+      "assets": ["Gold"],
+      "description": "Gold fifth turning point."
+    }
+  },
+  "key_convergence_dates": [
+    {
+      "date": "2026-01-16",
+      "significance": "HIGHEST - All 5 assets converge",
+      "assets_count": 5,
+      "description": "The most critical date of January 2026. All five assets (S&P 500, Bitcoin, EUR/USD, Gold, Oil) have turning point dates or strong statistical signals on or around January 16. EUR/USD has an 80% downside probability. Weekly cycles align for Gold and Bitcoin. This date should be watched closely for potential broad market directional shifts."
+    },
+    {
+      "date": "2026-01-27",
+      "significance": "HIGH - 4 assets converge with bearish bias",
+      "assets_count": 4,
+      "description": "Four assets (S&P 500, Bitcoin, EUR/USD, Oil) show turning points or bearish statistics. S&P has 67% down, Oil has 71% down. Combined with the S&P 500 turning point on Jan 28 and weekly cycle ending Jan 30, the Jan 27-30 window represents a significant risk window."
+    },
+    {
+      "date": "2026-01-05",
+      "significance": "MODERATE-HIGH - S&P and EUR/USD cluster",
+      "assets_count": 2,
+      "description": "S&P 500 first turning point date combined with EUR/USD 78% down statistic. The early-January window (Jan 2-8) sees activity across Gold, Oil, S&P, EUR/USD and Bitcoin."
+    },
+    {
+      "date": "2026-01-23",
+      "significance": "MODERATE-HIGH - Bullish cluster",
+      "assets_count": 3,
+      "description": "S&P 500 (68% up), Gold (68% up), and Oil (68% up) all show bullish statistical signals, creating a potential risk-on day."
+    }
+  ],
+  "themes": [
+    {
+      "theme": "Extended rally meets cyclical exhaustion",
+      "description": "S&P 500 has rallied for 8 consecutive months. Gold hit all-time highs. Both show technical divergences suggesting the uptrend, while still intact, is mature and vulnerable to correction."
+    },
+    {
+      "theme": "January as year-defining month",
+      "description": "According to Gann methodology, January often sets the tone for the entire year. A low in January frequently holds for months, while a high followed by a decline can mark the year's peak. Potential geopolitical triggers in Europe, UK, or Israel could serve as catalysts."
+    },
+    {
+      "theme": "Dollar strength / EUR weakness",
+      "description": "January is the most negative month of the year for EUR/USD. Combined with 78-80% downside statistics, this theme of dollar strength could have ripple effects across Gold and commodities."
+    },
+    {
+      "theme": "Crypto at a crossroads",
+      "description": "Bitcoin is in a tightening consolidation after November's sharp rally and December's correction. The 35-month cycle pattern suggests potential for a major directional resolution. The $95,000 breakout vs $84,400 breakdown levels define the binary outcome."
+    },
+    {
+      "theme": "Oil under persistent pressure",
+      "description": "Oil remains in a structural downtrend with declining moving averages acting as resistance caps. Two out of three cyclical patterns point lower. Support at $55 area is under threat with potential for a move to $51 or even $43."
+    },
+    {
+      "theme": "Risk accumulation in quiet markets",
+      "description": "The report repeatedly warns that the biggest danger arrives when markets appear calm. The S&P's smooth 8-month rally, low volatility, and muted corrections create a false sense of security. The Fear & Greed Index recovery to 46 from 24 (November) reflects gradually rebuilding complacency."
+    }
+  ],
+  "risk_rules": [
+    "Time is more important than price, but price must confirm the turn - wait for price confirmation at turning point dates before acting",
+    "Turning point dates are not prophecies - they are indicators of potential change windows with high historical probability",
+    "A continuation date (cycle continues) means the trend is expected to persist until the next turning point; it does not mean the price will reverse",
+    "Double dates (two turning points close together, like Jan 2-3 for S&P 500 or Jan 27-28) suggest the first date often creates a correction, and the second restores the original trend direction",
+    "When working against the general trend direction, the statistical probability is weaker and trades should only be taken after clear confirmation signals",
+    "Leverage feels like genius when the market climbs but becomes cruel the moment the market corrects - manage position sizing accordingly",
+    "Work with a clear head, not high pulse - this is the key trading principle",
+    "The more assets you trade from this report, the more chances you have to finish the month profitably - diversification across all five assets improves odds",
+    "January's year-defining nature means building awareness rather than aggression - set alerts, plan scenarios, but wait for price to confirm",
+    "All content is for educational purposes only and does not constitute investment advice"
+  ],
+  "seasonal_summary": {
+    "sp500": "Bullish - January is a positive month for the index",
+    "bitcoin": "Bullish - 60% of years positive, 87% chance of higher close Jan 6 vs Jan 1",
+    "eurusd": "Bearish - The most negative month of the year for the Euro",
+    "gold": "Bullish - 83% chance of higher prices from Jan 8 through month-end over 30 years",
+    "oil": "Slightly bullish seasonally, but 2 of 3 cyclical patterns point down - mixed overall"
+  }
+}

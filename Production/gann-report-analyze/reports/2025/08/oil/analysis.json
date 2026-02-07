@@ -1,0 +1,107 @@
+{
+  "asset": "Oil (Crude)",
+  "key_dates": [
+    {
+      "date": "2025-08-01",
+      "description": "First turning point (+/- 1 day)."
+    },
+    {
+      "date": "2025-08-07",
+      "description": "Second turning point."
+    },
+    {
+      "date": "2025-08-14",
+      "description": "Third turning point. Particularly strong date."
+    },
+    {
+      "date": "2025-08-20",
+      "description": "Fourth turning point (20-21.8 range)."
+    },
+    {
+      "date": "2025-08-28",
+      "description": "Fifth turning point. Aligns with weekly cycle."
+    }
+  ],
+  "seasonal": "August generally positive (bullish) for Oil. One strong monthly cycle. Two weekly cycles ending Aug 22/29. Last window expected for significant trend change.",
+  "statistics": [
+    {
+      "date": "2025-08-01",
+      "probability": "73%",
+      "direction": "up",
+      "description": "~73% up probability from 30-year data."
+    },
+    {
+      "date": "2025-08-28",
+      "probability": "73%",
+      "direction": "up",
+      "description": "~73% up probability from 30-year data."
+    },
+    {
+      "date": "2025-08-12",
+      "probability": "70%",
+      "direction": "up",
+      "description": "Oil closed higher on Aug 12 vs Aug 7 in ~70% of 30 years."
+    }
+  ],
+  "insights": [
+    "Bullish seasonal month with one monthly cycle and two weekly cycles.",
+    "Aug 14 considered strong. Dates 19-22/28 align with weekly cycles.",
+    "Price in $64.10-$64.85 range confirming bullish pattern. 61.8% Fib support holding.",
+    "Trapped between $55.30 support and $66.50 resistance since September.",
+    "Above $80 = significant trend change. Below $55.30 = deeper bearish signal.",
+    "Two decade patterns (10/20-year) point to highs in August. Aug 31 significant.",
+    "If price rises to Aug 28-31 area, possible peak and reversal.",
+    "Weekly cycles ending Aug 22/29 could create sharp moves.",
+    "Support at $60.445 (trend continuation). Immediate Fib support $64.85.",
+    "Key resistance at $69.655 above current ceiling."
+  ],
+  "technical": {
+    "support": [
+      {
+        "level": "$55.30-$56",
+        "description": "Major historical support. Held since April."
+      },
+      {
+        "level": "$51-$52.70",
+        "description": "Lower support if $55 breaks."
+      },
+      {
+        "level": "$43.40",
+        "description": "Deep support - significant bearish signal."
+      },
+      {
+        "level": "$60.445",
+        "description": "Daily trend continuation support."
+      },
+      {
+        "level": "$64.10-$64.85",
+        "description": "Fib 61.8% daily support."
+      }
+    ],
+    "resistance": [
+      {
+        "level": "$64.40-$66.50",
+        "description": "Resistance ceiling since September."
+      },
+      {
+        "level": "$69.655",
+        "description": "Higher daily chart resistance."
+      },
+      {
+        "level": "$80",
+        "description": "Trend change confirmation level."
+      }
+    ],
+    "indicators": "Above $55.30 historical support. Trapped $55-66 range. Two decade patterns point to August highs. Weekly cycles ending Aug 22/29. Daily in upward channel with Fib support at $64."
+  },
+  "summary": "Oil August 2025: bullish seasonal bias with five turning points (Aug 1, 7, 14, 20-21, 28). Trapped between $55-56 and $64-66. Decade patterns suggest highs around Aug 28-31 then possible reversal. Above $80 = trend change.",
+  "previous_month_review": "July: 4 dates. 01.07=low on support, +6%. 09.07=high, -3% decline then recovery. 14-15.07=double cycle at resistance, no skip, reversed up. 30-31.07=double cycle at resistance, decline on second date. Unclear at writing.",
+  "risk_notes": [
+    "NO open positions over weekends - Oil highest surprise risk.",
+    "Decade patterns suggest peak Aug 28-31 then reversal.",
+    "Avoid trading middle of $55-66 range.",
+    "Weekly cycles Aug 22/29 could create sharp moves.",
+    "Below $55.30 = next support much lower at $51-52.70.",
+    "Aug 14 particularly strong - significant volatility expected."
+  ]
+}

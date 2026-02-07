@@ -1,0 +1,123 @@
+{
+  "report_title": "Cycles Trading Monthly Report - September 2025",
+  "report_date": "2025-09",
+  "assets": ["S&P 500", "Bitcoin", "EUR/USD", "Gold", "Oil"],
+  "cross_asset_calendar": {
+    "2025-09-03": {
+      "assets": ["S&P 500", "Bitcoin", "EUR/USD", "Gold", "Oil"],
+      "note": "Major confluence date - ALL five assets have turning points. Gold and Oil have ~70-76% downward probability. Highest activity day of the month."
+    },
+    "2025-09-05": {
+      "assets": ["Oil"],
+      "note": "Oil turning point with 67% upward probability."
+    },
+    "2025-09-07": {
+      "assets": ["Bitcoin"],
+      "note": "Bitcoin cycle pivot."
+    },
+    "2025-09-08": {
+      "assets": ["EUR/USD"],
+      "note": "EUR/USD 69% downward probability (Euro decline)."
+    },
+    "2025-09-09": {
+      "assets": ["S&P 500", "EUR/USD", "Gold"],
+      "note": "Triple confluence date. S&P and EUR/USD turning points. Gold has 76% downward probability. EUR/USD aligns with weekly cycle ending."
+    },
+    "2025-09-10": {
+      "assets": ["S&P 500"],
+      "note": "S&P 500 statistically strong up day (76% probability)."
+    },
+    "2025-09-11": {
+      "assets": ["S&P 500", "Gold"],
+      "note": "S&P 500 71% up probability. Gold turning point date."
+    },
+    "2025-09-12": {
+      "assets": ["S&P 500", "Gold"],
+      "note": "S&P 500 76% up probability. Gold 71% down probability but also 70% probability of rising from Sep 12 to Sep 18."
+    },
+    "2025-09-14": {
+      "assets": ["Bitcoin"],
+      "note": "Bitcoin cycle pivot."
+    },
+    "2025-09-15": {
+      "assets": ["S&P 500", "EUR/USD", "Oil"],
+      "note": "Triple confluence. S&P daily turning point overlaps seasonal peak (strong reversal signal). EUR/USD aligns with weekly cycle. Oil: 70% probability of closing lower on Sep 20 vs Sep 15."
+    },
+    "2025-09-16": {
+      "assets": ["Oil"],
+      "note": "Oil 67% downward probability."
+    },
+    "2025-09-17": {
+      "assets": ["Oil"],
+      "note": "Oil strong turning point zone begins (17-18). Expect important reversal."
+    },
+    "2025-09-18": {
+      "assets": ["Gold", "Oil"],
+      "note": "Gold turning point. Oil strong turning point zone ends (17-18). Bitcoin 86% probability of lower price by Sep 24 vs Sep 18."
+    },
+    "2025-09-19": {
+      "assets": ["Oil"],
+      "note": "Oil 68% downward probability."
+    },
+    "2025-09-22": {
+      "assets": ["Bitcoin"],
+      "note": "Bitcoin cluster zone begins (22-23)."
+    },
+    "2025-09-23": {
+      "assets": ["S&P 500", "Bitcoin", "EUR/USD"],
+      "note": "Major confluence date. S&P 76% down probability. Bitcoin cluster zone. EUR/USD 69% down probability. High-risk reversal day."
+    },
+    "2025-09-24": {
+      "assets": ["S&P 500", "EUR/USD", "Gold", "Oil"],
+      "note": "Quad confluence date. S&P turning point cluster (24-25). EUR/USD cluster ends. Gold turning point. Oil turning point. Major activity expected."
+    },
+    "2025-09-25": {
+      "assets": ["S&P 500", "EUR/USD"],
+      "note": "S&P turning point cluster ends. EUR/USD 80% downward probability (strongest single-day statistical signal in entire report)."
+    },
+    "2025-09-28": {
+      "assets": ["Bitcoin"],
+      "note": "Bitcoin cycle pivot."
+    },
+    "2025-09-29": {
+      "assets": ["EUR/USD"],
+      "note": "EUR/USD final turning point of the month."
+    }
+  },
+  "themes": [
+    "September 2025 is historically the weakest month for equities (S&P 500) and carries bearish seasonal bias for most risk assets",
+    "Major cross-asset confluence dates are Sep 3 (all 5 assets), Sep 9, Sep 15, Sep 23, and Sep 24 - these dates carry the highest probability of significant market moves",
+    "The 45-year, 60-year, and 90-year historical macro cycles all echo concerning patterns for September 2025 (Iran-Iraq war, US financial strains, Livermore sustainability collapse)",
+    "Gold is the exception with bullish seasonal bias in September - the most positive month of the year for the metal",
+    "Oil remains in a structural downtrend with the multi-year support band broken - contrarian to its seasonal positive bias",
+    "Bitcoin has 66.7% probability of ending September negative - short history makes seasonal data less reliable but still cautionary",
+    "EUR/USD has particularly strong statistical signals with 80% probability of Euro decline around Sep 25",
+    "Institutional positioning (CFTC COT) shows hedging activity in equities - more PUT buying versus CALL",
+    "The overall sentiment indicator (Fear & Greed Index) at 64 suggests greed but not extreme - room for both directions but reversal risk is elevated",
+    "Multiple assets show technical weakness despite bullish primary trends - divergences on weekly RSI/MACD are common across equities and crypto",
+    "All analysis should be combined with real-time price action at turning point dates - dates are not predictions but windows of opportunity",
+    "The W.D. Gann principle applies: Time is more important than price, but price must confirm the turn"
+  ],
+  "risk_rules": [
+    "September is historically the most dangerous month for risk assets - reduce overall exposure and position sizes",
+    "Never trade turning point dates in isolation - always combine with technical analysis (support/resistance, chart patterns, divergences)",
+    "Tighten stops on all existing long positions, especially in S&P 500 and Bitcoin",
+    "Avoid opening new leveraged positions (2x-3x ETFs, leveraged crypto) during this month",
+    "Cross-asset confluence dates (Sep 3, 9, 15, 23, 24) carry the highest reversal risk - be extra cautious around these dates",
+    "Turning point dates can deviate by +/- 1 trading day - be prepared for this",
+    "The classic pattern is high-low-high alternation, but consecutive highs or lows are also possible - do not assume direction before price confirms",
+    "When trading against the overall trend, entries should only be made after clear reversal confirmation signals",
+    "Gradually take profits in positions showing significant unrealized gains - do not wait for a single exit point",
+    "Keep position sizes small enough to survive the worst-case scenario for each turning point",
+    "Stay connected to the Discord community for real-time updates and adjustments to the monthly outlook",
+    "None of the content constitutes investment advice - all material is for educational and informational purposes only"
+  ],
+  "previous_month_summary": {
+    "month": "August 2025",
+    "sp500": "5 turning points - Aug 1 (excellent, caught the low), Aug 14 (provided the high), Aug 18 (failed to stop decline), Aug 25 (early by 1 day, marked low on ES futures), Aug 28 (appears to be high at time of writing)",
+    "bitcoin": "4 turning points - Aug 7 (did not work), Aug 14-15 (double cycle, powerful ~10% reversal down), Aug 20 (partial, +4.5% then reversed), Aug 27 (partial, +3.5% then reversed)",
+    "eurusd": "5 turning points - Aug 1 (excellent, low + 300 pip rally), Aug 8 (late by 1 day, 130 pips move), Aug 15 (high near resistance), Aug 21 (support bounce), Aug 25 (partial, high of cycle but not classic)",
+    "gold": "4 turning points - Aug 5 (stopped then continued = continuing cycle), Aug 11-12 (early by 1 day, marked the high), Aug 20-21 (early by 1 day, marked the low, +4% classic rise), Aug 29 (at support, possible low)",
+    "oil": "5 turning points - Aug 1 (high, -10% decline followed), Aug 7-8 (low area but unclear), Aug 14 (high at resistance), Aug 20-21 (low, +5% rise), Aug 28 (at resistance, possible high)"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "asset": "Oil (Crude)",
+  "key_dates": [
+    {"date": "2025-07-01", "description": "Cycle turning point date for potential trend reversal"},
+    {"date": "2025-07-09", "description": "Cycle turning point date for potential trend reversal"},
+    {"date": "2025-07-14", "description": "Cycle turning point date (range with 15.7) for potential trend reversal"},
+    {"date": "2025-07-15", "description": "Cycle turning point date (range with 14.7) for potential trend reversal"},
+    {"date": "2025-07-30", "description": "Cycle turning point date (range with 31.7) for potential trend reversal"},
+    {"date": "2025-07-31", "description": "Cycle turning point date (range with 30.7) for potential trend reversal"}
+  ],
+  "seasonal": "July is typically a month with almost no change for oil. Seasonally neutral.",
+  "statistics": [
+    {"date": "2025-07-11", "probability": "70%", "direction": "up", "description": "Multi-seasonal statistic over last 30 years shows ~70% bullish bias around this date"},
+    {"date": "2025-07-24", "probability": "73%", "direction": "up", "description": "Multi-seasonal statistic over last 30 years shows ~73% bullish bias around this date"},
+    {"date": "2025-08-01", "probability": "70%", "direction": "up", "description": "In the last 30 years, oil closed at a higher price on 01.08 compared to 23.07 in 70% of cases (21 out of 30 years)"}
+  ],
+  "insights": [
+    "Oil is caught between cyclical trends and a critical technical juncture - a key pivot point between potential reversal to downtrend continuation",
+    "The decline in late April was not a normal price fluctuation but a meaningful move: a breakdown below a central support level between $64.40-$66.50 that had held for the last 3 years",
+    "Higher-volume trading cycles accompanied the breakdown, reinforcing the understanding that this is not a passing move but a potential depth shift in price dynamics",
+    "For months oil has remained below this key level; every rally attempt was met with renewed resistance, and overall sentiment continued bearish",
+    "The situation changed in the last month following the Israeli strike on Iran, which led to a sharp rise and rapid breakout of the resistance zone",
+    "The breakout reached the significant resistance area at $78.50, where sellers re-entered and oil returned above the $64.40-$66.50 support zone",
+    "A break below the $64.40-$66.50 zone could signal resumption of the downtrend; the first target in such a case would be around $55.30 (previous low area), followed by $51 range, then $52.70, and if those also break, the significant support is at $43.40",
+    "For a genuine trend reversal to bullish, a clear breakout above $80 resistance is needed - only such a move would signal potential end of the downtrend and beginning of a new primary uptrend",
+    "This month is also a time to pay attention to geopolitical events and combine the historical turning dates with daily cycles",
+    "The daily chart shows the first half of July may see a brief upward move followed by a downward correction within the broader pattern",
+    "All key levels are marked on the attached weekly chart"
+  ],
+  "technical": {
+    "support": [
+      {"level": "64.40", "description": "Lower bound of critical 3-year support zone ($64.40-$66.50); breakdown below here resumes downtrend"},
+      {"level": "66.50", "description": "Upper bound of critical support zone that was broken in April"},
+      {"level": "55.30", "description": "First major support target if the $64.40-$66.50 zone breaks; previous low area"},
+      {"level": "52.70", "description": "Second major support level below the $55.30 area"},
+      {"level": "51.00", "description": "Support in the range between $52.70 and $51.00"},
+      {"level": "43.40", "description": "Ultimate significant support level if all above levels break"}
+    ],
+    "resistance": [
+      {"level": "78.50", "description": "Significant resistance zone where sellers re-entered after Iran-strike rally"},
+      {"level": "80.00", "description": "Critical resistance level - only a clear breakout above here would signal genuine trend reversal to bullish"}
+    ],
+    "indicators": "Weekly chart shows oil broke below the 3-year support zone ($64.40-$66.50) in late April, a meaningful structural breakdown. After the Israel-Iran strike caused a sharp rally to $78.50, oil pulled back and is now testing the broken support as resistance. The pattern shows resistance at $78.50 as confirmed, establishing a bearish technical structure with a 61.8% Fibonacci retracement level reinforcing this zone. Daily chart shows the first half of July may feature a brief upward attempt followed by correction. Breakout above $80 required for genuine bullish reversal. The overall downtrend pattern with multiple lower highs from recent months remains intact."
+  },
+  "summary": "Oil is at a critical technical juncture after breaking below its 3-year support zone of $64.40-$66.50 in April and subsequently rallying to $78.50 resistance following the Israel-Iran military events. Seasonally, July is typically flat for oil. The key cycle dates cluster around early July (1st, 9th) and mid-July (14-15th) with an end-of-month cycle (30-31). Statistics show 70-73% bullish probability around July 11 and July 24. The fundamental question is whether the broken support zone holds as resistance or whether oil can break above $80 for a genuine trend reversal.",
+  "previous_month_review": "In June 2025, there were four turning point dates for oil that captured the reversal of the strong downward move. The first date (June 5-6, double cycle) saw price not stop at the dates and continued the upward move; after the breakout of resistance, the community assessed it as a continuing cycle with the upward move persisting to the next turning point. Although as a turning point it did not work, it absolutely provided a significant move of about 20% from then to the high. The second date (June 13) served as the 'high' of the move; despite the strong rally, price stopped at the turning date combined with historical resistance and provided about 10% decline within 24 hours, continuing to fall to the next date and returning to test resistance. This provided an opportunity to join a short from the top per the live weekly reviews. The third date (June 26) and fourth date (June 30) provided the 'low' of the move: after the strong decline from the previous turning point, oil 'sat' on support level and with difficulty exited it. Even though these dates are providing the low, at the time of writing there was no significant move or potential return from this date.",
+  "risk_notes": [
+    "Break below $64.40 support would confirm resumption of downtrend with potential targets at $55.30, $52.70-$51.00, and $43.40",
+    "Geopolitical events (Israel-Iran conflict) can cause sudden sharp moves that override technical patterns",
+    "The downtrend since recent highs with the broken 3-year support remains the dominant pattern - bearish bias until $80 breakout",
+    "Seasonally neutral month means no seasonal tailwind to support either direction",
+    "This month combines cyclical events with geopolitical tension - heightened vigilance required for position management",
+    "Even cycle dates that 'don't work' as turning points still serve to understand future price movement direction"
+  ]
+}

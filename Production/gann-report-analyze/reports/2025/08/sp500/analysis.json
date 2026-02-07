@@ -1,0 +1,111 @@
+{
+  "asset": "S&P500",
+  "key_dates": [
+    {
+      "date": "2025-08-01",
+      "description": "First turning point date of August (+/- 1 day)."
+    },
+    {
+      "date": "2025-08-14",
+      "description": "Second turning point. Significant for potential volatility."
+    },
+    {
+      "date": "2025-08-18",
+      "description": "Third turning point. Within volatility window Aug 13-18."
+    },
+    {
+      "date": "2025-08-25",
+      "description": "Fourth turning point. Aligns with daily cycle."
+    },
+    {
+      "date": "2025-08-28",
+      "description": "Fifth turning point. Potential trend reversal."
+    }
+  ],
+  "seasonal": "August slightly negative seasonally. September is worst month statistically. MACD negative divergence persists on weekly. All three trends still upward.",
+  "statistics": [
+    {
+      "date": "2025-08-06",
+      "probability": "67%",
+      "direction": "up",
+      "description": "~67% up probability from 30-year data."
+    },
+    {
+      "date": "2025-08-15",
+      "probability": "73%",
+      "direction": "up",
+      "description": "~73% up probability from 30-year data."
+    },
+    {
+      "date": "2025-08-28",
+      "probability": "68%",
+      "direction": "up",
+      "description": "~68% up probability from 30-year data."
+    },
+    {
+      "date": "2025-08-19",
+      "probability": "67%",
+      "direction": "up",
+      "description": "Index closed higher on Aug 19 vs Aug 9 in ~67% of 30 years."
+    }
+  ],
+  "insights": [
+    "Cyclical windows from July (84-year global wars, 45-year Iran, 250-year empires) continue through August.",
+    "90/144-year cycles point to identity/migration upheaval. Gold, oil, crypto signal geopolitical movement.",
+    "Aug cycle depth: Strong monthly cycles on dollar/euro. Weekly on oil (Aug 18-22). Dense daily points for S&P/Gold (Aug 13-18).",
+    "Critical windows: Aug 4-6 and Aug 28-Sep 1 are high-concentration cycle zones.",
+    "Gann: Time more important than price, but price must confirm the turn.",
+    "Dominant trend positive. 2025 expected positive per annual review.",
+    "CNN Fear and Greed at 61 (end July), declining from 66.",
+    "RSP and Dow not breaking highs - rally led by few mega-caps.",
+    "Aug 15 strongest date in volatility window. Aug 28 significant for reversal.",
+    "Tighten stops, avoid new longs without correction, avoid leveraged ETFs.",
+    "Trade price+time. Dates are anchors for cyclical confirmation."
+  ],
+  "technical": {
+    "support": [
+      {
+        "level": "6,203",
+        "description": "Daily chart first support."
+      },
+      {
+        "level": "6,147",
+        "description": "Previous ATH breakout level."
+      },
+      {
+        "level": "6,091",
+        "description": "Peak cluster support (6,091-6,147). Held July."
+      },
+      {
+        "level": "5,961",
+        "description": "Below this at month end = fundamental change."
+      },
+      {
+        "level": "5,823",
+        "description": "Fibonacci 38.2% from April."
+      }
+    ],
+    "resistance": [
+      {
+        "level": "6,575",
+        "description": "Mathematical/cyclical upper target."
+      },
+      {
+        "level": "6,505",
+        "description": "Fibonacci extension target."
+      }
+    ],
+    "indicators": "V-shaped recovery on weekly. RSP double-top, Dow lagging. MACD persistent negative divergence. Fib 38.2% at 5,823. N-pattern on weekly per Dow theory. Fear/Greed at 61."
+  },
+  "summary": "August 2025 slightly negative seasonally for S&P500 with five turning points (Aug 1, 14, 18, 25, 28). Concentrated volatility expected Aug 13-18. Trend positive but RSP/Dow lagging. MACD divergence present. September worst month approaching.",
+  "previous_month_review": "July: 5 turning dates. 03.07=high of June. 10-11.07 double cycle=high then mild decline. 16.07=low, best cycle +2.5%. 23-24.07=continuation. 31.07=high.",
+  "risk_notes": [
+    "August slightly negative; September worst month statistically.",
+    "Volatility Aug 13-18 with S&P/Gold daily cycles converging.",
+    "RSP/Dow not breaking highs - narrow mega-cap rally.",
+    "MACD negative divergence persisting.",
+    "Below 5,961 at month end = fundamental change.",
+    "Wait for chart confirmation on dates.",
+    "84/45/250-year geopolitical cycles continue from July."
+  ]
+}

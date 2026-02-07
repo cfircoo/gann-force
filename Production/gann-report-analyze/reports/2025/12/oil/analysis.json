@@ -1,0 +1,54 @@
+{
+  "asset": "Oil (Crude)",
+  "key_dates": [
+    {"date": "2025-12-02", "description": "Turning date (+/- 1 day). First cycle date of December with strong 81% up statistical bias"},
+    {"date": "2025-12-08", "description": "Turning date (+/- 1 day). Early-month turning point with 70% down statistical bias"},
+    {"date": "2025-12-18", "description": "Turning date (+/- 1 day). Double date range 18-19.12; mid-month turning point"},
+    {"date": "2025-12-19", "description": "Turning date (+/- 1 day). Second part of mid-month double date"},
+    {"date": "2025-12-30", "description": "Turning date (+/- 1 day). Double date range 30-31.12; end-of-month turning point"},
+    {"date": "2025-12-31", "description": "Turning date (+/- 1 day). Second part of end-of-month double date"}
+  ],
+  "seasonal": "December is slightly positive for Oil. While two out of three decade patterns from recent decades point upward, the overall seasonal bias is only mildly bullish. The monthly cycle is strong and signals potential for volatility and meaningful direction change. In the last 30 years, Oil closed higher on Dec 17 compared to Dec 10 in approximately 69% of cases.",
+  "statistics": [
+    {"date": "2025-12-02", "probability": "81%", "direction": "up", "description": "Multi-decade seasonal statistical significance: approximately 81% probability of upward movement on this date. Note: the possible decline may arrive only after the trading day closes"},
+    {"date": "2025-12-08", "probability": "70%", "direction": "down", "description": "Multi-decade seasonal statistical significance: approximately 70% probability of downward movement on this date"},
+    {"date": "2025-12-22", "probability": "75%", "direction": "up", "description": "Multi-decade seasonal statistical significance: approximately 75% probability of upward movement on this date"},
+    {"date": "2025-12-17", "probability": "69%", "direction": "up", "description": "In the last 30 years, Oil closed higher on Dec 17 than on Dec 10 in approximately 69% of cases"}
+  ],
+  "insights": [
+    "Oil continues to move within a compressed range, without deviating from the picture that was outlined in previous months",
+    "The historical support band between $64.40 and $66.50 continues to be the critical zone for recent months. This zone has not been retested on a monthly basis and as long as the price remains below it, Oil will continue to be stuck between choppy and declining",
+    "To see a real trend change, a clear return above $70 is required first. This is only the first step. Only a strong and sustained break above $80 would signal that Oil has ended its decline trend and entered a new bullish cycle",
+    "Until that happens, the probability of further declines remains elevated. In the context of this scenario, the first price target is the area of the previous low around $55.30",
+    "From there a decline to the $51-$52.70 range could follow, and if that does not hold, the next meaningful support is in the $43.40 area",
+    "An additional observation from the weekly chart reveals a consistent pattern: the 20-week moving average continues to serve as an alternating buffer between support and resistance, while the 50-week moving average continues to decline and serves as a dynamic barrier against any attempt by Oil to return to a positive trend",
+    "December also includes a significant weekly cycle ending around Dec 5, and an additional critical cycle ending the week of Jan 2, 2026. Turning dates found within these weeks could lead to more significant direction changes",
+    "The macro backdrop: the convergence of the Panama Canal cycles (18.6, 36, 72-year cycles) around oil toward 2028, along with geopolitical tensions (Venezuela, Nigeria, and the broader 250-year empire cycle), places Oil in a pivotal structural position",
+    "Three different cycles pointing to the same year (2028) suggest that Oil could reach a significant peak or trough - not overnight but through a series of moves that shift the center of gravity"
+  ],
+  "technical": {
+    "support": [
+      {"level": "55.36-55.96", "description": "Support zone on the daily chart; historical support area"},
+      {"level": "55.30", "description": "Area of the previous low; first downside target if decline continues"},
+      {"level": "51-52.70", "description": "Secondary downside target range; if $55 does not hold"},
+      {"level": "43.40", "description": "Next meaningful support area far below current range"}
+    ],
+    "resistance": [
+      {"level": "61.45-62.60", "description": "Resistance zone on daily chart; including 62.00 and 62.60 levels"},
+      {"level": "64.40-66.50", "description": "Historical support band that has become critical resistance; 50-day moving average is also around $66"},
+      {"level": "69.60-70.53", "description": "Major resistance on the daily chart; the $70 level is the first step for any real trend change"},
+      {"level": "80", "description": "Major breakout level; only a strong and sustained break above $80 would signal the end of the decline trend"}
+    ],
+    "indicators": "The weekly chart shows the 20-week moving average acting as alternating support/resistance buffer, while the 50-week moving average continues to decline as a dynamic barrier. The daily chart is in a compressed range between $55-$66 with the 50-day moving average near $66 capping upside. The pattern is choppy with a lean toward decline. Oil needs to clear $70 for the first sign of a bullish reversal."
+  },
+  "summary": "December is mildly positive for Oil seasonally, but the technical picture remains bearish with Oil trapped in a compressed $55-$66 range. Key turning dates are Dec 2 (81% up bias), Dec 8 (70% down bias), Dec 18-19, and Dec 30-31. Two significant weekly cycles (ending Dec 5 and Jan 2, 2026) could trigger more meaningful direction changes. A clear break above $70 is needed for the first signs of trend reversal, while below $64.40, the risk of further decline toward $55.30 and then $51-$52.70 remains elevated.",
+  "previous_month_review": "November had four Oil turning dates with a broad declining bias, though locating quality trades around classic support/resistance levels was difficult. The first (Nov 4) worked as the high of the price movement, from which a declining move of approximately 3.5% developed before reversing back up to the next date. The second (Nov 11-12, double date) - the first date (Nov 11) served as the high, while the second (Nov 12) served as the low, and despite a strong signal of potential continuation, the price reversed back to rises until the next date. The third (Nov 20, arrived 1 day early on Nov 19) served as the high; the fact that it did not reach the resistance level opened the possibility of taking a short position. The fourth (Nov 26) served as the low of the downward movement from the previous cycle; from it an upward movement began that should continue to the first December turning date (Dec 2). Note that the Dec 2 date has an 81% statistical indication for upward movement in the last 30 years, so the possible decline may arrive only after the trading day closes.",
+  "risk_notes": [
+    "Oil remains in a bearish structure with the 50-week moving average declining - do not fight the trend without clear reversal confirmation",
+    "Turning dates may deviate by +/- 1 day from the noted date",
+    "The Dec 2 turning date has 81% up stats, but note the decline may come only after the trading day closes",
+    "The Dec 8 turning date has a 70% statistical bias toward decline - one of the rare bearish statistical dates across all assets",
+    "Macro cycles (18.6, 36, 72, 250-year cycles) converge around 2028 for Oil, suggesting elevated structural volatility ahead",
+    "Until Oil breaks above $70, every rally should be treated as a potential short opportunity rather than a trend reversal"
+  ]
+}

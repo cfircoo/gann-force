@@ -1,0 +1,52 @@
+{
+  "asset": "EUR/USD",
+  "key_dates": [
+    {"date": "2025-12-02", "description": "Turning date (+/- 1 day). First cycle date of December, continuing from the Nov 24 turning date which served as the low of the previous cycle"},
+    {"date": "2025-12-08", "description": "Turning date (+/- 1 day). Early-month turning point"},
+    {"date": "2025-12-16", "description": "Turning date (+/- 1 day). Mid-month turning point"},
+    {"date": "2025-12-22", "description": "Turning date (+/- 1 day). Late-month turning point"},
+    {"date": "2025-12-30", "description": "Turning date (+/- 1 day). End-of-month turning point"}
+  ],
+  "seasonal": "December is the most bullish month in the year for the Euro. Seasonal patterns from the last 20 years, both decade patterns point upward. In the last 20 years, the Euro closed higher on Dec 28 compared to Dec 19 in approximately 70% of cases.",
+  "statistics": [
+    {"date": "2025-12-02", "probability": "85%", "direction": "up", "description": "Multi-decade seasonal statistical significance: approximately 85% probability of upward movement on this date"},
+    {"date": "2025-12-15", "probability": "77%", "direction": "up", "description": "Multi-decade seasonal statistical significance: approximately 77% probability of upward movement on this date"},
+    {"date": "2025-12-28", "probability": "70%", "direction": "up", "description": "In the last 20 years, the Euro closed higher on Dec 28 than on Dec 19 in approximately 70% of cases"}
+  ],
+  "insights": [
+    "December is the most bullish month for the Euro; both decade patterns from recent decades also point upward",
+    "No monthly or weekly dates in the Euro this month are expected to lead to extreme price movement",
+    "November did not change the overall picture materially. The weekly low of late July/early August around 1.1390 still carries special weight as a key level",
+    "This level (1.1390) also coincides with the 61.8% Fibonacci retracement of the rally that began in May - making it a critical test level for the continuation",
+    "The support zone between 1.1190 and 1.1275 is considered a must-hold area. As long as the price remains above it, the primary uptrend remains intact",
+    "A break below this zone signals a directional change and the beginning of a deeper correction - possibly even a new downtrend",
+    "In October, the daily chart showed a declining price structure. During November, the Euro attempted to break the last daily high at 1.1664 resistance level and also the 100-day moving average helped push back the rally",
+    "Currently the Euro can be seen as choppy with a lean toward declines, as both support and resistance levels on the daily chart are clearly marked",
+    "It is important to remember that the connection between a clear technical level (whether support or resistance) and a turning date creates one of the central conditions for creating precise and favorable risk-reward trades",
+    "At the current stage, with no clear trend established, it is possible to operate in both directions (long and short), with the main emphasis on precise timing around the turning date windows"
+  ],
+  "technical": {
+    "support": [
+      {"level": "1.1190-1.1275", "description": "Must-hold support zone. The 61.8% Fibonacci level of the rally from May. A break below signals trend change"},
+      {"level": "1.1390-1.1394", "description": "Support level on daily chart; near the weekly low of late July/early August and coincides with 61.8% Fibonacci"},
+      {"level": "1.1390", "description": "Key weekly support also coinciding with weekly chart support zone"},
+      {"level": "1.14718", "description": "Support on the daily chart"}
+    ],
+    "resistance": [
+      {"level": "1.16636", "description": "Near-term resistance on the daily chart"},
+      {"level": "1.17292-1.17705", "description": "Resistance zone on the daily chart"},
+      {"level": "1.18278-1.19194", "description": "Resistance zone on the weekly chart"},
+      {"level": "1.22316-1.23299", "description": "Upper resistance zone on the weekly chart"}
+    ],
+    "indicators": "The weekly chart shows the 100-day moving average acting as dynamic resistance, helping to push back the November rally attempt. The daily chart shows a declining structure from October with a choppy lean toward declines. Key Fibonacci levels define the support zones. The short-term technical outlook shows erosion. Both support and resistance are clearly defined, allowing two-directional trading around turning dates."
+  },
+  "summary": "December is the most bullish month for the Euro, with seasonal patterns from recent decades all pointing upward. Key turning dates are Dec 2, Dec 8, Dec 16, Dec 22, and Dec 30. Statistical data shows 85% probability of upward movement around Dec 2 and 77% around Dec 15. However, the short-term technical picture shows erosion with no monthly or weekly dates expected to cause extreme moves. The 1.1190-1.1275 support zone is critical for maintaining the bullish thesis.",
+  "previous_month_review": "November had four EUR/USD turning dates. The first (Nov 4) worked as a turning point, marking the low and beginning a significant upward move to the next date. The second (Nov 13-14, double date) worked as the high of the move and from it a decline began to the next date. The third (Nov 18) did not work. The fourth (Nov 24) worked as the low of the previous cycle, from which a rise began toward the first December turning date (Dec 2).",
+  "risk_notes": [
+    "No monthly or weekly cycle dates in December for the Euro are expected to lead to extreme price movement - reduce position sizing expectations accordingly",
+    "Turning dates may deviate by +/- 1 day from the noted date",
+    "A break below the 1.1190-1.1275 support zone could signal a deeper correction or new downtrend",
+    "While December is seasonally bullish, the short-term technical bias leans toward erosion and declines",
+    "In the absence of a clear dominant trend, both long and short trades are valid, requiring precise timing around turning dates"
+  ]
+}

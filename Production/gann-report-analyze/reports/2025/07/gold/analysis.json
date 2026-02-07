@@ -1,0 +1,55 @@
+{
+  "asset": "Gold",
+  "key_dates": [
+    {"date": "2025-07-01", "description": "Cycle turning point date for potential trend reversal"},
+    {"date": "2025-07-10", "description": "Cycle turning point date (range with 11.7) for potential trend reversal"},
+    {"date": "2025-07-11", "description": "Cycle turning point date (range with 10.7) for potential trend reversal"},
+    {"date": "2025-07-21", "description": "Cycle turning point date (range with 22.7) for potential trend reversal"},
+    {"date": "2025-07-22", "description": "Cycle turning point date (range with 21.7) for potential trend reversal"},
+    {"date": "2025-07-30", "description": "Cycle turning point date for potential trend reversal"}
+  ],
+  "seasonal": "July is generally a positive month for gold. Seasonally bullish.",
+  "statistics": [
+    {"date": "2025-07-08", "probability": "67%", "direction": "up", "description": "Multi-seasonal statistic over last 30 years shows ~67% bullish bias around this date"},
+    {"date": "2025-07-15", "probability": "67%", "direction": "down", "description": "Multi-seasonal statistic over last 30 years shows ~67% bearish bias around this date"},
+    {"date": "2025-07-17", "probability": "73%", "direction": "up", "description": "Multi-seasonal statistic over last 30 years shows ~73% bullish bias around this date"},
+    {"date": "2025-07-22", "probability": "76%", "direction": "down", "description": "Multi-seasonal statistic over last 30 years shows ~76% bearish bias around this date"},
+    {"date": "2025-07-21", "probability": "70%", "direction": "up", "description": "In the last 30 years, gold closed at a higher price on 21.07 compared to 07.07 in 70% of cases (21 out of 30 years)"}
+  ],
+  "insights": [
+    "Gold hit all-time highs on April 21 and is currently in a correction/consolidation phase within the larger uptrend",
+    "Elliott Wave analysis using 'wave counting' theory shows the uptrend from October 2022 consists of 5 main waves with sub-waves",
+    "According to Elliott Wave theory, the uptrend contains 3 impulse waves (1, 3, 5) and 2 corrective waves (2, 4); wave 3 is typically the strongest, and gold's wave 3 has clearly been the dominant one",
+    "Wave 5 (current) is expected to complete the uptrend before a meaningful correction begins downward",
+    "Currently appears to be at wave 5 based on the current spiral count, meaning the wave completing the uptrend - before a correction that could be significant",
+    "In a pattern shift framework with N-pattern reversal on the weekly chart, the longer the correction continues before the next upward move, the deeper it may be - potentially the deepest seen in gold in the last 2.5 years",
+    "If the ABCD Fibonacci extension pattern is used: movement AB to CD with Fibonacci extensions - point D arrived around the area where we got resistance from the chart at approximately $3,516",
+    "Gold dropped in May to Fibonacci 38.2% ($3,134) and immediately bounced back up",
+    "The Fibonacci extension target if gold breaks upward would be at $3,782",
+    "Major support remains around $3,080",
+    "July key turning dates: July 4 and July 11 carry two weekly cycles from weeks ending at 4th and 11th respectively, so the actual cycle turning dates fall within the weeks starting with those dates",
+    "For N-pattern reversal (if confirmed), that would be a signal to open short opportunities but only on clear breakdown"
+  ],
+  "technical": {
+    "support": [
+      {"level": "3134", "description": "Fibonacci 38.2% retracement level; gold bounced strongly from here in May"},
+      {"level": "3080", "description": "Major support zone; significant if broken would signal deeper correction"},
+      {"level": "2960", "description": "Fibonacci support level; beginning of the recent rally"}
+    ],
+    "resistance": [
+      {"level": "3436", "description": "Resistance from chart around this level where previous April resistance was encountered"},
+      {"level": "3516", "description": "ABCD pattern point D area; key chart resistance from April"},
+      {"level": "3782", "description": "Fibonacci extension upside target if gold breaks above resistance"}
+    ],
+    "indicators": "Weekly chart shows Elliott Wave structure with 5 main waves since October 2022 uptrend. Currently in wave 5 which is expected to complete the move before a significant correction. Wave 3 was dominant and the longest. Elliott theory suggests wave 5 typically ends the impulsive move. ABCD Fibonacci extension pattern shows point D arrival at chart resistance approximately $3,516. Gold bounced from the 38.2% Fibonacci retracement at $3,134 in May. Daily chart shows consolidation near highs with daily support around $2,960 and the 50-day MA. Gold is positioned at all-time highs with technical indicators suggesting the current bullish wave is in its final stages."
+  },
+  "summary": "Gold remains in a long-term uptrend but is approaching the completion of wave 5 in its Elliott Wave structure, suggesting a meaningful correction could be ahead. Seasonally, July is positive for gold. Key turning dates cluster around July 10-11 and July 21-22, with high-probability statistics pointing to up moves around July 8 and July 17, and down moves around July 15 and July 22 (76% probability). The Fibonacci structure provides clear support at $3,134 and resistance at $3,516, with an upside target of $3,782 if a breakout occurs.",
+  "previous_month_review": "In June 2025, there were four turning point dates for gold that worked well in a 'clean' classical fashion. The first date (June 6) arrived one day early and served as the high of the move, from which a downward move began. The second date (June 11-12) was a double cycle: the first date marked the low and from there gold climbed toward resistance at $3,436, providing a move of about 3.5% to the high, though it changed direction before the next date. The third date (June 20) arrived one day early in a downward move, appeared to mark the turning point but stopped for one day and then broke downward. The fourth date (June 25-26) was a double cycle: the price stopped at the first date and climbed slightly into resistance (retest), from where the direction continued downward as had already been happening since the second date.",
+  "risk_notes": [
+    "Wave 5 completion in Elliott Wave theory typically precedes meaningful corrections - could be the deepest gold correction in 2.5 years",
+    "If N-pattern reversal on the weekly chart materializes, expect a significant downward move",
+    "Break below $3,080 support would signal a deeper correction is underway",
+    "The correction from the all-time high could be sharp since it would represent an N-pattern reversal in the resistance and pattern shift framework",
+    "Trading against the prevailing uptrend requires confirmation from both turning date and chart pattern"
+  ]
+}

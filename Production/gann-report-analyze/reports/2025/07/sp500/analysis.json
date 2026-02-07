@@ -1,0 +1,57 @@
+{
+  "asset": "S&P 500",
+  "key_dates": [
+    {"date": "2025-07-03", "description": "Cycle turning point date for potential trend reversal"},
+    {"date": "2025-07-10", "description": "Cycle turning point date (range with 11.7); potential trend change zone"},
+    {"date": "2025-07-11", "description": "Cycle turning point date (range with 10.7); weekly cycle ends here coinciding with daily cycle"},
+    {"date": "2025-07-16", "description": "Cycle turning point date for potential trend reversal"},
+    {"date": "2025-07-23", "description": "Start of critical time window July 23-31; cycle turning point date (range with 24.7)"},
+    {"date": "2025-07-24", "description": "Cycle turning point date (range with 23.7); start of high-potential escalation window"},
+    {"date": "2025-07-31", "description": "Cycle turning point date; end of critical time window"}
+  ],
+  "seasonal": "July is a positive month for the S&P 500 index. Approximately 67% up bias around July 9 over the last 30 years. Seasonally bullish.",
+  "statistics": [
+    {"date": "2025-07-09", "probability": "67%", "direction": "up", "description": "Multi-seasonal statistic over last 30 years shows ~67% bullish bias around this date"},
+    {"date": "2025-07-13", "probability": "73%", "direction": "up", "description": "In the last 30 years, the index closed higher on 13.07 than on 13.06 in 73% of cases (22 out of 30 years)"}
+  ],
+  "insights": [
+    "July 2025 is not just a time with potential - it is a time with real-time cycles converging with reality",
+    "Between July 3 and 31, there are continuous sequences of dates defined in the report as turning points where daily, weekly, and monthly cycles converge",
+    "The window of July 23-31 stands out as marked with high potential for escalation, instability, and chaos - both geopolitically, in collective consciousness, and in financial markets",
+    "82-84 year cycle appearing whenever revolution or war occurs on a global scale: 1861 led to American Civil War, 1941 to US entry into WWII. In 2025 we are at the midpoint and doubling point (164 years = 82*2)",
+    "61.8-year Fibonacci cycle connects the Kennedy assassination November 1963 to September 2025 - entering a peak period",
+    "250-year empire cycle points to a turning point approaching July 4, 2026 (USA turns 250 years old)",
+    "The market responds to the chart, not to headlines - V-shape recovery pattern is a key technical formation",
+    "CNN Fear & Greed Index at 66 (Greed) as of end of April. In May it was 62, in June 66 - a neutral level to consider",
+    "From a cyclical approach standpoint, this is about identifying when market conditions are ripe for a turn, not predicting",
+    "Double cycle occurs when two turning dates appear close together (e.g. 21-22), first date typically changes direction, second returns original trend",
+    "Days between July 23 to 31 are defined as a cycle-sensitive time window; a sharp reversal downward here would signal the end of the current trend and beginning of a deeper correction",
+    "When trading against the overall direction, require confirmation from both the turning date AND the chart pattern before acting"
+  ],
+  "technical": {
+    "support": [
+      {"level": "6059", "description": "Daily chart support level"},
+      {"level": "5961", "description": "Daily chart support level - break below here especially significant"},
+      {"level": "5775", "description": "Key technical resistance zone that could become support (former resistance area between 5700-5775 that held as resistance before breakout)"},
+      {"level": "5700", "description": "Lower bound of major resistance zone; held by two significant moving averages (20 and 50 week)"},
+      {"level": "4800", "description": "Potential deep correction target if monthly cycles complete a reversal"}
+    ],
+    "resistance": [
+      {"level": "6147", "description": "Daily chart support/resistance level"},
+      {"level": "6505", "description": "Fibonacci extension target based on recent uptrend"}
+    ],
+    "indicators": "Weekly chart shows V-shape recovery pattern with sharp decline in March-April followed by near-vertical recovery. The rally broke through 5700-5775 resistance area that held with two significant moving averages. Daily chart shows bullish continuation with market reacting to charts not headlines. Despite geopolitical events (US-Iran B-2 strike on June 22), market continued higher. RSI and MACD showing negative divergence on Bitcoin (related cross-asset observation). Timing is key - combining cyclical turn dates with technical levels for highest probability trades. The most profitable trades come when technical retest aligns with turning date (as happened on June 23). Market at all-time highs with potential for double-top formation near December and February highs."
+  },
+  "summary": "July 2025 is an extraordinarily significant month for the S&P 500, where multiple historical cycles of 82-84 years, 61.8 years (Fibonacci), and 250 years are converging simultaneously. The period from July 23-31 is flagged as a critical time window with high escalation potential. While the current uptrend appears intact and the possibility of continued gains remains realistic for now, rare cycle synchronization demands heightened alertness and careful risk management, with stops tightened on existing positions and avoidance of new leveraged entries.",
+  "previous_month_review": "In June 2025, there were five turning point dates with one not working, and the rest proving correct ('lukewarm') given the narrow range. One date (June 4) marked the high of the move temporarily. The second date (June 10-11) brought a return of the downward move to retest 5963 where it stalled. June 16 was unclear amid narrow range. June 23 arrived with classic timing as the low of the downward move, initiating a rally of about 3.5% forward to June 30. June 27 appeared to serve as the high with a one-day deviation toward June 30.",
+  "risk_notes": [
+    "Rare synchronization of 82-84 year, 61.8 year Fibonacci, and 250-year imperial cycles all converging in this period",
+    "Geopolitical risk: US strike on Iran with B-2 bombers on June 22 echoes historical conflict patterns",
+    "Tighten stops on existing positions; avoid opening new long positions without clear reversal confirmation",
+    "Avoid leveraged certificates (2x-3x) during high volatility periods especially around turning dates",
+    "The July 23-31 window carries potential for geopolitical escalation, societal instability, and market chaos",
+    "Break below 6059 or 5961 would be especially significant as potential start of deeper correction",
+    "Consider using protective puts with 2-3 month expiry for portfolio hedging",
+    "If trading against the overall trend, only enter after clear confirmation signal and keep stops very tight"
+  ]
+}

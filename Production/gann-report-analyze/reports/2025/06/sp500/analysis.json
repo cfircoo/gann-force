@@ -1,0 +1,54 @@
+{
+  "asset": "S&P 500",
+  "key_dates": [
+    {"date": "2025-06-04", "description": "Cycle turning point - potential reversal or continuation signal"},
+    {"date": "2025-06-10", "description": "Cycle turning point (range 10-11 June)"},
+    {"date": "2025-06-11", "description": "Cycle turning point (range 10-11 June)"},
+    {"date": "2025-06-16", "description": "Cycle turning point - key date with statistical significance (85% up)"},
+    {"date": "2025-06-23", "description": "Cycle turning point - statistical significance (90% up on June 30)"},
+    {"date": "2025-06-27", "description": "Cycle turning point - potential reversal zone"}
+  ],
+  "seasonal": "June is a slightly bearish month for the S&P 500. However, this month is part of a critical historical cycle window. The week of June 9-13 and the period of June 20 are expected to be particularly important weekly cycles. Most cycles signal expected peaks between June 16-21, with potential declines in the second half of the month.",
+  "statistics": [
+    {"date": "2025-06-16", "probability": "85%", "direction": "up", "description": "Over the last 30 years, the index closed higher on June 16 approximately 85% of the time"},
+    {"date": "2025-06-24", "probability": "71%", "direction": "down", "description": "Over the last 30 years, the index declined around June 24 approximately 71% of the time"},
+    {"date": "2025-06-30", "probability": "90%", "direction": "up", "description": "Over the last 30 years, the index closed higher on June 30 approximately 90% of the time"},
+    {"date": "2025-06-17", "probability": "73%", "direction": "up", "description": "In the last 30 years, the index closed higher on June 17 than it was on June 11, in 73% of cases (22 out of 30)"}
+  ],
+  "insights": [
+    "June 2025 is a historically critical month - it sits at the intersection of 82-year and 164-year war/revolution cycles (82 years from WWII, 164 years from the US Civil War)",
+    "Trump's birthday is June 14 - Fibonacci ratio 61.8 years from JFK assassination in November 1963 points to September 2025, suggesting a politically charged period beginning in June",
+    "Presidential assassination attempts have historically clustered in June/July at distinct cyclical intervals, indicating June 2025 could be a tipping point for deep political/social change",
+    "Fear & Greed Index at 62 (Greed zone) at start of month - when above 'Greed', expect a correction; when hitting 'Fear', look for buying opportunities",
+    "The V-shaped recovery pattern in recent months is one of the most challenging for technical analysis - sharp drop followed by equally sharp recovery with no classic resistance pause",
+    "5,700-5,775 zone is a critical technical resistance area where the 20 and 50 week moving averages converge - potential double top formation",
+    "The week ending June 20 is expected to produce multiple cycle convergences, and daily cycles between June 9-12 suggest heightened volatility",
+    "Despite broad index recovery, the Russell 2000 (small caps) has barely recovered - a Dow Theory divergence warning of market weakness",
+    "Timing is everything: combine price action with cycle dates, looking for technical levels (support/resistance) aligning with turning points for highest probability trades",
+    "The weekly cycle ending June 27 and several daily dates between June 20-30 point to expected volatility in the last third of the month"
+  ],
+  "technical": {
+    "support": [
+      {"level": "5700", "description": "Major support zone - convergence of 20 and 50 week moving averages; key level from recent cycle"},
+      {"level": "5775", "description": "Secondary support within the 5,700-5,775 cluster; held during recent tests"},
+      {"level": "4800", "description": "Deep support target if monthly retracement unfolds (similar to March-April area)"}
+    ],
+    "resistance": [
+      {"level": "5700-5775", "description": "Also acts as resistance band - the index has been oscillating around this zone, creating a potential double top"},
+      {"level": "6120", "description": "All-time high area from the December/February peaks; significant overhead resistance"}
+    ],
+    "indicators": "Weekly chart shows a V-shaped recovery which is difficult to analyze. The 20-week and 200-day moving averages are converging in the 5,700-5,775 zone. Daily chart shows a half-mast flag/pennant pattern within an uptrend. Fear & Greed at 62 suggests caution. Low volumes on rallies while small caps lag - classic divergence signal. MACD and RSI not confirming breakout strength. The index has returned to near all-time highs but internal breadth is poor - a Charles Dow disharmony warning."
+  },
+  "summary": "June 2025 is flagged as an exceptionally significant month for the S&P 500, sitting at the intersection of deep historical cycles (82-year and 164-year war cycles). Key turning dates cluster around June 4, 10-11, 16, 23, and 27. The report favors a scenario where the market may rally into mid-June (16th has 85% upside probability) before a potential correction into late June (24th has 71% downside probability), with a strong end-of-month bounce (30th at 90% up). Technical resistance at 5,700-5,775 and poor market breadth (Russell 2000 divergence) add cautionary weight.",
+  "previous_month_review": "May 2025 had five turning dates with one (May 9) nearly missed by a day or two: May 2 marked the high of the movement, May 9 did not serve as a turning point (missed the low), May 16 acted as the high of the previous cycle and started a downward move, May 22-27 were a double cycle where the May 23 date marked the low and beginning of an upward cycle. Overall the month was very successful from a cycles perspective.",
+  "risk_notes": [
+    "June is a slightly bearish month seasonally - trade with caution and respect the overall trend direction",
+    "Geopolitical risk is elevated: deep historical cycles suggest potential for dramatic political events (US political upheaval/Trump-related events around his June 14 birthday)",
+    "The V-shape recovery pattern is treacherous - a reversal from current levels without proper consolidation could be sharp",
+    "Russell 2000 / small cap divergence from large cap recovery is a Dow Theory warning of potential broader market weakness",
+    "Consider reducing exposure to leveraged instruments (2x-3x) as cycle volatility could produce whipsaws",
+    "If the 5,700-5,775 support zone breaks, expect potential revisit of the 4,800 area",
+    "This is NOT investment advice - information is for educational purposes. Connect with the Discord community for real-time updates",
+    "When trading against the general trend, only enter after clear technical confirmation on intraday charts (4h, 30min)"
+  ]
+}
