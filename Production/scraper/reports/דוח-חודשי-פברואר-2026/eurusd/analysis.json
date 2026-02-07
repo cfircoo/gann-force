@@ -1,0 +1,138 @@
+{
+  "asset": "EUR/USD",
+  "key_dates": [
+    {
+      "date": "2026-02-03",
+      "description": "Turning point date - one of the strongest turning point dates in a cluster of daily cycle dates between Feb 1-11. Possible deviation of +/- 1 day."
+    },
+    {
+      "date": "2026-02-06",
+      "description": "Turning point date - one of the strongest turning point dates in a cluster of daily cycle dates between Feb 1-11. Possible deviation of +/- 1 day."
+    },
+    {
+      "date": "2026-02-17",
+      "description": "Turning point date - aligns with the weekly cycle, making it a potentially significant trend-change point. Possible deviation of +/- 1 day."
+    },
+    {
+      "date": "2026-02-24",
+      "description": "Turning point date. Possible deviation of +/- 1 day."
+    }
+  ],
+  "seasonal": "February is considered a slightly negative (bearish) month for the Euro. In the last 20 years, the Euro closed lower on March 1 compared to its price on February 20 in 65% of cases.",
+  "statistics": [
+    {
+      "date": "2026-02-06",
+      "probability": "~73%",
+      "direction": "decline",
+      "description": "Around February 6, approximately 73% probability of a decline based on 20-year multi-seasonal statistics."
+    },
+    {
+      "date": "2026-02-09",
+      "probability": "~76%",
+      "direction": "rise",
+      "description": "Around February 9, approximately 76% probability of a rise based on 20-year multi-seasonal statistics."
+    },
+    {
+      "date": "2026-02-10",
+      "probability": "~85%",
+      "direction": "decline",
+      "description": "Around February 10, approximately 85% probability of a decline based on 20-year multi-seasonal statistics."
+    },
+    {
+      "date_range": "2026-02-01 to 2026-02-11",
+      "description": "Anomalous cluster of daily turning point dates, suggesting high volatility in this period. Feb 3 and Feb 6 are the strongest dates within this cluster."
+    },
+    {
+      "date": "2026-02-20",
+      "probability": "65%",
+      "direction": "decline",
+      "description": "In 65% of the last 20 years, EUR/USD closed lower on March 1 compared to its price on February 20."
+    }
+  ],
+  "insights": [
+    "February is a mildly bearish month for EUR/USD from a seasonal perspective.",
+    "There is a one-day weekly cycle centered on the week ending around February 20 - be prepared for a turning point around that time window.",
+    "The daily cycle dates between February 1-11 show an unusual concentration of turning points, implying high volatility in early February.",
+    "The February 17 turning point aligns with the weekly cycle, making it a potentially important trend-change signal.",
+    "When a clear technical level coincides with a turning point date, it offers a better risk/reward trade setup with improved risk-to-reward ratio.",
+    "At the current stage, only if the Euro returns below the retracement level and holds below it, would it make sense to consider short trades around the turning point date windows.",
+    "In December, EUR/USD showed a classic rally with rising highs and lows - this is how a healthy uptrend should appear.",
+    "For the Euro to confirm a sustained uptrend (not just a short-term move within a range), it must halt the correction that started at end of January.",
+    "The weekly candle that closed the recent move was a 'falling star' (shooting star) type, meaning sellers exploited the highs to exit the Euro.",
+    "A clean and backed breakout above 1.1920 is needed to talk about a clear return to an upward trend, opening the path to the next resistance zone around 1.2230.",
+    "Ongoing updates on EUR/USD price action will be published in the Discord community and during weekly live sessions."
+  ],
+  "technical": {
+    "support": [
+      {
+        "level": "1.1772 - 1.1814",
+        "description": "Current support zone combining Fibonacci retracement levels. This is the decision zone on the daily chart. Acts as a possible retracement base."
+      },
+      {
+        "level": "1.1493",
+        "description": "First key support from below on the weekly chart."
+      },
+      {
+        "level": "1.1390",
+        "description": "Weekly low from around early August area. Overlaps with the 61.8% Fibonacci retracement of the rally that started in May, making it a significant test level for continuation."
+      },
+      {
+        "level": "1.1190 - 1.1275",
+        "description": "Defined as the decision zone. A break below signals a character change in the trend and potentially the start of a new primary downtrend."
+      },
+      {
+        "level": "1.1580",
+        "description": "Daily support level, though no longer playing a central role at this stage and therefore less relevant for current decisions."
+      }
+    ],
+    "resistance": [
+      {
+        "level": "1.1920",
+        "description": "Weekly resistance level that was briefly broken in late January. A clean breakout above this level is required to confirm return to uptrend."
+      },
+      {
+        "level": "1.2230",
+        "description": "Next resistance zone above 1.1920. Once 1.1920 is cleared, this becomes the next upside target area."
+      },
+      {
+        "level": "1.2316 - 1.2329",
+        "description": "Upper resistance zone visible on the weekly chart."
+      },
+      {
+        "level": "1.1919 - 1.1932",
+        "description": "Intermediate resistance zone on the weekly chart."
+      }
+    ],
+    "indicators": "Fibonacci retracement levels are central to the analysis. Key Fibonacci levels on the daily chart: 0.382 (1.18907), 0.5 (1.18313), 0.618 (1.17719), 0.786 (1.16877), 1.0 (1.15796). The 61.8% Fibonacci retracement of the May-onward rally sits near 1.1390. Weekly chart shows a 'shooting star' candle pattern suggesting sellers are active at the highs. The daily chart zone of 1.1772-1.1814 is the critical decision area: if price holds there and stabilizes, it supports trend continuation upward; if it breaks, it changes the character of the move and increases the probability of a deeper correction."
+  },
+  "summary": "EUR/USD faces a mildly bearish February from a seasonal standpoint, with a 65% historical tendency to decline from mid-to-late February into March. The critical decision zone sits at 1.1772-1.1814 on the daily chart: holding above supports the bullish case while a break below shifts the outlook toward deeper correction. Traders should watch the dense cluster of turning point dates in early February (especially Feb 3 and Feb 6) and the weekly-cycle-aligned Feb 17 date for potential trend-change signals.",
+  "risk_notes": [
+    "All turning point dates may deviate by +/- 1 day from the stated date.",
+    "The report is for educational purposes only and does not constitute investment advice, a recommendation, or a solicitation to execute trades.",
+    "The content should not replace the judgment of a qualified investment advisor who considers the unique needs of each individual investor.",
+    "The weekly chart breakout at 1.1920 showed signs of being a failed breakout (shooting star candle with sellers exploiting highs), so caution is warranted on the bullish side.",
+    "A break below the 1.1190-1.1275 support zone would signal a clear change in trend character and potentially the start of a new primary downtrend.",
+    "High volatility is expected in the Feb 1-11 period due to the unusual cluster of daily turning point dates."
+  ],
+  "january_review": {
+    "description": "Summary of January 2026 turning point performance for EUR/USD",
+    "turning_points": [
+      {
+        "dates": "January 07-08 (double date)",
+        "result": "Did not work. Neither date managed to halt the declining move."
+      },
+      {
+        "date": "January 16",
+        "result": "Worked. Served as the low of the declining move, and a significant rally began from this point until the next turning date."
+      },
+      {
+        "date": "January 21",
+        "result": "Partially worked on that day only, but was subsequently broken to the upside."
+      },
+      {
+        "dates": "January 27-28 (double date)",
+        "result": "Worked. Served as the high of the upward move."
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "asset": "Oil",
+  "key_dates": [
+    {
+      "date": "2026-02-03",
+      "description": "First turning point date for February 2026. Aligns with a weekly cycle ending around February 6, which also aligns with the daily turning point of February 3. The assessment there is for a reversal move (direction change)."
+    },
+    {
+      "date": "2026-02-12 to 2026-02-13",
+      "description": "Second turning point window. Defined as strong and expected to include a reversal, as it aligns with decade patterns that show a low around this time zone."
+    },
+    {
+      "date": "2026-02-23 to 2026-02-24",
+      "description": "Third turning point window. The daily turning points on Feb 23-24 align with a strong weekly cycle (week ending Feb 20), making this a time window worth watching for a significant turning point."
+    }
+  ],
+  "seasonal": "From a seasonal perspective, February is considered a slightly positive month for Oil. In the last 30 years, Oil closed on March 5 at a price higher than it traded on February 21 in approximately 60% of cases. The multi-seasonal statistics over the last 30 years show a mild upward bias during February.",
+  "statistics": [
+    {
+      "date": "2026-02-09",
+      "probability": "~70%",
+      "direction": "Up",
+      "description": "Around February 9, approximately 70% probability of an upward move based on 30-year seasonal data."
+    },
+    {
+      "date": "2026-02-13",
+      "probability": "~77%",
+      "direction": "Up",
+      "description": "Around February 13, approximately 77% probability of an upward move based on 30-year seasonal data."
+    },
+    {
+      "date": "2026-02-21 to 2026-03-05",
+      "probability": "~60%",
+      "direction": "Up",
+      "description": "In the last 30 years, Oil closed on March 5 at a higher price than it traded on February 21 in approximately 60% of cases."
+    }
+  ],
+  "insights": [
+    "January 2026 cycles review: There were 4 turning point dates in January. The first (Jan 2) worked partially - price stopped, began to drop, broke slightly for one day, then returned to rising. The second (Jan 16) worked - it marked the low of the move, though not in the classic fashion. The third (Jan 22) did not work - paused for one day and continued climbing above. The fourth (Jan 27) did not work - price continued higher. Bottom line: January was not a good month for Oil cycles.",
+    "The support zone in Oil at $55.36 to $56 continues to prove itself. This zone has held since April and May, and returned to hold in October and December as well. Once again, it managed to generate demand and lift Oil by about 15 percent.",
+    "The trigger apparently came from developments between the US and Venezuela, but the chart explains why this could have happened regardless - as long as support is not broken to the downside in a clear manner, it can be relied upon from a technical perspective.",
+    "From the other side, there is no trend change. The price is indeed climbing powerfully, but it has hit the same resistance band that has been marked on the report charts since September.",
+    "The resistance band between $64.40 and $66.50 remains the critical zone in the medium range. This is a historic zone that is meant to serve as a ceiling for any breakout attempt.",
+    "As long as price remains below, Oil stays in a consolidation state with a tendency for continued decline in the larger time frames, and not in a state of a new uptrend, until proven otherwise.",
+    "To speak of a true change in the primary downtrend to upward, Oil must first clearly return above $70. This is an opening condition, not final confirmation.",
+    "True confirmation will only come if we see a strong and clear breakout above $80. Only then can we say the decline is behind us and we have entered a new uptrend.",
+    "Until that happens, every rally is still a correction within a consolidating structure, and the probability of additional declines remains on the table.",
+    "A more meaningful scenario will only be accepted if price returns and breaks the $66.50 level, a move that could open the way upward toward the $70 area and beyond.",
+    "If that is just a breakout clearly above $70, it will signal potential for a significant upward move.",
+    "In the scenario of a breakdown to the downside, the next price target would be in the $51 to $52.70 zone. And if that zone also does not hold, the door opens toward the next significant support level around $43.40.",
+    "The $61.80 level is currently meant to serve as a retest zone that invites potential buyers. The resistance zone at $64.40 to $66.50 currently overlaps with the weekly chart.",
+    "In examining decade patterns, two out of three patterns point upward and one pattern points downward.",
+    "At the weekly cycle level, there is one weekly cycle defined as very strong, the week ending on February 20. The daily turning points on Feb 23-24 align with this weekly cycle, making it a time window worth watching for a significant turning point.",
+    "Additionally, there is an earlier weekly cycle, the week ending on February 6, which aligns with the daily turning point of February 3, and the assessment there is also for a reversal move.",
+    "The time window between February 12 and 13 is also defined as strong and expected to include a reversal as it aligns with decade patterns that show a low around this time."
+  ],
+  "technical": {
+    "support": [
+      "$55.36 - $56.00 (major support zone, held since April/May, also held in October and December)",
+      "$51.00 - $52.70 (next downside target if major support breaks)",
+      "$51.18 (visible on weekly chart)",
+      "$43.40 (significant support level if $51-52.70 zone fails)"
+    ],
+    "resistance": [
+      "$61.80 (retest zone, potential buyer invitation level)",
+      "$64.40 - $66.50 (critical resistance band, marked since September, key ceiling zone)",
+      "$70.00 (opening condition for trend reversal - must be clearly reclaimed)",
+      "$78.48 (visible on weekly chart, near 100-period moving average area)",
+      "$80.00 (true confirmation of trend reversal only above this level)"
+    ],
+    "indicators": "Weekly chart shows Light Crude Oil Futures (NYMEX) with 100-period moving average around the $76-78 area acting as dynamic resistance. The primary trend remains bearish within a consolidation structure. Price is currently trading in the mid-$60s range. Daily chart shows key support and resistance zones marked. Support zone at $55.36-$56 has been a 3-year support area. Breakout or breakdown from the $64.40-$66.50 resistance zone or $55.36-$56 support zone will signal the next significant move direction."
+  },
+  "summary": "Oil in February 2026 carries a mild seasonal upward bias with key turning point dates on February 3, February 12-13, and February 23-24. The critical battle zone remains the $64.40-$66.50 resistance band overhead, with strong support at $55.36-$56 below. Until a clear breakout above $70 (and ideally $80) occurs, every rally is considered a correction within a larger consolidation/bearish structure, and further declines remain a possibility.",
+  "risk_notes": [
+    "Each turning point date may deviate by +/- one day from the marked date - be prepared for this.",
+    "January 2026 was not a good month for Oil cycles - two out of four turning dates did not work, which may affect confidence in February cycle dates.",
+    "As long as price remains below $66.50, Oil stays in a consolidation state with downside tendency in larger timeframes.",
+    "Every rally is still considered a correction within a consolidating/bearish structure until price breaks clearly above $70 and confirms above $80.",
+    "The probability of additional declines remains on the table until a true trend reversal is confirmed.",
+    "If the $55.36-$56 support zone breaks, the downside target drops significantly to $51-$52.70, and if that fails, to $43.40.",
+    "Important note from the report: Nothing stated herein is a recommendation to take any action. The information is provided for knowledge and learning purposes only.",
+    "It is very important to be connected to the Discord community where these matters are discussed during the month in real time."
+  ]
+}

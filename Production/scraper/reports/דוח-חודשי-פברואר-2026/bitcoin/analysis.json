@@ -1,0 +1,98 @@
+{
+  "asset": "Bitcoin",
+  "key_dates": [
+    {
+      "date": "2026-02-03",
+      "description": "First turning point date for February 2026. Possible trend reversal or inflection point."
+    },
+    {
+      "date": "2026-02-10",
+      "description": "Second turning point date for February 2026. Potential shift in price direction."
+    },
+    {
+      "date": "2026-02-17 to 2026-02-18",
+      "description": "Third turning point date (double date). Key inflection zone; historically Bitcoin traded higher on Feb 17 compared to Feb 6 in 9 out of 9 years (100% of years)."
+    },
+    {
+      "date": "2026-02-24",
+      "description": "Fourth turning point date for February 2026. Final expected reversal point of the month."
+    }
+  ],
+  "seasonal": "Seasonally, Bitcoin tends to be bearish (short) in February. In 9 out of the last 15 years, Bitcoin ended February positively (60% of years). However, Bitcoin does not have a long historical record, so seasonal statistics are less attractive/reliable compared to other assets in the report.",
+  "statistics": [
+    {
+      "description": "Bitcoin ended February positively in 9 out of the last 15 years",
+      "probability": "60%",
+      "note": "Bitcoin lacks long-term history, so seasonal statistics are less reliable than for other assets"
+    },
+    {
+      "description": "In the last 9 years, Bitcoin traded at a higher price on February 17 compared to February 6",
+      "probability": "100%",
+      "sample": "9 out of 9 years"
+    },
+    {
+      "description": "Three strong weekly cycles end on weeks containing Feb 13, Feb 20, and Feb 29",
+      "note": "Three strong cycles in the same month signals high volatility potential"
+    },
+    {
+      "description": "The daily time window between February 16-19 is expected to be especially volatile",
+      "note": "Worth watching for significant changes in trend or pace of movement"
+    }
+  ],
+  "insights": [
+    "All turning point dates may deviate by +/- one day as part of the methodology. Be prepared for this.",
+    "Bitcoin is in a significant long-term test zone. After the downward move in November, December through mid-January became a month of stabilization and attempts to hold.",
+    "Despite the stabilization, trading cycles on the upside faded and declines began to expand, until by mid-January Bitcoin started a wave of significant declines that broke the bottom set in November at approximately $80,500.",
+    "Bitcoin has a repeating pattern of 35 months of rise followed by 14 months of decline. Currently, the third iteration of this cycle may be occurring, as the 35-month rally ended precisely in October 2025, and since then Bitcoin has fallen approximately 40% from its peak.",
+    "The weekly chart provides indications of a possible deep correction. The current decline is strong. In many cases it does not reverse in a single day. Typically a small rebound appears first, but if breakout levels are broken, this could signal the beginning of a longer-term decline potentially lasting 100-150 weeks.",
+    "On the daily chart, Bitcoin is building a narrowing consolidation (wedge) pattern. The range is becoming tighter, making it increasingly difficult to predict the breakout direction. The correct approach is to define decision points in advance.",
+    "The crypto market is characterized by high dynamics and rapid volatility, therefore real-time monitoring is essential for correct decisions.",
+    "Real-time tracking can be the difference between a late reaction and a precise, timely action."
+  ],
+  "technical": {
+    "support": [
+      {
+        "level": "$74,090",
+        "description": "Major support level on the daily chart (labeled as 'support')"
+      },
+      {
+        "level": "$80,500",
+        "description": "November bottom level, now broken to the downside"
+      }
+    ],
+    "resistance": [
+      {
+        "level": "$80,642",
+        "description": "First resistance level on the daily chart"
+      },
+      {
+        "level": "$84,400",
+        "description": "Second resistance level on the daily chart. Break below this confirms growing weakness"
+      },
+      {
+        "level": "$93,220",
+        "description": "Third resistance level on the daily chart"
+      },
+      {
+        "level": "$94,837",
+        "description": "Upper resistance zone on the daily chart"
+      },
+      {
+        "level": "$95,000",
+        "description": "Breakout and establishment above this level would signal renewed upward momentum"
+      }
+    ],
+    "indicators": "Weekly chart shows bearish signals with potential for a deep correction. Daily chart shows a narrowing consolidation (wedge) pattern with tightening range. Break below $84,400 and then below $80,600 signals growing weakness with high probability of continued declines toward support levels marked on the weekly chart. Break above $95,000 signals momentum renewal to the upside. Current price around $77,600-$78,600 area."
+  },
+  "summary": "Bitcoin is in a critical long-term test zone for February 2026, having fallen approximately 40% from its October 2025 peak following a repeating 35-month rise / 14-month decline cycle. The four key turning point dates are Feb 3, Feb 10, Feb 17-18 (double date with 100% historical accuracy for price being higher than Feb 6), and Feb 24. Seasonally Bitcoin tends to be bearish in February, but with three strong weekly cycles converging (ending weeks of Feb 13, 20, and 29), the Feb 16-19 window is expected to be particularly volatile and could define the direction for the rest of the month.",
+  "previous_month_review": "January 2026 had four turning point dates for Bitcoin. First date (Jan 3): Did not work - failed to block the upward price movement. Second date (Jan 16): Arrived one day early - served as the 'high' of the previous cycle. Third date (Jan 22): Did not work - however, a few days later the price broke it to the downside. Fourth date (Jan 27-28, double date): Worked - reached the double turning point on the way up, and from there the price fell sharply to the downside.",
+  "risk_notes": [
+    "Bitcoin lacks long-term historical data, making seasonal statistics less reliable compared to other assets in the report.",
+    "All turning point dates may deviate by +/- one day.",
+    "The crypto market is characterized by high dynamics and rapid volatility; real-time monitoring is essential for correct trading decisions.",
+    "The weekly chart suggests the possibility of a deep correction lasting 100-150 weeks if key breakout levels are broken.",
+    "When price is in a narrowing consolidation (wedge), it is difficult to predict the breakout direction - define decision points in advance rather than guessing direction.",
+    "This content is not investment advice, recommendation, or solicitation. It is for educational and informational purposes only and should not replace individual professional judgment.",
+    "Bitcoin has broken below its November $80,500 support level, indicating significant structural weakness in the current trend."
+  ]
+}

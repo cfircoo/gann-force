@@ -1,0 +1,104 @@
+{
+  "asset": "Gold",
+  "key_dates": [
+    {
+      "date": "2026-02-03",
+      "description": "First turning point date of February 2026. Potential trend reversal or inflection point."
+    },
+    {
+      "date": "2026-02-09",
+      "description": "Second turning point date of February 2026. Watch for directional change."
+    },
+    {
+      "date": "2026-02-13",
+      "description": "Third turning point date of February 2026. Two price targets converge around Feb 13 - Fibonacci retracement and seasonal timing indicators align. Buyers expected to be active around this date."
+    },
+    {
+      "date": "2026-02-27",
+      "description": "Fourth turning point date of February 2026. Late-month potential reversal area."
+    }
+  ],
+  "seasonal": "February is a slightly positive month for Gold from a seasonal perspective. Multi-seasonal statistics over the last 30 years show that February 16 has approximately 76% probability of an upward move. February 2026 is also a month considered very favorable for Gold, with two price/time cycles converging from midmonth patterns creating potential for a significant peak. Seasonal patterns within the enrichment structure suggest three fingerprints on a bullish bias.",
+  "statistics": [
+    {
+      "date": "2026-02-16",
+      "probability": "~76%",
+      "direction": "Up",
+      "description": "Multi-seasonal 30-year statistic shows approximately 76% probability of an upward move on this date."
+    },
+    {
+      "date_range": "2026-02-07 to 2026-02-14",
+      "probability": "60%",
+      "direction": "Up",
+      "description": "In the last 30 years, Gold closed at a higher price on Feb 14 compared to where it traded on Feb 7 in 60% of cases (18 out of 30 years)."
+    },
+    {
+      "date": "2026-02-13",
+      "probability": null,
+      "direction": "Buyers expected",
+      "description": "Fibonacci 78.6% retracement level converges with key price target around Feb 13. Buyers anticipated at this convergence zone."
+    }
+  ],
+  "insights": [
+    "January 2026 turning point performance review: Of 5 turning dates in January, 3 worked (Jan 2 as low, Jan 16 as low with ~9% rally to next turning point, Jan 29 as high with ~20% total move). Two dates did not work (Jan 8 and Jan 23 - price continued through without reversal).",
+    "The primary trend remains bullish - there has been no real trend reversal. Even after a ~20% correction in Gold, the current decline can still be considered a technical correction within the chart's broader uptrend.",
+    "Gold is still operating within a broad ascending structure. Professionals observe that the asset is mainly experiencing profit-taking after a sharp rise, not a fundamental directional change - it is already possible to announce this. Gold may have reached its top for weeks and even months ahead.",
+    "According to Elliott Wave analysis, the upward trend is composed of three impulse waves (1, 3, 5) and two corrective waves (2, 4). Among the impulse waves, wave 3 is by far the longest and most powerful, typically containing five internal sub-waves.",
+    "The updated spiral count shows wave 3 extending toward the $3,500 area, and the previous system's point C marked on the chart began what is effectively wave 5 (the first primary wave), representing the upward cycle that began at the end of 2022 and has already concluded.",
+    "At the start of February, the $4,381 level on the weekly chart is expected to serve as a retest for any decline attempts. This level has 6 weekly candles above it, so a decline to it is expected to attract mid-range to long-term buying demand.",
+    "If a breakout occurs to the upside, the next Fibonacci 1:3 extension price target is the $5,932 area.",
+    "A strong decline initially causes buyer hesitation, but as it develops with peak and trough levels on the 4-hour chart, it will also be possible to time new long entries.",
+    "A break of the support zone to the downside signals a more significant correction toward support levels marked on the weekly chart."
+  ],
+  "technical": {
+    "support": [
+      {
+        "level": "$4,381",
+        "description": "Key weekly chart support - retest level with 6 weekly candles above it. Critical hold level for bullish structure."
+      },
+      {
+        "level": "$4,548 - $4,638",
+        "description": "Daily chart support zone incorporating the Fibonacci 78.6% retracement level for the last upward rally and the 50-day moving average."
+      },
+      {
+        "level": "$3,886",
+        "description": "Next major technical target if $4,381 breaks decisively to the downside. Central support zone on weekly chart."
+      },
+      {
+        "level": "$3,500",
+        "description": "Wave 3 Elliott extension area and updated spiral endpoint."
+      }
+    ],
+    "resistance": [
+      {
+        "level": "$4,944.92",
+        "description": "Fibonacci 0.382 retracement level on the weekly chart."
+      },
+      {
+        "level": "$5,574.35",
+        "description": "Fibonacci 2.618 extension level on the weekly chart."
+      },
+      {
+        "level": "$5,599.50",
+        "description": "Fibonacci 0 (full retracement / high target) on weekly chart."
+      },
+      {
+        "level": "$5,932",
+        "description": "Fibonacci 1:3 extension target if breakout to the upside occurs. Upper D? wave target zone."
+      }
+    ],
+    "indicators": "Elliott Wave count suggests Gold is in a complex corrective or new impulsive structure. Wave 3 was the longest and most powerful impulse. The updated spiral places current action around wave 5 territory. Weekly chart shows an ascending channel from 2022 lows near $1,600 with labeled A-B-C corrective structure and D? wave targets. Daily chart shows a 50-period moving average acting as dynamic support. Fibonacci levels (0.382, 0.5, 0.618, 0.786, 1.0) are mapped from recent swing high to swing low. The daily chart does not yet signal a trend change despite sharp late-January declines - only a strong and powerful decline, not a structural bearish reversal pattern."
+  },
+  "summary": "Gold enters February 2026 in a technically corrective phase after a sharp decline at the end of January, but the primary uptrend remains intact with no confirmed reversal. Key turning point dates are February 3, 9, 13, and 27, with the $4,381 weekly support level being critical - holding above it maintains bullish bias, while a decisive break below shifts the target to $3,886. Seasonal statistics slightly favor bulls with a 76% probability of upward movement around February 16, and the convergence of Fibonacci retracements near the 50-day moving average in the $4,548-$4,638 zone provides the first area where buyers are expected to re-engage.",
+  "risk_notes": [
+    "Turning point dates can deviate by +/- 1 day from the marked date - be prepared accordingly.",
+    "This is not investment advice, a recommendation, or a proposal for executing trades. It is not investment consulting, investment marketing, or any other form of advice.",
+    "The content is for educational and informational purposes only and should not replace the judgment of the reader/trader.",
+    "The investor is obligated to receive professional investment advice tailored to their specific needs.",
+    "If $4,381 support breaks decisively downward, it signals a deeper correction - do not rush to 'buy the dip' at the bottom. Wait for price to stabilize and show deceleration of decline.",
+    "Even in medium and long-term positions, do not allow accumulated returns to erode. Minimize or exit positions according to the methodology.",
+    "Do not chase the decline. Wait for real support zones and price behavior that confirms entry, with a clear pre-defined stop.",
+    "A strong decline causes initial buyer hesitation and should be traded cautiously with proper risk management on the 4-hour timeframe.",
+    "If returning to trade after a deep correction, only do so after price behavior confirms entry, with a stop-loss defined in advance."
+  ]
+}
