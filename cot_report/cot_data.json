@@ -1,0 +1,1529 @@
+{
+  "Currencies": [
+    {
+      "code": "232741",
+      "name": "AUSTRALIAN DOLLAR",
+      "report_date": "2026-02-03",
+      "contract": "AUSTRALIAN DOLLAR - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF AUD 100,000",
+      "open_interest": 254240,
+      "change_in_open_interest": 2185,
+      "non_commercial": {
+        "long": 118751,
+        "short": 92633,
+        "spreads": 1477,
+        "net": 26118
+      },
+      "changes": {
+        "long": 8945,
+        "short": -10027,
+        "spreads": -116
+      },
+      "pct_of_open_interest": {
+        "long": 46.7,
+        "short": 36.4,
+        "spreads": 0.6
+      },
+      "unfulfilled_calls": -24.14
+    },
+    {
+      "code": "096742",
+      "name": "BRITISH POUND",
+      "report_date": "2026-02-03",
+      "contract": "BRITISH POUND - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF GBP 62,500",
+      "open_interest": 227888,
+      "change_in_open_interest": 3429,
+      "non_commercial": {
+        "long": 94893,
+        "short": 108804,
+        "spreads": 2840,
+        "net": -13911
+      },
+      "changes": {
+        "long": 7107,
+        "short": 4856,
+        "spreads": 3
+      },
+      "pct_of_open_interest": {
+        "long": 41.6,
+        "short": 47.7,
+        "spreads": 1.2
+      },
+      "unfulfilled_calls": -6.18
+    },
+    {
+      "code": "090741",
+      "name": "CANADIAN DOLLAR",
+      "report_date": "2026-02-03",
+      "contract": "CANADIAN DOLLAR - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF CAD 100,000",
+      "open_interest": 216252,
+      "change_in_open_interest": -10952,
+      "non_commercial": {
+        "long": 77397,
+        "short": 75267,
+        "spreads": 3506,
+        "net": 2130
+      },
+      "changes": {
+        "long": 228,
+        "short": -17948,
+        "spreads": 561
+      },
+      "pct_of_open_interest": {
+        "long": 35.8,
+        "short": 34.8,
+        "spreads": 1.6
+      },
+      "unfulfilled_calls": -0.12
+    },
+    {
+      "code": "099741",
+      "name": "EURO FX",
+      "report_date": "2026-02-03",
+      "contract": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF EUR 125,000",
+      "open_interest": 910464,
+      "change_in_open_interest": -8820,
+      "non_commercial": {
+        "long": 302301,
+        "short": 138940,
+        "spreads": 31071,
+        "net": 163361
+      },
+      "changes": {
+        "long": 11965,
+        "short": -19262,
+        "spreads": -4029
+      },
+      "pct_of_open_interest": {
+        "long": 33.2,
+        "short": 15.3,
+        "spreads": 3.4
+      },
+      "unfulfilled_calls": -22.39
+    },
+    {
+      "code": "097741",
+      "name": "JAPANESE YEN",
+      "report_date": "2026-02-03",
+      "contract": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF JPY 12,500,000",
+      "open_interest": 303673,
+      "change_in_open_interest": 2947,
+      "non_commercial": {
+        "long": 114428,
+        "short": 133650,
+        "spreads": 27440,
+        "net": -19222
+      },
+      "changes": {
+        "long": 9968,
+        "short": -4743,
+        "spreads": -883
+      },
+      "pct_of_open_interest": {
+        "long": 37.7,
+        "short": 44,
+        "spreads": 9
+      },
+      "unfulfilled_calls": -3.68
+    },
+    {
+      "code": "092741",
+      "name": "SWISS FRANC",
+      "report_date": "2026-02-03",
+      "contract": "SWISS FRANC - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF CHF 125,000",
+      "open_interest": 93555,
+      "change_in_open_interest": -2556,
+      "non_commercial": {
+        "long": 9687,
+        "short": 50404,
+        "spreads": 586,
+        "net": -40717
+      },
+      "changes": {
+        "long": -37,
+        "short": -2213,
+        "spreads": 514
+      },
+      "pct_of_open_interest": {
+        "long": 10.4,
+        "short": 53.9,
+        "spreads": 0.6
+      },
+      "unfulfilled_calls": 18.71
+    },
+    {
+      "code": "098662",
+      "name": "U.S. DOLLAR INDEX",
+      "report_date": "2026-02-03",
+      "contract": "USD INDEX - ICE FUTURES U.S.",
+      "contract_unit": "U.S. DOLLAR INDEX X $1000",
+      "open_interest": 28190,
+      "change_in_open_interest": -3556,
+      "non_commercial": {
+        "long": 16610,
+        "short": 17462,
+        "spreads": 2153,
+        "net": -852
+      },
+      "changes": {
+        "long": -1335,
+        "short": -4888,
+        "spreads": 353
+      },
+      "pct_of_open_interest": {
+        "long": 58.9,
+        "short": 61.9,
+        "spreads": 7.6
+      },
+      "unfulfilled_calls": 0.24
+    },
+    {
+      "code": "095741",
+      "name": "MEXICAN PESO",
+      "report_date": "2026-02-03",
+      "contract": "MEXICAN PESO - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF MXN 500,000",
+      "open_interest": 225867,
+      "change_in_open_interest": -11877,
+      "non_commercial": {
+        "long": 132392,
+        "short": 41800,
+        "spreads": 1591,
+        "net": 90592
+      },
+      "changes": {
+        "long": -16702,
+        "short": -4180,
+        "spreads": 157
+      },
+      "pct_of_open_interest": {
+        "long": 58.6,
+        "short": 18.5,
+        "spreads": 0.7
+      },
+      "unfulfilled_calls": 7.23
+    },
+    {
+      "code": "112741",
+      "name": "NEW ZEALAND DOLLAR",
+      "report_date": "2026-02-03",
+      "contract": "NZ DOLLAR - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF NZD 100,000",
+      "open_interest": 71304,
+      "change_in_open_interest": -14248,
+      "non_commercial": {
+        "long": 11883,
+        "short": 46177,
+        "spreads": 837,
+        "net": -34294
+      },
+      "changes": {
+        "long": -191,
+        "short": -13642,
+        "spreads": 99
+      },
+      "pct_of_open_interest": {
+        "long": 16.7,
+        "short": 64.8,
+        "spreads": 1.2
+      },
+      "unfulfilled_calls": 2.55
+    },
+    {
+      "code": "102741",
+      "name": "BRAZILIAN REAL",
+      "report_date": "2026-02-03",
+      "contract": "BRAZILIAN REAL - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF BRL 100,000",
+      "open_interest": 87335,
+      "change_in_open_interest": -33158,
+      "non_commercial": {
+        "long": 57232,
+        "short": 26270,
+        "spreads": 519,
+        "net": 30962
+      },
+      "changes": {
+        "long": 1205,
+        "short": -10912,
+        "spreads": -8595
+      },
+      "pct_of_open_interest": {
+        "long": 65.5,
+        "short": 30.1,
+        "spreads": 0.6
+      },
+      "unfulfilled_calls": -3.19
+    },
+    {
+      "code": "122741",
+      "name": "SOUTH AFRICAN RAND",
+      "report_date": "2026-02-03",
+      "contract": "SO AFRICAN RAND - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF ZAR 500,000",
+      "open_interest": 30584,
+      "change_in_open_interest": 1533,
+      "non_commercial": {
+        "long": 15993,
+        "short": 6313,
+        "spreads": 4888,
+        "net": 9680
+      },
+      "changes": {
+        "long": -1306,
+        "short": -1904,
+        "spreads": 4302
+      },
+      "pct_of_open_interest": {
+        "long": 52.3,
+        "short": 20.6,
+        "spreads": 16
+      },
+      "unfulfilled_calls": -16.19
+    }
+  ],
+  "Cryptocurrencies": [
+    {
+      "code": "133741",
+      "name": "BITCOIN",
+      "report_date": "2026-02-03",
+      "contract": "BITCOIN - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "5 Bitcoins",
+      "open_interest": 23044,
+      "change_in_open_interest": -1232,
+      "non_commercial": {
+        "long": 18939,
+        "short": 17931,
+        "spreads": 2433,
+        "net": 1008
+      },
+      "changes": {
+        "long": 885,
+        "short": 567,
+        "spreads": -1708
+      },
+      "pct_of_open_interest": {
+        "long": 82.2,
+        "short": 77.8,
+        "spreads": 10.6
+      },
+      "unfulfilled_calls": 3.17
+    },
+    {
+      "code": "133742",
+      "name": "MICRO BITCOIN",
+      "report_date": "2026-02-03",
+      "contract": "MICRO BITCOIN - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "Bitcoin X $0.10",
+      "open_interest": 26840,
+      "change_in_open_interest": -5124,
+      "non_commercial": {
+        "long": 17882,
+        "short": 24081,
+        "spreads": 352,
+        "net": -6199
+      },
+      "changes": {
+        "long": -996,
+        "short": -2073,
+        "spreads": -2571
+      },
+      "pct_of_open_interest": {
+        "long": 66.6,
+        "short": 89.7,
+        "spreads": 1.3
+      },
+      "unfulfilled_calls": 5.76
+    },
+    {
+      "code": "146021",
+      "name": "ETHER CASH SETTLED",
+      "report_date": "2026-02-03",
+      "contract": "ETHER CASH SETTLED - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "50 Index Points",
+      "open_interest": 33723,
+      "change_in_open_interest": -6696,
+      "non_commercial": {
+        "long": 23311,
+        "short": 20956,
+        "spreads": 9185,
+        "net": 2355
+      },
+      "changes": {
+        "long": -3955,
+        "short": -4072,
+        "spreads": -2541
+      },
+      "pct_of_open_interest": {
+        "long": 69.1,
+        "short": 62.1,
+        "spreads": 27.2
+      },
+      "unfulfilled_calls": -20.13
+    },
+    {
+      "code": "146022",
+      "name": "MICRO ETHER",
+      "report_date": "2026-02-03",
+      "contract": "MICRO ETHER - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "0.1 Index Points",
+      "open_interest": 115739,
+      "change_in_open_interest": -93306,
+      "non_commercial": {
+        "long": 109236,
+        "short": 112432,
+        "spreads": 2401,
+        "net": -3196
+      },
+      "changes": {
+        "long": -91204,
+        "short": -91555,
+        "spreads": -2088
+      },
+      "pct_of_open_interest": {
+        "long": 94.4,
+        "short": 97.1,
+        "spreads": 2.1
+      },
+      "unfulfilled_calls": 9.11
+    }
+  ],
+  "Indexes": [
+    {
+      "code": "13874+",
+      "name": "S&P 500 STOCK INDEX",
+      "report_date": "2026-02-03",
+      "contract": "S&P 500 Consolidated - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "S&P 500 INDEX X $50.00",
+      "open_interest": 1949539,
+      "change_in_open_interest": 33549,
+      "non_commercial": {
+        "long": 244946,
+        "short": 374275,
+        "spreads": 46001,
+        "net": -129329
+      },
+      "changes": {
+        "long": 223,
+        "short": 31805,
+        "spreads": 4902
+      },
+      "pct_of_open_interest": {
+        "long": 12.6,
+        "short": 19.2,
+        "spreads": 2.4
+      },
+      "unfulfilled_calls": 4.1
+    },
+    {
+      "code": "209742",
+      "name": "NASDAQ-100 STOCK INDEX (MINI)",
+      "report_date": "2026-02-03",
+      "contract": "NASDAQ MINI - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "NASDAQ 100 STOCK INDEX X $20",
+      "open_interest": 268823,
+      "change_in_open_interest": 8064,
+      "non_commercial": {
+        "long": 83886,
+        "short": 69699,
+        "spreads": 6637,
+        "net": 14187
+      },
+      "changes": {
+        "long": -5593,
+        "short": 8375,
+        "spreads": 3172
+      },
+      "pct_of_open_interest": {
+        "long": 31.2,
+        "short": 25.9,
+        "spreads": 2.5
+      },
+      "unfulfilled_calls": -5.1
+    },
+    {
+      "code": "124603",
+      "name": "DOW JONES INDUSTRIAL AVG x $5",
+      "report_date": "2026-02-03",
+      "contract": "DJIA x $5 - CHICAGO BOARD OF TRADE",
+      "contract_unit": "$5 X DJIA INDEX",
+      "open_interest": 70011,
+      "change_in_open_interest": -895,
+      "non_commercial": {
+        "long": 20011,
+        "short": 18964,
+        "spreads": 1018,
+        "net": 1047
+      },
+      "changes": {
+        "long": -33,
+        "short": 64,
+        "spreads": 41
+      },
+      "pct_of_open_interest": {
+        "long": 28.6,
+        "short": 27.1,
+        "spreads": 1.5
+      },
+      "unfulfilled_calls": -33.77
+    },
+    {
+      "code": "239742",
+      "name": "RUSSELL 2000 MINI",
+      "report_date": "2026-02-03",
+      "contract": "RUSSELL E-MINI - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "RUSSEL 2000 INDEX X $50",
+      "open_interest": 407183,
+      "change_in_open_interest": -9364,
+      "non_commercial": {
+        "long": 92836,
+        "short": 88538,
+        "spreads": 10403,
+        "net": 4298
+      },
+      "changes": {
+        "long": -8727,
+        "short": -698,
+        "spreads": 309
+      },
+      "pct_of_open_interest": {
+        "long": 22.8,
+        "short": 21.7,
+        "spreads": 2.6
+      },
+      "unfulfilled_calls": 0.54
+    },
+    {
+      "code": "33874A",
+      "name": "E-MINI S&P 400",
+      "report_date": "2026-02-03",
+      "contract": "E-MINI S&P 400 STOCK INDEX - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "S&P 400 INDEX X $100",
+      "open_interest": 42358,
+      "change_in_open_interest": 277,
+      "non_commercial": {
+        "long": 8631,
+        "short": 3305,
+        "spreads": 250,
+        "net": 5326
+      },
+      "changes": {
+        "long": -183,
+        "short": 247,
+        "spreads": -33
+      },
+      "pct_of_open_interest": {
+        "long": 20.4,
+        "short": 7.8,
+        "spreads": 0.6
+      },
+      "unfulfilled_calls": -83.22
+    },
+    {
+      "code": "13874A",
+      "name": "E-MINI S&P 500",
+      "report_date": "2026-02-03",
+      "contract": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "$50 X S&P 500 INDEX",
+      "open_interest": 1928476,
+      "change_in_open_interest": 31015,
+      "non_commercial": {
+        "long": 248468,
+        "short": 381409,
+        "spreads": 33086,
+        "net": -132941
+      },
+      "changes": {
+        "long": 3026,
+        "short": 36180,
+        "spreads": -433
+      },
+      "pct_of_open_interest": {
+        "long": 12.9,
+        "short": 19.8,
+        "spreads": 1.7
+      },
+      "unfulfilled_calls": 4.01
+    },
+    {
+      "code": "1170E1",
+      "name": "VIX FUTURES",
+      "report_date": "2026-02-03",
+      "contract": "VIX FUTURES - CBOE FUTURES EXCHANGE",
+      "contract_unit": "$1000 X INDEX",
+      "open_interest": 364584,
+      "change_in_open_interest": 2182,
+      "non_commercial": {
+        "long": 75037,
+        "short": 155672,
+        "spreads": 76467,
+        "net": -80635
+      },
+      "changes": {
+        "long": -2941,
+        "short": 2708,
+        "spreads": 397
+      },
+      "pct_of_open_interest": {
+        "long": 20.6,
+        "short": 42.7,
+        "spreads": 21
+      },
+      "unfulfilled_calls": -346.07
+    }
+  ],
+  "Treasuries and Rates": [
+    {
+      "code": "045601",
+      "name": "30-DAY FEDERAL FUNDS",
+      "report_date": "2026-02-03",
+      "contract": "FED FUNDS - CHICAGO BOARD OF TRADE",
+      "contract_unit": "CONTRACTS OF $5,000,000",
+      "open_interest": 1765710,
+      "change_in_open_interest": -580088,
+      "non_commercial": {
+        "long": 181635,
+        "short": 376338,
+        "spreads": 374211,
+        "net": -194703
+      },
+      "changes": {
+        "long": -234709,
+        "short": -156035,
+        "spreads": -55985
+      },
+      "pct_of_open_interest": {
+        "long": 10.3,
+        "short": 21.3,
+        "spreads": 21.2
+      },
+      "unfulfilled_calls": -2.47
+    },
+    {
+      "code": "042601",
+      "name": "UST 2Y NOTE",
+      "report_date": "2026-02-03",
+      "contract": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "contract_unit": "CONTRACTS OF $200,000 FACE VALUE",
+      "open_interest": 4645002,
+      "change_in_open_interest": 35924,
+      "non_commercial": {
+        "long": 755987,
+        "short": 2103589,
+        "spreads": 158521,
+        "net": -1347602
+      },
+      "changes": {
+        "long": -10651,
+        "short": 117952,
+        "spreads": -14767
+      },
+      "pct_of_open_interest": {
+        "long": 16.3,
+        "short": 45.3,
+        "spreads": 3.4
+      },
+      "unfulfilled_calls": 12.56
+    },
+    {
+      "code": "044601",
+      "name": "UST 5Y NOTE",
+      "report_date": "2026-02-03",
+      "contract": "UST 5Y NOTE - CHICAGO BOARD OF TRADE",
+      "contract_unit": "CONTRACTS OF $100,000 FACE VALUE",
+      "open_interest": 6896712,
+      "change_in_open_interest": 119566,
+      "non_commercial": {
+        "long": 543500,
+        "short": 2702480,
+        "spreads": 219252,
+        "net": -2158980
+      },
+      "changes": {
+        "long": -27321,
+        "short": 40613,
+        "spreads": 5188
+      },
+      "pct_of_open_interest": {
+        "long": 7.9,
+        "short": 39.2,
+        "spreads": 3.2
+      },
+      "unfulfilled_calls": 162.43
+    },
+    {
+      "code": "043602",
+      "name": "UST 10Y NOTE",
+      "report_date": "2026-02-03",
+      "contract": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "contract_unit": "CONTRACTS OF $100,000 FACE VALUE",
+      "open_interest": 5495119,
+      "change_in_open_interest": -195724,
+      "non_commercial": {
+        "long": 698068,
+        "short": 1427482,
+        "spreads": 213473,
+        "net": -729414
+      },
+      "changes": {
+        "long": 29322,
+        "short": 32585,
+        "spreads": 26204
+      },
+      "pct_of_open_interest": {
+        "long": 12.7,
+        "short": 26,
+        "spreads": 3.9
+      },
+      "unfulfilled_calls": 223.54
+    }
+  ],
+  "Energies": [
+    {
+      "code": "067651",
+      "name": "CRUDE OIL, LIGHT SWEET",
+      "report_date": "2026-02-03",
+      "contract": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF 1,000 BARRELS",
+      "open_interest": 2091314,
+      "change_in_open_interest": 55665,
+      "non_commercial": {
+        "long": 315529,
+        "short": 190964,
+        "spreads": 825127,
+        "net": 124565
+      },
+      "changes": {
+        "long": 20282,
+        "short": -7301,
+        "spreads": -6287
+      },
+      "pct_of_open_interest": {
+        "long": 15.1,
+        "short": 9.1,
+        "spreads": 39.5
+      },
+      "unfulfilled_calls": 9.6
+    },
+    {
+      "code": "111659",
+      "name": "GASOLINE BLENDSTOCK (RBOB)",
+      "report_date": "2026-02-03",
+      "contract": "GASOLINE RBOB - NEW YORK MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF 42,000 U.S. GALLONS",
+      "open_interest": 469165,
+      "change_in_open_interest": 4820,
+      "non_commercial": {
+        "long": 116257,
+        "short": 39826,
+        "spreads": 108840,
+        "net": 76431
+      },
+      "changes": {
+        "long": -2279,
+        "short": 503,
+        "spreads": 6694
+      },
+      "pct_of_open_interest": {
+        "long": 24.8,
+        "short": 8.5,
+        "spreads": 23.2
+      },
+      "unfulfilled_calls": 43.04
+    },
+    {
+      "code": "022651",
+      "name": "HEATING OIL, NY HARBOR-ULSD",
+      "report_date": "2026-02-03",
+      "contract": "NY HARBOR ULSD - NEW YORK MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF 42,000 U.S. GALLONS",
+      "open_interest": 366997,
+      "change_in_open_interest": -14078,
+      "non_commercial": {
+        "long": 62759,
+        "short": 37480,
+        "spreads": 85976,
+        "net": 25279
+      },
+      "changes": {
+        "long": -5089,
+        "short": -6533,
+        "spreads": -6338
+      },
+      "pct_of_open_interest": {
+        "long": 17.1,
+        "short": 10.2,
+        "spreads": 23.4
+      },
+      "unfulfilled_calls": -17.51
+    },
+    {
+      "code": "023651",
+      "name": "NATURAL GAS",
+      "report_date": "2026-02-03",
+      "contract": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "contract_unit": "Contracts of 10,000 MMBTU'S",
+      "open_interest": 1655983,
+      "change_in_open_interest": 30040,
+      "non_commercial": {
+        "long": 215099,
+        "short": 387409,
+        "spreads": 772291,
+        "net": -172310
+      },
+      "changes": {
+        "long": -1013,
+        "short": 7691,
+        "spreads": 15378
+      },
+      "pct_of_open_interest": {
+        "long": 13,
+        "short": 23.4,
+        "spreads": 46.6
+      },
+      "unfulfilled_calls": 25.8
+    }
+  ],
+  "Grains": [
+    {
+      "code": "002602",
+      "name": "CORN",
+      "report_date": "2026-02-03",
+      "contract": "CORN - CHICAGO BOARD OF TRADE",
+      "contract_unit": "CONTRACTS OF 5,000 BUSHELS",
+      "open_interest": 1740882,
+      "change_in_open_interest": 33428,
+      "non_commercial": {
+        "long": 344781,
+        "short": 379479,
+        "spreads": 475836,
+        "net": -34698
+      },
+      "changes": {
+        "long": 3205,
+        "short": 6232,
+        "spreads": 25185
+      },
+      "pct_of_open_interest": {
+        "long": 19.8,
+        "short": 21.8,
+        "spreads": 27.3
+      },
+      "unfulfilled_calls": 11.46
+    },
+    {
+      "code": "005602",
+      "name": "SOYBEANS",
+      "report_date": "2026-02-03",
+      "contract": "SOYBEANS - CHICAGO BOARD OF TRADE",
+      "contract_unit": "CONTRACTS OF 5,000 BUSHELS",
+      "open_interest": 883178,
+      "change_in_open_interest": 24345,
+      "non_commercial": {
+        "long": 177970,
+        "short": 113803,
+        "spreads": 199695,
+        "net": 64167
+      },
+      "changes": {
+        "long": 10896,
+        "short": 4160,
+        "spreads": 4512
+      },
+      "pct_of_open_interest": {
+        "long": 20.2,
+        "short": 12.9,
+        "spreads": 22.6
+      },
+      "unfulfilled_calls": 9.53
+    },
+    {
+      "code": "007601",
+      "name": "SOYBEAN OIL",
+      "report_date": "2026-02-03",
+      "contract": "SOYBEAN OIL - CHICAGO BOARD OF TRADE",
+      "contract_unit": "CONTRACTS OF 60,000 POUNDS",
+      "open_interest": 667851,
+      "change_in_open_interest": 5767,
+      "non_commercial": {
+        "long": 138652,
+        "short": 102745,
+        "spreads": 178779,
+        "net": 35907
+      },
+      "changes": {
+        "long": -885,
+        "short": 4484,
+        "spreads": 246
+      },
+      "pct_of_open_interest": {
+        "long": 20.8,
+        "short": 15.4,
+        "spreads": 26.8
+      },
+      "unfulfilled_calls": -9.98
+    },
+    {
+      "code": "026603",
+      "name": "SOYBEAN MEAL",
+      "report_date": "2026-02-03",
+      "contract": "SOYBEAN MEAL - CHICAGO BOARD OF TRADE",
+      "contract_unit": "CONTRACTS OF 100 TONS",
+      "open_interest": 545729,
+      "change_in_open_interest": 12476,
+      "non_commercial": {
+        "long": 113333,
+        "short": 110509,
+        "spreads": 102188,
+        "net": 2824
+      },
+      "changes": {
+        "long": -1720,
+        "short": -12838,
+        "spreads": 1610
+      },
+      "pct_of_open_interest": {
+        "long": 20.8,
+        "short": 20.2,
+        "spreads": 18.7
+      },
+      "unfulfilled_calls": -0.25
+    },
+    {
+      "code": "001602",
+      "name": "WHEAT-SRW",
+      "report_date": "2026-02-03",
+      "contract": "WHEAT-SRW - CHICAGO BOARD OF TRADE",
+      "contract_unit": "CONTRACTS OF 5,000 BUSHELS",
+      "open_interest": 543432,
+      "change_in_open_interest": 7404,
+      "non_commercial": {
+        "long": 121319,
+        "short": 186815,
+        "spreads": 191735,
+        "net": -65496
+      },
+      "changes": {
+        "long": 1498,
+        "short": -12396,
+        "spreads": 3693
+      },
+      "pct_of_open_interest": {
+        "long": 22.3,
+        "short": 34.4,
+        "spreads": 35.3
+      },
+      "unfulfilled_calls": 6.01
+    },
+    {
+      "code": "001612",
+      "name": "WHEAT-HRW",
+      "report_date": "2026-02-03",
+      "contract": "WHEAT-HRW - CHICAGO BOARD OF TRADE",
+      "contract_unit": "CONTRACTS OF 5,000 BUSHELS",
+      "open_interest": 312784,
+      "change_in_open_interest": 494,
+      "non_commercial": {
+        "long": 84076,
+        "short": 92218,
+        "spreads": 81516,
+        "net": -8142
+      },
+      "changes": {
+        "long": 4153,
+        "short": 9129,
+        "spreads": -3780
+      },
+      "pct_of_open_interest": {
+        "long": 26.9,
+        "short": 29.5,
+        "spreads": 26.1
+      },
+      "unfulfilled_calls": 1.64
+    },
+    {
+      "code": "001626",
+      "name": "WHEAT-HRSpring",
+      "report_date": "2026-02-03",
+      "contract": "WHEAT-HRSpring - MIAX FUTURES EXCHANGE",
+      "contract_unit": "CONTRACTS OF 5,000 BUSHELS",
+      "open_interest": 75296,
+      "change_in_open_interest": -210,
+      "non_commercial": {
+        "long": 14610,
+        "short": 29589,
+        "spreads": 10628,
+        "net": -14979
+      },
+      "changes": {
+        "long": 258,
+        "short": -1385,
+        "spreads": 273
+      },
+      "pct_of_open_interest": {
+        "long": 19.4,
+        "short": 39.3,
+        "spreads": 14.1
+      },
+      "unfulfilled_calls": 13.29
+    },
+    {
+      "code": "039601",
+      "name": "ROUGH RICE",
+      "report_date": "2026-02-03",
+      "contract": "ROUGH RICE - CHICAGO BOARD OF TRADE",
+      "contract_unit": "CONTRACTS OF 200,000 POUNDS",
+      "open_interest": 11984,
+      "change_in_open_interest": -258,
+      "non_commercial": {
+        "long": 2601,
+        "short": 5804,
+        "spreads": 1218,
+        "net": -3203
+      },
+      "changes": {
+        "long": -389,
+        "short": -905,
+        "spreads": 530
+      },
+      "pct_of_open_interest": {
+        "long": 21.7,
+        "short": 48.4,
+        "spreads": 10.2
+      },
+      "unfulfilled_calls": 6.21
+    },
+    {
+      "code": "135731",
+      "name": "CANOLA",
+      "report_date": "2026-02-03",
+      "contract": "CANOLA - ICE FUTURES U.S.",
+      "contract_unit": "20 Metric Tonnes",
+      "open_interest": 296432,
+      "change_in_open_interest": 8372,
+      "non_commercial": {
+        "long": 51370,
+        "short": 114355,
+        "spreads": 40179,
+        "net": -62985
+      },
+      "changes": {
+        "long": 4099,
+        "short": -5231,
+        "spreads": 1622
+      },
+      "pct_of_open_interest": {
+        "long": 17.3,
+        "short": 38.6,
+        "spreads": 13.6
+      },
+      "unfulfilled_calls": 55.64
+    }
+  ],
+  "Livestock & Dairy": [
+    {
+      "code": "057642",
+      "name": "LIVE CATTLE",
+      "report_date": "2026-02-03",
+      "contract": "LIVE CATTLE - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF 40,000 POUNDS",
+      "open_interest": 336190,
+      "change_in_open_interest": 3976,
+      "non_commercial": {
+        "long": 151701,
+        "short": 59852,
+        "spreads": 48413,
+        "net": 91849
+      },
+      "changes": {
+        "long": 3913,
+        "short": 1042,
+        "spreads": 2523
+      },
+      "pct_of_open_interest": {
+        "long": 45.1,
+        "short": 17.8,
+        "spreads": 14.4
+      },
+      "unfulfilled_calls": 31.99
+    },
+    {
+      "code": "061641",
+      "name": "FEEDER CATTLE",
+      "report_date": "2026-02-03",
+      "contract": "FEEDER CATTLE - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF 50,000 POUNDS",
+      "open_interest": 79277,
+      "change_in_open_interest": 496,
+      "non_commercial": {
+        "long": 31840,
+        "short": 21744,
+        "spreads": 21771,
+        "net": 10096
+      },
+      "changes": {
+        "long": -1001,
+        "short": -2422,
+        "spreads": 2652
+      },
+      "pct_of_open_interest": {
+        "long": 40.2,
+        "short": 27.4,
+        "spreads": 27.5
+      },
+      "unfulfilled_calls": -7.1
+    },
+    {
+      "code": "054642",
+      "name": "LEAN HOGS",
+      "report_date": "2026-02-03",
+      "contract": "LEAN HOGS - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF 40,000 POUNDS",
+      "open_interest": 375763,
+      "change_in_open_interest": 18549,
+      "non_commercial": {
+        "long": 161832,
+        "short": 82463,
+        "spreads": 76951,
+        "net": 79369
+      },
+      "changes": {
+        "long": 11971,
+        "short": -1462,
+        "spreads": 6390
+      },
+      "pct_of_open_interest": {
+        "long": 43.1,
+        "short": 21.9,
+        "spreads": 20.5
+      },
+      "unfulfilled_calls": 7.55
+    },
+    {
+      "code": "052641",
+      "name": "MILK, Class III",
+      "report_date": "2026-02-03",
+      "contract": "MILK, Class III - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF 200,000 POUNDS",
+      "open_interest": 34442,
+      "change_in_open_interest": 220,
+      "non_commercial": {
+        "long": 4956,
+        "short": 13825,
+        "spreads": 1696,
+        "net": -8869
+      },
+      "changes": {
+        "long": -740,
+        "short": 815,
+        "spreads": 42
+      },
+      "pct_of_open_interest": {
+        "long": 14.4,
+        "short": 40.1,
+        "spreads": 4.9
+      },
+      "unfulfilled_calls": 118.25
+    },
+    {
+      "code": "052642",
+      "name": "NON FAT DRY MILK",
+      "report_date": "2026-02-03",
+      "contract": "NON FAT DRY MILK - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF 44,000 LBS.",
+      "open_interest": 12321,
+      "change_in_open_interest": 1043,
+      "non_commercial": {
+        "long": 207,
+        "short": 1618,
+        "spreads": 415,
+        "net": -1411
+      },
+      "changes": {
+        "long": -56,
+        "short": 195,
+        "spreads": 13
+      },
+      "pct_of_open_interest": {
+        "long": 1.7,
+        "short": 13.1,
+        "spreads": 3.4
+      },
+      "unfulfilled_calls": 10.15
+    },
+    {
+      "code": "050642",
+      "name": "BUTTER (CASH SETTLED)",
+      "report_date": "2026-02-03",
+      "contract": "BUTTER (CASH SETTLED) - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF 20,000 POUNDS",
+      "open_interest": 17036,
+      "change_in_open_interest": 1236,
+      "non_commercial": {
+        "long": 257,
+        "short": 3315,
+        "spreads": 614,
+        "net": -3058
+      },
+      "changes": {
+        "long": -58,
+        "short": 86,
+        "spreads": 41
+      },
+      "pct_of_open_interest": {
+        "long": 1.5,
+        "short": 19.5,
+        "spreads": 3.6
+      },
+      "unfulfilled_calls": 109.21
+    },
+    {
+      "code": "063642",
+      "name": "CHEESE (CASH-SETTLED)",
+      "report_date": "2026-02-03",
+      "contract": "CHEESE (CASH-SETTLED) - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF 20,000 POUNDS",
+      "open_interest": 36831,
+      "change_in_open_interest": 415,
+      "non_commercial": {
+        "long": 1006,
+        "short": 12043,
+        "spreads": 2010,
+        "net": -11037
+      },
+      "changes": {
+        "long": 370,
+        "short": -297,
+        "spreads": -358
+      },
+      "pct_of_open_interest": {
+        "long": 2.7,
+        "short": 32.7,
+        "spreads": 5.5
+      },
+      "unfulfilled_calls": -151.19
+    }
+  ],
+  "Metals": [
+    {
+      "code": "088691",
+      "name": "GOLD",
+      "report_date": "2026-02-03",
+      "contract": "GOLD - COMMODITY EXCHANGE INC.",
+      "contract_unit": "CONTRACTS OF 100 TROY OUNCES",
+      "open_interest": 409694,
+      "change_in_open_interest": -78769,
+      "non_commercial": {
+        "long": 214508,
+        "short": 48904,
+        "spreads": 50612,
+        "net": 165604
+      },
+      "changes": {
+        "long": -37592,
+        "short": 2200,
+        "spreads": -26874
+      },
+      "pct_of_open_interest": {
+        "long": 52.4,
+        "short": 11.9,
+        "spreads": 12.4
+      },
+      "unfulfilled_calls": 4.68
+    },
+    {
+      "code": "084691",
+      "name": "SILVER",
+      "report_date": "2026-02-03",
+      
+      "contract": "SILVER - COMMODITY EXCHANGE INC.",
+      "contract_unit": "CONTRACTS OF 5,000 TROY OUNCES",
+      "open_interest": 143180,
+      "change_in_open_interest": -13457,
+      "non_commercial": {
+        "long": 38883,
+        "short": 13006,
+        "spreads": 36580,
+        "net": 25877
+      },
+      "changes": {
+        "long": -4592,
+        "short": -6766,
+        "spreads": 2650
+      },
+      "pct_of_open_interest": {
+        "long": 27.2,
+        "short": 9.1,
+        "spreads": 25.5
+      },
+      "unfulfilled_calls": -11.9
+    },
+    {
+      "code": "085692",
+      "name": "COPPER",
+      "report_date": "2026-02-03",
+      "contract": "COPPER- #1 - COMMODITY EXCHANGE INC.",
+      "contract_unit": "CONTRACTS OF 25,000 POUNDS",
+      "open_interest": 278845,
+      "change_in_open_interest": 626,
+      "non_commercial": {
+        "long": 97407,
+        "short": 49593,
+        "spreads": 70884,
+        "net": 47814
+      },
+      "changes": {
+        "long": -3993,
+        "short": -3417,
+        "spreads": 7717
+      },
+      "pct_of_open_interest": {
+        "long": 34.9,
+        "short": 17.8,
+        "spreads": 25.4
+      },
+      "unfulfilled_calls": 83.01
+    },
+    {
+      "code": "075651",
+      "name": "PALLADIUM",
+      "report_date": "2026-02-03",
+      "contract": "PALLADIUM - NEW YORK MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF 100 TROY OUNCES",
+      "open_interest": 17304,
+      "change_in_open_interest": -1819,
+      "non_commercial": {
+        "long": 8518,
+        "short": 7385,
+        "spreads": 776,
+        "net": 1133
+      },
+      "changes": {
+        "long": -918,
+        "short": -1367,
+        "spreads": -28
+      },
+      "pct_of_open_interest": {
+        "long": 49.2,
+        "short": 42.7,
+        "spreads": 4.5
+      },
+      "unfulfilled_calls": -2.52
+    },
+    {
+      "code": "076651",
+      "name": "PLATINUM",
+      "report_date": "2026-02-03",
+      "contract": "PLATINUM - NEW YORK MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF 50 TROY OUNCES",
+      "open_interest": 73590,
+      "change_in_open_interest": -5851,
+      "non_commercial": {
+        "long": 31468,
+        "short": 18362,
+        "spreads": 12529,
+        "net": 13106
+      },
+      "changes": {
+        "long": -4951,
+        "short": -4135,
+        "spreads": 1334
+      },
+      "pct_of_open_interest": {
+        "long": 42.8,
+        "short": 25,
+        "spreads": 17
+      },
+      "unfulfilled_calls": 16.06
+    },
+    {
+      "code": "191693",
+      "name": "ALUMINUM MWP",
+      "report_date": "2026-02-03",
+      "contract": "ALUMINUM MWP - COMMODITY EXCHANGE INC.",
+      "contract_unit": "55,116 US Pounds-25 MT",
+      "open_interest": 24926,
+      "change_in_open_interest": -2152,
+      "non_commercial": {
+        "long": 1728,
+        "short": 4641,
+        "spreads": 742,
+        "net": -2913
+      },
+      "changes": {
+        "long": -320,
+        "short": -981,
+        "spreads": -8
+      },
+      "pct_of_open_interest": {
+        "long": 6.9,
+        "short": 18.6,
+        "spreads": 3
+      },
+      "unfulfilled_calls": 4.41
+    }
+  ],
+  "Softs": [
+    {
+      "code": "073732",
+      "name": "COCOA",
+      "report_date": "2026-02-03",
+      "contract": "COCOA - ICE FUTURES U.S.",
+      "contract_unit": "CONTRACTS OF 10 METRIC TONS",
+      "open_interest": 160254,
+      "change_in_open_interest": 10857,
+      "non_commercial": {
+        "long": 31042,
+        "short": 45550,
+        "spreads": 42657,
+        "net": -14508
+      },
+      "changes": {
+        "long": 3590,
+        "short": 2596,
+        "spreads": 2762
+      },
+      "pct_of_open_interest": {
+        "long": 19.4,
+        "short": 28.4,
+        "spreads": 26.6
+      },
+      "unfulfilled_calls": -14.6
+    },
+    {
+      "code": "033661",
+      "name": "COTTON NO. 2",
+      "report_date": "2026-02-03",
+      "contract": "COTTON NO. 2 - ICE FUTURES U.S.",
+      "contract_unit": "CONTRACTS OF 50,000 POUNDS",
+      "open_interest": 380025,
+      "change_in_open_interest": 17396,
+      "non_commercial": {
+        "long": 101788,
+        "short": 144532,
+        "spreads": 77201,
+        "net": -42744
+      },
+      "changes": {
+        "long": 5316,
+        "short": 9093,
+        "spreads": 2363
+      },
+      "pct_of_open_interest": {
+        "long": 26.8,
+        "short": 38,
+        "spreads": 20.3
+      },
+      "unfulfilled_calls": 11.32
+    },
+    {
+      "code": "083731",
+      "name": "COFFEE C",
+      "report_date": "2026-02-03",
+      "contract": "COFFEE C - ICE FUTURES U.S.",
+      "contract_unit": "CONTRACTS OF 37,500 POUNDS",
+      "open_interest": 179573,
+      "change_in_open_interest": 4683,
+      "non_commercial": {
+        "long": 49342,
+        "short": 30978,
+        "spreads": 42058,
+        "net": 18364
+      },
+      "changes": {
+        "long": -7776,
+        "short": 6594,
+        "spreads": 2398
+      },
+      "pct_of_open_interest": {
+        "long": 27.5,
+        "short": 17.3,
+        "spreads": 23.4
+      },
+      "unfulfilled_calls": 15.54
+    },
+    {
+      "code": "080732",
+      "name": "SUGAR NO. 11",
+      "report_date": "2026-02-03",
+      "contract": "SUGAR NO. 11 - ICE FUTURES U.S.",
+      "contract_unit": "CONTRACTS OF 112,000 POUNDS",
+      "open_interest": 1059582,
+      "change_in_open_interest": 53278,
+      "non_commercial": {
+        "long": 154357,
+        "short": 364646,
+        "spreads": 220154,
+        "net": -210289
+      },
+      "changes": {
+        "long": 934,
+        "short": 43470,
+        "spreads": 9434
+      },
+      "pct_of_open_interest": {
+        "long": 14.6,
+        "short": 34.4,
+        "spreads": 20.8
+      },
+      "unfulfilled_calls": 4.94
+    },
+    {
+      "code": "040701",
+      "name": "FRZN CONCENTRATED ORANGE JUICE",
+      "report_date": "2026-02-03",
+      "contract": "FRZN CONCENTRATED ORANGE JUICE - ICE FUTURES U.S.",
+      "contract_unit": "CONTRACTS OF 15,000 POUNDS",
+      "open_interest": 8333,
+      "change_in_open_interest": -594,
+      "non_commercial": {
+        "long": 3786,
+        "short": 2047,
+        "spreads": 654,
+        "net": 1739
+      },
+      "changes": {
+        "long": -177,
+        "short": -770,
+        "spreads": -9
+      },
+      "pct_of_open_interest": {
+        "long": 45.4,
+        "short": 24.6,
+        "spreads": 7.8
+      },
+      "unfulfilled_calls": -2.93
+    },
+    {
+      "code": "058644",
+      "name": "RANDOM LENGTH LUMBER",
+      "report_date": "2026-02-03",
+      "contract": "LUMBER - CHICAGO MERCANTILE EXCHANGE",
+      "contract_unit": "CONTRACTS OF 27,500 BOARD FEET",
+      "open_interest": 8686,
+      "change_in_open_interest": 685,
+      "non_commercial": {
+        "long": 2171,
+        "short": 4934,
+        "spreads": 192,
+        "net": -2763
+      },
+      "changes": {
+        "long": -95,
+        "short": 115,
+        "spreads": 94
+      },
+      "pct_of_open_interest": {
+        "long": 25,
+        "short": 56.8,
+        "spreads": 2.2
+      },
+      "unfulfilled_calls": 138.15
+    }
+  ]
+}

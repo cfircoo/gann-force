@@ -1,0 +1,58 @@
+OK: [Currencies] AUSTRALIAN DOLLAR
+OK: [Currencies] BRITISH POUND
+OK: [Currencies] CANADIAN DOLLAR
+OK: [Currencies] EURO FX
+OK: [Currencies] JAPANESE YEN
+OK: [Currencies] SWISS FRANC
+OK: [Currencies] U.S. DOLLAR INDEX
+OK: [Currencies] MEXICAN PESO
+OK: [Currencies] NEW ZEALAND DOLLAR
+OK: [Currencies] BRAZILIAN REAL
+OK: [Currencies] SOUTH AFRICAN RAND
+OK: [Cryptocurrencies] BITCOIN
+OK: [Cryptocurrencies] MICRO BITCOIN
+OK: [Cryptocurrencies] ETHER CASH SETTLED
+OK: [Cryptocurrencies] MICRO ETHER
+OK: [Indexes] S&P 500 STOCK INDEX
+OK: [Indexes] NASDAQ-100 STOCK INDEX (MINI)
+OK: [Indexes] DOW JONES INDUSTRIAL AVG x $5
+OK: [Indexes] RUSSELL 2000 MINI
+OK: [Indexes] E-MINI S&P 400
+OK: [Indexes] E-MINI S&P 500
+OK: [Indexes] VIX FUTURES
+OK: [Treasuries and Rates] 30-DAY FEDERAL FUNDS
+OK: [Treasuries and Rates] UST 2Y NOTE
+OK: [Treasuries and Rates] UST 5Y NOTE
+OK: [Treasuries and Rates] UST 10Y NOTE
+OK: [Energies] CRUDE OIL, LIGHT SWEET
+OK: [Energies] GASOLINE BLENDSTOCK (RBOB)
+OK: [Energies] HEATING OIL, NY HARBOR-ULSD
+OK: [Energies] NATURAL GAS
+OK: [Grains] CORN
+OK: [Grains] SOYBEANS
+OK: [Grains] SOYBEAN OIL
+OK: [Grains] SOYBEAN MEAL
+OK: [Grains] WHEAT-SRW
+OK: [Grains] WHEAT-HRW
+OK: [Grains] WHEAT-HRSpring
+OK: [Grains] ROUGH RICE
+OK: [Grains] CANOLA
+OK: [Livestock & Dairy] LIVE CATTLE
+OK: [Livestock & Dairy] FEEDER CATTLE
+OK: [Livestock & Dairy] LEAN HOGS
+OK: [Livestock & Dairy] MILK, Class III
+OK: [Livestock & Dairy] NON FAT DRY MILK
+OK: [Livestock & Dairy] BUTTER (CASH SETTLED)
+OK: [Livestock & Dairy] CHEESE (CASH-SETTLED)
+OK: [Metals] GOLD
+OK: [Metals] SILVER
+OK: [Metals] COPPER
+OK: [Metals] PALLADIUM
+OK: [Metals] PLATINUM
+OK: [Metals] ALUMINUM MWP
+OK: [Softs] COCOA
+OK: [Softs] COTTON NO. 2
+OK: [Softs] COFFEE C
+OK: [Softs] SUGAR NO. 11
+OK: [Softs] FRZN CONCENTRATED ORANGE JUICE
+OK: [Softs] RANDOM LENGTH LUMBER
