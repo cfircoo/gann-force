@@ -431,45 +431,90 @@ if currentHour != lastAlertHour
 // Check if FVG conditions are met
 fvg_conditions_met = is_valid_tf and (fvg_after_cross_bull or fvg_after_cross_bear) and ((fvg_after_cross_bull and all_candles_above_sma and htf_confirms_bull) or (fvg_after_cross_bear and all_candles_below_sma and htf_confirms_bear)) and not position_open
 
+// Pre-calculate prospective trade values for webhook alerts
+alert_direction = fvg_after_cross_bull ? "long" : "short"
+float alert_entry = close
+float alert_sl = na
+float alert_tp = na
+float alert_rr = na
+
+if fvg_conditions_met
+    float base_stop = fvg_after_cross_bull ? (close - sma_slow) : (sma_slow - close)
+    float stop_buf = base_stop * STOP_BUFFER_PCT / 100
+    alert_sl := fvg_after_cross_bull ? (sma_slow - stop_buf) : (sma_slow + stop_buf)
+    alert_tp := close + (close - alert_sl) * 2
+    alert_rr := math.abs(alert_tp - close) / math.abs(close - alert_sl)
+
+// Build JSON webhook payload
+webhook_json(string alert_type, int mins_before) =>
+    string j = '{"strategy":"30-60"'
+    j := j + ',"symbol":"' + syminfo.ticker + '"'
+    j := j + ',"exchange":"' + syminfo.prefix + '"'
+    j := j + ',"direction":"' + alert_direction + '"'
+    j := j + ',"alert_type":"' + alert_type + '"'
+    j := j + ',"mins_before_close":' + str.tostring(mins_before)
+    j := j + ',"timeframe":"1H"'
+    j := j + ',"price":' + str.tostring(close, format.mintick)
+    j := j + ',"entry":' + str.tostring(alert_entry, format.mintick)
+    j := j + ',"stop_loss":' + str.tostring(alert_sl, format.mintick)
+    j := j + ',"take_profit":' + str.tostring(alert_tp, format.mintick)
+    j := j + ',"rr_ratio":' + str.tostring(alert_rr, "#.##")
+    j := j + ',"wma30":' + str.tostring(wma_fast, format.mintick)
+    j := j + ',"sma60":' + str.tostring(sma_slow, format.mintick)
+    j := j + ',"trend_1h":"' + (trend_1h_bull ? "bull" : "bear") + '"'
+    j := j + ',"trend_4h":"' + (trend_4h_bull ? "bull" : "bear") + '"'
+    j := j + ',"trend_daily":"' + (trend_daily_bull ? "bull" : "bear") + '"'
+    j := j + ',"bars_since_cross":' + str.tostring(bars_since_cross) + '}'
+    j
+
+
 // 60 min before close = minute 0 (start of hour)
 if currentMinute == 0 and i_alert_60 and not array.get(alertsTriggered, 0) and fvg_conditions_met
     array.set(alertsTriggered, 0, true)
     alert("התראה מוקדמת (60 דק') | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar)
+    alert(webhook_json("early", 60), alert.freq_once_per_bar)
 
 // 45 min before close = minute 15
 if currentMinute == 15 and i_alert_45 and not array.get(alertsTriggered, 1) and fvg_conditions_met
     array.set(alertsTriggered, 1, true)
     alert("התראה מוקדמת (45 דק') | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar)
+    alert(webhook_json("early", 45), alert.freq_once_per_bar)
 
 // 30 min before close = minute 30
 if currentMinute == 30 and i_alert_30 and not array.get(alertsTriggered, 2) and fvg_conditions_met
     array.set(alertsTriggered, 2, true)
     alert("התראה מוקדמת (30 דק') | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar)
+    alert(webhook_json("early", 30), alert.freq_once_per_bar)
 
 // 25 min before close = minute 35
 if currentMinute == 35 and i_alert_25 and not array.get(alertsTriggered, 3) and fvg_conditions_met
     array.set(alertsTriggered, 3, true)
     alert("התראה מוקדמת (25 דק') | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar)
+    alert(webhook_json("early", 25), alert.freq_once_per_bar)
 
 // 20 min before close = minute 40
 if currentMinute == 40 and i_alert_20 and not array.get(alertsTriggered, 4) and fvg_conditions_met
     array.set(alertsTriggered, 4, true)
     alert("התראה מוקדמת (20 דק') | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar)
+    alert(webhook_json("early", 20), alert.freq_once_per_bar)
 
 // 15 min before close = minute 45
 if currentMinute == 45 and i_alert_15 and not array.get(alertsTriggered, 5) and fvg_conditions_met
     array.set(alertsTriggered, 5, true)
     alert("התראה מוקדמת (15 דק') | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar)
+    alert(webhook_json("early", 15), alert.freq_once_per_bar)
 
 // 5 min before close = minute 55
 if currentMinute == 55 and i_alert_5 and not array.get(alertsTriggered, 6) and fvg_conditions_met
     array.set(alertsTriggered, 6, true)
     alert("התראה מוקדמת (5 דק') | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar)
+    alert(webhook_json("early", 5), alert.freq_once_per_bar)
 
 // Confirmed alert on bar close
 if (first_bull_fvg or first_bear_fvg) and i_alert_0 and not array.get(alertsTriggered, 7)
     array.set(alertsTriggered, 7, true)
     alert("כניסה לעסקה | " + syminfo.ticker + " | 1 שעה", alert.freq_once_per_bar_close)
+    alert(webhook_json("confirmed", 0), alert.freq_once_per_bar_close)
 
 // ============================================================================
 // ALERTS - COMMENTED FOR FUTURE USE
