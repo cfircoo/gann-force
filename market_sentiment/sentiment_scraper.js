@@ -4,6 +4,32 @@ const path = require("path");
 
 const URL = "https://www.myfxbook.com/community/outlook";
 
+const SUPABASE_FUNCTION_URL =
+  "https://nvvgqvkbooqrdusugmgg.supabase.co/functions/v1/ingest-sentiment";
+const SUPABASE_ANON_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im52dmdxdmtib29xcmR1c3VnbWdnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA3NDkzNjUsImV4cCI6MjA4NjMyNTM2NX0.SafREKWntFMmJv720S3RpSo4z03cvXpn2y1DgefNZzY";
+
+async function pushToSupabase(output) {
+  try {
+    const res = await fetch(SUPABASE_FUNCTION_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+      body: JSON.stringify(output),
+    });
+    const result = await res.json();
+    if (result.ok) {
+      console.log(`Pushed ${result.symbols} symbols to Supabase (scan ${result.scan_id})`);
+    } else {
+      console.error("Supabase push failed:", result.error);
+    }
+  } catch (err) {
+    console.error("Supabase push error:", err.message);
+  }
+}
+
 async function scrape() {
   console.log("Launching browser...");
   const browser = await chromium.launch({
@@ -88,9 +114,13 @@ async function scrape() {
     data,
   };
 
+  // Save to file (local backup)
   const outPath = path.join(__dirname, "sentiment_data.json");
   fs.writeFileSync(outPath, JSON.stringify(output, null, 2));
   console.log(`Saved ${data.length} symbols to ${outPath}`);
+
+  // Push to Supabase
+  await pushToSupabase(output);
 
   return output;
 }

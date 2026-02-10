@@ -1,1 +1,5 @@
+node_modules/
+.wrangler/
+*.env
 Production/scraper/.env
+sentiment_raw.json

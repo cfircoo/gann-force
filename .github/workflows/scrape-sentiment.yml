@@ -1,0 +1,31 @@
+name: Scrape Sentiment
+
+on:
+  schedule:
+    # Every 6 hours
+    - cron: "0 */6 * * *"
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        working-directory: market_sentiment
+        run: npm install playwright
+
+      - name: Install Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: Run sentiment scraper
+        working-directory: market_sentiment
+        run: xvfb-run node sentiment_scraper.js
+        env:
+          CI: true

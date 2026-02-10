@@ -1,6 +1,12 @@
 const { chromium } = require("playwright");
+const { createClient } = require("@supabase/supabase-js");
+const fs = require("fs");
+const path = require("path");
 
 const BASE_URL = "https://www.tradingster.com/cot/legacy-futures";
+
+const SUPABASE_URL = process.env.SUPABASE_URL || "https://nvvgqvkbooqrdusugmgg.supabase.co";
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 const INSTRUMENTS = {
   Currencies: [
@@ -174,6 +180,70 @@ function extractNonCommercial(page) {
   });
 }
 
+async function pushToSupabase(results) {
+  if (!SUPABASE_KEY) {
+    console.log("No SUPABASE_SERVICE_ROLE_KEY set, skipping DB push");
+    return;
+  }
+
+  const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  // Get report_date from first asset
+  const firstCategory = Object.values(results)[0];
+  const reportDate = firstCategory?.[0]?.report_date || null;
+
+  const { data: scan, error: scanErr } = await supabase
+    .from("cot_scans")
+    .insert({
+      source: "tradingster.com",
+      report_date: reportDate,
+    })
+    .select("id")
+    .single();
+
+  if (scanErr) {
+    console.error("Supabase scan insert error:", scanErr);
+    return;
+  }
+
+  const rows = [];
+  for (const [category, assets] of Object.entries(results)) {
+    for (const asset of assets) {
+      rows.push({
+        scan_id: scan.id,
+        category,
+        code: asset.code,
+        name: asset.name,
+        report_date: asset.report_date,
+        contract: asset.contract,
+        contract_unit: asset.contract_unit,
+        open_interest: asset.open_interest,
+        change_in_open_interest: asset.change_in_open_interest,
+        nc_long: asset.non_commercial.long,
+        nc_short: asset.non_commercial.short,
+        nc_spreads: asset.non_commercial.spreads,
+        nc_net: asset.non_commercial.net,
+        chg_long: asset.changes.long,
+        chg_short: asset.changes.short,
+        chg_spreads: asset.changes.spreads,
+        pct_long: asset.pct_of_open_interest.long,
+        pct_short: asset.pct_of_open_interest.short,
+        pct_spreads: asset.pct_of_open_interest.spreads,
+        unfulfilled_calls: asset.unfulfilled_calls,
+      });
+    }
+  }
+
+  const { error: dataErr } = await supabase.from("cot_data").insert(rows);
+
+  if (dataErr) {
+    console.error("Supabase data insert error:", dataErr);
+    return;
+  }
+
+  console.log(`Pushed ${rows.length} instruments to Supabase (scan ${scan.id})`);
+}
+
 async function scrapeAll() {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
@@ -215,7 +285,15 @@ async function scrapeAll() {
 }
 
 scrapeAll()
-  .then((data) => console.log(JSON.stringify(data, null, 2)))
+  .then(async (data) => {
+    // Save to file (local backup)
+    const outPath = path.join(__dirname, "cot_data.json");
+    fs.writeFileSync(outPath, JSON.stringify(data, null, 2));
+    console.log(JSON.stringify(data, null, 2));
+
+    // Push to Supabase
+    await pushToSupabase(data);
+  })
   .catch((err) => {
     console.error("Fatal:", err.message);
     process.exit(1);
