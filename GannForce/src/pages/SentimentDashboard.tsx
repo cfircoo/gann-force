@@ -3,8 +3,6 @@ import { useSentimentData } from "@/hooks/useSentimentData";
 import { SentimentRow } from "@/components/sentiment/SentimentRow";
 import {
   getSignal,
-  getSignalLabel,
-  type SentimentAsset,
   type SentimentSignal,
 } from "@/types/sentiment";
 import { cn } from "@/lib/utils";
