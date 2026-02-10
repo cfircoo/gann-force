@@ -18,10 +18,6 @@ const borderColors: Record<Recommendation, string> = {
   strong_sell: "border-t-red-600",
 };
 
-function formatNumber(n: number): string {
-  return n.toLocaleString();
-}
-
 function formatSigned(n: number): string {
   const prefix = n > 0 ? "+" : "";
   return prefix + n.toLocaleString();
