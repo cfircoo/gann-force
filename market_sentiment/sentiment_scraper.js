@@ -54,7 +54,19 @@ async function scrape() {
   });
 
   console.log(`Navigating to ${URL}...`);
-  await page.goto(URL, { waitUntil: "domcontentloaded", timeout: 30000 });
+  await page.goto(URL, { waitUntil: "networkidle", timeout: 60000 });
+
+  // Wait for Cloudflare challenge to resolve (if any)
+  console.log("Waiting for Cloudflare to pass...");
+  await page.waitForTimeout(5000);
+
+  // Check if we're stuck on a Cloudflare challenge page
+  const pageTitle = await page.title();
+  console.log(`Page title: ${pageTitle}`);
+  if (pageTitle.toLowerCase().includes("just a moment") || pageTitle.toLowerCase().includes("attention")) {
+    console.log("Cloudflare challenge detected, waiting longer...");
+    await page.waitForTimeout(10000);
+  }
 
   // Dismiss ad dialog if present
   try {
@@ -70,10 +82,20 @@ async function scrape() {
 
   // Wait for the sentiment table to load
   console.log("Waiting for sentiment table...");
-  await page.waitForSelector("#outlookSymbolsTableContent tr", {
-    state: "attached",
-    timeout: 30000,
-  });
+  try {
+    await page.waitForSelector("#outlookSymbolsTableContent tr", {
+      state: "attached",
+      timeout: 45000,
+    });
+  } catch (err) {
+    // Save screenshot for debugging
+    const screenshotPath = path.join(__dirname, "debug_screenshot.png");
+    await page.screenshot({ path: screenshotPath, fullPage: true });
+    console.log(`Debug screenshot saved to ${screenshotPath}`);
+    const bodyText = await page.evaluate(() => document.body.innerText.substring(0, 500));
+    console.log(`Page body preview: ${bodyText}`);
+    throw err;
+  }
   await page.waitForTimeout(2000);
 
   console.log("Extracting sentiment data...");
