@@ -15,25 +15,9 @@ export function useSentimentData(): UseSentimentDataReturn {
 
   useEffect(() => {
     async function fetchData() {
-      // Get the latest scan
-      const { data: scan, error: scanErr } = await supabase
-        .from("sentiment_scans")
-        .select("id, source, scraped_at, total_symbols")
-        .order("scraped_at", { ascending: false })
-        .limit(1)
-        .single();
-
-      if (scanErr) {
-        setError(`Failed to load sentiment scan: ${scanErr.message}`);
-        setLoading(false);
-        return;
-      }
-
-      // Get all data for this scan
       const { data: rows, error: dataErr } = await supabase
         .from("sentiment_data")
-        .select("symbol, short_pct, long_pct")
-        .eq("scan_id", scan.id);
+        .select("symbol, short_pct, long_pct, scraped_at");
 
       if (dataErr) {
         setError(`Failed to load sentiment data: ${dataErr.message}`);
@@ -47,10 +31,13 @@ export function useSentimentData(): UseSentimentDataReturn {
         long_pct: Number(r.long_pct),
       }));
 
+      const latest = rows.reduce((max: string, r: any) =>
+        r.scraped_at > max ? r.scraped_at : max, "");
+
       setData({
-        source: scan.source,
-        scraped_at: scan.scraped_at,
-        total_symbols: scan.total_symbols,
+        source: "myfxbook.com",
+        scraped_at: latest,
+        total_symbols: assets.length,
         data: assets,
       });
       setLoading(false);

@@ -6,6 +6,7 @@ export interface InstrumentConfig {
   cotName: string;
   cotCategory: CotCategory;
   sentimentSymbol: string | null;
+  fastbullSymbol: string | null;
 }
 
 export const DASHBOARD_INSTRUMENTS: InstrumentConfig[] = [
@@ -15,6 +16,7 @@ export const DASHBOARD_INSTRUMENTS: InstrumentConfig[] = [
     cotName: "E-MINI S&P 500",
     cotCategory: "Indexes",
     sentimentSymbol: null,
+    fastbullSymbol: null,
   },
   {
     id: "GOLD",
@@ -22,6 +24,7 @@ export const DASHBOARD_INSTRUMENTS: InstrumentConfig[] = [
     cotName: "GOLD",
     cotCategory: "Metals",
     sentimentSymbol: "XAUUSD",
+    fastbullSymbol: "XAUUSD",
   },
   {
     id: "EURUSD",
@@ -29,6 +32,7 @@ export const DASHBOARD_INSTRUMENTS: InstrumentConfig[] = [
     cotName: "EURO FX",
     cotCategory: "Currencies",
     sentimentSymbol: "EURUSD",
+    fastbullSymbol: "EURUSD",
   },
   {
     id: "OIL",
@@ -36,6 +40,7 @@ export const DASHBOARD_INSTRUMENTS: InstrumentConfig[] = [
     cotName: "CRUDE OIL, LIGHT SWEET",
     cotCategory: "Energies",
     sentimentSymbol: null,
+    fastbullSymbol: "WTI",
   },
   {
     id: "SILVER",
@@ -43,5 +48,6 @@ export const DASHBOARD_INSTRUMENTS: InstrumentConfig[] = [
     cotName: "SILVER",
     cotCategory: "Metals",
     sentimentSymbol: "XAGUSD",
+    fastbullSymbol: "XAGUSD",
   },
 ];
