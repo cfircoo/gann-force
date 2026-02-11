@@ -78,7 +78,8 @@ export default function FastBullDashboard() {
           <thead>
             <tr className="bg-gray-50 border-b border-gray-200">
               <Th onClick={() => handleSort("symbol")}>Symbol{sortIcon("symbol")}</Th>
-              <Th className="text-center">Price</Th>
+              <Th className="text-center">Orders Price</Th>
+              <Th className="text-center">Positions Price</Th>
               <Th onClick={() => handleSort("orders_buy")} className="text-center">
                 Orders Buy%{sortIcon("orders_buy")}
               </Th>
@@ -140,6 +141,9 @@ function FastBullRow({ asset }: { asset: FastBullAsset }) {
   return (
     <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
       <td className="py-3 px-4 font-semibold text-gray-900">{asset.symbol}</td>
+      <td className="py-3 px-4 text-center font-mono text-gray-700">
+        {asset.orders_price ?? "-"}
+      </td>
       <td className="py-3 px-4 text-center font-mono text-gray-700">
         {asset.positions_price ?? "-"}
       </td>
