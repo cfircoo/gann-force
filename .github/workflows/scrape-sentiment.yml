@@ -31,6 +31,9 @@ jobs:
         run: xvfb-run node sentiment_scraper.js
         env:
           CI: true
+          PROXY_SERVER: ${{ secrets.PROXY_SERVER }}
+          PROXY_USER: ${{ secrets.PROXY_USER }}
+          PROXY_PASS: ${{ secrets.PROXY_PASS }}
 
       - name: Upload debug screenshot
         if: steps.sentiment.outcome == 'failure'
