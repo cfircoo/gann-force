@@ -72,9 +72,6 @@ async function attempt(n) {
   try {
     console.log(`Navigating to ${URL}...`);
     await page.goto(URL, { waitUntil: "domcontentloaded", timeout: 30000 });
-
-    // Wait for page to render
-    console.log("Waiting for page to render...");
     await page.waitForTimeout(5000);
 
     const pageTitle = await page.title();
