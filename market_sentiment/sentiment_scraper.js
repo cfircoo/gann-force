@@ -14,6 +14,8 @@ const PROXY_SERVER = process.env.PROXY_SERVER || "http://eu.proxy-jet.io:1010";
 const PROXY_USER = process.env.PROXY_USER || "260211Nk1Na-resi_region-DE_Hamburg_Hamburg";
 const PROXY_PASS = process.env.PROXY_PASS || "IYOsUL4PJAq7634";
 
+const MAX_RETRIES = 3;
+
 async function pushToSupabase(output) {
   try {
     const res = await fetch(SUPABASE_FUNCTION_URL, {
@@ -35,8 +37,8 @@ async function pushToSupabase(output) {
   }
 }
 
-async function scrape() {
-  console.log("Launching browser with residential proxy...");
+async function attempt(n) {
+  console.log(`\nAttempt ${n}/${MAX_RETRIES} — launching browser with residential proxy...`);
 
   const browser = await chromium.launch({
     headless: true,
@@ -69,37 +71,50 @@ async function scrape() {
 
   try {
     console.log(`Navigating to ${URL}...`);
-    await page.goto(URL, { waitUntil: "networkidle", timeout: 60000 });
+    await page.goto(URL, { waitUntil: "domcontentloaded", timeout: 30000 });
 
-    // Wait for Cloudflare challenge to resolve
-    console.log("Waiting for Cloudflare...");
+    // Wait for page to render
+    console.log("Waiting for page to render...");
     await page.waitForTimeout(5000);
 
     const pageTitle = await page.title();
     console.log(`Page title: ${pageTitle}`);
+
+    // Handle Cloudflare challenge
     if (
       pageTitle.toLowerCase().includes("just a moment") ||
       pageTitle.toLowerCase().includes("attention")
     ) {
-      console.log("Cloudflare challenge detected, waiting longer...");
+      console.log("Cloudflare challenge detected, waiting...");
       await page.waitForTimeout(10000);
+    }
+
+    // Handle cookie consent
+    try {
+      const acceptBtn = page.locator('button:has-text("Accept All")');
+      await acceptBtn.waitFor({ state: "visible", timeout: 3000 });
+      await acceptBtn.click();
+      console.log("Accepted cookies");
+      await page.waitForTimeout(1000);
+    } catch {
+      // No cookie banner
     }
 
     // Dismiss ad dialog if present
     try {
       const continueBtn = page.locator('button:has-text("Continue to Myfxbook")');
-      await continueBtn.waitFor({ state: "visible", timeout: 8000 });
+      await continueBtn.waitFor({ state: "visible", timeout: 5000 });
       await continueBtn.click();
       console.log("Dismissed ad dialog");
     } catch {
-      console.log("No ad dialog, continuing...");
+      // No ad dialog
     }
 
     // Wait for the sentiment table
     console.log("Waiting for sentiment table...");
     await page.waitForSelector("#outlookSymbolsTableContent tr", {
       state: "attached",
-      timeout: 45000,
+      timeout: 30000,
     });
     await page.waitForTimeout(2000);
 
@@ -133,34 +148,62 @@ async function scrape() {
       throw new Error("No data extracted from page");
     }
 
-    console.log(`Got ${data.length} symbols`);
-
-    const output = {
-      source: "myfxbook.com",
-      scraped_at: new Date().toISOString(),
-      total_symbols: data.length,
-      data,
-    };
-
-    // Save to file
-    const outPath = path.join(__dirname, "sentiment_data.json");
-    fs.writeFileSync(outPath, JSON.stringify(output, null, 2));
-    console.log(`Saved ${data.length} symbols to ${outPath}`);
-
-    // Push to Supabase
-    await pushToSupabase(output);
-
-    return output;
+    return data;
   } catch (err) {
-    // Save debug screenshot
-    const screenshotPath = path.join(__dirname, "debug_screenshot.png");
-    await page.screenshot({ path: screenshotPath, fullPage: true });
-    console.log(`Debug screenshot saved to ${screenshotPath}`);
-    const bodyText = await page.evaluate(() => document.body.innerText.substring(0, 500));
-    console.log(`Page body preview: ${bodyText}`);
+    // Save debug screenshot on last attempt
+    if (n === MAX_RETRIES) {
+      try {
+        const screenshotPath = path.join(__dirname, "debug_screenshot.png");
+        await page.screenshot({ path: screenshotPath, fullPage: true, timeout: 10000 });
+        console.log(`Debug screenshot saved to ${screenshotPath}`);
+        const bodyText = await page.evaluate(() => document.body.innerText.substring(0, 500));
+        console.log(`Page body preview: ${bodyText}`);
+      } catch {}
+    }
     await browser.close();
     throw err;
   }
+}
+
+async function scrape() {
+  let data = null;
+  let lastErr = null;
+
+  for (let i = 1; i <= MAX_RETRIES; i++) {
+    try {
+      data = await attempt(i);
+      break;
+    } catch (err) {
+      lastErr = err;
+      console.error(`Attempt ${i} failed: ${err.message}`);
+      if (i < MAX_RETRIES) {
+        console.log("Retrying with fresh IP...");
+      }
+    }
+  }
+
+  if (!data) {
+    throw lastErr || new Error("All attempts failed");
+  }
+
+  console.log(`\nGot ${data.length} symbols`);
+
+  const output = {
+    source: "myfxbook.com",
+    scraped_at: new Date().toISOString(),
+    total_symbols: data.length,
+    data,
+  };
+
+  // Save to file
+  const outPath = path.join(__dirname, "sentiment_data.json");
+  fs.writeFileSync(outPath, JSON.stringify(output, null, 2));
+  console.log(`Saved ${data.length} symbols to ${outPath}`);
+
+  // Push to Supabase
+  await pushToSupabase(output);
+
+  return output;
 }
 
 scrape().catch((err) => {
