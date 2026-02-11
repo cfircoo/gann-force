@@ -1,6 +1,367 @@
 {
   "source": "myfxbook.com",
-  "scraped_at": "2026-02-10T19:58:35.975Z",
-  "total_symbols": 0,
-  "data": []
+  "scraped_at": "2026-02-11T18:30:40.396Z",
+  "total_symbols": 72,
+  "data": [
+    {
+      "symbol": "EURUSD",
+      "short_pct": 63,
+      "long_pct": 37
+    },
+    {
+      "symbol": "GBPUSD",
+      "short_pct": 50,
+      "long_pct": 50
+    },
+    {
+      "symbol": "USDJPY",
+      "short_pct": 49,
+      "long_pct": 51
+    },
+    {
+      "symbol": "GBPJPY",
+      "short_pct": 30,
+      "long_pct": 70
+    },
+    {
+      "symbol": "USDCAD",
+      "short_pct": 24,
+      "long_pct": 76
+    },
+    {
+      "symbol": "EURAUD",
+      "short_pct": 15,
+      "long_pct": 85
+    },
+    {
+      "symbol": "EURJPY",
+      "short_pct": 46,
+      "long_pct": 54
+    },
+    {
+      "symbol": "AUDCAD",
+      "short_pct": 87,
+      "long_pct": 13
+    },
+    {
+      "symbol": "AUDJPY",
+      "short_pct": 72,
+      "long_pct": 28
+    },
+    {
+      "symbol": "AUDNZD",
+      "short_pct": 90,
+      "long_pct": 10
+    },
+    {
+      "symbol": "AUDUSD",
+      "short_pct": 92,
+      "long_pct": 8
+    },
+    {
+      "symbol": "CADJPY",
+      "short_pct": 32,
+      "long_pct": 68
+    },
+    {
+      "symbol": "EURCAD",
+      "short_pct": 60,
+      "long_pct": 40
+    },
+    {
+      "symbol": "EURCHF",
+      "short_pct": 11,
+      "long_pct": 89
+    },
+    {
+      "symbol": "EURCZK",
+      "short_pct": 100,
+      "long_pct": 0
+    },
+    {
+      "symbol": "EURGBP",
+      "short_pct": 47,
+      "long_pct": 53
+    },
+    {
+      "symbol": "EURHUF",
+      "short_pct": 97,
+      "long_pct": 3
+    },
+    {
+      "symbol": "EURNOK",
+      "short_pct": 2,
+      "long_pct": 98
+    },
+    {
+      "symbol": "EURNZD",
+      "short_pct": 35,
+      "long_pct": 65
+    },
+    {
+      "symbol": "EURPLN",
+      "short_pct": 78,
+      "long_pct": 22
+    },
+    {
+      "symbol": "EURSEK",
+      "short_pct": 50,
+      "long_pct": 50
+    },
+    {
+      "symbol": "EURTRY",
+      "short_pct": 33,
+      "long_pct": 67
+    },
+    {
+      "symbol": "GBPCAD",
+      "short_pct": 61,
+      "long_pct": 39
+    },
+    {
+      "symbol": "GBPCHF",
+      "short_pct": 10,
+      "long_pct": 90
+    },
+    {
+      "symbol": "NZDCAD",
+      "short_pct": 81,
+      "long_pct": 19
+    },
+    {
+      "symbol": "NZDJPY",
+      "short_pct": 42,
+      "long_pct": 58
+    },
+    {
+      "symbol": "NZDUSD",
+      "short_pct": 62,
+      "long_pct": 38
+    },
+    {
+      "symbol": "USDCHF",
+      "short_pct": 13,
+      "long_pct": 87
+    },
+    {
+      "symbol": "USDCZK",
+      "short_pct": 0,
+      "long_pct": 100
+    },
+    {
+      "symbol": "USDHUF",
+      "short_pct": 0,
+      "long_pct": 100
+    },
+    {
+      "symbol": "USDMXN",
+      "short_pct": 24,
+      "long_pct": 76
+    },
+    {
+      "symbol": "USDNOK",
+      "short_pct": 0,
+      "long_pct": 100
+    },
+    {
+      "symbol": "USDPLN",
+      "short_pct": 0,
+      "long_pct": 100
+    },
+    {
+      "symbol": "USDSEK",
+      "short_pct": 36,
+      "long_pct": 64
+    },
+    {
+      "symbol": "USDSGD",
+      "short_pct": 4,
+      "long_pct": 96
+    },
+    {
+      "symbol": "USDTHB",
+      "short_pct": 0,
+      "long_pct": 100
+    },
+    {
+      "symbol": "USDTRY",
+      "short_pct": 25,
+      "long_pct": 75
+    },
+    {
+      "symbol": "USDZAR",
+      "short_pct": 8,
+      "long_pct": 92
+    },
+    {
+      "symbol": "CHFJPY",
+      "short_pct": 66,
+      "long_pct": 34
+    },
+    {
+      "symbol": "AUDCHF",
+      "short_pct": 77,
+      "long_pct": 23
+    },
+    {
+      "symbol": "GBPNZD",
+      "short_pct": 12,
+      "long_pct": 88
+    },
+    {
+      "symbol": "NZDCHF",
+      "short_pct": 30,
+      "long_pct": 70
+    },
+    {
+      "symbol": "XAGUSD",
+      "short_pct": 45,
+      "long_pct": 55
+    },
+    {
+      "symbol": "XAUUSD",
+      "short_pct": 39,
+      "long_pct": 61
+    },
+    {
+      "symbol": "CADCHF",
+      "short_pct": 15,
+      "long_pct": 85
+    },
+    {
+      "symbol": "GBPAUD",
+      "short_pct": 11,
+      "long_pct": 89
+    },
+    {
+      "symbol": "SGDJPY",
+      "short_pct": 5,
+      "long_pct": 95
+    },
+    {
+      "symbol": "GBPNOK",
+      "short_pct": 0,
+      "long_pct": 100
+    },
+    {
+      "symbol": "EURZAR",
+      "short_pct": 88,
+      "long_pct": 12
+    },
+    {
+      "symbol": "AUDSGD",
+      "short_pct": 100,
+      "long_pct": 0
+    },
+    {
+      "symbol": "GBPSEK",
+      "short_pct": 0,
+      "long_pct": 100
+    },
+    {
+      "symbol": "CHFSGD",
+      "short_pct": 94,
+      "long_pct": 6
+    },
+    {
+      "symbol": "EURSGD",
+      "short_pct": 22,
+      "long_pct": 78
+    },
+    {
+      "symbol": "GBPSGD",
+      "short_pct": 18,
+      "long_pct": 82
+    },
+    {
+      "symbol": "XAUGBP",
+      "short_pct": 65,
+      "long_pct": 35
+    },
+    {
+      "symbol": "NOKJPY",
+      "short_pct": 0,
+      "long_pct": 100
+    },
+    {
+      "symbol": "ZARJPY",
+      "short_pct": 0,
+      "long_pct": 100
+    },
+    {
+      "symbol": "GBPTRY",
+      "short_pct": 100,
+      "long_pct": 0
+    },
+    {
+      "symbol": "USDRUB",
+      "short_pct": 0,
+      "long_pct": 100
+    },
+    {
+      "symbol": "SEKJPY",
+      "short_pct": 0,
+      "long_pct": 100
+    },
+    {
+      "symbol": "EURMXN",
+      "short_pct": 100,
+      "long_pct": 0
+    },
+    {
+      "symbol": "XAUAUD",
+      "short_pct": 40,
+      "long_pct": 60
+    },
+    {
+      "symbol": "XAUEUR",
+      "short_pct": 49,
+      "long_pct": 51
+    },
+    {
+      "symbol": "XAUJPY",
+      "short_pct": 1,
+      "long_pct": 99
+    },
+    {
+      "symbol": "XAUCHF",
+      "short_pct": 8,
+      "long_pct": 92
+    },
+    {
+      "symbol": "GBPMXN",
+      "short_pct": 100,
+      "long_pct": 0
+    },
+    {
+      "symbol": "XAGAUD",
+      "short_pct": 0,
+      "long_pct": 100
+    },
+    {
+      "symbol": "NOKSEK",
+      "short_pct": 0,
+      "long_pct": 100
+    },
+    {
+      "symbol": "XAGEUR",
+      "short_pct": 9,
+      "long_pct": 91
+    },
+    {
+      "symbol": "XPTUSD",
+      "short_pct": 49,
+      "long_pct": 51
+    },
+    {
+      "symbol": "XPDUSD",
+      "short_pct": 0,
+      "long_pct": 100
+    },
+    {
+      "symbol": "USDCNH",
+      "short_pct": 0,
+      "long_pct": 100
+    }
+  ]
 }
