@@ -30,6 +30,10 @@ jobs:
         env:
           CI: true
 
+      - name: Run FastBull scraper
+        working-directory: market_sentiment
+        run: node fastbull_scraper.js
+
       - name: Upload debug screenshot
         if: failure()
         uses: actions/upload-artifact@v4

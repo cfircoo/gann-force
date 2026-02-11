@@ -1,0 +1,262 @@
+{
+  "source": "fastbull.com/order-book",
+  "scraped_at": "2026-02-11T06:26:12.231Z",
+  "total_symbols": 15,
+  "data": [
+    {
+      "symbol": "XAUUSD",
+      "orders": {
+        "currentPrice": "5054.92",
+        "buy_pct": 53.37,
+        "sell_pct": 46.63
+      },
+      "positions": {
+        "currentPrice": "5055.13",
+        "long_pct": 82.42,
+        "short_pct": 17.58,
+        "long_profit_pct": 76.94,
+        "long_loss_pct": 23.06,
+        "short_profit_pct": 8.46,
+        "short_loss_pct": 91.54
+      }
+    },
+    {
+      "symbol": "XAGUSD",
+      "orders": {
+        "currentPrice": "82.352",
+        "buy_pct": 45.72,
+        "sell_pct": 54.28
+      },
+      "positions": {
+        "currentPrice": "82.350",
+        "long_pct": 87.15,
+        "short_pct": 12.85,
+        "long_profit_pct": 64.8,
+        "long_loss_pct": 35.2,
+        "short_profit_pct": 12.98,
+        "short_loss_pct": 87.02
+      }
+    },
+    {
+      "symbol": "EURUSD",
+      "orders": {
+        "currentPrice": "1.19138",
+        "buy_pct": 58.13,
+        "sell_pct": 41.87
+      },
+      "positions": {
+        "currentPrice": "1.19138",
+        "long_pct": 31.58,
+        "short_pct": 68.42,
+        "long_profit_pct": 74.35,
+        "long_loss_pct": 25.65,
+        "short_profit_pct": 3.96,
+        "short_loss_pct": 96.04
+      }
+    },
+    {
+      "symbol": "GBPUSD",
+      "orders": {
+        "currentPrice": "1.36671",
+        "buy_pct": 53.76,
+        "sell_pct": 46.24
+      },
+      "positions": {
+        "currentPrice": "1.36671",
+        "long_pct": 51.18,
+        "short_pct": 48.82,
+        "long_profit_pct": 52.32,
+        "long_loss_pct": 47.68,
+        "short_profit_pct": 7.95,
+        "short_loss_pct": 92.05
+      }
+    },
+    {
+      "symbol": "USDJPY",
+      "orders": {
+        "currentPrice": "153.148",
+        "buy_pct": 62.42,
+        "sell_pct": 37.58
+      },
+      "positions": {
+        "currentPrice": "153.148",
+        "long_pct": 52.77,
+        "short_pct": 47.23,
+        "long_profit_pct": 23.89,
+        "long_loss_pct": 76.11,
+        "short_profit_pct": 43.91,
+        "short_loss_pct": 56.09
+      }
+    },
+    {
+      "symbol": "USDCAD",
+      "orders": {
+        "currentPrice": "1.35221",
+        "buy_pct": 58.64,
+        "sell_pct": 41.36
+      },
+      "positions": {
+        "currentPrice": "1.35221",
+        "long_pct": 53.24,
+        "short_pct": 46.76,
+        "long_profit_pct": 7.6,
+        "long_loss_pct": 92.4,
+        "short_profit_pct": 70.8,
+        "short_loss_pct": 29.2
+      }
+    },
+    {
+      "symbol": "AUDUSD",
+      "orders": {
+        "currentPrice": "0.71126",
+        "buy_pct": 62.45,
+        "sell_pct": 37.55
+      },
+      "positions": {
+        "currentPrice": "0.71126",
+        "long_pct": 39.49,
+        "short_pct": 60.51,
+        "long_profit_pct": 82.56,
+        "long_loss_pct": 17.44,
+        "short_profit_pct": 2.31,
+        "short_loss_pct": 97.69
+      }
+    },
+    {
+      "symbol": "NZDUSD",
+      "orders": {
+        "currentPrice": "0.60596",
+        "buy_pct": 45.31,
+        "sell_pct": 54.69
+      },
+      "positions": {
+        "currentPrice": "0.60596",
+        "long_pct": 55.07,
+        "short_pct": 44.93,
+        "long_profit_pct": 51.11,
+        "long_loss_pct": 48.89,
+        "short_profit_pct": 7.73,
+        "short_loss_pct": 92.27
+      }
+    },
+    {
+      "symbol": "USDCHF",
+      "orders": {
+        "currentPrice": "0.76596",
+        "buy_pct": 25.05,
+        "sell_pct": 74.95
+      },
+      "positions": {
+        "currentPrice": "0.76596",
+        "long_pct": 93.53,
+        "short_pct": 6.47,
+        "long_profit_pct": 1.57,
+        "long_loss_pct": 98.43,
+        "short_profit_pct": 84.42,
+        "short_loss_pct": 15.58
+      }
+    },
+    {
+      "symbol": "AUDJPY",
+      "orders": {
+        "currentPrice": "108.930",
+        "buy_pct": 94.86,
+        "sell_pct": 5.14
+      },
+      "positions": {
+        "currentPrice": "108.930",
+        "long_pct": 54.91,
+        "short_pct": 45.09,
+        "long_profit_pct": 60.42,
+        "long_loss_pct": 39.58,
+        "short_profit_pct": 27.33,
+        "short_loss_pct": 72.67
+      }
+    },
+    {
+      "symbol": "EURAUD",
+      "orders": {
+        "currentPrice": "1.67502",
+        "buy_pct": 50.77,
+        "sell_pct": 49.23
+      },
+      "positions": {
+        "currentPrice": "1.67502",
+        "long_pct": 56.32,
+        "short_pct": 43.68,
+        "long_profit_pct": 12.66,
+        "long_loss_pct": 87.34,
+        "short_profit_pct": 48.36,
+        "short_loss_pct": 51.64
+      }
+    },
+    {
+      "symbol": "EURJPY",
+      "orders": {
+        "currentPrice": "182.458",
+        "buy_pct": 67.52,
+        "sell_pct": 32.48
+      },
+      "positions": {
+        "currentPrice": "182.458",
+        "long_pct": 34.75,
+        "short_pct": 65.25,
+        "long_profit_pct": 36.23,
+        "long_loss_pct": 63.77,
+        "short_profit_pct": 22.78,
+        "short_loss_pct": 77.22
+      }
+    },
+    {
+      "symbol": "GBPJPY",
+      "orders": {
+        "currentPrice": "209.308",
+        "buy_pct": 60.07,
+        "sell_pct": 39.93
+      },
+      "positions": {
+        "currentPrice": "209.306",
+        "long_pct": 53.3,
+        "short_pct": 46.7,
+        "long_profit_pct": 27.85,
+        "long_loss_pct": 72.15,
+        "short_profit_pct": 25.17,
+        "short_loss_pct": 74.83
+      }
+    },
+    {
+      "symbol": "WTI",
+      "orders": {
+        "currentPrice": "64.404",
+        "buy_pct": 31.45,
+        "sell_pct": 68.55
+      },
+      "positions": {
+        "currentPrice": "64.404",
+        "long_pct": 74.39,
+        "short_pct": 25.61,
+        "long_profit_pct": 29.94,
+        "long_loss_pct": 70.06,
+        "short_profit_pct": 25.02,
+        "short_loss_pct": 74.98
+      }
+    },
+    {
+      "symbol": "BRENT",
+      "orders": {
+        "currentPrice": "69.575",
+        "buy_pct": 38.73,
+        "sell_pct": 61.27
+      },
+      "positions": {
+        "currentPrice": "69.569",
+        "long_pct": 85.83,
+        "short_pct": 14.17,
+        "long_profit_pct": 33.43,
+        "long_loss_pct": 66.57,
+        "short_profit_pct": 15.63,
+        "short_loss_pct": 84.37
+      }
+    }
+  ]
+}
