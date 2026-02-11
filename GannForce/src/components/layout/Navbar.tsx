@@ -5,6 +5,7 @@ const links = [
   { to: "/dashboard", label: "Dashboard" },
   { to: "/cot", label: "COT Report" },
   { to: "/sentiment", label: "Sentiment" },
+  { to: "/fastbull", label: "FastBull" },
 ];
 
 export function Navbar() {

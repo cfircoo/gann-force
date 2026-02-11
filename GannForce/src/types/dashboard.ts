@@ -22,6 +22,7 @@ export interface DashboardInstrument {
   sentimentSignal: SentimentSignal | null;
   recommendation: Recommendation;
   hasSentiment: boolean;
+  pivotPrice: string | null;
 }
 
 export function getCotSignal(unfulfilled: number | null): CotSignal {

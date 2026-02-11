@@ -41,7 +41,14 @@ export function InstrumentCard({ instrument, sentimentSource }: InstrumentCardPr
       <div className="px-5 pt-4 pb-3 flex items-start justify-between">
         <div>
           <h3 className="text-lg font-bold text-gray-900">{instrument.display}</h3>
-          <p className="text-xs text-gray-400 font-medium">{instrument.id}</p>
+          <div className="flex items-center gap-2">
+            <p className="text-xs text-gray-400 font-medium">{instrument.id}</p>
+            {instrument.pivotPrice && (
+              <span className="text-xs font-mono font-semibold text-gray-600">
+                {instrument.pivotPrice}
+              </span>
+            )}
+          </div>
         </div>
         <div className="text-right">
           <RecommendationBadge recommendation={recommendation} />

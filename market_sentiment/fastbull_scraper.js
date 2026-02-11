@@ -31,9 +31,7 @@ async function pushToSupabase(output) {
     });
     const result = await res.json();
     if (result.ok) {
-      console.log(
-        `Pushed ${result.symbols} symbols to Supabase (scan ${result.scan_id})`
-      );
+      console.log(`Upserted ${result.symbols} symbols to Supabase`);
     } else {
       console.error("Supabase push failed:", result.error);
     }
