@@ -11,13 +11,9 @@ export function AssetBox({ asset }: AssetBoxProps) {
   const isPositive = value !== null && value > 0;
   const isNegative = value !== null && value < 0;
 
-  const longShortRatio =
-    asset.non_commercial.short !== 0
-      ? asset.non_commercial.long / asset.non_commercial.short
-      : null;
-
-  const chgLong = asset.changes.long;
-  const chgShort = asset.changes.short;
+  const net = asset.non_commercial.long - asset.non_commercial.short;
+  const chgDiff = Math.abs(asset.changes.long) - Math.abs(asset.changes.short);
+  const changeRatio = net !== 0 ? chgDiff / net : null;
 
   return (
     <div
@@ -34,19 +30,11 @@ export function AssetBox({ asset }: AssetBoxProps) {
       <span className="text-lg font-bold mt-1">
         {value !== null ? value.toFixed(2) : "N/A"}
       </span>
-      {longShortRatio !== null && (
+      {changeRatio !== null && (
         <span className="text-[10px] opacity-80 mt-1">
-          L/S {longShortRatio.toFixed(2)}
+          Chg {changeRatio > 0 ? "+" : ""}{(changeRatio * 100).toFixed(1)}%
         </span>
       )}
-      <div className="flex gap-2 text-[10px] opacity-80 mt-0.5">
-        <span className={chgLong > 0 ? "text-green-200" : chgLong < 0 ? "text-red-200" : ""}>
-          L {chgLong > 0 ? "+" : ""}{chgLong.toLocaleString()}
-        </span>
-        <span className={chgShort > 0 ? "text-red-200" : chgShort < 0 ? "text-green-200" : ""}>
-          S {chgShort > 0 ? "+" : ""}{chgShort.toLocaleString()}
-        </span>
-      </div>
     </div>
   );
 }
