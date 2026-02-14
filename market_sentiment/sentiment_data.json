@@ -1,6 +1,6 @@
 {
   "source": "myfxbook.com",
-  "scraped_at": "2026-02-11T18:30:40.396Z",
+  "scraped_at": "2026-02-11T18:45:33.366Z",
   "total_symbols": 72,
   "data": [
     {
@@ -60,13 +60,13 @@
     },
     {
       "symbol": "CADJPY",
-      "short_pct": 32,
-      "long_pct": 68
+      "short_pct": 31,
+      "long_pct": 69
     },
     {
       "symbol": "EURCAD",
-      "short_pct": 60,
-      "long_pct": 40
+      "short_pct": 61,
+      "long_pct": 39
     },
     {
       "symbol": "EURCHF",
@@ -120,8 +120,8 @@
     },
     {
       "symbol": "GBPCHF",
-      "short_pct": 10,
-      "long_pct": 90
+      "short_pct": 9,
+      "long_pct": 91
     },
     {
       "symbol": "NZDCAD",
@@ -230,8 +230,8 @@
     },
     {
       "symbol": "GBPAUD",
-      "short_pct": 11,
-      "long_pct": 89
+      "short_pct": 12,
+      "long_pct": 88
     },
     {
       "symbol": "SGDJPY",
