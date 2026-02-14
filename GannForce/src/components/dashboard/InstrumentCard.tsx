@@ -78,7 +78,7 @@ export function InstrumentCard({ instrument, sentimentSource }: InstrumentCardPr
                 >
                   {cotAsset.unfulfilled_calls !== null
                     ? (cotAsset.unfulfilled_calls > 0 ? "+" : "") +
-                      cotAsset.unfulfilled_calls.toFixed(2)
+                      cotAsset.unfulfilled_calls.toFixed(1) + "%"
                     : "N/A"}
                 </span>
               </div>
