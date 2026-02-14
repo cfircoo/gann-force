@@ -149,8 +149,8 @@ function extractNonCommercial(page) {
         ? Math.abs(longChg) - Math.abs(shortChg)
         : null;
     const unfulfilledCalls =
-      net !== null && chgDiff !== null && chgDiff !== 0
-        ? Math.round((net / chgDiff) * 100) / 100
+      net !== null && chgDiff !== null && net !== 0
+        ? Math.round((chgDiff / net) * 10000) / 100
         : null;
 
     return {

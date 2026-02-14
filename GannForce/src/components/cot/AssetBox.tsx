@@ -11,14 +11,10 @@ export function AssetBox({ asset }: AssetBoxProps) {
   const isPositive = value !== null && value > 0;
   const isNegative = value !== null && value < 0;
 
-  const net = asset.non_commercial.long - asset.non_commercial.short;
-  const chgDiff = Math.abs(asset.changes.long) - Math.abs(asset.changes.short);
-  const changeRatio = net !== 0 ? chgDiff / net : null;
-
   return (
     <div
       className={cn(
-        "rounded-lg p-3 text-white font-semibold flex flex-col items-center justify-center min-h-[120px] transition-transform hover:scale-105 cursor-default shadow-sm",
+        "rounded-lg p-3 text-white font-semibold flex flex-col items-center justify-center min-h-[80px] transition-transform hover:scale-105 cursor-default shadow-sm",
         isPositive && "bg-bullish",
         isNegative && "bg-bearish",
         isNull && "bg-gray-400"
@@ -28,13 +24,8 @@ export function AssetBox({ asset }: AssetBoxProps) {
         {asset.name}
       </span>
       <span className="text-lg font-bold mt-1">
-        {value !== null ? value.toFixed(2) : "N/A"}
+        {value !== null ? `${value > 0 ? "+" : ""}${value.toFixed(1)}%` : "N/A"}
       </span>
-      {changeRatio !== null && (
-        <span className="text-[10px] opacity-80 mt-1">
-          Chg {changeRatio > 0 ? "+" : ""}{(changeRatio * 100).toFixed(1)}%
-        </span>
-      )}
     </div>
   );
 }
