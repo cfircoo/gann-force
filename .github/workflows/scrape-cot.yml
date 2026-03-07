@@ -18,27 +18,27 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: cot_report
     steps:
-      - name: Trigger COT scraper
-        run: |
-          FORCE="${{ github.event.inputs.force || 'false' }}"
-          URL="${{ secrets.SUPABASE_URL }}/functions/v1/scrape-cot?force=${FORCE}"
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-          response=$(curl -s -w "\n%{http_code}" \
-            -X POST \
-            -H "Content-Type: application/json" \
-            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
-            "$URL" \
-            -d '{}')
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
-          http_code=$(echo "$response" | tail -1)
-          body=$(echo "$response" | head -n -1)
+      - name: Install dependencies
+        run: npm install
 
-          echo "Status: $http_code"
-          echo "Response: $body"
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium --with-deps
 
-          if [ "$http_code" -ne 200 ]; then
-            echo "::error::COT scrape failed with status $http_code"
-            exit 1
-          fi
+      - name: Run COT scraper
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node cot_scraper.js
