@@ -8,6 +8,10 @@ const BASE_URL = "https://www.tradingster.com/cot/legacy-futures";
 const SUPABASE_URL = process.env.SUPABASE_URL || "https://nvvgqvkbooqrdusugmgg.supabase.co";
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
+const PROXY_SERVER = process.env.PROXY_SERVER;
+const PROXY_USER = process.env.PROXY_USER;
+const PROXY_PASS = process.env.PROXY_PASS;
+
 const INSTRUMENTS = {
   Currencies: [
     { name: "AUSTRALIAN DOLLAR", code: "232741" },
@@ -245,7 +249,12 @@ async function pushToSupabase(results) {
 }
 
 async function scrapeAll() {
-  const browser = await chromium.launch({ headless: true });
+  const launchOptions = { headless: true };
+  if (PROXY_SERVER) {
+    launchOptions.proxy = { server: PROXY_SERVER, username: PROXY_USER, password: PROXY_PASS };
+    process.stderr.write(`Using proxy: ${PROXY_SERVER}\n`);
+  }
+  const browser = await chromium.launch(launchOptions);
   const page = await browser.newPage();
   const results = {};
 
