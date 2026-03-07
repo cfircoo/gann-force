@@ -1,0 +1,35 @@
+[     447ms] [ERROR] Failed to load resource: net::ERR_RESPONSE_HEADERS_TRUNCATED @ https://secapp.taxes.gov.il/favicon.ico:0
+[     479ms] [ERROR] No userDetails found in sessionStorage @ https://secapp.taxes.gov.il/shaamInfraLayout/build/additional-page_4.entry.js:25
+[     489ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ https://secapp.taxes.gov.il/shaamGetServerApi/api/GetMachineName:0
+[     489ms] [ERROR] Error fetching server name Error: Failed to fetch server name
+    at l.getServerName (https://secapp.taxes.gov.il/shaamInfraLayout/build/additional-page_4.entry.js:26:100569)
+    at async l.componentWillLoad (https://secapp.taxes.gov.il/shaamInfraLayout/build/additional-page_4.entry.js:26:86451) @ https://secapp.taxes.gov.il/shaamInfraLayout/build/additional-page_4.entry.js:25
+[     522ms] [ERROR] Failed to load resource: net::ERR_RESPONSE_HEADERS_TRUNCATED @ https://secapp.taxes.gov.il/favicon.ico:0
+[     534ms] [ERROR] Mixed Content: The page at 'https://secapp.taxes.gov.il/taxes-login/login/general' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint 'http://secapp.taxes.gov.il/taxes-login/'. This request has been blocked; the content must be served over HTTPS. @ https://secapp.taxes.gov.il/taxes-login/login/general:0
+[  240608ms] [ERROR] Mixed Content: The page at 'https://secapp.taxes.gov.il/taxes-login/login/general' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint 'http://secapp.taxes.gov.il/taxes-login/'. This request has been blocked; the content must be served over HTTPS. @ https://secapp.taxes.gov.il/taxes-login/login/general:0
+[  240609ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[  480602ms] [ERROR] Mixed Content: The page at 'https://secapp.taxes.gov.il/taxes-login/login/general' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint 'http://secapp.taxes.gov.il/taxes-login/'. This request has been blocked; the content must be served over HTTPS. @ https://secapp.taxes.gov.il/taxes-login/login/general:0
+[  480603ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[  720513ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[  960512ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 1200531ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 1445640ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 1680529ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 1920514ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 2160512ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 2400531ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 2640536ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 2885640ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 3120531ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 3360529ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 3605639ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 3840528ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 4080533ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 4325640ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 4560534ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 4800530ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 5045640ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 5280529ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 5520529ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 5765638ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0
+[ 6000534ms] [ERROR] שגיאה בבקשת רפרש Bl @ https://secapp.taxes.gov.il/taxes-login/chunk-VRR2FVSJ.js:0

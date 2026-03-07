@@ -146,7 +146,7 @@ function extractNonCommercial(page) {
       longPos !== null && shortPos !== null ? longPos - shortPos : null;
     const chgDiff =
       longChg !== null && shortChg !== null
-        ? Math.abs(longChg) - Math.abs(shortChg)
+        ? longChg - shortChg
         : null;
     const unfulfilledCalls =
       net !== null && chgDiff !== null && chgDiff !== 0

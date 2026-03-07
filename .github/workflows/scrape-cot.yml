@@ -2,9 +2,18 @@ name: Scrape COT
 
 on:
   schedule:
-    # Daily at 08:00 UTC
-    - cron: "0 8 * * *"
-  workflow_dispatch: # Manual trigger
+    # Friday at 17:00 UTC
+    - cron: "0 17 * * 5"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force re-scrape even if report already exists"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 jobs:
   scrape:
@@ -13,11 +22,14 @@ jobs:
     steps:
       - name: Trigger COT scraper
         run: |
+          FORCE="${{ github.event.inputs.force || 'false' }}"
+          URL="${{ secrets.SUPABASE_URL }}/functions/v1/scrape-cot?force=${FORCE}"
+
           response=$(curl -s -w "\n%{http_code}" \
             -X POST \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
-            "${{ secrets.SUPABASE_URL }}/functions/v1/scrape-cot" \
+            "$URL" \
             -d '{}')
 
           http_code=$(echo "$response" | tail -1)
