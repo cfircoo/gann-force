@@ -13,7 +13,7 @@ export const DASHBOARD_INSTRUMENTS: InstrumentConfig[] = [
   {
     id: "SP500",
     display: "S&P 500",
-    cotName: "E-MINI S&P 500",
+    cotName: "S&P 500 STOCK INDEX",
     cotCategory: "Indexes",
     sentimentSymbol: null,
     fastbullSymbol: null,
