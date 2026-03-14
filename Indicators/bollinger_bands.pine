@@ -1,0 +1,57 @@
+//@version=6
+indicator("Double Bollinger Bands", shorttitle="DBB", overlay=true)
+
+// ============================================================================
+// SETTINGS
+// ============================================================================
+
+i_length = input.int(20, "Length", minval=1, group="Bollinger Bands")
+i_mult_1 = input.float(2.0, "StdDev Multiplier 1", minval=0.1, step=0.1, group="Bollinger Bands")
+i_mult_2 = input.float(3.0, "StdDev Multiplier 2", minval=0.1, step=0.1, group="Bollinger Bands")
+i_src = input.source(close, "Source", group="Bollinger Bands")
+
+i_basis_color = input.color(color.blue, "Basis", group="Colors")
+i_upper_1_color = input.color(color.red, "Upper Band 1", group="Colors")
+i_lower_1_color = input.color(color.green, "Lower Band 1", group="Colors")
+i_fill_1_color = input.color(color.new(color.blue, 100), "Fill 1", group="Colors")
+i_upper_2_color = input.color(color.orange, "Upper Band 2", group="Colors")
+i_lower_2_color = input.color(color.teal, "Lower Band 2", group="Colors")
+i_fill_2_color = input.color(color.new(color.orange, 100), "Fill 2", group="Colors")
+
+// ============================================================================
+// CALCULATIONS
+// ============================================================================
+
+basis = ta.sma(i_src, i_length)
+dev_1 = i_mult_1 * ta.stdev(i_src, i_length)
+dev_2 = i_mult_2 * ta.stdev(i_src, i_length)
+
+upper_1 = basis + dev_1
+lower_1 = basis - dev_1
+upper_2 = basis + dev_2
+lower_2 = basis - dev_2
+
+// ============================================================================
+// SIGNALS - Price touches 3σ band
+// ============================================================================
+
+touch_upper_3 = high >= upper_2
+touch_lower_3 = low <= lower_2
+
+// ============================================================================
+// PLOTTING
+// ============================================================================
+
+p_upper_2 = plot(upper_2, "Upper 2 (3σ)", color=i_upper_2_color, linewidth=1)
+p_upper_1 = plot(upper_1, "Upper 1 (2σ)", color=i_upper_1_color, linewidth=1)
+p_basis = plot(basis, "Basis", color=i_basis_color, linewidth=2)
+p_lower_1 = plot(lower_1, "Lower 1 (2σ)", color=i_lower_1_color, linewidth=1)
+p_lower_2 = plot(lower_2, "Lower 2 (3σ)", color=i_lower_2_color, linewidth=1)
+
+fill(p_upper_1, p_lower_1, color=i_fill_1_color, title="Band 1 Fill")
+fill(p_upper_2, p_upper_1, color=i_fill_2_color, title="Upper Band 2 Fill")
+fill(p_lower_1, p_lower_2, color=i_fill_2_color, title="Lower Band 2 Fill")
+
+// Strong signals at 3σ touch
+plotshape(touch_lower_3, "Long Signal (3σ)", shape.triangleup, location.belowbar, color.green, size=size.small)
+plotshape(touch_upper_3, "Short Signal (3σ)", shape.triangledown, location.abovebar, color.red, size=size.small)
