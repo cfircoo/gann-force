@@ -1,0 +1,60 @@
+{
+  "asset": "Gold",
+  "key_dates": [
+    {"date": "2026-03-03", "description": "Turning point date - reinforced by daily turning point dates between March 3-5, aligning with weekly cycle of week ending March 6"},
+    {"date": "2026-03-10", "description": "Turning point date"},
+    {"date": "2026-03-13", "description": "Turning point date"},
+    {"date": "2026-03-26", "description": "Turning point date - double date window 26-27 March, aligning with weekly cycle end"},
+    {"date": "2026-03-27", "description": "Turning point date - part of double date with March 26, aligning with weekly cycle"}
+  ],
+  "seasonal": "March is a negative month for Gold seasonally (one of the weakest). However, cyclical patterns and the overall structure suggest this seasonal weakness may manifest differently this time, as there are no monthly cycles in March and the focus shifts to weekly and daily cycles.",
+  "statistics": [
+    {"date": "2026-03-19", "probability": "76%", "direction": "up", "description": "Over the last 30 years, approximately 76% probability of upward movement around March 19"},
+    {"date": "2026-03-26", "probability": "67%", "direction": "up", "description": "Over the last 30 years, approximately 67% probability of upward movement around March 26"},
+    {"date": "2026-03-15", "probability": "70%", "direction": "up", "description": "Over the last 30 years, Gold closed on March 26 at a higher price than on March 15 in ~70% of cases (range statistic)"}
+  ],
+  "insights": [
+    "Gold's central peak already arrived at an important daily turning point (Jan 29), just before the report was published - from a cyclical perspective, we already received significant confirmation of the February report",
+    "During that same move, a central price target was also achieved, confirming the cyclical analysis from multiple angles",
+    "February carried heavy cyclical weight - as we move to March, the picture changes: this is a seasonally weak month where generally two out of three decade patterns lean negative",
+    "In contrast to the prior month, there are no monthly cycles in March, so the main attention shifts to weekly and daily cycle patterns",
+    "Two prominent weekly cycles in the month: weeks ending March 6 and March 27 - the first gets additional reinforcement through daily turning points between March 3-5, making it a time window likely to mark an important turning point at the beginning of the month",
+    "Also toward month-end, the dates March 26-27 converge with the weekly cycle, and there too the probability for a significant turning point rises",
+    "The important point especially in Gold this month is the high density of daily turning point dates - when multiple turning points converge closely, the implication is not only potential for reversals but also sharp rises in volatility",
+    "Elliott Wave analysis: according to the wave count, the upward trend is composed of three impulse waves (1, 3, 5) and two correction waves (2, 4) - of the impulse waves, wave 3 is the longest and most powerful, typically containing five internal sub-waves",
+    "In the scenario where we receive a return to upside breakout, until the price arrives at Fibonacci 1:3 extensions at $5,932, that is effectively considered arrival at target",
+    "Scenario 1 - $4,381 holds: still within a technical correction within a primary uptrend - act with stops and clear risk, wait for buyers to return",
+    "Scenario 2 - Clear break below $4,381: this is no longer just background noise - the signal is that the decline could expand, with next technical target at $3,886",
+    "Important to note that levels $5,418-$5,598 could bring back selling pressure from sellers who were stuck from the previous peak, shorts on the fence that can also weigh in",
+    "Level $5,100 flagged as significant resistance until proven otherwise - when combined with the start of March, this is expected to be one of the important levels to watch"
+  ],
+  "technical": {
+    "support": [
+      {"level": "4381", "description": "Critical weekly support - Scenario 1: as long as it holds, we are in a correction within a primary uptrend. Break below signals potential expansion of decline toward $3,886"},
+      {"level": "4253", "description": "Fibonacci 78.6% retracement level"},
+      {"level": "3886", "description": "Technical target if $4,381 breaks clearly - Fibonacci 100% retracement"},
+      {"level": "3500", "description": "Major support zone from previous cycle (point B on weekly chart)"},
+      {"level": "3129", "description": "Previous significant support from weekly chart"}
+    ],
+    "resistance": [
+      {"level": "4541-4638", "description": "Daily chart support/resistance zone - support in the January report, area of 50-day moving average and Fibonacci 78.6%"},
+      {"level": "4743", "description": "Fibonacci 50% retracement on weekly chart"},
+      {"level": "4945", "description": "Fibonacci 38.2% retracement on weekly chart"},
+      {"level": "5100", "description": "Significant resistance until broken - important level to watch at the start of March"},
+      {"level": "5418-5598", "description": "Could bring back selling pressure from sellers stuck from previous peak and shorts on the fence"},
+      {"level": "5575", "description": "Fibonacci 2.618 extension on weekly chart"},
+      {"level": "5600", "description": "Upper range of resistance zone"},
+      {"level": "5932", "description": "Fibonacci 1:3 extension - effectively the target for the current wave structure"}
+    ],
+    "indicators": "Daily chart has begun to stabilize from the violent declines recorded at end of January, gradually returning to a more positive structure with new pattern of rising highs and lows - a pattern suggesting genuine attempt to return to a clear uptrend. The weekly chart shows an Elliott Wave pattern where wave 5 from the primary impulse wave (from 2022 bottom) may have already completed at the peak. The 20-week moving average sits around $3,000 area on the weekly chart. The weekly support at $4,381 serves as the retest level for the entire move."
+  },
+  "summary": "Gold enters March in a seasonally weak month but with a structurally complex picture. The central peak already arrived in late January at an important turning point, confirming the cyclical analysis. With no monthly cycles in March, attention shifts to weekly and daily patterns. Two key weekly cycles (weeks ending March 6 and March 27) are the primary time windows. The high density of daily turning point dates means not only potential reversals but also sharp spikes in volatility. The critical level is $4,381 weekly support - above it we remain in a correction within a primary uptrend, below it signals potential expansion toward $3,886.",
+  "previous_month_review": "February 2026 had four turning point dates in Gold. Date 1 (Feb 3): worked - arrived one day early and served as the low of the movement. Date 2 (Feb 9): worked - served as the high of the movement from the previous cycle. Date 3 (Feb 13): worked partially - served as the low of the movement, though price dropped slightly from it for a few days and returned, generating an upward movement of ~8% to the next turning point. Date 4 (Feb 27): as of now - did not work - the price movement did not stop there and continued upward, though it may still serve as the high with a one-day delay.",
+  "risk_notes": [
+    "If $4,381 holds, act with stops within the system and clear risk from the outset - wait to see that the decline is slowing and buyers are returning",
+    "If $4,381 breaks clearly, do not chase the accumulated return, minimize or exit positions accordingly",
+    "After a correction, return to action only after there is price behavior confirming entry, with clearly defined stops",
+    "Not every decline is an opportunity - forgive yourself for errors, in this type of month it is not enough to identify direction, must also manage pace and volatility wisely",
+    "For educational and informational purposes only - not investment advice"
+  ]
+}

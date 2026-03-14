@@ -1,0 +1,54 @@
+{
+  "asset": "Bitcoin",
+  "key_dates": [
+    {"date": "2026-03-02", "description": "Turning point date - beginning of month"},
+    {"date": "2026-03-06", "description": "Turning point date, reinforced by daily turning point on same day, aligning with weekly cycle of week ending March 6"},
+    {"date": "2026-03-16", "description": "Turning point date (expect high volatility) - double date window 16-17 March"},
+    {"date": "2026-03-17", "description": "Turning point date (expect high volatility) - double date window with March 16"},
+    {"date": "2026-03-20", "description": "Turning point date"},
+    {"date": "2026-03-26", "description": "Turning point date, aligning with weekly cycle of week ending March 27 - double date window 26-27"},
+    {"date": "2026-03-27", "description": "Turning point date, aligning with weekly cycle end - significant convergence"}
+  ],
+  "seasonal": "March tends to show some weakness for Bitcoin. In 8 out of the last 15 years, Bitcoin finished March negatively (53%). However, Bitcoin's limited history (15 years) makes seasonal statistics less reliable compared to other assets in the report.",
+  "statistics": [
+    {"date": "2026-03-10", "probability": "67%", "direction": "up", "description": "Over the last 9 years, Bitcoin tended to trade at a higher price on April 2 than on March 10 in 6 out of 9 years (~67%)"}
+  ],
+  "insights": [
+    "Bitcoin has broken below the critical support band of $70,000-$78,000 which was identified as the central support zone - it has spent the entire month of February settling below this level",
+    "Bitcoin has a recurring pattern of 35 months of gains followed by 14 months of decline - the 35-month rally wave ended precisely in October 2025, and since then Bitcoin has declined ~52% from the peak",
+    "From a long-term perspective, this break of the $70,000-$78,000 support has substantial significance - it is not merely temporary weakness but potentially a structural change in the primary trend",
+    "In simple terms, Bitcoin is no longer behaving like an asset in a primary uptrend - the implication is that any rally from here should be treated as a technical correction within a developing bearish primary trend",
+    "The overall technical pattern forming is a symmetrical triangle - in most cases this suggests the natural assumption is that pressure to continue the prior direction (downward) remains present",
+    "If we see a breakout above the resistance zones, it could open the door for a rally to the $74,570 area (Fibonacci 38.2% of the entire decline), which is the probable ceiling for any upside move",
+    "Two prominent weekly cycles stand out: weeks ending March 6 and March 27 - these are the key time windows for potential turning points",
+    "The window between March 15-18 features daily turning point dates that hint at higher volatility possibilities",
+    "Toward month-end, additional convergence occurs as dates March 26-27 meet the weekly cycle - this is a central time zone to watch closely",
+    "Crypto market is characterized by high dynamics and rapid volatility - real-time decisions are essential",
+    "Not enough to just identify direction - must also pay attention to the pace at which the market moves"
+  ],
+  "technical": {
+    "support": [
+      {"level": "69886-71561", "description": "Current resistance/support band on daily chart - Bitcoin is struggling around this zone"},
+      {"level": "60009", "description": "Fibonacci 0% level (full retracement target) - bottom of the major decline from all-time highs"},
+      {"level": "49000-53300", "description": "If Bitcoin reaches this range, significant support exists; if it does not hold, additional downside toward $49,000 is possible"},
+      {"level": "43400", "description": "Next support if deeper decline materializes"}
+    ],
+    "resistance": [
+      {"level": "74573", "description": "Fibonacci 38.2% retracement of the decline - most probable ceiling for any upside rally"},
+      {"level": "78984", "description": "Fibonacci 50% retracement - resistance"},
+      {"level": "80642", "description": "Resistance zone on daily chart"},
+      {"level": "84400", "description": "Fibonacci 61.8% retracement - major resistance"},
+      {"level": "97960", "description": "Fibonacci 1.0 retracement (full recovery) - extreme resistance"}
+    ],
+    "indicators": "Daily chart has returned to a bearish structure with clear arrangement of lower highs and lower lows. From early February, a stabilization attempt began around the $69,900-$71,560 zone. The MACD remained below the action line throughout the last rally wave, signaling weakness. RSI shows minor negative divergence. The 20-week moving average has been supporting declines but the overall structure remains bearish."
+  },
+  "summary": "Bitcoin is in a significant long-term test zone after breaking below the critical $70,000-$78,000 support band. The 35-month cycle of gains appears to have completed in October 2025, and the current decline of ~52% from peak suggests a structural shift toward a bearish primary trend. March is not expected to be a simple month - the cyclical structure hints at sensitive time points that could create reversals, accelerations, or upside at resistance levels. Two key weekly cycles (weeks ending March 6 and March 27) are the most important time windows, with mid-month dates (March 16-17) offering higher volatility potential.",
+  "previous_month_review": "February 2026 had four turning point dates. Date 1 (Feb 3): did not work - failed to block the declining price movement and missed the low set on Feb 6. Date 2 (Feb 10): was one day late - served as the high of the movement. Date 3 (Feb 17): worked partially - the actual high arrived two days earlier. Date 4 (Feb 24): worked - served as the low of the movement.",
+  "risk_notes": [
+    "Bitcoin has limited history (15 years) making seasonal analysis less reliable - prioritize technical levels and real-time updates",
+    "In a bearish primary trend structure, treat any rally as a technical correction, not the start of new highs",
+    "Stay connected to the Discord community for real-time crypto updates as conditions change rapidly",
+    "The difference between a late reaction and a precise action can be the difference in crypto trading",
+    "For educational and informational purposes only - not investment advice"
+  ]
+}

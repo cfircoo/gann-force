@@ -1,0 +1,61 @@
+{
+  "asset": "Oil",
+  "key_dates": [
+    {"date": "2026-03-04", "description": "Turning point date - beginning of month"},
+    {"date": "2026-03-11", "description": "Turning point date"},
+    {"date": "2026-03-16", "description": "Turning point date - first weekly cycle reinforcement with daily turning point dates around March 16 and 20"},
+    {"date": "2026-03-20", "description": "Turning point date - aligns with weekly cycle"},
+    {"date": "2026-03-26", "description": "Turning point date - double date window 26-27 March, aligning with weekly cycle end"},
+    {"date": "2026-03-27", "description": "Turning point date - part of double date with March 26, aligning with weekly cycle"}
+  ],
+  "seasonal": "March is a positive month for Oil seasonally, as all three decade patterns of the last 30 years support upward movement. However, the cyclical structure also hints at a period of relatively high volatility that should not be treated as a smooth environment.",
+  "statistics": [
+    {"date": "2026-03-04", "probability": "71%", "direction": "up", "description": "Over the last 30 years, approximately 71% probability of upward movement around March 4"},
+    {"date": "2026-03-13", "probability": "73%", "direction": "down", "description": "Over the last 30 years, approximately 73% probability of downward movement around March 13"},
+    {"date": "2026-03-26", "probability": "81%", "direction": "up", "description": "Over the last 30 years, approximately 81% probability of upward movement around March 26"},
+    {"date": "2026-03-15", "probability": "73%", "direction": "up", "description": "Over the last 30 years, Oil closed on March 26 at a higher price than on March 15 in ~73% of cases (range statistic)"}
+  ],
+  "insights": [
+    "The support zone between $55.36-$56.00 continues to prove itself - this zone has been holding since last month and is where cycles converge from multiple months of significance",
+    "The sheer halt at this level over the span of several months and the meaningful dip patterns suggest two legs of stability on the ground - a structure that could hint at a possible reversal of the primary downtrend",
+    "The trigger apparently came from the US-Israel attack on Iran and the renewed confrontation with Venezuela - but it is important to be precise: the news can explain why it happened now, but the chart explains why it could have happened at all",
+    "The resistance band between $64.40-$66.50 which overlapped with the weekly chart began to break upward on the first day of March - currently acting as support",
+    "For a true reversal of the primary downtrend, Oil must first return clearly above $70.00 and hold above it - this is an opening condition, not final confirmation",
+    "The real confirmation will only come with a strong and clear breakout above $78.90",
+    "Until that happens, all upside is still a correction within a broad sideways/bearish structure, and the probability of additional declines can still be on the table",
+    "In the scenario of a break downward, the next price target sits in the $51-$52.70 zone",
+    "If even the $43.40 zone does not hold, the door opens toward the next meaningful support around $43.40 per barrel",
+    "A strong monthly cycle appears during March, with additional cycles joining already at the start of the month - within the month itself, two very strong weekly cycles stand out in weeks ending March 20 and March 27, both potentially marking areas of significant trend change",
+    "The first weekly cycle gets additional reinforcement through daily turning point dates around March 16 and 20, which is a time window worth tracking closely",
+    "Toward month-end, the weekly cycle ending March 27 converges with daily turning dates around March 26-27, raising the probability of an additional reversal",
+    "In Oil, especially when there appears to be a tailwind, it is important not to let your guard down - the meaningful changes tend to arrive precisely from within time zones where everyone feels secure"
+  ],
+  "technical": {
+    "support": [
+      {"level": "64.40-66.50", "description": "Former resistance now support after breakout on March 1 - resistance zone from weekly chart overlapping here"},
+      {"level": "62.60-61.80", "description": "Support zone on daily chart"},
+      {"level": "61.80", "description": "Level flagged in previous report as potential support (retest), which indeed attracted buyers and sparked a 6%+ move from the Feb 3 turning point"},
+      {"level": "55.97-55.14", "description": "Support zone on daily chart - lower range"},
+      {"level": "55.36-56.00", "description": "Critical multi-month support zone - proven itself repeatedly, cycles converge here"},
+      {"level": "51.00-52.70", "description": "Downside target if current support breaks"},
+      {"level": "43.40", "description": "Next meaningful support if further decline materializes"}
+    ],
+    "resistance": [
+      {"level": "66.50", "description": "Upper end of the broken-out resistance band"},
+      {"level": "70.00-70.40", "description": "Resistance on weekly chart - primary trend reversal condition: Oil must break and hold above this"},
+      {"level": "78.48", "description": "100-week moving average - major resistance on weekly chart"},
+      {"level": "78.90", "description": "True confirmation of trend reversal requires a strong breakout above this level"},
+      {"level": "100.00", "description": "Psychological resistance far above current levels"}
+    ],
+    "indicators": "The daily chart shows a break upward of the resistance band $64.40-$66.50 on March 1, with a price gap higher after the weekend (geopolitical catalyst: Iran attack). Oil created clear highs and lows in an upward pattern during January's rise, and this continued into February. The weekly chart shows Oil has been in a primary downtrend, with the $55.36-$56.00 zone holding as critical multi-month support. Weekly resistance levels from the weekly chart are now the key focus areas."
+  },
+  "summary": "Oil enters March with a positive seasonal backdrop supported by all three decade patterns. The critical $55.36-$56.00 support zone has held and the break above $64.40-$66.50 resistance on March 1 (catalyzed by the US-Israel Iran attack) is a positive development. However, until Oil clearly reclaims $70.00+ and confirms with a breakout above $78.90, any upside remains a correction within a broader bearish structure. Two very strong weekly cycles in weeks ending March 20 and March 27 are the key time windows, with daily turning dates around March 16, 20, and 26-27 providing additional convergence points.",
+  "previous_month_review": "February 2026 had three turning point dates. Date 1 (Feb 3): worked - marked the low of the correction, from which an upward movement of 6.5% occurred to the next turning point. Date 2 (Feb 12-13) double cycle: worked in double form (as described in Note 2 in the report) - on the first date price declined, on the second date price stopped and returned upward. Date 3 (Feb 23-24) double cycle: worked partially - stopped and began to decline on the first date, but after a few days reversed upward.",
+  "risk_notes": [
+    "As long as primary downtrend has not been truly reversed (requires breakout above $78.90), treat upside as correction within bearish structure",
+    "In Oil, when there appears to be a tailwind, do not let your guard down - meaningful changes arrive precisely from time zones where everyone feels secure",
+    "The seasonal direction remains positive but the path to it may be sharp, fast, and not stable",
+    "Updates will be published in the Discord community and during weekly live sessions",
+    "For educational and informational purposes only - not investment advice"
+  ]
+}

@@ -59,32 +59,32 @@ i_stats_size = input.string("huge", "Statistics Arrow Size", options=["tiny", "s
 // Group 1 defaults
 const string G1_NAME = "S&P500"
 const string G1_TICKERS = "SP500,SPX,ES1,US500,QQQ,NQ1"
-const string G1_DATES = "05.01.26,12.01.26,16.01.26,28.01.26,04.02.26,13.02.26,20.02.26,27.02.26"
-const string G1_STATS = "23.01.26.U,27.01.26.D,03.02.26.U,10.02.26.U,11.02.26.U,16.02.26.U,20.02.26,27.02.26"
+const string G1_DATES = "04.02.26,13.02.26,20.02.26,27.02.26,02.03.26,12.03.26,18.03.26,27.03.26"
+const string G1_STATS = "03.02.26.U,10.02.26.U,11.02.26.U,16.02.26.U,20.02.26,27.02.26,17.03.26.U,27.03.26.D"
 
 // Group 2 defaults
 const string G2_NAME = "GOLD"
 const string G2_TICKERS = "AUX,GOLD,SILVER"
-const string G2_DATES = "02.01.26,08.01.26,16.01.26,23.01.26,29.01.26,03.02.26,09.02.26,13.02.26,27.02.26"
-const string G2_STATS = "16.02.26.U"
+const string G2_DATES = "03.02.26,09.02.26,13.02.26,27.02.26,03.03.26,10.03.26,13.03.26,26.03.26,27.03.26"
+const string G2_STATS = "13.02.26.U,16.02.26.U,19.03.26.U,26.03.26.U"
 
 // Group 3 defaults
 const string G3_NAME = "OIL"
 const string G3_TICKERS = "USOIL,MCL1"
-const string G3_DATES = "02.01.26,16.01.26,22.01.26,28.01.26,03.02.26.12.02.26,13.02.26,23.02.26,24.02.26"
-const string G3_STATS = "09.02.26.U,13.02.26.U"
+const string G3_DATES = "03.02.26,12.02.26,13.02.26,23.02.26,24.02.26,04.03.26,11.03.26,16.03.26,20.03.26,26.03.26,27.03.26"
+const string G3_STATS = "09.02.26.U,13.02.26.U,04.03.26.U,13.03.26.D,26.03.26.U"
 
 // Group 4 defaults
 const string G4_NAME = "EUROUSD"
 const string G4_TICKERS = "EURUSD,M6E1,6E1"
-const string G4_DATES = "07.01.26,08.01.26,16.01.26,21.01.26,27.01.26,28.01.26,03.02.26,06.02.26,17.02.26,24.02.26"
-const string G4_STATS = "06.02.26.D,09.02.26.U,10.02.26.U"
+const string G4_DATES = "03.02.26,06.02.26,17.02.26,24.02.26,04.03.26,12.03.26,13.03.26,20.03.26,30.03.26"
+const string G4_STATS = "06.02.26.D,09.02.26.U,10.02.26.D,20.02.26.D,06.03.26.U,16.03.26.U,17.03.26.U"
 
 // Group 5 defaults
 const string G5_NAME = "BITCOIN"
 const string G5_TICKERS = "BTCUSD,BTCUSDT,ETHUSD,ETHUSDT"
-const string G5_DATES = "03.01.26,16.01.26,22.01.26,27.01.26,28.01.26,03.02.26,10.02.26,17.02.26,18.02.26,24.02.26"
-const string G5_STATS = "09.02.26.U, 13.02.26.U"
+const string G5_DATES = "03.02.26,10.02.26,17.02.26,18.02.26,24.02.26,02.03.26,06.03.26,16.03.26,17.03.26,20.03.26,26.03.26,27.03.26"
+const string G5_STATS = "17.02.26.U"
 
 // ============================================================================
 // GROUP INPUTS

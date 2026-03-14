@@ -1,0 +1,60 @@
+{
+  "asset": "EUR/USD",
+  "key_dates": [
+    {"date": "2026-03-04", "description": "Turning point date - strong daily turning point dates around March 4-5"},
+    {"date": "2026-03-12", "description": "Turning point date - double date window 12-13 March, with daily turning point sitting mid-window"},
+    {"date": "2026-03-13", "description": "Turning point date - part of double date window with March 12"},
+    {"date": "2026-03-20", "description": "Turning point date - daily turning point aligning with weekly cycle"},
+    {"date": "2026-03-30", "description": "Turning point date - end of month, dates 30-31 March also align with weekly cycle and may signal significant trend change"}
+  ],
+  "seasonal": "March tends to be a positive month for the Euro (mildly bullish). However, within this picture, a monthly cycle active this month hints at a month less straightforward than it appears - the main weight falls on the strong weekly cycle of the week ending March 13.",
+  "statistics": [
+    {"date": "2026-03-06", "probability": "74%", "direction": "up", "description": "Over the last 20 years, approximately 74% probability of upward movement around March 6"},
+    {"date": "2026-03-16", "probability": "76%", "direction": "up", "description": "Over the last 20 years, approximately 76% probability of upward movement around March 16"},
+    {"date": "2026-03-17", "probability": "78%", "direction": "up", "description": "Over the last 20 years, approximately 78% probability of upward movement around March 17"},
+    {"date": "2026-03-18", "probability": "69%", "direction": "down", "description": "Over the last 20 years, EUR/USD closed lower on March 25 than on March 18 in ~69% of cases (range statistic)"}
+  ],
+  "insights": [
+    "The breakout above 1.1920 was flagged in the previous report as having high probability of proving to be a failed breakout - the weekly candle that closed the move was a falling star, indicating sellers exploited the rise to free themselves from Euro positions",
+    "The weekly chart does not currently provide a clear bullish signal - for a true change in the picture, price must establish itself above 1.1920 with a clean breakout that also consolidates above 1.2080, then toward 1.2230 resistance",
+    "From the downside, nearby support levels are at 1.1578 and further at 1.1493, with the weekly low set in late July/early August around 1.1390 remaining particularly important as it coincides with Fibonacci 61.8% of the rally from May",
+    "Below 1.1390, the support zone between 1.1190-1.1275 takes on decision-zone weight - a break below could signal the start of a new primary downtrend",
+    "The daily chart confirms weakness with the Euro continuing to show weakness especially from the start of March and the break below, with technical picture pointing to support levels being tested soon",
+    "Level 1.1768 which was broken with force on the first day of the month should serve as current resistance",
+    "The connection between the monthly cycle and the weekly cycle, meeting at the same time zone, raises the probability that mid-month could become a significant decision point",
+    "Up to March 13, this is a central time zone that could create a material trend change, with daily turning point dates also joining at March 12",
+    "Beyond that, two additional weaker weekly cycles exist in weeks ending March 20 and March 27 - the end-of-month dates March 30-31 also gain additional cycle weight",
+    "In the current stage, only if the Euro completes a retest, returns to trade below, and manages to hold, would it make sense to examine short trades around daily turning point time windows",
+    "The strength of the decline suggests at least one to two weeks in the near term, the chosen direction is downward"
+  ],
+  "technical": {
+    "support": [
+      {"level": "1.1768", "description": "Broken support now acting as resistance - broken with force on March 1"},
+      {"level": "1.1687", "description": "Next support with Fibonacci 78.6% level nearby"},
+      {"level": "1.1580", "description": "Key support zones to track for potential reversal of the downward move"},
+      {"level": "1.1578", "description": "Nearby support from below"},
+      {"level": "1.1493", "description": "Further support level"},
+      {"level": "1.1390", "description": "Weekly low from late July/early August - major support, coincides with Fibonacci 61.8% of rally from May, a test zone for the overall trend"},
+      {"level": "1.1190-1.1275", "description": "Decision zone - break below signals possible new primary downtrend"}
+    ],
+    "resistance": [
+      {"level": "1.1768", "description": "Broken support now resistance on daily chart"},
+      {"level": "1.1813-1.1831", "description": "Fibonacci 50% retracement - resistance zone on daily chart"},
+      {"level": "1.1878", "description": "Resistance on daily chart"},
+      {"level": "1.1891", "description": "Fibonacci 38.2% retracement"},
+      {"level": "1.1920", "description": "Major resistance from weekly chart - former breakout level now resistance"},
+      {"level": "1.1927", "description": "Resistance zone on weekly chart"},
+      {"level": "1.2080", "description": "Next resistance above 1.1920"},
+      {"level": "1.2230-1.2330", "description": "Higher resistance zone on weekly chart"}
+    ],
+    "indicators": "Daily chart shows Euro entering a weaker phase especially from the start of March with the breakdown below key levels. Weekly chart falling star candle at 1.1920 resistance was a clear reversal signal. The EUR/USD has broken below 1.1768 with significant force, indicating bears are in control in the short term. Fibonacci retracement levels from the recent rally are the key technical framework."
+  },
+  "summary": "March opens in a moderately positive seasonal environment for the Euro, but hidden within this is a monthly cycle that hints at a less straightforward month. The strong weekly cycle of the week ending March 13 is the main event, with the connection between the monthly and weekly cycles converging around mid-month raising the probability of a significant decision point. The breakout above 1.1920 proved to be a failed breakout as predicted, and the Euro has entered a weaker phase with the break below 1.1768. Short-term bias is downward, with key time windows around March 4-5, 12-13, 20, and 30-31.",
+  "previous_month_review": "February 2026 had four turning point dates. Date 1 (Feb 3): worked - from it an upward movement of ~160 pips began. Date 2 (Feb 6): worked, though one day late - marked the high of the movement, though the high was recognized only in hindsight after decline began. Date 3 (Feb 17): did not work. Date 4 (Feb 24): worked - served as the high of the movement though arrived one day early.",
+  "risk_notes": [
+    "Do not buy on blindness at support levels - even at support, check what is actually happening with trading cycles and price behavior",
+    "Short trades should only be considered when Euro completes a retest, returns to trade below, and holds - combined with daily turning point time windows",
+    "Updates will be published in the Discord community and during weekly live sessions",
+    "For educational and informational purposes only - not investment advice"
+  ]
+}

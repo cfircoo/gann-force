@@ -1,0 +1,58 @@
+{
+  "asset": "S&P 500",
+  "key_dates": [
+    {"date": "2026-03-02", "description": "Daily turning point aligning with weekly cycle of the week ending March 6"},
+    {"date": "2026-03-12", "description": "Turning point date (expect high volatility). Daily turning point sits mid-window 11-13 March"},
+    {"date": "2026-03-18", "description": "Turning point date within double cycle window (18-19 March)"},
+    {"date": "2026-03-27", "description": "Turning point date (68% down statistic)"}
+  ],
+  "seasonal": "March is a positive month for the S&P 500 seasonally. Over the last 30 years, the index closed higher on March 30 than on March 13 in approximately 80% of cases (24 out of 30).",
+  "statistics": [
+    {"date": "2026-03-17", "probability": "76%", "direction": "up", "description": "Over the last 30 years, approximately 76% probability of upward movement around March 17"},
+    {"date": "2026-03-27", "probability": "68%", "direction": "down", "description": "Over the last 30 years, approximately 68% probability of downward movement around March 27"},
+    {"date": "2026-03-13", "probability": "80%", "direction": "up", "description": "Over the last 30 years, the index closed higher on March 30 than on March 13 in ~80% of cases (range statistic)"}
+  ],
+  "insights": [
+    "March 2026 is not a regular month - it sits on a dense cluster of converging cycles from multiple timeframes, all pointing to this period as significant",
+    "Historical cycle analysis: 45-year cycle points to 1981 (Reagan assassination attempt, Cold War escalation), 60-year cycle to 1966 (Vietnam escalation), 72-year cycle to 1954 (hydrogen bomb technology leap), 90-year cycle to 1936 (Nazi Germany remilitarization of Rhineland)",
+    "Israel and US attacked Iran on Saturday morning Feb 28 - the geopolitical trigger from the cycle convergence has materialized",
+    "The attack on Iran was forecast in the annual 2026 report and February report based on geopolitical cycles converging around this timeframe",
+    "Prince Andrew arrested on Feb 19 for financial crimes - parallels to historical financial scandals that preceded market turbulence",
+    "Eight consecutive months of gains in S&P 500 with index declining ~0.87% is a historically extreme reading - D9 indicator lit up with reading of 8-9, historically associated with market corrections",
+    "CNN Fear & Greed Index: end of December 46 points, end of January 57, end of February 43 - currently at 40 (Fear zone)",
+    "Primary trend remains upward but quality of the rally is weakening - corrections of 10-15% do not negate a bullish primary trend",
+    "The daily chart shows buyer strength fading - the daily chart is first to absorb news and sentiment changes",
+    "In the last four months, the minor trend shifted from clear upward consolidation to sideways with slight upward bias - all three trends (primary, secondary, minor) were aligned upward, now the possibility of working both directions (long and short) has returned",
+    "When the market doesn't react to clearly bad news, it often means something worse is coming",
+    "Timing is not magic - it's a method-based system that rewards patience and punishes impulsive behavior"
+  ],
+  "technical": {
+    "support": [
+      {"level": "6722-6792", "description": "Immediate support zone on daily chart"},
+      {"level": "6550", "description": "Strong weekly support level - 20-week moving average area, last strong support"},
+      {"level": "6536", "description": "Clear break below this level signals transition from shallow to deep correction"},
+      {"level": "6175", "description": "Fibonacci 38.2% retracement of the rally from April 2025 - major correction target area, overlaps with 100-week moving average and retest zone"},
+      {"level": "6147-6095", "description": "Weekly retest zone from previous highs"}
+    ],
+    "resistance": [
+      {"level": "6976-6999", "description": "Resistance zone on daily chart near all-time highs"},
+      {"level": "6785", "description": "Additional support level above 6725, break creates graduated decline"},
+      {"level": "6725", "description": "Additional support level"}
+    ],
+    "indicators": "Weekly chart still looks positive from broad perspective but time is starting to press for a correction. D9 indicator lit extreme reading (8-9 range). Monthly chart showed February candle declining ~0.87% after 8 months of gains - historically this precedes deeper corrections. MACD remained below the action line throughout the entire last rally wave (mid-November to end of December), signaling weakness within an uptrend. RSI and MACD show minor negative divergence. 20-week moving average at ~6,550 is critical support."
+  },
+  "summary": "March 2026 is an exceptionally significant month due to convergence of multiple long-range historical cycles (45, 60, 72, and 90 years) all pointing to this period. The geopolitical trigger has already materialized with the US-Israel attack on Iran on Feb 28. While the primary trend remains upward, eight consecutive months of gains and deteriorating technical indicators (D9 extreme reading, MACD weakness, fading buyer strength on daily chart) suggest a correction is becoming increasingly likely. Key turning dates are March 2, 12, 18, and 27, with the mid-month window around March 11-13 being particularly important as daily and weekly cycles converge there.",
+  "previous_month_review": "February 2026 had four turning point dates. Date 1 (Feb 4): arrived one day late (Feb 5), the low was actually the next day. Date 2 (Feb 13): worked, marked the low of the movement; in real-time adjusted one day earlier to Feb 11 which made things clearer. Date 3 (Feb 20): worked partially, marked the high of the movement from the previous cycle, though broke upward after three trading days. Date 4 (Feb 27): worked, arrived one day early (Feb 26) and marked the high of the movement, from which the decline began toward the next turning point on March 2.",
+  "risk_notes": [
+    "Maximum risk per trade on futures contracts listed in the report should not exceed 1% of account",
+    "In stocks, maintain 30-40% liquidity in the portfolio during this period",
+    "Do not hold open positions over weekends without leverage - one event outside trading hours can open the week with an aggressive gap",
+    "Stop loss must be set within the system with clear risk from the outset",
+    "Do not buy blindly at support - first check what is actually happening there (trading cycles, controlled vs. panic decline, loss of control)",
+    "In this period, prefer stocks that have already corrected 10-15% and examine them seriously as potential opportunities",
+    "Not every decline is an opportunity - sometimes a decline is just the beginning of the road",
+    "A correction of 10-15% does not negate a positive primary trend - it restores balance and reduces accumulated risk",
+    "2026 was described in the annual report as a psychologically very sensitive year for markets",
+    "For educational and informational purposes only - not investment advice"
+  ]
+}
