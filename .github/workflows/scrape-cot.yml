@@ -2,8 +2,8 @@ name: Scrape COT
 
 on:
   schedule:
-    # Friday at 17:00 UTC
-    - cron: "0 17 * * 5"
+    # Friday at 18:02 UTC
+    - cron: "2 18 * * 5"
   workflow_dispatch:
     inputs:
       force:

@@ -399,3 +399,42 @@ for j = 0 to max_lookback
 - Collects the high/low across all bars in that window (handles intraday timeframes where multiple bars fall on the same date)
 - Early exit when bars are before the target timestamp (bars are chronological)
 - Fallback to `close` if no bar found (future dates)
+
+---
+
+## Calculation 18: Cross-Candle Price Equality Detection
+**Used in:** `equal_open_close.pine`
+
+```pine
+// Compare prices across 3 candles with tolerance
+match = math.abs(open[2] - close[1]) <= tolerance and math.abs(close[1] - open) <= tolerance
+```
+- Checks if `open[2] == close[1] == open[0]` (within tolerance)
+- Uses `math.abs()` for tolerance-based comparison instead of `==`
+- Tolerance of 0.0 = exact match; increase for volatile instruments
+- **Key insight:** Exact float comparison (`==`) is unreliable for prices; always use `math.abs(a - b) <= tolerance`
+
+### Candle Color as Direction Signal
+```pine
+is_green = close[2] > open[2]  // first candle is green (close > open)
+is_red = close[2] < open[2]    // first candle is red (close < open)
+```
+- Simple candle color detection: `close > open` = green, `close < open` = red
+
+---
+
+## Summary: Signal Chain (Equal Open-Close Method)
+
+```
+1. Price Equality Detection (3 candles)
+   |-- candle[2].open == candle[1].close == candle[0].open
+   |-- Tolerance-based comparison (math.abs <= tolerance)
+   |
+2. Direction from first candle color
+   |-- Green (close > open) = one direction
+   |-- Red (close < open) = opposite direction
+   |
+3. Arrow on first candle (offset=-2)
+   |
+4. Alert mark on 3rd candle (where alert fires)
+```
