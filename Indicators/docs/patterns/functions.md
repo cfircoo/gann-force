@@ -443,3 +443,68 @@ get_label_size(size_str) =>
 - Maps `input.string` dropdown values to Pine Script constants
 - Default fallback handles unexpected values
 - Reusable pattern for any enum-like input (style, size, extend, etc.)
+
+---
+
+## Pattern 20: Plotshape with Offset (Arrow on Different Candle)
+**Used in:** `equal_open_close.pine`
+
+```pine
+// Detection fires on candle[0], but arrow appears on candle[2]
+plotshape(match_3 and is_green, style=shape.triangleup, location=location.belowbar,
+    color=color.green, size=size.small, offset=-2)
+```
+- `offset=-2` shifts the visual marker 2 bars left (to the first candle)
+- Detection still evaluates at candle[0] — offset only affects display position
+- Use negative offset when the signal references historical candles but you want to mark the origin
+- **Common pitfall:** `offset` does NOT change which bar's data is used for detection — only where the shape is drawn
+
+---
+
+## Pattern 21: Dynamic Alert Message (alert vs alertcondition)
+**Used in:** `equal_open_close.pine`
+
+```pine
+alert_msg = match_3 and is_red ? "SHORT ({{ticker}} {{interval}})" : "LONG ({{ticker}} {{interval}})"
+if match_3
+    alert(alert_msg, alert.freq_once_per_bar)
+```
+- `alert()` allows dynamic messages (ternary, string concatenation)
+- `alertcondition()` requires static message strings — cannot change per signal
+- Use `alert()` when the message content depends on conditions (direction, price, etc.)
+- `{{ticker}}` and `{{interval}}` are TradingView placeholders, resolved at alert time
+
+---
+
+## Pattern 22: Debug Labels with ATR Offset
+**Used in:** `equal_open_close.pine`
+
+```pine
+if match_3
+    atr = ta.atr(14)
+    label.new(bar_index, high + atr * 2,
+        "O[2]:" + str.tostring(open[2]) + "\nC[1]:" + str.tostring(close[1]) + "\nO:" + str.tostring(open),
+        style=label.style_label_down, color=color.gray, textcolor=color.white, size=size.normal)
+```
+- Uses `ta.atr(14) * 2` to position label well above candles (scales with volatility)
+- Shows the actual price values used in detection for visual verification
+- Requires `max_labels_count=500` in `indicator()` declaration
+- **Key lesson:** Default `max_labels_count` (50) is often too low; always set explicitly when creating labels in loops or frequent conditions
+- `yloc=yloc.abovebar` can overlap with candles — use explicit price positioning (`high + offset`) for reliable visibility
+
+---
+
+## Pattern 23: Separate Detection Mark from Signal Mark
+**Used in:** `equal_open_close.pine`
+
+```pine
+// Signal arrows on first candle (where pattern starts)
+plotshape(match_3 and is_green, style=shape.triangleup, offset=-2, ...)
+
+// Alert mark on third candle (where alert fires)
+plotshape(match_3, style=shape.circle, color=color.orange, size=size.tiny, ...)
+```
+- Two separate visual markers for the same pattern
+- Signal arrow on the candle that defines the pattern (offset to first candle)
+- Alert circle on the candle where detection actually occurs (no offset)
+- Helps distinguish "what triggered" from "when it triggered"

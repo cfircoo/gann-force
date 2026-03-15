@@ -1,0 +1,44 @@
+//@version=6
+indicator("Equal Open-Close", shorttitle="EqOC", overlay=true, max_labels_count=500)
+
+// ============================================================================
+// SETTINGS
+// ============================================================================
+
+i_tolerance = input.float(0.0, "Price Tolerance", minval=0.0, step=0.01, tooltip="Max allowed difference between open[1] and close. 0 = exact match.", group="Detection")
+// ============================================================================
+// DETECTION
+// ============================================================================
+
+// 3-candle: candle[2] open == candle[1] close == candle[0] open
+match_3 = math.abs(open[2] - close[1]) <= i_tolerance and math.abs(close[1] - open) <= i_tolerance
+
+// First candle color
+is_green = close[2] > open[2]
+is_red = close[2] < open[2]
+
+// ============================================================================
+// DISPLAY
+// ============================================================================
+
+plotshape(match_3 and is_green, title="Green Candle", style=shape.triangleup, location=location.belowbar, color=color.green, size=size.small, offset=-2)
+plotshape(match_3 and is_red, title="Red Candle", style=shape.triangledown, location=location.abovebar, color=color.red, size=size.small, offset=-2)
+
+// ============================================================================
+// ALERTS
+// ============================================================================
+
+alert_msg = match_3 and is_red ? "EqOC: SHORT ({{ticker}} {{interval}})" : "EqOC: LONG ({{ticker}} {{interval}})"
+if match_3
+    alert(alert_msg, alert.freq_once_per_bar)
+
+// Alert mark on 3rd candle (where alert fires)
+plotshape(match_3, title="Alert Mark", style=shape.circle, location=location.abovebar, color=color.orange, size=size.tiny)
+
+// ============================================================================
+// DEBUG: show prices on matched candles
+// ============================================================================
+
+if match_3
+    atr = ta.atr(14)
+    label.new(bar_index, high + atr * 2, "O[2]:" + str.tostring(open[2]) + "\nC[1]:" + str.tostring(close[1]) + "\nO:" + str.tostring(open), style=label.style_label_down, color=color.gray, textcolor=color.white, size=size.normal)
