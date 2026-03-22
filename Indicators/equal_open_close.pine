@@ -56,10 +56,10 @@ plotshape(match_coc, title="COC Alert Mark", style=shape.square, location=locati
 // DEBUG: show prices on matched candles
 // ============================================================================
 
+atr = ta.atr(14)
+
 if match_oco
-    atr = ta.atr(14)
     label.new(bar_index, high + atr * 2, "OCO\nO[2]:" + str.tostring(open[2]) + "\nC[1]:" + str.tostring(close[1]) + "\nO:" + str.tostring(open), style=label.style_label_down, color=color.gray, textcolor=color.white, size=size.normal)
 
 if match_coc
-    atr = ta.atr(14)
-    label.new(bar_index, high + atr * 2, "COC\nC[2]:" + str.tostring(close[2]) + "\nO[1]:" + str.tostring(open[1]) + "\nC:" + str.tostring(close), style=label.style_label_down, color=color.purple, textcolor=color.white, size=size.normal)
+    label.new(bar_index, low - atr * 2, "COC\nC[2]:" + str.tostring(close[2]) + "\nO[1]:" + str.tostring(open[1]) + "\nC:" + str.tostring(close), style=label.style_label_up, color=color.purple, textcolor=color.white, size=size.normal)
