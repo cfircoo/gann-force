@@ -1,1137 +1,1176 @@
-//@version=6
-indicator("Gann ", shorttitle="GannCycles", overlay=true, max_bars_back=500)
+    //@version=6
+    indicator("Gann ", shorttitle="GannCycles", overlay=true, max_bars_back=500)
 
-// ============================================================================
-// TYPE DEFINITIONS
-// ============================================================================
+    // ============================================================================
+    // TYPE DEFINITIONS
+    // ============================================================================
 
-// Cycle object - holds a single cycle (date range) with calculated high/low and magnet levels
-type Cycle
-    int id
-    int tsStart
-    int tsEnd
-    float high
-    float low
-    float mag_25
-    float mag_50
-    float mag_75
-    float high_target  // Price target based on 2:1 Gann projection (upward)
-    float low_target   // Price target based on 2:1 Gann projection (downward)
-    bool is_double     // True if cycle duration < 26 hours (double cycle)
-    float first_close  // Close price of first candle in cycle (for trend detection)
-    float last_close   // Close price of last candle in cycle (for trend detection)
-    bool calculated    // Guard: true after calculate_high_low has run (avoids redundant scans)
-    int bar_start      // Cached bar_index of first bar in cycle (for target lines)
-    int bar_end        // Cached bar_index of last bar in cycle (for target lines)
+    // Cycle object - holds a single cycle (date range) with calculated high/low and magnet levels
+    type Cycle
+        int id
+        int tsStart
+        int tsEnd
+        float high
+        float low
+        float mag_25
+        float mag_50
+        float mag_75
+        float high_target  // Price target based on 2:1 Gann projection (upward)
+        float low_target   // Price target based on 2:1 Gann projection (downward)
+        bool is_double     // True if cycle duration < 26 hours (double cycle)
+        float first_close  // Close price of first candle in cycle (for trend detection)
+        float last_close   // Close price of last candle in cycle (for trend detection)
+        bool calculated    // Guard: true after calculate_high_low has run (avoids redundant scans)
+        int bar_start      // Cached bar_index of first bar in cycle (for target lines)
+        int bar_end        // Cached bar_index of last bar in cycle (for target lines)
 
-// Group settings
-type VLineGroup
-    string name
-    string tickers
-    string dates
-    bool showHighLow
-    bool showMagnet
-    bool showGannFan
-    bool showDoubleGann       // Toggle double gann box on active cycle
-    string statistics         // Statistics arrows: "DD.MM.YY.U,DD.MM.YY.D" format
-    array<Cycle> cycles
-    int firstMonthCycleIdx  // Index of first cycle in current month
+    // Group settings
+    type VLineGroup
+        string name
+        string tickers
+        string dates
+        bool showHighLow
+        bool showMagnet
+        bool showGannFan
+        bool showDoubleGann       // Toggle double gann box on active cycle
+        string statistics         // Statistics arrows: "DD.MM.YY.U,DD.MM.YY.D" format
+        array<Cycle> cycles
+        int firstMonthCycleIdx  // Index of first cycle in current month
 
-// ============================================================================
-// COMMON SETTINGS
-// ============================================================================
+    // ============================================================================
+    // COMMON SETTINGS
+    // ============================================================================
 
-i_hour = input.int(1, "Hour (0-23)", minval=0, maxval=23, group="Common Settings", tooltip="Hour to place the line", display=display.none)
-i_utc_offset = input.int(2, "UTC Offset", minval=-12, maxval=14, group="Common Settings", tooltip="UTC offset in hours (e.g., 2 for UTC+2)", display=display.none)
-i_show_hl = input.bool(true, "Show High/Low Lines", group="Common Settings", display=display.none)
-i_show_magnet = input.bool(true, "Show Magnet Lines (0.25, 0.5, 0.75)", group="Common Settings", display=display.none)
-i_show_gann = input.bool(true, "Show Gann Fan", group="Common Settings", display=display.none)
-i_show_double_gann = input.bool(true, "Show Double Gann Box", group="Common Settings", display=display.none)
-i_gann_square_calibration = input.float(1.4285705, "Gann Square Price/Bar Ratio", minval=0.001, maxval=100.0, step=0.001, group="Common Settings", tooltip="Price/bar ratio from TradingView Gann Square tool. SPX500 1H = 1.4285705. Adjust per asset/timeframe.", display=display.none)
-i_show_target_lines = input.bool(false, "Show Target Lines", group="Common Settings", tooltip="Show diagonal and horizontal target lines for all groups", display=display.none)
-i_target_circle_mode = input.string("both", "Target Circle Mode", options=["none", "trend", "both"], group="Common Settings", tooltip="none=hidden, trend=based on cycle direction (reversal), both=show high and low circles", display=display.none)
-i_show_pivot_fan = input.bool(false, "Show Pivot Fan", group="Common Settings", tooltip="Auto-detect trend with 50-60% correction", display=display.none)
-i_min_blocks = input.int(20, "Minimum Blocks", minval=5, maxval=200, group="Common Settings", tooltip="Minimum number of bars in a valid trend", display=display.none)
+    i_hour = input.int(1, "Hour (0-23)", minval=0, maxval=23, group="Common Settings", tooltip="Hour to place the line", display=display.none)
+    i_utc_offset = input.int(2, "UTC Offset", minval=-12, maxval=14, group="Common Settings", tooltip="UTC offset in hours (e.g., 2 for UTC+2)", display=display.none)
+    i_show_hl = input.bool(true, "Show High/Low Lines", group="Common Settings", display=display.none)
+    i_show_magnet = input.bool(true, "Show Magnet Lines (0.25, 0.5, 0.75)", group="Common Settings", display=display.none)
+    i_show_gann = input.bool(true, "Show Gann Fan", group="Common Settings", display=display.none)
+    i_show_double_gann = input.bool(true, "Show Double Gann Box", group="Common Settings", display=display.none)
+    i_gann_square_calibration = input.float(1.4285705, "Gann Square Price/Bar Ratio", minval=0.001, maxval=100.0, step=0.001, group="Common Settings", tooltip="Price/bar ratio from TradingView Gann Square tool. SPX500 1H = 1.4285705. Adjust per asset/timeframe.", display=display.none)
+    i_show_target_lines = input.bool(false, "Show Target Lines", group="Common Settings", tooltip="Show diagonal and horizontal target lines for all groups", display=display.none)
+    i_target_circle_mode = input.string("both", "Target Circle Mode", options=["none", "trend", "both"], group="Common Settings", tooltip="none=hidden, trend=based on cycle direction (reversal), both=show high and low circles", display=display.none)
+    i_show_pivot_fan = input.bool(false, "Show Pivot Fan", group="Common Settings", tooltip="Auto-detect trend with 50-60% correction", display=display.none)
+    i_min_blocks = input.int(20, "Minimum Blocks", minval=5, maxval=200, group="Common Settings", tooltip="Minimum number of bars in a valid trend", display=display.none)
 
-// Cycle Strategy Settings
-i_show_strategy = input.bool(true, "Show Cycle Strategy", group="Cycle Strategy", tooltip="Show magnet bounce signals on active and recent cycles")
-i_mag_zone_pct = input.float(0.05, "Magnet Zone Width (%)", minval=0.01, maxval=0.20, step=0.01, group="Cycle Strategy", tooltip="How close price must get to magnet level to trigger signal (as % of cycle range)")
-i_show_mag_zones = input.bool(true, "Show Magnet Zones", group="Cycle Strategy", tooltip="Highlight 25/50/75 zones on active cycle")
-i_strat_long_color = input.color(color.new(#00E676, 20), "Long Signal Color", group="Cycle Strategy", display=display.none)
-i_strat_short_color = input.color(color.new(#FF5252, 20), "Short Signal Color", group="Cycle Strategy", display=display.none)
-i_strat_pivot_color = input.color(color.new(#FFAB40, 20), "Pivot Zone Color", group="Cycle Strategy", display=display.none)
-i_show_cycle_type = input.bool(true, "Show Cycle Type Labels", group="Cycle Strategy", tooltip="Label each cycle with its type (Up/Down/Continuation/Sideways/Double)")
-i_cycle_type_size = input.string("normal", "Cycle Type Label Size", options=["tiny", "small", "normal", "large", "huge"], group="Cycle Strategy", display=display.none)
+    // Cycle Strategy Settings
+    i_show_strategy = input.bool(true, "Show Cycle Strategy", group="Cycle Strategy", tooltip="Show magnet bounce signals on active and recent cycles")
+    i_mag_zone_pct = input.float(0.05, "Magnet Zone Width (%)", minval=0.01, maxval=0.20, step=0.01, group="Cycle Strategy", tooltip="How close price must get to magnet level to trigger signal (as % of cycle range)")
+    i_show_mag_zones = input.bool(true, "Show Magnet Zones", group="Cycle Strategy", tooltip="Highlight 25/50/75 zones on active cycle")
+    i_strat_long_color = input.color(color.new(#00E676, 20), "Long Signal Color", group="Cycle Strategy", display=display.none)
+    i_strat_short_color = input.color(color.new(#FF5252, 20), "Short Signal Color", group="Cycle Strategy", display=display.none)
+    i_strat_pivot_color = input.color(color.new(#FFAB40, 20), "Pivot Zone Color", group="Cycle Strategy", display=display.none)
+    i_show_cycle_type = input.bool(true, "Show Cycle Type Labels", group="Cycle Strategy", tooltip="Label each cycle with its type (Up/Down/Continuation/Sideways/Double)")
+    i_cycle_type_size = input.string("normal", "Cycle Type Label Size", options=["tiny", "small", "normal", "large", "huge"], group="Cycle Strategy", display=display.none)
 
-// ============================================================================
-// GROUP DEFAULTS
-// ============================================================================
+    // ============================================================================
+    // GROUP DEFAULTS
+    // ============================================================================
 
-// Group 1 defaults
-const string G1_NAME = "S&P500"
-const string G1_TICKERS = "SP500,SPX,ES1,US500,QQQ,NQ1"
-const string G1_DATES = "02.03.26,12.03.26,18.03.26,27.03.26,02.04.26,06.04.26,09.04.26,17.04.26,27.04.26,28.04.26"
-const string G1_STATS = "17.03.26.U,27.03.26.D,02.04.26.D,10.04.26.D"
+    // Group 1 defaults
+    const string G1_NAME = "S&P500"
+    const string G1_TICKERS = "SP500,SPX,ES1,US500,QQQ,NQ1"
+    const string G1_DATES = "02.03.26,12.03.26,18.03.26,27.03.26,02.04.26,06.04.26,09.04.26,17.04.26,27.04.26,28.04.26"
+    const string G1_STATS = "17.03.26.U,27.03.26.D,02.04.26.D,10.04.26.D"
 
-// Group 2 defaults
-const string G2_NAME = "GOLD"
-const string G2_TICKERS = "AUX,GOLD,SILVER"
-const string G2_DATES = "03.03.26,10.03.26,13.03.26,26.03.26,27.03.26,02.04.26,10.04.26,16.04.26,24.04.26,29.04.26"
-const string G2_STATS = "19.03.26.U,26.03.26.U,06.04.26.U,08.04.26.U,10.04.26.U,13.04.26.U,14.04.26.D"
+    // Group 2 defaults
+    const string G2_NAME = "GOLD"
+    const string G2_TICKERS = "AUX,GOLD,SILVER"
+    const string G2_DATES = "03.03.26,10.03.26,13.03.26,26.03.26,27.03.26,02.04.26,10.04.26,16.04.26,24.04.26,29.04.26"
+    const string G2_STATS = "19.03.26.U,26.03.26.U,06.04.26.U,08.04.26.U,10.04.26.U,13.04.26.U,14.04.26.D"
 
-// Group 3 defaults
-const string G3_NAME = "OIL"
-const string G3_TICKERS = "USOIL,MCL1"
-const string G3_DATES = "04.03.26,11.03.26,16.03.26,20.03.26,26.03.26,27.03.26,02.04.26,09.04.26,15.04.26,24.04.26,30.04.26"
-const string G3_STATS = "04.03.26.U,13.03.26.D,26.03.26.U,13.04.26.U,23.04.26.U"
+    // Group 3 defaults
+    const string G3_NAME = "OIL"
+    const string G3_TICKERS = "USOIL,MCL1"
+    const string G3_DATES = "04.03.26,11.03.26,16.03.26,20.03.26,26.03.26,27.03.26,02.04.26,09.04.26,15.04.26,24.04.26,30.04.26"
+    const string G3_STATS = "04.03.26.U,13.03.26.D,26.03.26.U,13.04.26.U,23.04.26.U"
 
-// Group 4 defaults
-const string G4_NAME = "EUROUSD"
-const string G4_TICKERS = "EURUSD,M6E1,6E1"
-const string G4_DATES = "04.03.26,12.03.26,13.03.26,20.03.26,30.03.26,02.04.26,10.04.26,16.04.26,17.04.26,28.04.26"
-const string G4_STATS = "06.03.26.U,16.03.26.U,17.03.26.U,07.04.26.D,24.04.26.U,29.04.26.U"
+    // Group 4 defaults
+    const string G4_NAME = "EUROUSD"
+    const string G4_TICKERS = "EURUSD,M6E1,6E1"
+    const string G4_DATES = "04.03.26,12.03.26,13.03.26,20.03.26,30.03.26,02.04.26,10.04.26,16.04.26,17.04.26,28.04.26"
+    const string G4_STATS = "06.03.26.U,16.03.26.U,17.03.26.U,07.04.26.D,24.04.26.U,29.04.26.U"
 
-// Group 5 defaults
-const string G5_NAME = "BITCOIN"
-const string G5_TICKERS = "BTCUSD,BTCUSDT,ETHUSD,ETHUSDT"
-const string G5_DATES = "02.03.26,06.03.26,16.03.26,17.03.26,20.03.26,26.03.26,27.03.26,03.04.26,10.04.26,16.04.26,17.04.26,27.04.26"
-const string G5_STATS = ""
+    // Group 5 defaults
+    const string G5_NAME = "BITCOIN"
+    const string G5_TICKERS = "BTCUSD,BTCUSDT,ETHUSD,ETHUSDT"
+    const string G5_DATES = "02.03.26,06.03.26,16.03.26,17.03.26,20.03.26,26.03.26,27.03.26,03.04.26,10.04.26,16.04.26,17.04.26,27.04.26"
+    const string G5_STATS = ""
 
-// ============================================================================
-// GROUP INPUTS
-// ============================================================================
+    // ============================================================================
+    // GROUP INPUTS
+    // ============================================================================
 
-// S&P500
-g1_tickers = input.string(G1_TICKERS, "Tickers", group=G1_NAME, tooltip="Comma-separated. Leave empty for all.", display=display.none)
-g1_dates = input.string(G1_DATES, "Cycle Dates (DD.MM.YY)", group=G1_NAME, tooltip="Rolling cycles: 25.12.25,01.01.26,05.01.26 → cycles 1-2, 2-3", display=display.none)
-g1_stats = input.string(G1_STATS, "Statistics (DD.MM.YY.U/D)", group=G1_NAME, tooltip="Up/Down arrows: 01.01.26.U,03.01.26.D", display=display.none)
+    // S&P500
+    g1_tickers = input.string(G1_TICKERS, "Tickers", group=G1_NAME, tooltip="Comma-separated. Leave empty for all.", display=display.none)
+    g1_dates = input.string(G1_DATES, "Cycle Dates (DD.MM.YY)", group=G1_NAME, tooltip="Rolling cycles: 25.12.25,01.01.26,05.01.26 → cycles 1-2, 2-3", display=display.none)
+    g1_stats = input.string(G1_STATS, "Statistics (DD.MM.YY.U/D)", group=G1_NAME, tooltip="Up/Down arrows: 01.01.26.U,03.01.26.D", display=display.none)
 
-// GOLD
-g2_tickers = input.string(G2_TICKERS, "Tickers", group=G2_NAME, tooltip="Comma-separated. Leave empty for all.", display=display.none)
-g2_dates = input.string(G2_DATES, "Cycle Dates (DD.MM.YY)", group=G2_NAME, tooltip="Rolling cycles: 25.12.25,01.01.26,05.01.26 → cycles 1-2, 2-3", display=display.none)
-g2_stats = input.string(G2_STATS, "Statistics (DD.MM.YY.U/D)", group=G2_NAME, tooltip="Up/Down arrows: 01.01.26.U,03.01.26.D", display=display.none)
+    // GOLD
+    g2_tickers = input.string(G2_TICKERS, "Tickers", group=G2_NAME, tooltip="Comma-separated. Leave empty for all.", display=display.none)
+    g2_dates = input.string(G2_DATES, "Cycle Dates (DD.MM.YY)", group=G2_NAME, tooltip="Rolling cycles: 25.12.25,01.01.26,05.01.26 → cycles 1-2, 2-3", display=display.none)
+    g2_stats = input.string(G2_STATS, "Statistics (DD.MM.YY.U/D)", group=G2_NAME, tooltip="Up/Down arrows: 01.01.26.U,03.01.26.D", display=display.none)
 
-// OIL
-g3_tickers = input.string(G3_TICKERS, "Tickers", group=G3_NAME, tooltip="Comma-separated. Leave empty for all.", display=display.none)
-g3_dates = input.string(G3_DATES, "Cycle Dates (DD.MM.YY)", group=G3_NAME, tooltip="Rolling cycles: 25.12.25,01.01.26,05.01.26 → cycles 1-2, 2-3", display=display.none)
-g3_stats = input.string(G3_STATS, "Statistics (DD.MM.YY.U/D)", group=G3_NAME, tooltip="Up/Down arrows: 01.01.26.U,03.01.26.D", display=display.none)
+    // OIL
+    g3_tickers = input.string(G3_TICKERS, "Tickers", group=G3_NAME, tooltip="Comma-separated. Leave empty for all.", display=display.none)
+    g3_dates = input.string(G3_DATES, "Cycle Dates (DD.MM.YY)", group=G3_NAME, tooltip="Rolling cycles: 25.12.25,01.01.26,05.01.26 → cycles 1-2, 2-3", display=display.none)
+    g3_stats = input.string(G3_STATS, "Statistics (DD.MM.YY.U/D)", group=G3_NAME, tooltip="Up/Down arrows: 01.01.26.U,03.01.26.D", display=display.none)
 
-// EUROUSD
-g4_tickers = input.string(G4_TICKERS, "Tickers", group=G4_NAME, tooltip="Comma-separated. Leave empty for all.", display=display.none)
-g4_dates = input.string(G4_DATES, "Cycle Dates (DD.MM.YY)", group=G4_NAME, tooltip="Rolling cycles: 25.12.25,01.01.26,05.01.26 → cycles 1-2, 2-3", display=display.none)
-g4_stats = input.string(G4_STATS, "Statistics (DD.MM.YY.U/D)", group=G4_NAME, tooltip="Up/Down arrows: 01.01.26.U,03.01.26.D", display=display.none)
+    // EUROUSD
+    g4_tickers = input.string(G4_TICKERS, "Tickers", group=G4_NAME, tooltip="Comma-separated. Leave empty for all.", display=display.none)
+    g4_dates = input.string(G4_DATES, "Cycle Dates (DD.MM.YY)", group=G4_NAME, tooltip="Rolling cycles: 25.12.25,01.01.26,05.01.26 → cycles 1-2, 2-3", display=display.none)
+    g4_stats = input.string(G4_STATS, "Statistics (DD.MM.YY.U/D)", group=G4_NAME, tooltip="Up/Down arrows: 01.01.26.U,03.01.26.D", display=display.none)
 
-// BITCOIN
-g5_tickers = input.string(G5_TICKERS, "Tickers", group=G5_NAME, tooltip="Comma-separated. Leave empty for all.", display=display.none)
-g5_dates = input.string(G5_DATES, "Cycle Dates (DD.MM.YY)", group=G5_NAME, tooltip="Rolling cycles: 25.12.25,01.01.26,05.01.26 → cycles 1-2, 2-3", display=display.none)
-g5_stats = input.string(G5_STATS, "Statistics (DD.MM.YY.U/D)", group=G5_NAME, tooltip="Up/Down arrows: 01.01.26.U,03.01.26.D", display=display.none)
+    // BITCOIN
+    g5_tickers = input.string(G5_TICKERS, "Tickers", group=G5_NAME, tooltip="Comma-separated. Leave empty for all.", display=display.none)
+    g5_dates = input.string(G5_DATES, "Cycle Dates (DD.MM.YY)", group=G5_NAME, tooltip="Rolling cycles: 25.12.25,01.01.26,05.01.26 → cycles 1-2, 2-3", display=display.none)
+    g5_stats = input.string(G5_STATS, "Statistics (DD.MM.YY.U/D)", group=G5_NAME, tooltip="Up/Down arrows: 01.01.26.U,03.01.26.D", display=display.none)
 
-// ============================================================================
-// STYLE SETTINGS
-// ============================================================================
+    // ============================================================================
+    // STYLE SETTINGS
+    // ============================================================================
 
-i_width = input.int(1, "Line Width", minval=1, maxval=4, group="Style", display=display.none)
-i_style = input.string("solid", "Line Style", options=["solid", "dotted", "dashed"], group="Style", display=display.none)
-i_color = input.color(color.new(color.gray, 30), "Cycle Dates Color", group="Style", display=display.none)
-i_hl_color = input.color(color.new(color.blue, 30), "High/Low Line Color", group="Style", display=display.none)
-i_magnet_color = input.color(color.new(color.purple, 30), "Magnet Lines Color", group="Style", display=display.none)
-i_gann_color = input.color(color.new(color.orange, 30), "Gann Fan Color", group="Style", display=display.none)
-i_target_color = input.color(color.new(color.lime, 30), "Target Lines Color", group="Style", display=display.none)
-i_low_target_color = input.color(color.new(color.red, 30), "Low Target Lines Color", group="Style", display=display.none)
-i_double_gann_color = input.color(color.new(color.green, 30), "Double Gann Box Color", group="Style", display=display.none)
+    i_width = input.int(1, "Line Width", minval=1, maxval=4, group="Style", display=display.none)
+    i_style = input.string("solid", "Line Style", options=["solid", "dotted", "dashed"], group="Style", display=display.none)
+    i_color = input.color(color.new(color.gray, 30), "Cycle Dates Color", group="Style", display=display.none)
+    i_hl_color = input.color(color.new(color.blue, 30), "High/Low Line Color", group="Style", display=display.none)
+    i_magnet_color = input.color(color.new(color.purple, 30), "Magnet Lines Color", group="Style", display=display.none)
+    i_gann_color = input.color(color.new(color.orange, 30), "Gann Fan Color", group="Style", display=display.none)
+    i_target_color = input.color(color.new(color.lime, 30), "Target Lines Color", group="Style", display=display.none)
+    i_low_target_color = input.color(color.new(color.red, 30), "Low Target Lines Color", group="Style", display=display.none)
+    i_double_gann_color = input.color(color.new(color.green, 30), "Double Gann Box Color", group="Style", display=display.none)
 
-// ============================================================================
-// HELPER FUNCTIONS
-// ============================================================================
+    // ============================================================================
+    // HELPER FUNCTIONS
+    // ============================================================================
 
-// Convert style string to constant
-get_line_style(style_str) =>
-    switch style_str
-        "solid" => line.style_solid
-        "dotted" => line.style_dotted
-        "dashed" => line.style_dashed
-        => line.style_dotted
+    // Convert style string to constant
+    get_line_style(style_str) =>
+        switch style_str
+            "solid" => line.style_solid
+            "dotted" => line.style_dotted
+            "dashed" => line.style_dashed
+            => line.style_dotted
 
-// Convert size string to constant
-get_label_size(size_str) =>
-    switch size_str
-        "tiny" => size.tiny
-        "small" => size.small
-        "normal" => size.normal
-        "large" => size.large
-        "huge" => size.huge
-        => size.huge
+    // Convert size string to constant
+    get_label_size(size_str) =>
+        switch size_str
+            "tiny" => size.tiny
+            "small" => size.small
+            "normal" => size.normal
+            "large" => size.large
+            "huge" => size.huge
+            => size.huge
 
-// Check if ticker is allowed
-is_ticker_allowed(ticker_list) =>
-    if ticker_list == ""
-        true
-    else
-        result = false
-        remaining = str.upper(str.replace_all(ticker_list, " ", ""))
-        current = str.upper(syminfo.ticker)
-        for i = 0 to 9
-            pos = str.pos(remaining, ",")
-            if pos >= 0
-                t = str.substring(remaining, 0, pos)
-                if str.contains(current, t)
-                    result := true
+    // Check if ticker is allowed
+    is_ticker_allowed(ticker_list) =>
+        if ticker_list == ""
+            true
+        else
+            result = false
+            remaining = str.upper(str.replace_all(ticker_list, " ", ""))
+            current = str.upper(syminfo.ticker)
+            for i = 0 to 9
+                pos = str.pos(remaining, ",")
+                if pos >= 0
+                    t = str.substring(remaining, 0, pos)
+                    if str.contains(current, t)
+                        result := true
+                        break
+                    remaining := str.substring(remaining, pos + 1)
+                else
+                    if str.length(remaining) > 0 and str.contains(current, remaining)
+                        result := true
                     break
-                remaining := str.substring(remaining, pos + 1)
-            else
-                if str.length(remaining) > 0 and str.contains(current, remaining)
-                    result := true
-                break
+            result
+
+    // Parse single date to timestamp
+    parse_date(date_str, utc_offset, hr) =>
+        result = int(na)
+        clean = str.replace_all(date_str, " ", "")
+        if str.length(clean) >= 8
+            d = int(str.tonumber(str.substring(clean, 0, 2)))
+            m = int(str.tonumber(str.substring(clean, 3, 5)))
+            y = 2000 + int(str.tonumber(str.substring(clean, 6, 8)))
+            // Calculate timestamp in UTC, then adjust for UTC offset
+            utc_ts = timestamp("UTC", y, m, d, hr, 0, 0)
+            result := utc_ts - utc_offset * 60 * 60 * 1000  // Subtract offset to convert local to UTC
         result
 
-// Parse single date to timestamp
-parse_date(date_str, utc_offset, hr) =>
-    result = int(na)
-    clean = str.replace_all(date_str, " ", "")
-    if str.length(clean) >= 8
-        d = int(str.tonumber(str.substring(clean, 0, 2)))
-        m = int(str.tonumber(str.substring(clean, 3, 5)))
-        y = 2000 + int(str.tonumber(str.substring(clean, 6, 8)))
-        // Calculate timestamp in UTC, then adjust for UTC offset
-        utc_ts = timestamp("UTC", y, m, d, hr, 0, 0)
-        result := utc_ts - utc_offset * 60 * 60 * 1000  // Subtract offset to convert local to UTC
-    result
+    // ============================================================================
+    // CYCLE METHODS
+    // ============================================================================
 
-// ============================================================================
-// CYCLE METHODS
-// ============================================================================
+    // Minimum cycle duration (26 hours in milliseconds)
+    var int MIN_CYCLE_MS = 26 * 60 * 60 * 1000
 
-// Minimum cycle duration (26 hours in milliseconds)
-var int MIN_CYCLE_MS = 26 * 60 * 60 * 1000
+    // Create Cycle with calculated high/low
+    method create(Cycle c, int id, int ts_start, int ts_end) =>
+        c.id := id
+        c.tsStart := ts_start
+        c.tsEnd := ts_end
+        c.high := na
+        c.low := na
+        c.mag_25 := na
+        c.mag_50 := na
+        c.mag_75 := na
+        c.high_target := na
+        c.low_target := na
+        // Mark as double cycle if duration < 26 hours
+        c.is_double := (ts_end - ts_start) < MIN_CYCLE_MS
+        c
 
-// Create Cycle with calculated high/low
-method create(Cycle c, int id, int ts_start, int ts_end) =>
-    c.id := id
-    c.tsStart := ts_start
-    c.tsEnd := ts_end
-    c.high := na
-    c.low := na
-    c.mag_25 := na
-    c.mag_50 := na
-    c.mag_75 := na
-    c.high_target := na
-    c.low_target := na
-    // Mark as double cycle if duration < 26 hours
-    c.is_double := (ts_end - ts_start) < MIN_CYCLE_MS
-    c
+    // Calculate high/low and magnet levels for a cycle by scanning bars (runs once per cycle)
+    method calculate_high_low(Cycle c) =>
+        if c.calculated
+            // Already computed — skip the expensive bar scan
+            true
+        else
+            c.calculated := true
+            max_lookback = math.min(500, bar_index)
+            int first_bar_ts = na
+            int last_bar_ts = na
+            for i = 0 to max_lookback
+                bar_ts = time[i]
+                if bar_ts >= c.tsStart and bar_ts <= c.tsEnd
+                    if na(c.high) or high[i] > c.high
+                        c.high := high[i]
+                    if na(c.low) or low[i] < c.low
+                        c.low := low[i]
+                    // Track first and last candle + cache bar indices for target lines
+                    if na(first_bar_ts) or bar_ts < first_bar_ts
+                        first_bar_ts := bar_ts
+                        c.first_close := close[i]
+                        c.bar_start := bar_index - i
+                    if na(last_bar_ts) or bar_ts > last_bar_ts
+                        last_bar_ts := bar_ts
+                        c.last_close := close[i]
+                if bar_ts < c.tsStart
+                    break
+            // Cache bar_end: first bar at or after tsEnd
+            for i = 0 to max_lookback
+                if time[i] >= c.tsEnd
+                    c.bar_end := bar_index - i
+                if time[i] < c.tsEnd
+                    break
+            // Calculate magnet levels and targets
+            if not na(c.high) and not na(c.low)
+                range_size = c.high - c.low
+                c.mag_25 := c.low + range_size * 0.25
+                c.mag_50 := c.low + range_size * 0.5
+                c.mag_75 := c.low + range_size * 0.75
+                c.high_target := c.high
+                c.low_target := c.low
+            true
 
-// Calculate high/low and magnet levels for a cycle by scanning bars (runs once per cycle)
-method calculate_high_low(Cycle c) =>
-    if c.calculated
-        // Already computed — skip the expensive bar scan
-        true
-    else
-        c.calculated := true
-        max_lookback = math.min(500, bar_index)
-        int first_bar_ts = na
-        int last_bar_ts = na
-        for i = 0 to max_lookback
-            bar_ts = time[i]
-            if bar_ts >= c.tsStart and bar_ts <= c.tsEnd
-                if na(c.high) or high[i] > c.high
-                    c.high := high[i]
-                if na(c.low) or low[i] < c.low
-                    c.low := low[i]
-                // Track first and last candle + cache bar indices for target lines
-                if na(first_bar_ts) or bar_ts < first_bar_ts
-                    first_bar_ts := bar_ts
-                    c.first_close := close[i]
-                    c.bar_start := bar_index - i
-                if na(last_bar_ts) or bar_ts > last_bar_ts
-                    last_bar_ts := bar_ts
-                    c.last_close := close[i]
-            if bar_ts < c.tsStart
-                break
-        // Cache bar_end: first bar at or after tsEnd
-        for i = 0 to max_lookback
-            if time[i] >= c.tsEnd
-                c.bar_end := bar_index - i
-            if time[i] < c.tsEnd
-                break
-        // Calculate magnet levels and targets
-        if not na(c.high) and not na(c.low)
-            range_size = c.high - c.low
-            c.mag_25 := c.low + range_size * 0.25
-            c.mag_50 := c.low + range_size * 0.5
-            c.mag_75 := c.low + range_size * 0.75
-            c.high_target := c.high
-            c.low_target := c.low
-        true
+    // Draw vertical line at timestamp
+    draw_vertical(ts, col, w, style) =>
+        line.new(ts, low, ts, high, xloc=xloc.bar_time, extend=extend.both, color=col, width=w, style=style)
 
-// Draw vertical line at timestamp
-draw_vertical(ts, col, w, style) =>
-    line.new(ts, low, ts, high, xloc=xloc.bar_time, extend=extend.both, color=col, width=w, style=style)
+    // Draw cycle's horizontal lines
+    method draw_horizontals(Cycle c, col, w, style) =>
+        if not na(c.high)
+            line.new(c.tsStart, c.high, c.tsEnd, c.high, xloc=xloc.bar_time, color=col, width=w, style=style)
+        if not na(c.low)
+            line.new(c.tsStart, c.low, c.tsEnd, c.low, xloc=xloc.bar_time, color=col, width=w, style=style)
 
-// Draw cycle's horizontal lines
-method draw_horizontals(Cycle c, col, w, style) =>
-    if not na(c.high)
-        line.new(c.tsStart, c.high, c.tsEnd, c.high, xloc=xloc.bar_time, color=col, width=w, style=style)
-    if not na(c.low)
-        line.new(c.tsStart, c.low, c.tsEnd, c.low, xloc=xloc.bar_time, color=col, width=w, style=style)
+    // Draw magnet lines on own date range (Gann box levels at 0.25, 0.5, 0.75)
+    method draw_magnet_lines(Cycle c, col, w, style) =>
+        if not na(c.mag_25)
+            line.new(c.tsStart, c.mag_25, c.tsEnd, c.mag_25, xloc=xloc.bar_time, color=col, width=w, style=style)
+        if not na(c.mag_50)
+            line.new(c.tsStart, c.mag_50, c.tsEnd, c.mag_50, xloc=xloc.bar_time, color=col, width=w, style=style)
+        if not na(c.mag_75)
+            line.new(c.tsStart, c.mag_75, c.tsEnd, c.mag_75, xloc=xloc.bar_time, color=col, width=w, style=style)
 
-// Draw magnet lines on own date range (Gann box levels at 0.25, 0.5, 0.75)
-method draw_magnet_lines(Cycle c, col, w, style) =>
-    if not na(c.mag_25)
-        line.new(c.tsStart, c.mag_25, c.tsEnd, c.mag_25, xloc=xloc.bar_time, color=col, width=w, style=style)
-    if not na(c.mag_50)
-        line.new(c.tsStart, c.mag_50, c.tsEnd, c.mag_50, xloc=xloc.bar_time, color=col, width=w, style=style)
-    if not na(c.mag_75)
-        line.new(c.tsStart, c.mag_75, c.tsEnd, c.mag_75, xloc=xloc.bar_time, color=col, width=w, style=style)
+    // Draw magnet lines projected onto next cycle's date range
+    method draw_magnet_on_next(Cycle c, int next_ts_start, int next_ts_end, col, w, style) =>
+        if not na(c.mag_25)
+            line.new(next_ts_start, c.mag_25, next_ts_end, c.mag_25, xloc=xloc.bar_time, color=col, width=w, style=style)
+        if not na(c.mag_50)
+            line.new(next_ts_start, c.mag_50, next_ts_end, c.mag_50, xloc=xloc.bar_time, color=col, width=w, style=style)
+        if not na(c.mag_75)
+            line.new(next_ts_start, c.mag_75, next_ts_end, c.mag_75, xloc=xloc.bar_time, color=col, width=w, style=style)
 
-// Draw magnet lines projected onto next cycle's date range
-method draw_magnet_on_next(Cycle c, int next_ts_start, int next_ts_end, col, w, style) =>
-    if not na(c.mag_25)
-        line.new(next_ts_start, c.mag_25, next_ts_end, c.mag_25, xloc=xloc.bar_time, color=col, width=w, style=style)
-    if not na(c.mag_50)
-        line.new(next_ts_start, c.mag_50, next_ts_end, c.mag_50, xloc=xloc.bar_time, color=col, width=w, style=style)
-    if not na(c.mag_75)
-        line.new(next_ts_start, c.mag_75, next_ts_end, c.mag_75, xloc=xloc.bar_time, color=col, width=w, style=style)
+    // ============================================================================
+    // PRICE TARGET CALCULATION - HIGH TARGET (Going UP)
+    // ============================================================================
+    // The price target uses a 2:1 time projection with the diagonal crossing
+    // the 50% retracement level at the cycle end.
+    //
+    // Geometry:
+    //   - Start point: (bar_start, low) - bottom-left corner of the cycle
+    //   - Midpoint: (bar_end, mag_50) - 50% level at cycle end
+    //   - End point: (bar_target, high) - where diagonal meets high level
+    //
+    // Time calculation:
+    //   - bars_in_cycle = bar_end - bar_start (number of bars in cycle)
+    //   - bar_target = bar_end + bars_in_cycle (2x cycle duration from start)
+    //
+    // The diagonal line maintains constant slope:
+    //   slope = (mag_50 - low) / bars_in_cycle = (high - low) / (2 * bars_in_cycle)
+    //
+    // Since mag_50 = (high + low) / 2, the line naturally passes through:
+    //   - low at bar_start
+    //   - mag_50 at bar_end
+    //   - high at bar_target
+    //
+    // Visual elements:
+    //   - Solid diagonal line from (bar_start, low) to (bar_target, high)
+    //   - Dashed horizontal line at high level from bar_start to bar_target
+    //   - Circle marker at the target point (bar_target, high)
+    // ============================================================================
+    method draw_target_line(Cycle c, col, w, bool show_lines, bool show_circle) =>
+        if not na(c.high) and not na(c.low) and not na(c.mag_50) and not na(c.bar_start) and not na(c.bar_end)
+            // Use cached bar indices from calculate_high_low (no bar scan needed)
+            int bars_in_cycle = c.bar_end - c.bar_start
+            int bar_target = c.bar_end + bars_in_cycle
+            if bars_in_cycle > 0 and bar_target <= bar_index + 500
+                if show_lines
+                    line.new(c.bar_start, c.low, bar_target, c.high, xloc=xloc.bar_index, color=col, width=w, style=line.style_solid)
+                    line.new(c.bar_start, c.high, bar_target, c.high, xloc=xloc.bar_index, color=col, width=w, style=line.style_dashed)
+                if show_circle
+                    label.new(bar_target, c.high, "⬤", xloc=xloc.bar_index, color=color.new(color.white, 100), textcolor=col, style=label.style_label_center, size=size.huge)
 
-// ============================================================================
-// PRICE TARGET CALCULATION - HIGH TARGET (Going UP)
-// ============================================================================
-// The price target uses a 2:1 time projection with the diagonal crossing
-// the 50% retracement level at the cycle end.
-//
-// Geometry:
-//   - Start point: (bar_start, low) - bottom-left corner of the cycle
-//   - Midpoint: (bar_end, mag_50) - 50% level at cycle end
-//   - End point: (bar_target, high) - where diagonal meets high level
-//
-// Time calculation:
-//   - bars_in_cycle = bar_end - bar_start (number of bars in cycle)
-//   - bar_target = bar_end + bars_in_cycle (2x cycle duration from start)
-//
-// The diagonal line maintains constant slope:
-//   slope = (mag_50 - low) / bars_in_cycle = (high - low) / (2 * bars_in_cycle)
-//
-// Since mag_50 = (high + low) / 2, the line naturally passes through:
-//   - low at bar_start
-//   - mag_50 at bar_end
-//   - high at bar_target
-//
-// Visual elements:
-//   - Solid diagonal line from (bar_start, low) to (bar_target, high)
-//   - Dashed horizontal line at high level from bar_start to bar_target
-//   - Circle marker at the target point (bar_target, high)
-// ============================================================================
-method draw_target_line(Cycle c, col, w, bool show_lines, bool show_circle) =>
-    if not na(c.high) and not na(c.low) and not na(c.mag_50) and not na(c.bar_start) and not na(c.bar_end)
-        // Use cached bar indices from calculate_high_low (no bar scan needed)
-        int bars_in_cycle = c.bar_end - c.bar_start
-        int bar_target = c.bar_end + bars_in_cycle
-        if bars_in_cycle > 0 and bar_target <= bar_index + 500
-            if show_lines
-                line.new(c.bar_start, c.low, bar_target, c.high, xloc=xloc.bar_index, color=col, width=w, style=line.style_solid)
-                line.new(c.bar_start, c.high, bar_target, c.high, xloc=xloc.bar_index, color=col, width=w, style=line.style_dashed)
-            if show_circle
-                label.new(bar_target, c.high, "⬤", xloc=xloc.bar_index, color=color.new(color.white, 100), textcolor=col, style=label.style_label_center, size=size.huge)
+    // ============================================================================
+    // PRICE TARGET CALCULATION - LOW TARGET (Going DOWN)
+    // ============================================================================
+    // Mirror of high target - diagonal goes from high down to low.
+    //
+    // Geometry:
+    //   - Start point: (bar_start, high) - top-left corner of the cycle
+    //   - Midpoint: (bar_end, mag_50) - 50% level at cycle end
+    //   - End point: (bar_target, low) - where diagonal meets low level
+    //
+    // Time calculation:
+    //   - bars_in_cycle = bar_end - bar_start (number of bars in cycle)
+    //   - bar_target = bar_end + bars_in_cycle (2x cycle duration from start)
+    //
+    // The diagonal line maintains constant slope (negative):
+    //   slope = (mag_50 - high) / bars_in_cycle = -(high - low) / (2 * bars_in_cycle)
+    //
+    // Since mag_50 = (high + low) / 2, the line naturally passes through:
+    //   - high at bar_start
+    //   - mag_50 at bar_end
+    //   - low at bar_target
+    //
+    // Visual elements:
+    //   - Solid diagonal line from (bar_start, high) to (bar_target, low)
+    //   - Dashed horizontal line at low level from bar_start to bar_target
+    //   - Circle marker at the target point (bar_target, low)
+    // ============================================================================
+    method draw_low_target_line(Cycle c, col, w, bool show_lines, bool show_circle) =>
+        if not na(c.high) and not na(c.low) and not na(c.mag_50) and not na(c.bar_start) and not na(c.bar_end)
+            // Use cached bar indices from calculate_high_low (no bar scan needed)
+            int bars_in_cycle = c.bar_end - c.bar_start
+            int bar_target = c.bar_end + bars_in_cycle
+            if bars_in_cycle > 0 and bar_target <= bar_index + 500
+                if show_lines
+                    line.new(c.bar_start, c.high, bar_target, c.low, xloc=xloc.bar_index, color=col, width=w, style=line.style_solid)
+                    line.new(c.bar_start, c.low, bar_target, c.low, xloc=xloc.bar_index, color=col, width=w, style=line.style_dashed)
+                if show_circle
+                    label.new(bar_target, c.low, "⬤", xloc=xloc.bar_index, color=color.new(color.white, 100), textcolor=col, style=label.style_label_center, size=size.huge)
 
-// ============================================================================
-// PRICE TARGET CALCULATION - LOW TARGET (Going DOWN)
-// ============================================================================
-// Mirror of high target - diagonal goes from high down to low.
-//
-// Geometry:
-//   - Start point: (bar_start, high) - top-left corner of the cycle
-//   - Midpoint: (bar_end, mag_50) - 50% level at cycle end
-//   - End point: (bar_target, low) - where diagonal meets low level
-//
-// Time calculation:
-//   - bars_in_cycle = bar_end - bar_start (number of bars in cycle)
-//   - bar_target = bar_end + bars_in_cycle (2x cycle duration from start)
-//
-// The diagonal line maintains constant slope (negative):
-//   slope = (mag_50 - high) / bars_in_cycle = -(high - low) / (2 * bars_in_cycle)
-//
-// Since mag_50 = (high + low) / 2, the line naturally passes through:
-//   - high at bar_start
-//   - mag_50 at bar_end
-//   - low at bar_target
-//
-// Visual elements:
-//   - Solid diagonal line from (bar_start, high) to (bar_target, low)
-//   - Dashed horizontal line at low level from bar_start to bar_target
-//   - Circle marker at the target point (bar_target, low)
-// ============================================================================
-method draw_low_target_line(Cycle c, col, w, bool show_lines, bool show_circle) =>
-    if not na(c.high) and not na(c.low) and not na(c.mag_50) and not na(c.bar_start) and not na(c.bar_end)
-        // Use cached bar indices from calculate_high_low (no bar scan needed)
-        int bars_in_cycle = c.bar_end - c.bar_start
-        int bar_target = c.bar_end + bars_in_cycle
-        if bars_in_cycle > 0 and bar_target <= bar_index + 500
-            if show_lines
-                line.new(c.bar_start, c.high, bar_target, c.low, xloc=xloc.bar_index, color=col, width=w, style=line.style_solid)
-                line.new(c.bar_start, c.low, bar_target, c.low, xloc=xloc.bar_index, color=col, width=w, style=line.style_dashed)
-            if show_circle
-                label.new(bar_target, c.low, "⬤", xloc=xloc.bar_index, color=color.new(color.white, 100), textcolor=col, style=label.style_label_center, size=size.huge)
+    // ============================================================================
+    // GANN FAN - Reusable method for drawing Gann fan lines
+    // ============================================================================
+    // Parameters:
+    //   ts_origin  - Timestamp of the origin point (start of fan)
+    //   price_origin - Price at origin (typically low for upward fan)
+    //   ts_ref     - Timestamp of reference point (defines 1:1 slope)
+    //   price_ref  - Price at reference point (typically high for upward fan)
+    //   w          - Line width
+    //
+    // The 1:1 line goes from (ts_origin, price_origin) to (ts_ref, price_ref)
+    // Other lines use the same origin but different slopes (multipliers of 1:1)
+    //
+    // Lines drawn (9 total):
+    //   Flatter: 1:8, 1:4, 1:3, 1:2
+    //   Reference: 1:1
+    //   Steeper: 2:1, 3:1, 4:1, 8:1
+    // ============================================================================
+    draw_gann_fan(int ts_origin, float price_origin, int ts_ref, float price_ref, int w) =>
+        price_diff = price_ref - price_origin
 
-// ============================================================================
-// GANN FAN - Reusable method for drawing Gann fan lines
-// ============================================================================
-// Parameters:
-//   ts_origin  - Timestamp of the origin point (start of fan)
-//   price_origin - Price at origin (typically low for upward fan)
-//   ts_ref     - Timestamp of reference point (defines 1:1 slope)
-//   price_ref  - Price at reference point (typically high for upward fan)
-//   w          - Line width
-//
-// The 1:1 line goes from (ts_origin, price_origin) to (ts_ref, price_ref)
-// Other lines use the same origin but different slopes (multipliers of 1:1)
-//
-// Lines drawn (9 total):
-//   Flatter: 1:8, 1:4, 1:3, 1:2
-//   Reference: 1:1
-//   Steeper: 2:1, 3:1, 4:1, 8:1
-// ============================================================================
-draw_gann_fan(int ts_origin, float price_origin, int ts_ref, float price_ref, int w) =>
-    price_diff = price_ref - price_origin
+        // Flatter lines (price moves slower)
+        line.new(ts_origin, price_origin, ts_ref, price_origin + 0.125 * price_diff, xloc=xloc.bar_time, color=#00C853, width=w, style=line.style_solid, extend=extend.right)  // 1:8 green
+        line.new(ts_origin, price_origin, ts_ref, price_origin + 0.25 * price_diff, xloc=xloc.bar_time, color=#2962FF, width=w, style=line.style_solid, extend=extend.right)   // 1:4 blue
+        line.new(ts_origin, price_origin, ts_ref, price_origin + 0.333 * price_diff, xloc=xloc.bar_time, color=#7C4DFF, width=w, style=line.style_solid, extend=extend.right)  // 1:3 purple
+        line.new(ts_origin, price_origin, ts_ref, price_origin + 0.5 * price_diff, xloc=xloc.bar_time, color=#00BFA5, width=w, style=line.style_solid, extend=extend.right)    // 1:2 teal
 
-    // Flatter lines (price moves slower)
-    line.new(ts_origin, price_origin, ts_ref, price_origin + 0.125 * price_diff, xloc=xloc.bar_time, color=#00C853, width=w, style=line.style_solid, extend=extend.right)  // 1:8 green
-    line.new(ts_origin, price_origin, ts_ref, price_origin + 0.25 * price_diff, xloc=xloc.bar_time, color=#2962FF, width=w, style=line.style_solid, extend=extend.right)   // 1:4 blue
-    line.new(ts_origin, price_origin, ts_ref, price_origin + 0.333 * price_diff, xloc=xloc.bar_time, color=#7C4DFF, width=w, style=line.style_solid, extend=extend.right)  // 1:3 purple
-    line.new(ts_origin, price_origin, ts_ref, price_origin + 0.5 * price_diff, xloc=xloc.bar_time, color=#00BFA5, width=w, style=line.style_solid, extend=extend.right)    // 1:2 teal
+        // 1:1 line - reference slope
+        line.new(ts_origin, price_origin, ts_ref, price_ref, xloc=xloc.bar_time, color=#2196F3, width=w, style=line.style_solid, extend=extend.right)  // 1:1 blue
 
-    // 1:1 line - reference slope
-    line.new(ts_origin, price_origin, ts_ref, price_ref, xloc=xloc.bar_time, color=#2196F3, width=w, style=line.style_solid, extend=extend.right)  // 1:1 blue
+        // Steeper lines (price moves faster)
+        line.new(ts_origin, price_origin, ts_ref, price_origin + 2 * price_diff, xloc=xloc.bar_time, color=#7E57C2, width=w, style=line.style_solid, extend=extend.right)  // 2:1 purple
+        line.new(ts_origin, price_origin, ts_ref, price_origin + 3 * price_diff, xloc=xloc.bar_time, color=#E91E63, width=w, style=line.style_solid, extend=extend.right)  // 3:1 pink
+        line.new(ts_origin, price_origin, ts_ref, price_origin + 4 * price_diff, xloc=xloc.bar_time, color=#FF5252, width=w, style=line.style_solid, extend=extend.right)  // 4:1 red-orange
+        line.new(ts_origin, price_origin, ts_ref, price_origin + 8 * price_diff, xloc=xloc.bar_time, color=#F50057, width=w, style=line.style_solid, extend=extend.right)  // 8:1 red-pink
 
-    // Steeper lines (price moves faster)
-    line.new(ts_origin, price_origin, ts_ref, price_origin + 2 * price_diff, xloc=xloc.bar_time, color=#7E57C2, width=w, style=line.style_solid, extend=extend.right)  // 2:1 purple
-    line.new(ts_origin, price_origin, ts_ref, price_origin + 3 * price_diff, xloc=xloc.bar_time, color=#E91E63, width=w, style=line.style_solid, extend=extend.right)  // 3:1 pink
-    line.new(ts_origin, price_origin, ts_ref, price_origin + 4 * price_diff, xloc=xloc.bar_time, color=#FF5252, width=w, style=line.style_solid, extend=extend.right)  // 4:1 red-orange
-    line.new(ts_origin, price_origin, ts_ref, price_origin + 8 * price_diff, xloc=xloc.bar_time, color=#F50057, width=w, style=line.style_solid, extend=extend.right)  // 8:1 red-pink
+    // ============================================================================
+    // GROUP METHODS
+    // ============================================================================
 
-// ============================================================================
-// GROUP METHODS
-// ============================================================================
+    // Parse dates and create rolling cycles
+    method init_cycles(VLineGroup g, int utc_offset, int hr) =>
+        g.cycles := array.new<Cycle>()
 
-// Parse dates and create rolling cycles
-method init_cycles(VLineGroup g, int utc_offset, int hr) =>
-    g.cycles := array.new<Cycle>()
-
-    if g.dates != ""
-        // Parse all timestamps first
-        timestamps = array.new_int()
-        remaining = g.dates
-        for i = 0 to 11
-            pos = str.pos(remaining, ",")
-            if pos >= 0
-                ts = parse_date(str.substring(remaining, 0, pos), utc_offset, hr)
-                if not na(ts)
-                    array.push(timestamps, ts)
-                remaining := str.substring(remaining, pos + 1)
-            else
-                if str.length(remaining) > 0
-                    ts = parse_date(remaining, utc_offset, hr)
+        if g.dates != ""
+            // Parse all timestamps first
+            timestamps = array.new_int()
+            remaining = g.dates
+            for i = 0 to 11
+                pos = str.pos(remaining, ",")
+                if pos >= 0
+                    ts = parse_date(str.substring(remaining, 0, pos), utc_offset, hr)
                     if not na(ts)
                         array.push(timestamps, ts)
-                break
-
-        // Create rolling cycles (1-2, 2-3, 3-4, ...) - is_cancel set automatically for short cycles
-        size = array.size(timestamps)
-        if size >= 2
-            for i = 0 to size - 2
-                cycle = Cycle.new()
-                cycle.create(i + 1, array.get(timestamps, i), array.get(timestamps, i + 1))
-                array.push(g.cycles, cycle)
-
-// Pre-compute all cycles in one pass (avoids redundant bar scans from multiple draw methods)
-method precompute_cycles(VLineGroup g) =>
-    for cycle in g.cycles
-        cycle.calculate_high_low()
-
-// Draw all vertical lines for group (all cycles including double)
-method draw_verticals(VLineGroup g, col, w, style) =>
-    if array.size(g.cycles) > 0
-        // Collect unique timestamps - draw for all cycles
-        drawn = array.new_int()
-        for cycle in g.cycles
-            if not array.includes(drawn, cycle.tsStart)
-                draw_vertical(cycle.tsStart, col, w, style)
-                array.push(drawn, cycle.tsStart)
-            if not array.includes(drawn, cycle.tsEnd)
-                draw_vertical(cycle.tsEnd, col, w, style)
-                array.push(drawn, cycle.tsEnd)
-
-// Draw "Double Cycle" label for double cycles (text only, no lines)
-method draw_double_cycle_labels(VLineGroup g, col) =>
-    for cycle in g.cycles
-        if cycle.is_double
-            // Calculate middle timestamp for label
-            mid_ts = cycle.tsStart + (cycle.tsEnd - cycle.tsStart) / 2
-            // Get price level for label
-            cycle.calculate_high_low()
-            if not na(cycle.high) and not na(cycle.low)
-                mid_price = (cycle.high + cycle.low) / 2
-                label.new(mid_ts, mid_price, "Double Cycle", xloc=xloc.bar_time, color=color.new(color.white, 100), textcolor=col, style=label.style_label_center, size=size.small)
-
-// Calculate and draw horizontal lines — only 1 previous completed non-double cycle
-method draw_all_horizontals(VLineGroup g, col, w, style) =>
-    size = array.size(g.cycles)
-    if size > 0
-        int drawn = 0
-        for i = size - 1 to 0
-            if drawn >= 1
-                break
-            cycle = array.get(g.cycles, i)
-            if not cycle.is_double and time >= cycle.tsEnd
-                cycle.calculate_high_low()
-                cycle.draw_horizontals(col, w, style)
-                drawn += 1
-
-// Draw Gann fan from first complete non-double cycle of current month (or previous month if current is incomplete)
-method draw_gann_first_cycle(VLineGroup g, w) =>
-    size = array.size(g.cycles)
-    if size >= 1
-        // Get current month and year
-        current_month = month(time)
-        current_year = year(time)
-        prev_month = current_month == 1 ? 12 : current_month - 1
-        prev_year = current_month == 1 ? current_year - 1 : current_year
-
-        // Find first valid (non-double) cycle of current month
-        Cycle current_month_first = na
-        Cycle prev_month_first = na
-
-        for cycle in g.cycles
-            if not cycle.is_double
-                cycle_month = month(cycle.tsStart)
-                cycle_year = year(cycle.tsStart)
-                // Check current month
-                if cycle_month == current_month and cycle_year == current_year
-                    if na(current_month_first)
-                        current_month_first := cycle
-                // Check previous month
-                if cycle_month == prev_month and cycle_year == prev_year
-                    if na(prev_month_first)
-                        prev_month_first := cycle
-
-        // Determine which cycle to use for Gann fan
-        Cycle target_cycle = na
-        if not na(current_month_first) and time >= current_month_first.tsEnd
-            target_cycle := current_month_first
-        else if not na(prev_month_first) and time >= prev_month_first.tsEnd
-            target_cycle := prev_month_first
-
-        // Draw Gann fan if we found a valid complete cycle
-        if not na(target_cycle)
-            target_cycle.calculate_high_low()
-            if not na(target_cycle.low) and not na(target_cycle.high)
-                draw_gann_fan(target_cycle.tsStart, target_cycle.low, target_cycle.tsEnd, target_cycle.high, w)
-
-// Calculate and draw target lines and circles (only complete, non-double cycles)
-// show_lines: checkbox - if true, draw both high and low target lines
-// circle_mode: "none" = no circles, "trend" = opposite based on cycle trend, "both" = both circles
-method draw_all_targets(VLineGroup g, high_col, low_col, w, bool show_lines, string circle_mode) =>
-    size = array.size(g.cycles)
-    if size > 0
-        // Only draw targets for last 3 completed non-double cycles
-        int drawn_count = 0
-        for i = size - 1 to 0
-            if drawn_count >= 3
-                break
-            cycle = array.get(g.cycles, i)
-            if not cycle.is_double and time >= cycle.tsEnd
-                cycle.calculate_high_low()
-                drawn_count += 1
-                // Determine which circles to show based on circle_mode
-                bool show_high_circle = false
-                bool show_low_circle = false
-                if circle_mode == "both"
-                    show_high_circle := true
-                    show_low_circle := true
-                else if circle_mode == "trend"
-                    // Determine trend and show OPPOSITE circle (reversal expectation)
-                    if not na(cycle.first_close) and not na(cycle.last_close)
-                        if cycle.first_close < cycle.last_close
-                            // Uptrend - expect reversal down - show LOW circle
-                            show_low_circle := true
-                        else
-                            // Downtrend - expect reversal up - show HIGH circle
-                            show_high_circle := true
-                // Draw targets - lines always both if enabled, circles based on mode
-                cycle.draw_target_line(high_col, w, show_lines, show_high_circle)
-                cycle.draw_low_target_line(low_col, w, show_lines, show_low_circle)
-
-// Calculate and draw magnet lines - each cycle's magnets drawn on next cycle's dates (only complete, non-double cycles)
-// If next cycle is double, extend magnet lines to include it and continue until non-double cycle
-method draw_all_magnet_lines(VLineGroup g, col, w, style) =>
-    size = array.size(g.cycles)
-    if size > 0
-        // Calculate all cycles (needed for magnet values)
-        for cycle in g.cycles
-            if not cycle.is_double and time >= cycle.tsEnd
-                cycle.calculate_high_low()
-        // Only draw magnets for last 2 completed source cycles (current + previous)
-        if size >= 2
-            int drawn = 0
-            for i = size - 2 to 0
-                if drawn >= 2
+                    remaining := str.substring(remaining, pos + 1)
+                else
+                    if str.length(remaining) > 0
+                        ts = parse_date(remaining, utc_offset, hr)
+                        if not na(ts)
+                            array.push(timestamps, ts)
                     break
-                current_cycle = array.get(g.cycles, i)
-                if not current_cycle.is_double and time >= current_cycle.tsEnd
-                    next_cycle = array.get(g.cycles, i + 1)
-                    start_ts = next_cycle.tsStart
-                    end_ts = next_cycle.tsEnd
-                    // If next cycle is double, extend through consecutive double cycles
-                    if next_cycle.is_double and i + 2 <= size - 1
-                        for j = i + 2 to size - 1
-                            check_cycle = array.get(g.cycles, j)
-                            end_ts := check_cycle.tsEnd
-                            if not check_cycle.is_double
-                                break
-                    current_cycle.draw_magnet_on_next(start_ts, end_ts, col, w, style)
+
+            // Create rolling cycles (1-2, 2-3, 3-4, ...) - is_cancel set automatically for short cycles
+            size = array.size(timestamps)
+            if size >= 2
+                for i = 0 to size - 2
+                    cycle = Cycle.new()
+                    cycle.create(i + 1, array.get(timestamps, i), array.get(timestamps, i + 1))
+                    array.push(g.cycles, cycle)
+
+    // Pre-compute all cycles in one pass (avoids redundant bar scans from multiple draw methods)
+    method precompute_cycles(VLineGroup g) =>
+        for cycle in g.cycles
+            cycle.calculate_high_low()
+
+    // Draw all vertical lines for group (all cycles including double)
+    method draw_verticals(VLineGroup g, col, w, style) =>
+        if array.size(g.cycles) > 0
+            // Collect unique timestamps - draw for all cycles
+            drawn = array.new_int()
+            for cycle in g.cycles
+                if not array.includes(drawn, cycle.tsStart)
+                    draw_vertical(cycle.tsStart, col, w, style)
+                    array.push(drawn, cycle.tsStart)
+                if not array.includes(drawn, cycle.tsEnd)
+                    draw_vertical(cycle.tsEnd, col, w, style)
+                    array.push(drawn, cycle.tsEnd)
+
+    // Draw "Double Cycle" label for double cycles (text only, no lines)
+    method draw_double_cycle_labels(VLineGroup g, col) =>
+        for cycle in g.cycles
+            if cycle.is_double
+                // Calculate middle timestamp for label
+                mid_ts = cycle.tsStart + (cycle.tsEnd - cycle.tsStart) / 2
+                // Get price level for label
+                cycle.calculate_high_low()
+                if not na(cycle.high) and not na(cycle.low)
+                    mid_price = (cycle.high + cycle.low) / 2
+                    label.new(mid_ts, mid_price, "Double Cycle", xloc=xloc.bar_time, color=color.new(color.white, 100), textcolor=col, style=label.style_label_center, size=size.small)
+
+    // Calculate and draw horizontal lines — only 1 previous completed non-double cycle
+    method draw_all_horizontals(VLineGroup g, col, w, style) =>
+        size = array.size(g.cycles)
+        if size > 0
+            int drawn = 0
+            for i = size - 1 to 0
+                if drawn >= 1
+                    break
+                cycle = array.get(g.cycles, i)
+                if not cycle.is_double and time >= cycle.tsEnd
+                    cycle.calculate_high_low()
+                    cycle.draw_horizontals(col, w, style)
                     drawn += 1
-        // Draw last cycle's magnet lines extending 7 days after last vertical
+
+    // Draw Gann fan from first complete non-double cycle of current month (or previous month if current is incomplete)
+    method draw_gann_first_cycle(VLineGroup g, w) =>
+        size = array.size(g.cycles)
         if size >= 1
-            last_cycle = array.get(g.cycles, size - 1)
-            if not last_cycle.is_double and time >= last_cycle.tsEnd and not na(last_cycle.mag_50)
-                seven_days_ms = 7 * 24 * 60 * 60 * 1000
-                future_end = last_cycle.tsEnd + seven_days_ms
-                last_cycle.draw_magnet_on_next(last_cycle.tsEnd, future_end, col, w, style)
+            // Get current month and year
+            current_month = month(time)
+            current_year = year(time)
+            prev_month = current_month == 1 ? 12 : current_month - 1
+            prev_year = current_month == 1 ? current_year - 1 : current_year
 
-// Draw double gann box - L-shaped lines with dynamic visual square calculation
-// Uses visible range ratio to create visually proportional square with user calibration
-// Active cycle = current time is within cycle (tsStart <= time <= tsEnd)
-method draw_double_gann_box(VLineGroup g, col, w, style, float calibration) =>
-    size = array.size(g.cycles)
-    if size > 0
-        // Find the last active cycle (where time is within the cycle)
-        Cycle active_cycle = na
-        for i = size - 1 to 0
-            cycle = array.get(g.cycles, i)
-            if time >= cycle.tsStart and time <= cycle.tsEnd
-                active_cycle := cycle
-                break
+            // Find first valid (non-double) cycle of current month
+            Cycle current_month_first = na
+            Cycle prev_month_first = na
 
-        // If we have an active cycle, draw the L-shape
-        if not na(active_cycle)
-            // Use cached data from calculate_high_low (already called in pre-compute pass)
-            active_cycle.calculate_high_low()
+            for cycle in g.cycles
+                if not cycle.is_double
+                    cycle_month = month(cycle.tsStart)
+                    cycle_year = year(cycle.tsStart)
+                    // Check current month
+                    if cycle_month == current_month and cycle_year == current_year
+                        if na(current_month_first)
+                            current_month_first := cycle
+                    // Check previous month
+                    if cycle_month == prev_month and cycle_year == prev_year
+                        if na(prev_month_first)
+                            prev_month_first := cycle
 
-            // Use cached bar_start; just need first_open from the first bar
-            float first_open = na
-            int first_bar_index = active_cycle.bar_start
-            if not na(first_bar_index)
-                int bars_back = bar_index - first_bar_index
-                if bars_back >= 0 and bars_back <= 500
-                    first_open := open[bars_back]
+            // Determine which cycle to use for Gann fan
+            Cycle target_cycle = na
+            if not na(current_month_first) and time >= current_month_first.tsEnd
+                target_cycle := current_month_first
+            else if not na(prev_month_first) and time >= prev_month_first.tsEnd
+                target_cycle := prev_month_first
 
-            // Draw Gann square using Price/bar ratio from TradingView Gann Square tool
-            if not na(first_open) and not na(first_bar_index)
-                // Count bars: elapsed + estimate remaining, subtract weekend hours
-                int elapsed_bars = bar_index - first_bar_index
-                float elapsed_ms = float(time - active_cycle.tsStart)
-                float remaining_ms = float(active_cycle.tsEnd - time)
-                int total_bars = elapsed_bars
-                if elapsed_bars > 5 and elapsed_ms > 0 and remaining_ms > 0
-                    int remaining_bars = math.round(elapsed_bars * (remaining_ms / elapsed_ms))
-                    total_bars := elapsed_bars + remaining_bars
-                // Subtract weekend bars by counting actual weekend days in cycle range
-                int bar_ms = timeframe.in_seconds(timeframe.period) * 1000
-                int weekend_ms = 0
-                // Walk day by day through the cycle and count Saturday+Sunday hours
-                int day_ms = 24 * 60 * 60 * 1000
-                int num_days = math.ceil((active_cycle.tsEnd - active_cycle.tsStart) / day_ms)
-                for d = 0 to math.min(num_days, 30)
-                    int day_ts = active_cycle.tsStart + d * day_ms
-                    int dow = dayofweek(day_ts, "UTC")
-                    if dow == dayofweek.saturday or dow == dayofweek.sunday
-                        // Count hours of this weekend day that fall within the cycle
-                        int day_start = math.max(day_ts, active_cycle.tsStart)
-                        int day_end = math.min(day_ts + day_ms, active_cycle.tsEnd)
-                        if day_end > day_start
-                            weekend_ms += (day_end - day_start)
-                int weekend_bars = math.round(weekend_ms / bar_ms)
-                // Forex markets close ~3h before full Saturday (Fri 22:00 UTC close)
-                // So actual non-trading = 48h Sat+Sun - 3h = 45h per weekend
-                int num_weekends = weekend_bars > 0 ? math.round(weekend_bars / 48) : 0
-                int adjusted_weekend_bars = num_weekends * 45
-                total_bars := math.max(1, total_bars - adjusted_weekend_bars)
-                if total_bars > 0
-                    float visual_height = total_bars * calibration
-                    float top_price = first_open + visual_height
-                    // Full square box: 4 sides
-                    line.new(active_cycle.tsStart, first_open, active_cycle.tsEnd, first_open,
-                        xloc=xloc.bar_time, color=col, width=w, style=style)
-                    line.new(active_cycle.tsStart, top_price, active_cycle.tsEnd, top_price,
-                        xloc=xloc.bar_time, color=col, width=w, style=style)
-                    line.new(active_cycle.tsStart, first_open, active_cycle.tsStart, top_price,
-                        xloc=xloc.bar_time, color=col, width=w, style=style)
-                    line.new(active_cycle.tsEnd, first_open, active_cycle.tsEnd, top_price,
-                        xloc=xloc.bar_time, color=col, width=w, style=style)
+            // Draw Gann fan if we found a valid complete cycle
+            if not na(target_cycle)
+                target_cycle.calculate_high_low()
+                if not na(target_cycle.low) and not na(target_cycle.high)
+                    draw_gann_fan(target_cycle.tsStart, target_cycle.low, target_cycle.tsEnd, target_cycle.high, w)
+
+    // Calculate and draw target lines and circles (only complete, non-double cycles)
+    // show_lines: checkbox - if true, draw both high and low target lines
+    // circle_mode: "none" = no circles, "trend" = opposite based on cycle trend, "both" = both circles
+    method draw_all_targets(VLineGroup g, high_col, low_col, w, bool show_lines, string circle_mode) =>
+        size = array.size(g.cycles)
+        if size > 0
+            // Only draw targets for last 3 completed non-double cycles
+            int drawn_count = 0
+            for i = size - 1 to 0
+                if drawn_count >= 3
+                    break
+                cycle = array.get(g.cycles, i)
+                if not cycle.is_double and time >= cycle.tsEnd
+                    cycle.calculate_high_low()
+                    drawn_count += 1
+                    // Determine which circles to show based on circle_mode
+                    bool show_high_circle = false
+                    bool show_low_circle = false
+                    if circle_mode == "both"
+                        show_high_circle := true
+                        show_low_circle := true
+                    else if circle_mode == "trend"
+                        // Determine trend and show OPPOSITE circle (reversal expectation)
+                        if not na(cycle.first_close) and not na(cycle.last_close)
+                            if cycle.first_close < cycle.last_close
+                                // Uptrend - expect reversal down - show LOW circle
+                                show_low_circle := true
+                            else
+                                // Downtrend - expect reversal up - show HIGH circle
+                                show_high_circle := true
+                    // Draw targets - lines always both if enabled, circles based on mode
+                    cycle.draw_target_line(high_col, w, show_lines, show_high_circle)
+                    cycle.draw_low_target_line(low_col, w, show_lines, show_low_circle)
+
+    // Calculate and draw magnet lines - each cycle's magnets drawn on next cycle's dates (only complete, non-double cycles)
+    // If next cycle is double, extend magnet lines to include it and continue until non-double cycle
+    method draw_all_magnet_lines(VLineGroup g, col, w, style) =>
+        size = array.size(g.cycles)
+        if size > 0
+            // Calculate all cycles (needed for magnet values)
+            for cycle in g.cycles
+                if not cycle.is_double and time >= cycle.tsEnd
+                    cycle.calculate_high_low()
+            // Only draw magnets for last 2 completed source cycles (current + previous)
+            if size >= 2
+                int drawn = 0
+                for i = size - 2 to 0
+                    if drawn >= 2
+                        break
+                    current_cycle = array.get(g.cycles, i)
+                    if not current_cycle.is_double and time >= current_cycle.tsEnd
+                        next_cycle = array.get(g.cycles, i + 1)
+                        start_ts = next_cycle.tsStart
+                        end_ts = next_cycle.tsEnd
+                        // If next cycle is double, extend through consecutive double cycles
+                        if next_cycle.is_double and i + 2 <= size - 1
+                            for j = i + 2 to size - 1
+                                check_cycle = array.get(g.cycles, j)
+                                end_ts := check_cycle.tsEnd
+                                if not check_cycle.is_double
+                                    break
+                        current_cycle.draw_magnet_on_next(start_ts, end_ts, col, w, style)
+                        drawn += 1
+            // Draw last cycle's magnet lines extending 7 days after last vertical
+            if size >= 1
+                last_cycle = array.get(g.cycles, size - 1)
+                if not last_cycle.is_double and time >= last_cycle.tsEnd and not na(last_cycle.mag_50)
+                    seven_days_ms = 7 * 24 * 60 * 60 * 1000
+                    future_end = last_cycle.tsEnd + seven_days_ms
+                    last_cycle.draw_magnet_on_next(last_cycle.tsEnd, future_end, col, w, style)
+
+    // ============================================================================
+    // GANN SQUARE — Reusable functions
+    // ============================================================================
+
+    // Estimate actual trading bars between two timestamps (accounts for weekends)
+    estimate_trading_bars(int ts_start, int ts_end, int first_bi) =>
+        // Start with elapsed bars + extrapolate remaining
+        int elapsed_bars = bar_index - first_bi
+        float elapsed_ms = float(time - ts_start)
+        float remaining_ms = float(ts_end - time)
+        int total_bars = elapsed_bars
+        if elapsed_bars > 5 and elapsed_ms > 0 and remaining_ms > 0
+            int remaining_bars = math.round(elapsed_bars * (remaining_ms / elapsed_ms))
+            total_bars := elapsed_bars + remaining_bars
+        // Subtract weekend hours (45h per weekend for forex)
+        int bar_ms = timeframe.in_seconds(timeframe.period) * 1000
+        int weekend_ms = 0
+        int day_ms = 24 * 60 * 60 * 1000
+        int num_days = math.ceil((ts_end - ts_start) / day_ms)
+        for d = 0 to math.min(num_days, 30)
+            int day_ts = ts_start + d * day_ms
+            int dow = dayofweek(day_ts, "UTC")
+            if dow == dayofweek.saturday or dow == dayofweek.sunday
+                int d_start = math.max(day_ts, ts_start)
+                int d_end = math.min(day_ts + day_ms, ts_end)
+                if d_end > d_start
+                    weekend_ms += (d_end - d_start)
+        int weekend_bars = math.round(weekend_ms / bar_ms)
+        int num_weekends = weekend_bars > 0 ? math.round(weekend_bars / 48) : 0
+        int adjusted = num_weekends * 45
+        math.max(1, total_bars - adjusted)
+
+    // Draw a Gann square: box + diagonals. direction: "up" = diagonals from bottom-left, "down" = from top-left
+    draw_gann_square(int bi_start, float base_price, int total_bars, float calibration, color col, int w, string style, string direction) =>
+        float height = total_bars * calibration
+        float top = base_price + height
+        float mid = base_price + height * 0.5
+        int bi_end = bi_start + total_bars
+        // Box: 4 sides
+        line.new(bi_start, base_price, bi_end, base_price, xloc=xloc.bar_index, color=col, width=w, style=get_line_style(style))
+        line.new(bi_start, top, bi_end, top, xloc=xloc.bar_index, color=col, width=w, style=get_line_style(style))
+        line.new(bi_start, base_price, bi_start, top, xloc=xloc.bar_index, color=col, width=w, style=get_line_style(style))
+        line.new(bi_end, base_price, bi_end, top, xloc=xloc.bar_index, color=col, width=w, style=get_line_style(style))
+        if direction == "up"
+            line.new(bi_start, base_price, bi_end, mid, xloc=xloc.bar_index, color=#2196F3, width=2, style=line.style_solid)
+            line.new(bi_start, base_price, bi_end, top, xloc=xloc.bar_index, color=#00E676, width=2, style=line.style_solid)
+        else
+            line.new(bi_start, top, bi_end, mid, xloc=xloc.bar_index, color=#2196F3, width=2, style=line.style_solid)
+            line.new(bi_start, top, bi_end, base_price, xloc=xloc.bar_index, color=#00E676, width=2, style=line.style_solid)
+
+    // Draw Gann square on active cycle
+    method draw_double_gann_box(VLineGroup g, col, w, style, float calibration) =>
+        size = array.size(g.cycles)
+        if size > 0
+            Cycle active_cycle = na
+            for i = size - 1 to 0
+                cycle = array.get(g.cycles, i)
+                if time >= cycle.tsStart and time <= cycle.tsEnd
+                    active_cycle := cycle
+                    break
+            if not na(active_cycle)
+                active_cycle.calculate_high_low()
+                float first_open = na
+                int first_bar_index = active_cycle.bar_start
+                if not na(first_bar_index)
+                    int bars_back = bar_index - first_bar_index
+                    if bars_back >= 0 and bars_back <= 500
+                        first_open := open[bars_back]
+                if not na(first_open) and not na(first_bar_index)
+                    int total_bars = estimate_trading_bars(active_cycle.tsStart, active_cycle.tsEnd, first_bar_index)
+                    // Upper box: diagonals go up from bottom-left
+                    draw_gann_square(first_bar_index, first_open, total_bars, calibration, col, w, style, "up")
+                    // Lower box: diagonals go down from top-left
+                    float lower_base = first_open - total_bars * calibration
+                    draw_gann_square(first_bar_index, lower_base, total_bars, calibration, col, w, style, "down")
 
 
-// ============================================================================
-// PIVOT DETECTION - Find trends with 50-60% correction
-// ============================================================================
-// Key Logic:
-// 1. Use pivot lows as both TREND STARTS and CORRECTION POINTS
-// 2. Use pivot highs as TREND ENDS (maximums)
-// 3. A valid trend: pivot_low_start -> pivot_high_max -> pivot_low_correction
-// 4. Correction must be 50-60% of the range
-// 5. If correction exceeds 60%, trend is INVALIDATED - skip to next
-// ============================================================================
+    // ============================================================================
+    // GANN SQUARE PRICE TARGETS — Always drawn for active cycle (independent of box toggle)
+    // ============================================================================
+    method draw_gann_targets(VLineGroup g, float calibration) =>
+        size = array.size(g.cycles)
+        if size > 0
+            Cycle active_cycle = na
+            for i = size - 1 to 0
+                cycle = array.get(g.cycles, i)
+                if time >= cycle.tsStart and time <= cycle.tsEnd
+                    active_cycle := cycle
+                    break
+            if not na(active_cycle)
+                active_cycle.calculate_high_low()
+                float first_open = na
+                int first_bar_index = active_cycle.bar_start
+                if not na(first_bar_index)
+                    int bars_back = bar_index - first_bar_index
+                    if bars_back >= 0 and bars_back <= 500
+                        first_open := open[bars_back]
+                if not na(first_open) and not na(first_bar_index)
+                    int total_bars = estimate_trading_bars(active_cycle.tsStart, active_cycle.tsEnd, first_bar_index)
+                    int bi_end = first_bar_index + total_bars
+                    float upper_mid = first_open + total_bars * calibration * 0.5
+                    float lower_mid = first_open - total_bars * calibration * 0.5
+                    label.new(bi_end, upper_mid, "⬤", xloc=xloc.bar_index, color=color.new(color.white, 100), textcolor=#2196F3, style=label.style_label_center, size=size.huge)
+                    label.new(bi_end, first_open, "⬤", xloc=xloc.bar_index, color=color.new(color.white, 100), textcolor=#2196F3, style=label.style_label_center, size=size.huge)
+                    label.new(bi_end, lower_mid, "⬤", xloc=xloc.bar_index, color=color.new(color.white, 100), textcolor=#2196F3, style=label.style_label_center, size=size.huge)
 
-// Fixed pivot detection parameters
-var int PIVOT_LEFT = 10
-var int PIVOT_RIGHT = 10
+    // ============================================================================
+    // PIVOT DETECTION - Find trends with 50-60% correction
+    // ============================================================================
+    // Key Logic:
+    // 1. Use pivot lows as both TREND STARTS and CORRECTION POINTS
+    // 2. Use pivot highs as TREND ENDS (maximums)
+    // 3. A valid trend: pivot_low_start -> pivot_high_max -> pivot_low_correction
+    // 4. Correction must be 50-60% of the range
+    // 5. If correction exceeds 60%, trend is INVALIDATED - skip to next
+    // ============================================================================
 
-// Store both pivot highs and lows
-var array<float> pivot_high_prices = array.new_float()
-var array<int> pivot_high_bars = array.new_int()
-var array<float> pivot_low_prices = array.new_float()
-var array<int> pivot_low_bars = array.new_int()
+    // Fixed pivot detection parameters
+    var int PIVOT_LEFT = 10
+    var int PIVOT_RIGHT = 10
 
-// Detect pivots
-pivot_high_val = ta.pivothigh(high, PIVOT_LEFT, PIVOT_RIGHT)
-pivot_low_val = ta.pivotlow(low, PIVOT_LEFT, PIVOT_RIGHT)
+    // Store both pivot highs and lows
+    var array<float> pivot_high_prices = array.new_float()
+    var array<int> pivot_high_bars = array.new_int()
+    var array<float> pivot_low_prices = array.new_float()
+    var array<int> pivot_low_bars = array.new_int()
 
-if not na(pivot_high_val)
-    array.push(pivot_high_prices, pivot_high_val)
-    array.push(pivot_high_bars, bar_index - PIVOT_RIGHT)
+    // Detect pivots
+    pivot_high_val = ta.pivothigh(high, PIVOT_LEFT, PIVOT_RIGHT)
+    pivot_low_val = ta.pivotlow(low, PIVOT_LEFT, PIVOT_RIGHT)
 
-if not na(pivot_low_val)
-    array.push(pivot_low_prices, pivot_low_val)
-    array.push(pivot_low_bars, bar_index - PIVOT_RIGHT)
+    if not na(pivot_high_val)
+        array.push(pivot_high_prices, pivot_high_val)
+        array.push(pivot_high_bars, bar_index - PIVOT_RIGHT)
 
-// Find valid trend: pivot_low -> pivot_high -> pivot_low (50-60% correction)
-find_trend_with_correction(array<float> ph_prices, array<int> ph_bars, array<float> pl_prices, array<int> pl_bars, int min_blocks) =>
-    float trend_start_price = na
-    int trend_start_bar = na
-    float trend_end_price = na
-    int trend_end_bar = na
-    float corr_price = na
-    int corr_bar = na
+    if not na(pivot_low_val)
+        array.push(pivot_low_prices, pivot_low_val)
+        array.push(pivot_low_bars, bar_index - PIVOT_RIGHT)
 
-    int ph_count = array.size(ph_bars)
-    int pl_count = array.size(pl_bars)
+    // Find valid trend: pivot_low -> pivot_high -> pivot_low (50-60% correction)
+    find_trend_with_correction(array<float> ph_prices, array<int> ph_bars, array<float> pl_prices, array<int> pl_bars, int min_blocks) =>
+        float trend_start_price = na
+        int trend_start_bar = na
+        float trend_end_price = na
+        int trend_end_bar = na
+        float corr_price = na
+        int corr_bar = na
 
-    // Limit search to last 30 pivots to avoid deep scans
-    int max_pivots = 30
-    int corr_start = math.max(0, pl_count - max_pivots)
-    int high_start = math.max(0, ph_count - max_pivots)
+        int ph_count = array.size(ph_bars)
+        int pl_count = array.size(pl_bars)
 
-    if ph_count > 0 and pl_count > 1
-        // Try each pivot low as potential CORRECTION (from most recent backwards)
-        for corr_idx = pl_count - 1 to math.max(1, corr_start)
-            if not na(trend_start_price)
-                break
+        // Limit search to last 30 pivots to avoid deep scans
+        int max_pivots = 30
+        int corr_start = math.max(0, pl_count - max_pivots)
+        int high_start = math.max(0, ph_count - max_pivots)
 
-            int correction_bar = array.get(pl_bars, corr_idx)
-            float correction_price = array.get(pl_prices, corr_idx)
-
-            // Find a pivot high BEFORE this correction (trend end/maximum)
-            for high_idx = ph_count - 1 to high_start
+        if ph_count > 0 and pl_count > 1
+            // Try each pivot low as potential CORRECTION (from most recent backwards)
+            for corr_idx = pl_count - 1 to math.max(1, corr_start)
                 if not na(trend_start_price)
                     break
 
-                int high_bar = array.get(ph_bars, high_idx)
-                float high_price = array.get(ph_prices, high_idx)
+                int correction_bar = array.get(pl_bars, corr_idx)
+                float correction_price = array.get(pl_prices, corr_idx)
 
-                // High must be BEFORE correction
-                if high_bar < correction_bar
-                    // Find a pivot low BEFORE the high (trend start)
-                    for start_idx = corr_idx - 1 to math.max(0, corr_start)
-                        int start_bar = array.get(pl_bars, start_idx)
-                        float start_price = array.get(pl_prices, start_idx)
+                // Find a pivot high BEFORE this correction (trend end/maximum)
+                for high_idx = ph_count - 1 to high_start
+                    if not na(trend_start_price)
+                        break
 
-                        // Start must be BEFORE high
-                        if start_bar < high_bar
-                            // Must be an uptrend (start lower than high)
-                            if start_price < high_price
-                                int blocks = high_bar - start_bar
+                    int high_bar = array.get(ph_bars, high_idx)
+                    float high_price = array.get(ph_prices, high_idx)
 
-                                if blocks >= min_blocks
-                                    // Calculate correction percentage
-                                    float price_range = high_price - start_price
-                                    float invalidation_level = high_price - price_range * 0.60
+                    // High must be BEFORE correction
+                    if high_bar < correction_bar
+                        // Find a pivot low BEFORE the high (trend start)
+                        for start_idx = corr_idx - 1 to math.max(0, corr_start)
+                            int start_bar = array.get(pl_bars, start_idx)
+                            float start_price = array.get(pl_prices, start_idx)
 
-                                    // Check if ANY bar after the high went below 60% (limit to 500)
-                                    bool trend_invalidated = false
-                                    int bars_after_high = math.min(bar_index - high_bar, 500)
-                                    for j = 1 to bars_after_high
-                                        int check_bar = high_bar + j
-                                        int bars_back = bar_index - check_bar
-                                        if bars_back >= 0 and bars_back <= 500
-                                            float bar_low = low[bars_back]
-                                            if bar_low < invalidation_level
-                                                trend_invalidated := true
+                            // Start must be BEFORE high
+                            if start_bar < high_bar
+                                // Must be an uptrend (start lower than high)
+                                if start_price < high_price
+                                    int blocks = high_bar - start_bar
+
+                                    if blocks >= min_blocks
+                                        // Calculate correction percentage
+                                        float price_range = high_price - start_price
+                                        float invalidation_level = high_price - price_range * 0.60
+
+                                        // Check if ANY bar after the high went below 60% (limit to 500)
+                                        bool trend_invalidated = false
+                                        int bars_after_high = math.min(bar_index - high_bar, 500)
+                                        for j = 1 to bars_after_high
+                                            int check_bar = high_bar + j
+                                            int bars_back = bar_index - check_bar
+                                            if bars_back >= 0 and bars_back <= 500
+                                                float bar_low = low[bars_back]
+                                                if bar_low < invalidation_level
+                                                    trend_invalidated := true
+                                                    break
+
+                                        // Only proceed if trend wasn't invalidated
+                                        if not trend_invalidated
+                                            float correction_amount = high_price - correction_price
+                                            float correction_pct = correction_amount / price_range
+
+                                            // Check if correction is within 50-60%
+                                            if correction_pct >= 0.50 and correction_pct <= 0.60
+                                                trend_start_price := start_price
+                                                trend_start_bar := start_bar
+                                                trend_end_price := high_price
+                                                trend_end_bar := high_bar
+                                                corr_price := correction_price
+                                                corr_bar := correction_bar
                                                 break
+                                break  // Only check the nearest start for this high
 
-                                    // Only proceed if trend wasn't invalidated
-                                    if not trend_invalidated
-                                        float correction_amount = high_price - correction_price
-                                        float correction_pct = correction_amount / price_range
+        [trend_start_price, trend_start_bar, trend_end_price, trend_end_bar, corr_price, corr_bar]
 
-                                        // Check if correction is within 50-60%
-                                        if correction_pct >= 0.50 and correction_pct <= 0.60
-                                            trend_start_price := start_price
-                                            trend_start_bar := start_bar
-                                            trend_end_price := high_price
-                                            trend_end_bar := high_bar
-                                            corr_price := correction_price
-                                            corr_bar := correction_bar
-                                            break
-                            break  // Only check the nearest start for this high
+    // Draw trend labels and correction markers
+    draw_pivot_trend(int w) =>
+        [start_price, start_bar, end_price, end_bar, corr_price, corr_bar] = find_trend_with_correction(pivot_high_prices, pivot_high_bars, pivot_low_prices, pivot_low_bars, i_min_blocks)
 
-    [trend_start_price, trend_start_bar, trend_end_price, trend_end_bar, corr_price, corr_bar]
+        if not na(start_price) and not na(end_price) and not na(corr_price)
+            int blocks = end_bar - start_bar
+            float price_range = end_price - start_price
+            float correction_pct = (end_price - corr_price) / price_range * 100
 
-// Draw trend labels and correction markers
-draw_pivot_trend(int w) =>
-    [start_price, start_bar, end_price, end_bar, corr_price, corr_bar] = find_trend_with_correction(pivot_high_prices, pivot_high_bars, pivot_low_prices, pivot_low_bars, i_min_blocks)
+            // TREND START label (green)
+            label.new(start_bar, start_price,
+                "TREND START\n▲ " + str.tostring(start_price, format.mintick) + "\n(" + str.tostring(blocks) + " bars)",
+                xloc=xloc.bar_index, color=color.new(color.green, 0), textcolor=color.white,
+                style=label.style_label_up, size=size.small)
 
-    if not na(start_price) and not na(end_price) and not na(corr_price)
-        int blocks = end_bar - start_bar
-        float price_range = end_price - start_price
-        float correction_pct = (end_price - corr_price) / price_range * 100
+            // TREND END label (teal) - at the maximum
+            label.new(end_bar, end_price,
+                "TREND END\n▼ " + str.tostring(end_price, format.mintick),
+                xloc=xloc.bar_index, color=color.new(color.teal, 0), textcolor=color.white,
+                style=label.style_label_down, size=size.small)
 
-        // TREND START label (green)
-        label.new(start_bar, start_price,
-             "TREND START\n▲ " + str.tostring(start_price, format.mintick) + "\n(" + str.tostring(blocks) + " bars)",
-             xloc=xloc.bar_index, color=color.new(color.green, 0), textcolor=color.white,
-             style=label.style_label_up, size=size.small)
+            // CORRECTION label (purple)
+            label.new(corr_bar, corr_price,
+                "✓ CORRECTION\n" + str.tostring(correction_pct, "#.#") + "%",
+                xloc=xloc.bar_index, color=color.new(color.purple, 0), textcolor=color.white,
+                style=label.style_label_up, size=size.normal)
 
-        // TREND END label (teal) - at the maximum
-        label.new(end_bar, end_price,
-             "TREND END\n▼ " + str.tostring(end_price, format.mintick),
-             xloc=xloc.bar_index, color=color.new(color.teal, 0), textcolor=color.white,
-             style=label.style_label_down, size=size.small)
+            // Draw box showing full trend range (from start to correction)
+            box.new(start_bar, end_price, corr_bar, start_price, xloc=xloc.bar_index,
+                border_color=color.new(color.blue, 30), border_width=2, border_style=line.style_solid,
+                bgcolor=color.new(color.blue, 90))
 
-        // CORRECTION label (purple)
-        label.new(corr_bar, corr_price,
-             "✓ CORRECTION\n" + str.tostring(correction_pct, "#.#") + "%",
-             xloc=xloc.bar_index, color=color.new(color.purple, 0), textcolor=color.white,
-             style=label.style_label_up, size=size.normal)
+            // Draw correction zone (50% and 60% levels)
+            line.new(end_bar, end_price - price_range * 0.5, corr_bar, end_price - price_range * 0.5, xloc=xloc.bar_index, color=color.purple, width=1, style=line.style_dashed)
+            line.new(end_bar, end_price - price_range * 0.6, corr_bar, end_price - price_range * 0.6, xloc=xloc.bar_index, color=color.purple, width=1, style=line.style_dashed)
 
-        // Draw box showing full trend range (from start to correction)
-        box.new(start_bar, end_price, corr_bar, start_price, xloc=xloc.bar_index,
-             border_color=color.new(color.blue, 30), border_width=2, border_style=line.style_solid,
-             bgcolor=color.new(color.blue, 90))
+    // ============================================================================
+    // CYCLE TYPE CLASSIFICATION
+    // ============================================================================
+    // Classify each cycle and label it on the chart.
+    // Types: Up (עולה), Down (יורד), Continuation (ממשיך), Sideways (דשדוש),
+    //        Double Reversal (כפול מתהפך), Double Continuation (כפול ממשיך)
+    // ============================================================================
 
-        // Draw correction zone (50% and 60% levels)
-        line.new(end_bar, end_price - price_range * 0.5, corr_bar, end_price - price_range * 0.5, xloc=xloc.bar_index, color=color.purple, width=1, style=line.style_dashed)
-        line.new(end_bar, end_price - price_range * 0.6, corr_bar, end_price - price_range * 0.6, xloc=xloc.bar_index, color=color.purple, width=1, style=line.style_dashed)
+    method classify_cycle_type(Cycle c, Cycle prev) =>
+        // Returns: [type_name, type_emoji, type_color]
+        string type_name = ""
+        string type_emoji = ""
+        color type_col = color.gray
 
-// ============================================================================
-// CYCLE TYPE CLASSIFICATION
-// ============================================================================
-// Classify each cycle and label it on the chart.
-// Types: Up (עולה), Down (יורד), Continuation (ממשיך), Sideways (דשדוש),
-//        Double Reversal (כפול מתהפך), Double Continuation (כפול ממשיך)
-// ============================================================================
-
-method classify_cycle_type(Cycle c, Cycle prev) =>
-    // Returns: [type_name, type_emoji, type_color]
-    string type_name = ""
-    string type_emoji = ""
-    color type_col = color.gray
-
-    if c.is_double
-        // Double cycle — check if reversal or continuation vs previous
-        if not na(prev) and not na(prev.first_close) and not na(prev.last_close) and not na(c.first_close) and not na(c.last_close)
-            bool prev_up = prev.last_close > prev.first_close
-            bool curr_up = c.last_close > c.first_close
-            if prev_up == curr_up
-                type_name := "כפול ממשיך"
-                type_emoji := "⏩⏩"
-                type_col := color.yellow
+        if c.is_double
+            // Double cycle — check if reversal or continuation vs previous
+            if not na(prev) and not na(prev.first_close) and not na(prev.last_close) and not na(c.first_close) and not na(c.last_close)
+                bool prev_up = prev.last_close > prev.first_close
+                bool curr_up = c.last_close > c.first_close
+                if prev_up == curr_up
+                    type_name := "כפול ממשיך"
+                    type_emoji := "⏩⏩"
+                    type_col := color.yellow
+                else
+                    type_name := "כפול מתהפך"
+                    type_emoji := "🔄🔄"
+                    type_col := color.fuchsia
             else
-                type_name := "כפול מתהפך"
-                type_emoji := "🔄🔄"
-                type_col := color.fuchsia
-        else
-            type_name := "כפול"
-            type_emoji := "⏸"
-            type_col := color.yellow
-    else if not na(c.first_close) and not na(c.last_close) and not na(c.high) and not na(c.low)
-        float range_size = c.high - c.low
-        float move = math.abs(c.last_close - c.first_close)
-        bool is_up = c.last_close > c.first_close
-        bool is_sideways = range_size > 0 ? (move / range_size < 0.25) : true
+                type_name := "כפול"
+                type_emoji := "⏸"
+                type_col := color.yellow
+        else if not na(c.first_close) and not na(c.last_close) and not na(c.high) and not na(c.low)
+            float range_size = c.high - c.low
+            float move = math.abs(c.last_close - c.first_close)
+            bool is_up = c.last_close > c.first_close
+            bool is_sideways = range_size > 0 ? (move / range_size < 0.25) : true
 
-        if is_sideways
-            type_name := "דשדוש"
-            type_emoji := "↔"
-            type_col := color.gray
-        else if not na(prev) and not na(prev.first_close) and not na(prev.last_close) and not prev.is_double
-            bool prev_up = prev.last_close > prev.first_close
-            if prev_up == is_up
-                type_name := is_up ? "ממשיך ↑" : "ממשיך ↓"
-                type_emoji := "⏩"
-                type_col := is_up ? color.teal : color.maroon
+            if is_sideways
+                type_name := "דשדוש"
+                type_emoji := "↔"
+                type_col := color.gray
+            else if not na(prev) and not na(prev.first_close) and not na(prev.last_close) and not prev.is_double
+                bool prev_up = prev.last_close > prev.first_close
+                if prev_up == is_up
+                    type_name := is_up ? "ממשיך ↑" : "ממשיך ↓"
+                    type_emoji := "⏩"
+                    type_col := is_up ? color.teal : color.maroon
+                else
+                    type_name := is_up ? "עולה ↑" : "יורד ↓"
+                    type_emoji := is_up ? "▲" : "▼"
+                    type_col := is_up ? color.green : color.red
             else
                 type_name := is_up ? "עולה ↑" : "יורד ↓"
                 type_emoji := is_up ? "▲" : "▼"
                 type_col := is_up ? color.green : color.red
-        else
-            type_name := is_up ? "עולה ↑" : "יורד ↓"
-            type_emoji := is_up ? "▲" : "▼"
-            type_col := is_up ? color.green : color.red
 
-    [type_name, type_emoji, type_col]
+        [type_name, type_emoji, type_col]
 
-method draw_cycle_type_labels(VLineGroup g) =>
-    size = array.size(g.cycles)
-    if size > 0
-        for i = 0 to size - 1
-            cycle = array.get(g.cycles, i)
-            cycle.calculate_high_low()
-            if na(cycle.high) or na(cycle.low)
-                continue
-
-            // Get previous non-double cycle for context
-            Cycle prev = na
-            if i > 0
-                prev := array.get(g.cycles, i - 1)
-                prev.calculate_high_low()
-
-            // Only label completed cycles + the active one
-            if time >= cycle.tsStart
-                [type_name, type_emoji, type_col] = cycle.classify_cycle_type(prev)
-                if type_name != ""
-                    // Place label at the top of the cycle, centered in time
-                    int mid_ts = cycle.tsStart + (cycle.tsEnd - cycle.tsStart) / 2
-                    float label_price = cycle.high
-                    // For active cycle (not yet complete), use what we have
-                    bool is_active = time >= cycle.tsStart and time <= cycle.tsEnd
-                    string suffix = is_active ? " ●" : ""
-                    label.new(mid_ts, label_price, type_name + suffix,
-                         xloc=xloc.bar_time, color=color.new(type_col, 75),
-                         textcolor=type_col, style=label.style_label_down,
-                         size=get_label_size(i_cycle_type_size))
-
-// ============================================================================
-// CYCLE STRATEGY — Magnet Bounce Logic
-// ============================================================================
-// Rule: Within each cycle, price tends to gravitate toward magnet levels:
-//   - From below (near cycle low): price targets the 25% magnet, then potentially 50%
-//   - From above (near cycle high): price targets the 75% magnet, then potentially 50%
-//   - The 50% magnet is the pivot — price often touches it and reverses
-//   - Entry when price enters a magnet zone, target is the next magnet level
-//
-// Signals:
-//   🟢 LONG: Price enters 25% zone from below → target 50% (conservative) or 75% (aggressive)
-//   🔴 SHORT: Price enters 75% zone from above → target 50% (conservative) or 25% (aggressive)
-//   🟠 PIVOT: Price reaches 50% zone → expect reversal (direction based on approach)
-// ============================================================================
-
-method draw_cycle_strategy(VLineGroup g, float zone_pct, bool show_zones, color long_col, color short_col, color pivot_col) =>
-    size = array.size(g.cycles)
-    if size > 0
-        // Process current + previous cycle only
-        int processed = 0
-        for i = size - 1 to 0
-            if processed >= 2
-                break
-            cycle = array.get(g.cycles, i)
-            if cycle.is_double
-                continue
-            cycle.calculate_high_low()
-            if na(cycle.high) or na(cycle.low) or na(cycle.mag_25) or na(cycle.mag_50) or na(cycle.mag_75)
-                continue
-
-            processed += 1
-            float range_size = cycle.high - cycle.low
-            if range_size <= 0
-                continue
-            float zone_width = range_size * zone_pct
-
-            // Check if current bar is within this cycle
-            bool bar_in_cycle = time >= cycle.tsStart and time <= cycle.tsEnd
-
-            // Draw magnet zones on active cycle
-            if show_zones and bar_in_cycle
-                // 25% zone (long zone) — green tint
-                box.new(cycle.tsStart, cycle.mag_25 + zone_width, cycle.tsEnd, cycle.mag_25 - zone_width,
-                     xloc=xloc.bar_time, border_color=color.new(long_col, 70), border_width=0,
-                     bgcolor=color.new(long_col, 88))
-                // 75% zone (short zone) — red tint
-                box.new(cycle.tsStart, cycle.mag_75 + zone_width, cycle.tsEnd, cycle.mag_75 - zone_width,
-                     xloc=xloc.bar_time, border_color=color.new(short_col, 70), border_width=0,
-                     bgcolor=color.new(short_col, 88))
-                // 50% zone (pivot) — orange tint
-                box.new(cycle.tsStart, cycle.mag_50 + zone_width, cycle.tsEnd, cycle.mag_50 - zone_width,
-                     xloc=xloc.bar_time, border_color=color.new(pivot_col, 70), border_width=0,
-                     bgcolor=color.new(pivot_col, 88))
-
-            // Scan bars in this cycle for first magnet interaction (one signal per level per cycle)
-            int max_lookback = math.min(500, bar_index)
-            bool found_long = false
-            bool found_short = false
-            bool found_pivot = false
-
-            for j = 0 to max_lookback
-                if found_long and found_short and found_pivot
-                    break
-                bar_ts = time[j]
-                if bar_ts < cycle.tsStart
-                    break
-                if bar_ts > cycle.tsEnd
+    method draw_cycle_type_labels(VLineGroup g) =>
+        size = array.size(g.cycles)
+        if size > 0
+            for i = 0 to size - 1
+                cycle = array.get(g.cycles, i)
+                cycle.calculate_high_low()
+                if na(cycle.high) or na(cycle.low)
                     continue
 
-                // LONG signal: low dips into 25% zone and close bounces above it
-                if not found_long
-                    if low[j] <= cycle.mag_25 + zone_width and low[j] >= cycle.mag_25 - zone_width
-                        if close[j] > cycle.mag_25
-                            label.new(bar_ts, low[j], "▲ 25%",
-                                 xloc=xloc.bar_time, color=color.new(color.white, 100),
-                                 textcolor=long_col, style=label.style_label_up, size=size.small)
-                            found_long := true
+                // Get previous non-double cycle for context
+                Cycle prev = na
+                if i > 0
+                    prev := array.get(g.cycles, i - 1)
+                    prev.calculate_high_low()
 
-                // SHORT signal: high rises into 75% zone and close bounces below it
-                if not found_short
-                    if high[j] >= cycle.mag_75 - zone_width and high[j] <= cycle.mag_75 + zone_width
-                        if close[j] < cycle.mag_75
-                            label.new(bar_ts, high[j], "▼ 75%",
-                                 xloc=xloc.bar_time, color=color.new(color.white, 100),
-                                 textcolor=short_col, style=label.style_label_down, size=size.small)
-                            found_short := true
+                // Only label completed cycles + the active one
+                if time >= cycle.tsStart
+                    [type_name, type_emoji, type_col] = cycle.classify_cycle_type(prev)
+                    if type_name != ""
+                        // Place label at the top of the cycle, centered in time
+                        int mid_ts = cycle.tsStart + (cycle.tsEnd - cycle.tsStart) / 2
+                        float label_price = cycle.high
+                        // For active cycle (not yet complete), use what we have
+                        bool is_active = time >= cycle.tsStart and time <= cycle.tsEnd
+                        string suffix = is_active ? " ●" : ""
+                        label.new(mid_ts, label_price, type_name + suffix,
+                            xloc=xloc.bar_time, color=color.new(type_col, 75),
+                            textcolor=type_col, style=label.style_label_down,
+                            size=get_label_size(i_cycle_type_size))
 
-                // PIVOT signal: bar touches 50% zone
-                if not found_pivot
-                    if low[j] <= cycle.mag_50 + zone_width and high[j] >= cycle.mag_50 - zone_width
-                        string pivot_dir = close[j] > cycle.mag_50 ? "▼" : "▲"
-                        label.new(bar_ts, cycle.mag_50, pivot_dir + " 50%",
-                             xloc=xloc.bar_time, color=color.new(color.white, 100),
-                             textcolor=pivot_col, style=label.style_label_center, size=size.small)
-                        found_pivot := true
+    // ============================================================================
+    // CYCLE STRATEGY — Magnet Bounce Logic
+    // ============================================================================
+    // Rule: Within each cycle, price tends to gravitate toward magnet levels:
+    //   - From below (near cycle low): price targets the 25% magnet, then potentially 50%
+    //   - From above (near cycle high): price targets the 75% magnet, then potentially 50%
+    //   - The 50% magnet is the pivot — price often touches it and reverses
+    //   - Entry when price enters a magnet zone, target is the next magnet level
+    //
+    // Signals:
+    //   🟢 LONG: Price enters 25% zone from below → target 50% (conservative) or 75% (aggressive)
+    //   🔴 SHORT: Price enters 75% zone from above → target 50% (conservative) or 25% (aggressive)
+    //   🟠 PIVOT: Price reaches 50% zone → expect reversal (direction based on approach)
+    // ============================================================================
 
-// ============================================================================
-// MAIN EXECUTION
-// ============================================================================
+    method draw_cycle_strategy(VLineGroup g, float zone_pct, bool show_zones, color long_col, color short_col, color pivot_col) =>
+        size = array.size(g.cycles)
+        if size > 0
+            // Process current + previous cycle only
+            int processed = 0
+            for i = size - 1 to 0
+                if processed >= 2
+                    break
+                cycle = array.get(g.cycles, i)
+                if cycle.is_double
+                    continue
+                cycle.calculate_high_low()
+                if na(cycle.high) or na(cycle.low) or na(cycle.mag_25) or na(cycle.mag_50) or na(cycle.mag_75)
+                    continue
 
-// Initialize groups (using global settings for showHighLow, showMagnet, showGannFan, showDoubleGann)
-var VLineGroup group1 = VLineGroup.new(G1_NAME, g1_tickers, g1_dates, i_show_hl, i_show_magnet, i_show_gann, i_show_double_gann, g1_stats, array.new<Cycle>(), -1)
-var VLineGroup group2 = VLineGroup.new(G2_NAME, g2_tickers, g2_dates, i_show_hl, i_show_magnet, i_show_gann, i_show_double_gann, g2_stats, array.new<Cycle>(), -1)
-var VLineGroup group3 = VLineGroup.new(G3_NAME, g3_tickers, g3_dates, i_show_hl, i_show_magnet, i_show_gann, i_show_double_gann, g3_stats, array.new<Cycle>(), -1)
-var VLineGroup group4 = VLineGroup.new(G4_NAME, g4_tickers, g4_dates, i_show_hl, i_show_magnet, i_show_gann, i_show_double_gann, g4_stats, array.new<Cycle>(), -1)
-var VLineGroup group5 = VLineGroup.new(G5_NAME, g5_tickers, g5_dates, i_show_hl, i_show_magnet, i_show_gann, i_show_double_gann, g5_stats, array.new<Cycle>(), -1)
+                processed += 1
+                float range_size = cycle.high - cycle.low
+                if range_size <= 0
+                    continue
+                float zone_width = range_size * zone_pct
 
-// Hide on weekly and higher
-is_high_tf = timeframe.isweekly or timeframe.ismonthly
+                // Check if current bar is within this cycle
+                bool bar_in_cycle = time >= cycle.tsStart and time <= cycle.tsEnd
 
-// Draw on last bar only
-if barstate.islast and not is_high_tf
-    style = get_line_style(i_style)
-    // Process Group 1
-    if is_ticker_allowed(g1_tickers) and g1_dates != ""
-        group1.dates := g1_dates
-        group1.init_cycles(i_utc_offset, i_hour)
-        group1.precompute_cycles()
-        group1.draw_verticals(i_color, i_width, style)
-        group1.draw_double_cycle_labels(i_color)
-        if i_show_hl
-            group1.draw_all_horizontals(i_hl_color, i_width, style)
-        if i_show_magnet
-            group1.draw_all_magnet_lines(i_magnet_color, i_width, style)
-        if i_show_gann
-            group1.draw_gann_first_cycle(i_width)
-        if i_show_target_lines or i_target_circle_mode != "none"
-            group1.draw_all_targets(i_target_color, i_low_target_color, i_width, i_show_target_lines, i_target_circle_mode)
-        if i_show_double_gann
-            group1.draw_double_gann_box(i_double_gann_color, i_width, style, i_gann_square_calibration)
-        if i_show_strategy
-            group1.draw_cycle_strategy(i_mag_zone_pct, i_show_mag_zones, i_strat_long_color, i_strat_short_color, i_strat_pivot_color)
-        if i_show_cycle_type
-            group1.draw_cycle_type_labels()
+                // Draw magnet zones on active cycle
+                if show_zones and bar_in_cycle
+                    // 25% zone (long zone) — green tint
+                    box.new(cycle.tsStart, cycle.mag_25 + zone_width, cycle.tsEnd, cycle.mag_25 - zone_width,
+                        xloc=xloc.bar_time, border_color=color.new(long_col, 70), border_width=0,
+                        bgcolor=color.new(long_col, 88))
+                    // 75% zone (short zone) — red tint
+                    box.new(cycle.tsStart, cycle.mag_75 + zone_width, cycle.tsEnd, cycle.mag_75 - zone_width,
+                        xloc=xloc.bar_time, border_color=color.new(short_col, 70), border_width=0,
+                        bgcolor=color.new(short_col, 88))
+                    // 50% zone (pivot) — orange tint
+                    box.new(cycle.tsStart, cycle.mag_50 + zone_width, cycle.tsEnd, cycle.mag_50 - zone_width,
+                        xloc=xloc.bar_time, border_color=color.new(pivot_col, 70), border_width=0,
+                        bgcolor=color.new(pivot_col, 88))
 
-    // Process Group 2
-    if is_ticker_allowed(g2_tickers) and g2_dates != ""
-        group2.dates := g2_dates
-        group2.init_cycles(i_utc_offset, i_hour)
-        group2.precompute_cycles()
-        group2.draw_verticals(i_color, i_width, style)
-        group2.draw_double_cycle_labels(i_color)
-        if i_show_hl
-            group2.draw_all_horizontals(i_hl_color, i_width, style)
-        if i_show_magnet
-            group2.draw_all_magnet_lines(i_magnet_color, i_width, style)
-        if i_show_gann
-            group2.draw_gann_first_cycle(i_width)
-        if i_show_target_lines or i_target_circle_mode != "none"
-            group2.draw_all_targets(i_target_color, i_low_target_color, i_width, i_show_target_lines, i_target_circle_mode)
-        if i_show_double_gann
-            group2.draw_double_gann_box(i_double_gann_color, i_width, style, i_gann_square_calibration)
-        if i_show_strategy
-            group2.draw_cycle_strategy(i_mag_zone_pct, i_show_mag_zones, i_strat_long_color, i_strat_short_color, i_strat_pivot_color)
-        if i_show_cycle_type
-            group2.draw_cycle_type_labels()
+                // Scan bars in this cycle for first magnet interaction (one signal per level per cycle)
+                int max_lookback = math.min(500, bar_index)
+                bool found_long = false
+                bool found_short = false
+                bool found_pivot = false
 
-    // Process Group 3
-    if is_ticker_allowed(g3_tickers) and g3_dates != ""
-        group3.dates := g3_dates
-        group3.init_cycles(i_utc_offset, i_hour)
-        group3.precompute_cycles()
-        group3.draw_verticals(i_color, i_width, style)
-        group3.draw_double_cycle_labels(i_color)
-        if i_show_hl
-            group3.draw_all_horizontals(i_hl_color, i_width, style)
-        if i_show_magnet
-            group3.draw_all_magnet_lines(i_magnet_color, i_width, style)
-        if i_show_gann
-            group3.draw_gann_first_cycle(i_width)
-        if i_show_target_lines or i_target_circle_mode != "none"
-            group3.draw_all_targets(i_target_color, i_low_target_color, i_width, i_show_target_lines, i_target_circle_mode)
-        if i_show_double_gann
-            group3.draw_double_gann_box(i_double_gann_color, i_width, style, i_gann_square_calibration)
-        if i_show_strategy
-            group3.draw_cycle_strategy(i_mag_zone_pct, i_show_mag_zones, i_strat_long_color, i_strat_short_color, i_strat_pivot_color)
-        if i_show_cycle_type
-            group3.draw_cycle_type_labels()
+                for j = 0 to max_lookback
+                    if found_long and found_short and found_pivot
+                        break
+                    bar_ts = time[j]
+                    if bar_ts < cycle.tsStart
+                        break
+                    if bar_ts > cycle.tsEnd
+                        continue
 
-    // Process Group 4
-    if is_ticker_allowed(g4_tickers) and g4_dates != ""
-        group4.dates := g4_dates
-        group4.init_cycles(i_utc_offset, i_hour)
-        group4.precompute_cycles()
-        group4.draw_verticals(i_color, i_width, style)
-        group4.draw_double_cycle_labels(i_color)
-        if i_show_hl
-            group4.draw_all_horizontals(i_hl_color, i_width, style)
-        if i_show_magnet
-            group4.draw_all_magnet_lines(i_magnet_color, i_width, style)
-        if i_show_gann
-            group4.draw_gann_first_cycle(i_width)
-        if i_show_target_lines or i_target_circle_mode != "none"
-            group4.draw_all_targets(i_target_color, i_low_target_color, i_width, i_show_target_lines, i_target_circle_mode)
-        if i_show_double_gann
-            group4.draw_double_gann_box(i_double_gann_color, i_width, style, i_gann_square_calibration)
-        if i_show_strategy
-            group4.draw_cycle_strategy(i_mag_zone_pct, i_show_mag_zones, i_strat_long_color, i_strat_short_color, i_strat_pivot_color)
-        if i_show_cycle_type
-            group4.draw_cycle_type_labels()
+                    // LONG signal: low dips into 25% zone and close bounces above it
+                    if not found_long
+                        if low[j] <= cycle.mag_25 + zone_width and low[j] >= cycle.mag_25 - zone_width
+                            if close[j] > cycle.mag_25
+                                label.new(bar_ts, low[j], "▲ 25%",
+                                    xloc=xloc.bar_time, color=color.new(color.white, 100),
+                                    textcolor=long_col, style=label.style_label_up, size=size.small)
+                                found_long := true
 
-    // Process Group 5
-    if is_ticker_allowed(g5_tickers) and g5_dates != ""
-        group5.dates := g5_dates
-        group5.init_cycles(i_utc_offset, i_hour)
-        group5.precompute_cycles()
-        group5.draw_verticals(i_color, i_width, style)
-        group5.draw_double_cycle_labels(i_color)
-        if i_show_hl
-            group5.draw_all_horizontals(i_hl_color, i_width, style)
-        if i_show_magnet
-            group5.draw_all_magnet_lines(i_magnet_color, i_width, style)
-        if i_show_gann
-            group5.draw_gann_first_cycle(i_width)
-        if i_show_target_lines or i_target_circle_mode != "none"
-            group5.draw_all_targets(i_target_color, i_low_target_color, i_width, i_show_target_lines, i_target_circle_mode)
-        if i_show_double_gann
-            group5.draw_double_gann_box(i_double_gann_color, i_width, style, i_gann_square_calibration)
-        if i_show_strategy
-            group5.draw_cycle_strategy(i_mag_zone_pct, i_show_mag_zones, i_strat_long_color, i_strat_short_color, i_strat_pivot_color)
-        if i_show_cycle_type
-            group5.draw_cycle_type_labels()
+                    // SHORT signal: high rises into 75% zone and close bounces below it
+                    if not found_short
+                        if high[j] >= cycle.mag_75 - zone_width and high[j] <= cycle.mag_75 + zone_width
+                            if close[j] < cycle.mag_75
+                                label.new(bar_ts, high[j], "▼ 75%",
+                                    xloc=xloc.bar_time, color=color.new(color.white, 100),
+                                    textcolor=short_col, style=label.style_label_down, size=size.small)
+                                found_short := true
 
-    // Draw pivot trend detection
-    if i_show_pivot_fan
-        draw_pivot_trend(i_width)
+                    // PIVOT signal: bar touches 50% zone
+                    if not found_pivot
+                        if low[j] <= cycle.mag_50 + zone_width and high[j] >= cycle.mag_50 - zone_width
+                            string pivot_dir = close[j] > cycle.mag_50 ? "▼" : "▲"
+                            label.new(bar_ts, cycle.mag_50, pivot_dir + " 50%",
+                                xloc=xloc.bar_time, color=color.new(color.white, 100),
+                                textcolor=pivot_col, style=label.style_label_center, size=size.small)
+                            found_pivot := true
+
+    // ============================================================================
+    // MAIN EXECUTION
+    // ============================================================================
+
+    // Initialize groups (using global settings for showHighLow, showMagnet, showGannFan, showDoubleGann)
+    var VLineGroup group1 = VLineGroup.new(G1_NAME, g1_tickers, g1_dates, i_show_hl, i_show_magnet, i_show_gann, i_show_double_gann, g1_stats, array.new<Cycle>(), -1)
+    var VLineGroup group2 = VLineGroup.new(G2_NAME, g2_tickers, g2_dates, i_show_hl, i_show_magnet, i_show_gann, i_show_double_gann, g2_stats, array.new<Cycle>(), -1)
+    var VLineGroup group3 = VLineGroup.new(G3_NAME, g3_tickers, g3_dates, i_show_hl, i_show_magnet, i_show_gann, i_show_double_gann, g3_stats, array.new<Cycle>(), -1)
+    var VLineGroup group4 = VLineGroup.new(G4_NAME, g4_tickers, g4_dates, i_show_hl, i_show_magnet, i_show_gann, i_show_double_gann, g4_stats, array.new<Cycle>(), -1)
+    var VLineGroup group5 = VLineGroup.new(G5_NAME, g5_tickers, g5_dates, i_show_hl, i_show_magnet, i_show_gann, i_show_double_gann, g5_stats, array.new<Cycle>(), -1)
+
+    // Hide on weekly and higher
+    is_high_tf = timeframe.isweekly or timeframe.ismonthly
+
+    // Draw on last bar only
+    if barstate.islast and not is_high_tf
+        style = get_line_style(i_style)
+        // Process Group 1
+        if is_ticker_allowed(g1_tickers) and g1_dates != ""
+            group1.dates := g1_dates
+            group1.init_cycles(i_utc_offset, i_hour)
+            group1.precompute_cycles()
+            group1.draw_verticals(i_color, i_width, style)
+            group1.draw_double_cycle_labels(i_color)
+            if i_show_hl
+                group1.draw_all_horizontals(i_hl_color, i_width, style)
+            if i_show_magnet
+                group1.draw_all_magnet_lines(i_magnet_color, i_width, style)
+            if i_show_gann
+                group1.draw_gann_first_cycle(i_width)
+            if i_show_target_lines or i_target_circle_mode != "none"
+                group1.draw_all_targets(i_target_color, i_low_target_color, i_width, i_show_target_lines, i_target_circle_mode)
+            if i_show_double_gann
+                group1.draw_double_gann_box(i_double_gann_color, i_width, style, i_gann_square_calibration)
+            group1.draw_gann_targets(i_gann_square_calibration)
+            if i_show_strategy
+                group1.draw_cycle_strategy(i_mag_zone_pct, i_show_mag_zones, i_strat_long_color, i_strat_short_color, i_strat_pivot_color)
+            if i_show_cycle_type
+                group1.draw_cycle_type_labels()
+
+        // Process Group 2
+        if is_ticker_allowed(g2_tickers) and g2_dates != ""
+            group2.dates := g2_dates
+            group2.init_cycles(i_utc_offset, i_hour)
+            group2.precompute_cycles()
+            group2.draw_verticals(i_color, i_width, style)
+            group2.draw_double_cycle_labels(i_color)
+            if i_show_hl
+                group2.draw_all_horizontals(i_hl_color, i_width, style)
+            if i_show_magnet
+                group2.draw_all_magnet_lines(i_magnet_color, i_width, style)
+            if i_show_gann
+                group2.draw_gann_first_cycle(i_width)
+            if i_show_target_lines or i_target_circle_mode != "none"
+                group2.draw_all_targets(i_target_color, i_low_target_color, i_width, i_show_target_lines, i_target_circle_mode)
+            if i_show_double_gann
+                group2.draw_double_gann_box(i_double_gann_color, i_width, style, i_gann_square_calibration)
+            group2.draw_gann_targets(i_gann_square_calibration)
+            if i_show_strategy
+                group2.draw_cycle_strategy(i_mag_zone_pct, i_show_mag_zones, i_strat_long_color, i_strat_short_color, i_strat_pivot_color)
+            if i_show_cycle_type
+                group2.draw_cycle_type_labels()
+
+        // Process Group 3
+        if is_ticker_allowed(g3_tickers) and g3_dates != ""
+            group3.dates := g3_dates
+            group3.init_cycles(i_utc_offset, i_hour)
+            group3.precompute_cycles()
+            group3.draw_verticals(i_color, i_width, style)
+            group3.draw_double_cycle_labels(i_color)
+            if i_show_hl
+                group3.draw_all_horizontals(i_hl_color, i_width, style)
+            if i_show_magnet
+                group3.draw_all_magnet_lines(i_magnet_color, i_width, style)
+            if i_show_gann
+                group3.draw_gann_first_cycle(i_width)
+            if i_show_target_lines or i_target_circle_mode != "none"
+                group3.draw_all_targets(i_target_color, i_low_target_color, i_width, i_show_target_lines, i_target_circle_mode)
+            if i_show_double_gann
+                group3.draw_double_gann_box(i_double_gann_color, i_width, style, i_gann_square_calibration)
+            group3.draw_gann_targets(i_gann_square_calibration)
+            if i_show_strategy
+                group3.draw_cycle_strategy(i_mag_zone_pct, i_show_mag_zones, i_strat_long_color, i_strat_short_color, i_strat_pivot_color)
+            if i_show_cycle_type
+                group3.draw_cycle_type_labels()
+
+        // Process Group 4
+        if is_ticker_allowed(g4_tickers) and g4_dates != ""
+            group4.dates := g4_dates
+            group4.init_cycles(i_utc_offset, i_hour)
+            group4.precompute_cycles()
+            group4.draw_verticals(i_color, i_width, style)
+            group4.draw_double_cycle_labels(i_color)
+            if i_show_hl
+                group4.draw_all_horizontals(i_hl_color, i_width, style)
+            if i_show_magnet
+                group4.draw_all_magnet_lines(i_magnet_color, i_width, style)
+            if i_show_gann
+                group4.draw_gann_first_cycle(i_width)
+            if i_show_target_lines or i_target_circle_mode != "none"
+                group4.draw_all_targets(i_target_color, i_low_target_color, i_width, i_show_target_lines, i_target_circle_mode)
+            if i_show_double_gann
+                group4.draw_double_gann_box(i_double_gann_color, i_width, style, i_gann_square_calibration)
+            group4.draw_gann_targets(i_gann_square_calibration)
+            if i_show_strategy
+                group4.draw_cycle_strategy(i_mag_zone_pct, i_show_mag_zones, i_strat_long_color, i_strat_short_color, i_strat_pivot_color)
+            if i_show_cycle_type
+                group4.draw_cycle_type_labels()
+
+        // Process Group 5
+        if is_ticker_allowed(g5_tickers) and g5_dates != ""
+            group5.dates := g5_dates
+            group5.init_cycles(i_utc_offset, i_hour)
+            group5.precompute_cycles()
+            group5.draw_verticals(i_color, i_width, style)
+            group5.draw_double_cycle_labels(i_color)
+            if i_show_hl
+                group5.draw_all_horizontals(i_hl_color, i_width, style)
+            if i_show_magnet
+                group5.draw_all_magnet_lines(i_magnet_color, i_width, style)
+            if i_show_gann
+                group5.draw_gann_first_cycle(i_width)
+            if i_show_target_lines or i_target_circle_mode != "none"
+                group5.draw_all_targets(i_target_color, i_low_target_color, i_width, i_show_target_lines, i_target_circle_mode)
+            if i_show_double_gann
+                group5.draw_double_gann_box(i_double_gann_color, i_width, style, i_gann_square_calibration)
+            group5.draw_gann_targets(i_gann_square_calibration)
+            if i_show_strategy
+                group5.draw_cycle_strategy(i_mag_zone_pct, i_show_mag_zones, i_strat_long_color, i_strat_short_color, i_strat_pivot_color)
+            if i_show_cycle_type
+                group5.draw_cycle_type_labels()
+
+        // Draw pivot trend detection
+        if i_show_pivot_fan
+            draw_pivot_trend(i_width)
 
 
