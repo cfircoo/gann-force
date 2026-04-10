@@ -1,0 +1,51 @@
+{
+  "asset": "Oil",
+  "key_dates": [
+    {"date": "2026-04-02", "description": "First turning point of the month"},
+    {"date": "2026-04-09", "description": "Turning point date with daily cycle alignment"},
+    {"date": "2026-04-15", "description": "Turning point date aligning with first weekly cycle end"},
+    {"date": "2026-04-24", "description": "Turning point date aligning with second weekly cycle"},
+    {"date": "2026-04-30", "description": "Turning point date at month end"}
+  ],
+  "seasonal": "From a seasonal perspective, April is considered the most positive month of the year for oil. All three decade patterns point upward, especially in their intensity, with the 20-year pattern being particularly strong in its bullish bias.",
+  "statistics": [
+    {"date": "2026-04-13", "probability": "68%", "direction": "up", "description": "Over the last 30 years, approximately 68% probability of upward movement around April 13"},
+    {"date": "2026-04-23", "probability": "73%", "direction": "up", "description": "Over the last 30 years, approximately 73% probability of upward movement around April 23"},
+    {"date": "2026-04-08", "probability": "77%", "direction": "up", "description": "Over the last 30 years, oil closed higher on April 14 than on April 8 in ~77% of cases (range statistic)"},
+    {"date": "2026-04-14", "probability": "77%", "direction": "up", "description": "Over the last 30 years, oil closed higher on April 14 than on April 8 - range endpoint"}
+  ],
+  "insights": [
+    "April is the most positive month of the year for oil from a seasonal perspective. All three decade patterns point upward, and the 20-year pattern is particularly bullish",
+    "The support zone around $55.36-56 is the continuation holding area. If the price breaks below this, the next support is the October/December levels where a floor was already established in April and may well form again",
+    "There is potential for significant upward volatility from the Iran situation. The geopolitical overlay with the US/Israel-Iran conflict adds a supply disruption premium",
+    "The weekly chart shows oil has started forming a clear bottom pattern from the January highs, with the current structure supporting a bounce",
+    "Two important weekly cycles appear in weeks ending April 3 and April 24. The daily date of April 15 aligns with the first weekly cycle end, making it potentially significant",
+    "Daily dates between April 23 to 24 align with the second weekly cycle, and there is also high probability for reversals or at least directional changes around these dates",
+    "On the long-term perspective, a C-shaped wave from the second half suggests further decline is the primary path, with recovery potential from the $55-56 zone",
+    "The long-term view on oil remains that we are in a period of cycle completion where the 20-year pattern is particularly strong for April specifically",
+    "Key long-term resistance from the weekly chart sits between 98.30-100.47 dollars. Short-term daily chart support levels include intermediate Fibonacci at 93.75 and lower trendline support at 83.70-86.65",
+    "If Oil breaks above the $120 area on a weekly basis (Fibonacci extension), the 2008 breakout scenario could replay, though this is unlikely near-term"
+  ],
+  "technical": {
+    "support": [
+      {"level": "55.36-56.00", "description": "Main holding support zone, continuation area"},
+      {"level": "93.75", "description": "Intermediate Fibonacci support on daily chart"},
+      {"level": "86.65-83.70", "description": "Lower trendline support zone on daily chart"},
+      {"level": "124", "description": "If a breakout above long-term levels occurs, this Fibonacci extension becomes support-turned-resistance"}
+    ],
+    "resistance": [
+      {"level": "98.30-100.47", "description": "Long-term resistance zone from weekly chart, Fibonacci and structural levels"},
+      {"level": "120", "description": "Major Fibonacci extension level, breakout above signals massive move (2008 parallel)"}
+    ],
+    "indicators": "Weekly chart shows potential bottom pattern forming. Oil daily chart with support and resistance zones clearly marked. The weekly cycles in the first and third weeks of April are the most important timing references. Volume analysis suggests potential for strong moves once a direction is confirmed."
+  },
+  "summary": "April 2026 for Oil features 5 turning point dates (2, 9, 15, 24, 30) with strong seasonal bullish bias - April is the most positive month of the year for oil with all three decade patterns pointing upward. Key statistics show 77% probability of oil closing higher on April 14 than April 8. The support zone at $55.36-56 is critical - holding above maintains the bullish structure, while the geopolitical situation with Iran adds potential for supply disruption-driven spikes. Two weekly cycles (ending April 3 and 24) provide the primary timing framework.",
+  "previous_month_review": "March 2026 had five turning point dates for Oil. Date 1 (March 4): Did not work. Date 2 (March 11): Worked, arrived one day early and marked the low of the movement. Date 3 (March 16): Worked. Marked the high of the movement from the previous cycle. Date 4 (March 20): Worked, arrived one day late and marked the low of the movement from the previous cycle. Date 5 (March 26-27, double cycle): Did not work.",
+  "risk_notes": [
+    "Oil in April with strong seasonal patterns still requires risk management - the geopolitical situation can create sudden gaps",
+    "April appears to be a month where the concentration of monthly and daily cycles is very strong, which increases the probability of sharp reversals at turning point dates",
+    "Risk management in this month should be heightened given the overlap of cyclical concentration and geopolitical events",
+    "For educational and informational purposes only - not investment advice",
+    "Stay connected to the Discord community for real-time updates throughout the month"
+  ]
+}

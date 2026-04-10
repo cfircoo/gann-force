@@ -1,0 +1,1032 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-04-10T18:00:00",
+  "notes": {
+    "how_to_use": "Each cycle generates two price targets (high_target and low_target) based on 2:1 Gann diagonal projection. The diagonal starts at the cycle high/low and projects forward by 1 cycle duration. Where the diagonal meets the horizontal price level is the 'target_time'. Targets persist across cycles until price reaches them or they are manually marked missed.",
+    "when_to_update": "Update prices after each cycle completes: read the cycle high, low, and resulting targets from the GannCycles indicator on TradingView. Mark targets as 'reached' when price hits them, or 'missed' if they expire without being hit. Review at each new cycle boundary.",
+    "price_fields": "high_target = upward price destination (from cycle low), low_target = downward price destination (from cycle high). Both are calculated by the GannCycles Pine indicator automatically.",
+    "target_time_calc": "target_time = cycle_end + (cycle_end - cycle_start). The target projects forward by exactly 1 cycle duration from the cycle end.",
+    "direction_field": "expected_direction is based on cycle type analysis (up/down/continuation/reversal). It indicates which target (high or low) is more likely to be hit."
+  },
+  "assets": {
+    "sp500": {
+      "name": "S&P500",
+      "group": "G1",
+      "tickers": [
+        "SP500",
+        "SPX",
+        "ES1",
+        "US500"
+      ],
+      "statistics": "17.03.26.U,27.03.26.D,02.04.26.D,10.04.26.D",
+      "cycles": [
+        {
+          "cycle_number": 1,
+          "from": "2026-03-02",
+          "to": "2026-03-12",
+          "duration_days": 10,
+          "target_time": "2026-03-22",
+          "high_target": 6902.5,
+          "low_target": 6579.0,
+          "cycle_high": 6902.5,
+          "cycle_low": 6579.0,
+          "expected_direction": "down",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "יורד ↓"
+        },
+        {
+          "cycle_number": 2,
+          "from": "2026-03-12",
+          "to": "2026-03-18",
+          "duration_days": 6,
+          "target_time": "2026-03-24",
+          "high_target": 6764.4,
+          "low_target": 6612.2,
+          "cycle_high": 6764.4,
+          "cycle_low": 6612.2,
+          "expected_direction": "neutral",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "דשדוש"
+        },
+        {
+          "cycle_number": 3,
+          "from": "2026-03-18",
+          "to": "2026-03-27",
+          "duration_days": 9,
+          "target_time": "2026-04-05",
+          "high_target": 6770.4,
+          "low_target": 6442.4,
+          "cycle_high": 6770.4,
+          "cycle_low": 6442.4,
+          "expected_direction": "down",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "יורד ↓"
+        },
+        {
+          "cycle_number": 4,
+          "from": "2026-03-27",
+          "to": "2026-04-02",
+          "duration_days": 6,
+          "target_time": "2026-04-08",
+          "high_target": 6619.0,
+          "low_target": 6320.4,
+          "cycle_high": 6619.0,
+          "cycle_low": 6320.4,
+          "expected_direction": "up",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "עולה ↑"
+        },
+        {
+          "cycle_number": 5,
+          "from": "2026-04-02",
+          "to": "2026-04-06",
+          "duration_days": 4,
+          "target_time": "2026-04-10",
+          "high_target": 6602.8,
+          "low_target": 6468.8,
+          "cycle_high": 6602.8,
+          "cycle_low": 6468.8,
+          "expected_direction": "up",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "ממשיך ↑"
+        },
+        {
+          "cycle_number": 6,
+          "from": "2026-04-06",
+          "to": "2026-04-09",
+          "duration_days": 3,
+          "target_time": "2026-04-12",
+          "high_target": 6815.8,
+          "low_target": 6541.3,
+          "cycle_high": 6815.8,
+          "cycle_low": 6541.3,
+          "expected_direction": "up",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "ממשיך ↑"
+        },
+        {
+          "cycle_number": 7,
+          "from": "2026-04-09",
+          "to": "2026-04-17",
+          "duration_days": 8,
+          "target_time": "2026-04-25",
+          "high_target": "TBD - read from chart",
+          "low_target": "TBD - read from chart",
+          "cycle_high": 6853.8,
+          "cycle_low": 6779.8,
+          "expected_direction": "up (continuation - 3rd in row)",
+          "status": "active",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          },
+          "cycle_type": "ממשיך ↑ ●",
+          "notes": "Active cycle. Magnets projected from cycle 6: 25%=6610, 50%=6679, 75%=6747. ALL untouched - price above all."
+        },
+        {
+          "cycle_number": 8,
+          "from": "2026-04-17",
+          "to": "2026-04-27",
+          "duration_days": 10,
+          "target_time": "2026-05-07",
+          "high_target": "TBD - future cycle",
+          "low_target": "TBD - future cycle",
+          "cycle_high": "TBD - future cycle",
+          "cycle_low": "TBD - future cycle",
+          "expected_direction": "TBD",
+          "status": "future",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          }
+        },
+        {
+          "cycle_number": 9,
+          "from": "2026-04-27",
+          "to": "2026-04-28",
+          "duration_days": 1,
+          "target_time": "2026-04-29",
+          "high_target": "TBD - future cycle",
+          "low_target": "TBD - future cycle",
+          "cycle_high": "TBD - future cycle",
+          "cycle_low": "TBD - future cycle",
+          "expected_direction": "TBD",
+          "is_double": true,
+          "status": "future",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          }
+        }
+      ],
+      "persistent_targets": [
+        {
+          "source_cycle": 6,
+          "from": "2026-04-06",
+          "to": "2026-04-09",
+          "low_target": 6541.3,
+          "target_time": "2026-04-12",
+          "status": "active",
+          "notes": "Down target from continuation up cycle. Price at 6836, target at 6541 - 295 pts below. Would require strong reversal."
+        },
+        {
+          "source_cycle": 5,
+          "from": "2026-04-02",
+          "to": "2026-04-06",
+          "low_target": 6468.8,
+          "target_time": "2026-04-10",
+          "status": "active",
+          "notes": "Down target from continuation up cycle. Deep target at 6469 - hasn't been reached despite target_time being today."
+        }
+      ],
+      "current_projected_magnets": {
+        "source_cycle": "6 (Apr 6→9)",
+        "mag_25": 6609.93,
+        "mag_50": 6678.55,
+        "mag_75": 6747.18,
+        "projected_onto": "cycle 7 (Apr 9→17)",
+        "all_touched": false,
+        "notes": "Price at 6836 - above all magnets. None touched this cycle."
+      }
+    },
+    "gold": {
+      "name": "GOLD",
+      "group": "G2",
+      "tickers": [
+        "AUX",
+        "GOLD",
+        "SILVER"
+      ],
+      "statistics": "19.03.26.U,26.03.26.U,06.04.26.U,08.04.26.U,10.04.26.U,13.04.26.U,14.04.26.D",
+      "cycles": [
+        {
+          "cycle_number": 1,
+          "from": "2026-03-03",
+          "to": "2026-03-10",
+          "duration_days": 7,
+          "target_time": "2026-03-17",
+          "high_target": "TBD - read from chart",
+          "low_target": "TBD - read from chart",
+          "cycle_high": "TBD - read from chart",
+          "cycle_low": "TBD - read from chart",
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          }
+        },
+        {
+          "cycle_number": 2,
+          "from": "2026-03-10",
+          "to": "2026-03-13",
+          "duration_days": 3,
+          "target_time": "2026-03-16",
+          "high_target": "TBD - read from chart",
+          "low_target": "TBD - read from chart",
+          "cycle_high": "TBD - read from chart",
+          "cycle_low": "TBD - read from chart",
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          }
+        },
+        {
+          "cycle_number": 3,
+          "from": "2026-03-13",
+          "to": "2026-03-26",
+          "duration_days": 13,
+          "target_time": "2026-04-08",
+          "high_target": "TBD - read from chart",
+          "low_target": "TBD - read from chart",
+          "cycle_high": "TBD - read from chart",
+          "cycle_low": "TBD - read from chart",
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          }
+        },
+        {
+          "cycle_number": 4,
+          "from": "2026-03-26",
+          "to": "2026-03-27",
+          "duration_days": 1,
+          "target_time": "2026-03-28",
+          "high_target": "TBD - read from chart",
+          "low_target": "TBD - read from chart",
+          "cycle_high": "TBD - read from chart",
+          "cycle_low": "TBD - read from chart",
+          "expected_direction": "TBD",
+          "is_double": true,
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          }
+        },
+        {
+          "cycle_number": 5,
+          "from": "2026-03-27",
+          "to": "2026-04-02",
+          "duration_days": 6,
+          "target_time": "2026-04-08",
+          "high_target": "TBD - read from chart",
+          "low_target": "TBD - read from chart",
+          "cycle_high": "TBD - read from chart",
+          "cycle_low": "TBD - read from chart",
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          }
+        },
+        {
+          "cycle_number": 6,
+          "from": "2026-04-02",
+          "to": "2026-04-10",
+          "duration_days": 8,
+          "target_time": "2026-04-18",
+          "high_target": "TBD - read from chart",
+          "low_target": "TBD - read from chart",
+          "cycle_high": "TBD - read from chart (in progress)",
+          "cycle_low": "TBD - read from chart (in progress)",
+          "expected_direction": "TBD",
+          "status": "active",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          }
+        },
+        {
+          "cycle_number": 7,
+          "from": "2026-04-10",
+          "to": "2026-04-16",
+          "duration_days": 6,
+          "target_time": "2026-04-22",
+          "high_target": "TBD - future cycle",
+          "low_target": "TBD - future cycle",
+          "cycle_high": "TBD - future cycle",
+          "cycle_low": "TBD - future cycle",
+          "expected_direction": "TBD",
+          "status": "future",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          }
+        },
+        {
+          "cycle_number": 8,
+          "from": "2026-04-16",
+          "to": "2026-04-24",
+          "duration_days": 8,
+          "target_time": "2026-05-02",
+          "high_target": "TBD - future cycle",
+          "low_target": "TBD - future cycle",
+          "cycle_high": "TBD - future cycle",
+          "cycle_low": "TBD - future cycle",
+          "expected_direction": "TBD",
+          "status": "future",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          }
+        },
+        {
+          "cycle_number": 9,
+          "from": "2026-04-24",
+          "to": "2026-04-29",
+          "duration_days": 5,
+          "target_time": "2026-05-04",
+          "high_target": "TBD - future cycle",
+          "low_target": "TBD - future cycle",
+          "cycle_high": "TBD - future cycle",
+          "cycle_low": "TBD - future cycle",
+          "expected_direction": "TBD",
+          "status": "future",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          }
+        }
+      ],
+      "persistent_targets": [],
+      "notes": "Cannot read Gann indicator via MCP - XAUUSD doesn't match tickers AUX,GOLD,SILVER. Prices need manual entry.",
+      "current_projected_magnets": {
+        "notes": "Need to read from Gold chart manually. Price at ~4,775. Pivot at 4,519."
+      }
+    },
+    "oil": {
+      "name": "OIL",
+      "group": "G3",
+      "tickers": [
+        "USOIL",
+        "MCL1"
+      ],
+      "statistics": "04.03.26.U,13.03.26.D,26.03.26.U,13.04.26.U,23.04.26.U",
+      "cycles": [
+        {
+          "cycle_number": 1,
+          "from": "2026-03-04",
+          "to": "2026-03-11",
+          "duration_days": 7,
+          "target_time": "2026-03-18",
+          "high_target": "TBD - read from chart",
+          "low_target": "TBD - read from chart",
+          "cycle_high": "TBD - read from chart",
+          "cycle_low": "TBD - read from chart",
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          }
+        },
+        {
+          "cycle_number": 2,
+          "from": "2026-03-11",
+          "to": "2026-03-16",
+          "duration_days": 5,
+          "target_time": "2026-03-21",
+          "high_target": 102.44,
+          "low_target": 81.99,
+          "cycle_high": 102.44,
+          "cycle_low": 81.99,
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "ממשיך ↑"
+        },
+        {
+          "cycle_number": 3,
+          "from": "2026-03-16",
+          "to": "2026-03-20",
+          "duration_days": 4,
+          "target_time": "2026-03-24",
+          "high_target": 101.04,
+          "low_target": 91.45,
+          "cycle_high": 101.04,
+          "cycle_low": 91.45,
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "יורד ↓"
+        },
+        {
+          "cycle_number": 4,
+          "from": "2026-03-20",
+          "to": "2026-03-26",
+          "duration_days": 6,
+          "target_time": "2026-04-01",
+          "high_target": 101.67,
+          "low_target": 84.37,
+          "cycle_high": 101.67,
+          "cycle_low": 84.37,
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "דשדוש"
+        },
+        {
+          "cycle_number": 5,
+          "from": "2026-03-26",
+          "to": "2026-03-27",
+          "duration_days": 1,
+          "target_time": "2026-03-28",
+          "high_target": "TBD - read from chart",
+          "low_target": "TBD - read from chart",
+          "cycle_high": "TBD - read from chart",
+          "cycle_low": "TBD - read from chart",
+          "expected_direction": "TBD",
+          "is_double": true,
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          }
+        },
+        {
+          "cycle_number": 6,
+          "from": "2026-03-27",
+          "to": "2026-04-02",
+          "duration_days": 6,
+          "target_time": "2026-04-08",
+          "high_target": 106.86,
+          "low_target": 92.08,
+          "cycle_high": 106.86,
+          "cycle_low": 92.08,
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "עולה ↑"
+        },
+        {
+          "cycle_number": 7,
+          "from": "2026-04-02",
+          "to": "2026-04-09",
+          "duration_days": 7,
+          "target_time": "2026-04-16",
+          "high_target": 117.63,
+          "low_target": 91.05,
+          "cycle_high": 117.63,
+          "cycle_low": 91.05,
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "יורד ↓"
+        },
+        {
+          "cycle_number": 8,
+          "from": "2026-04-09",
+          "to": "2026-04-15",
+          "duration_days": 6,
+          "target_time": "2026-04-21",
+          "high_target": "TBD - read from chart",
+          "low_target": "TBD - read from chart",
+          "cycle_high": "TBD - read from chart (in progress)",
+          "cycle_low": "TBD - read from chart (in progress)",
+          "expected_direction": "sideways - breakout expected",
+          "status": "active",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          },
+          "cycle_type": "דשדוש ●",
+          "notes": "Active. Magnets from prev: 25%=97.7, 50%=104.34, 75%=110.99. Price at 98.6 near 25%."
+        },
+        {
+          "cycle_number": 9,
+          "from": "2026-04-15",
+          "to": "2026-04-24",
+          "duration_days": 9,
+          "target_time": "2026-05-03",
+          "high_target": "TBD - future cycle",
+          "low_target": "TBD - future cycle",
+          "cycle_high": "TBD - future cycle",
+          "cycle_low": "TBD - future cycle",
+          "expected_direction": "TBD",
+          "status": "future",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          }
+        },
+        {
+          "cycle_number": 10,
+          "from": "2026-04-24",
+          "to": "2026-04-30",
+          "duration_days": 6,
+          "target_time": "2026-05-06",
+          "high_target": "TBD - future cycle",
+          "low_target": "TBD - future cycle",
+          "cycle_high": "TBD - future cycle",
+          "cycle_low": "TBD - future cycle",
+          "expected_direction": "TBD",
+          "status": "future",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          }
+        }
+      ],
+      "persistent_targets": [
+        {
+          "source_cycle": 7,
+          "high_target": 117.63,
+          "low_target": 91.05,
+          "target_time": "2026-04-21",
+          "status": "active",
+          "notes": "Large range cycle. High target at 117.63 very far."
+        },
+        {
+          "source_cycle": 6,
+          "high_target": 106.86,
+          "low_target": 92.08,
+          "target_time": "2026-04-16",
+          "status": "active",
+          "notes": "Up target at 106.86 - reachable"
+        }
+      ],
+      "current_projected_magnets": {
+        "source_cycle": "7 (Apr 9→15)",
+        "mag_25": 97.7,
+        "mag_50": 104.34,
+        "mag_75": 110.99,
+        "projected_onto": "cycle 8 (Apr 15→24)",
+        "notes": "Price at ~98.6 bouncing off 25% magnet"
+      }
+    },
+    "eurusd": {
+      "name": "EUR/USD",
+      "group": "G4",
+      "tickers": [
+        "EURUSD",
+        "M6E1",
+        "6E1"
+      ],
+      "statistics": "06.03.26.U,16.03.26.U,17.03.26.U,07.04.26.D,24.04.26.U,29.04.26.U",
+      "cycles": [
+        {
+          "cycle_number": 1,
+          "from": "2026-03-04",
+          "to": "2026-03-12",
+          "duration_days": 8,
+          "target_time": "2026-03-20",
+          "high_target": 1.16,
+          "low_target": 1.14,
+          "cycle_high": 1.16,
+          "cycle_low": 1.14,
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "יורד ↓"
+        },
+        {
+          "cycle_number": 2,
+          "from": "2026-03-12",
+          "to": "2026-03-13",
+          "duration_days": 1,
+          "target_time": "2026-03-14",
+          "high_target": 1.16,
+          "low_target": 1.15,
+          "cycle_high": 1.16,
+          "cycle_low": 1.15,
+          "expected_direction": "TBD",
+          "is_double": true,
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "כפול ממשיך"
+        },
+        {
+          "cycle_number": 3,
+          "from": "2026-03-13",
+          "to": "2026-03-20",
+          "duration_days": 7,
+          "target_time": "2026-03-27",
+          "high_target": 1.16,
+          "low_target": 1.15,
+          "cycle_high": 1.16,
+          "cycle_low": 1.15,
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "עולה ↑"
+        },
+        {
+          "cycle_number": 4,
+          "from": "2026-03-20",
+          "to": "2026-03-30",
+          "duration_days": 10,
+          "target_time": "2026-04-09",
+          "high_target": 1.16,
+          "low_target": 1.14,
+          "cycle_high": 1.16,
+          "cycle_low": 1.14,
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "יורד ↓"
+        },
+        {
+          "cycle_number": 5,
+          "from": "2026-03-30",
+          "to": "2026-04-02",
+          "duration_days": 3,
+          "target_time": "2026-04-05",
+          "high_target": 1.17,
+          "low_target": 1.15,
+          "cycle_high": 1.17,
+          "cycle_low": 1.15,
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          },
+          "cycle_type": "עולה ↑"
+        },
+        {
+          "cycle_number": 6,
+          "from": "2026-04-02",
+          "to": "2026-04-10",
+          "duration_days": 8,
+          "target_time": "2026-04-18",
+          "high_target": 1.17,
+          "low_target": 1.15,
+          "cycle_high": 1.17,
+          "cycle_low": 1.15,
+          "expected_direction": "TBD",
+          "status": "active",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          },
+          "cycle_type": "ממשיך ↑"
+        },
+        {
+          "cycle_number": 7,
+          "from": "2026-04-10",
+          "to": "2026-04-16",
+          "duration_days": 6,
+          "target_time": "2026-04-22",
+          "high_target": "TBD - future cycle",
+          "low_target": "TBD - future cycle",
+          "cycle_high": "TBD - future cycle",
+          "cycle_low": "TBD - future cycle",
+          "expected_direction": "up continuation (2nd)",
+          "status": "future",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          },
+          "cycle_type": "ממשיך ↑ ●",
+          "notes": "Active. Magnets: 25%=1.16, 50%=1.16, 75%=1.17. Price at 1.1729 above all."
+        },
+        {
+          "cycle_number": 8,
+          "from": "2026-04-16",
+          "to": "2026-04-17",
+          "duration_days": 1,
+          "target_time": "2026-04-18",
+          "high_target": "TBD - future cycle",
+          "low_target": "TBD - future cycle",
+          "cycle_high": "TBD - future cycle",
+          "cycle_low": "TBD - future cycle",
+          "expected_direction": "TBD",
+          "is_double": true,
+          "status": "future",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          }
+        },
+        {
+          "cycle_number": 9,
+          "from": "2026-04-17",
+          "to": "2026-04-28",
+          "duration_days": 11,
+          "target_time": "2026-05-09",
+          "high_target": "TBD - future cycle",
+          "low_target": "TBD - future cycle",
+          "cycle_high": "TBD - future cycle",
+          "cycle_low": "TBD - future cycle",
+          "expected_direction": "TBD",
+          "status": "future",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          }
+        }
+      ],
+      "persistent_targets": [
+        {
+          "source_cycle": 5,
+          "high_target": 1.17,
+          "low_target": 1.15,
+          "target_time": "2026-04-20",
+          "status": "active"
+        },
+        {
+          "source_cycle": 4,
+          "high_target": 1.16,
+          "low_target": 1.14,
+          "target_time": "2026-04-10",
+          "status": "active"
+        }
+      ],
+      "current_projected_magnets": {
+        "source_cycle": "6 (Apr 10→16)",
+        "mag_25": 1.16,
+        "mag_50": 1.16,
+        "mag_75": 1.17,
+        "projected_onto": "cycle 7 (Apr 16→17 double)",
+        "notes": "Price at 1.1729 above all magnets. Tight range on EUR/USD."
+      }
+    },
+    "bitcoin": {
+      "name": "BITCOIN",
+      "group": "G5",
+      "tickers": [
+        "BTCUSD",
+        "BTCUSDT",
+        "ETHUSD",
+        "ETHUSDT"
+      ],
+      "statistics": "",
+      "cycles": [
+        {
+          "cycle_number": 1,
+          "from": "2026-03-02",
+          "to": "2026-03-06",
+          "duration_days": 4,
+          "target_time": "2026-03-10",
+          "high_target": "TBD - read from chart",
+          "low_target": "TBD - read from chart",
+          "cycle_high": "TBD - read from chart",
+          "cycle_low": "TBD - read from chart",
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          }
+        },
+        {
+          "cycle_number": 2,
+          "from": "2026-03-06",
+          "to": "2026-03-16",
+          "duration_days": 10,
+          "target_time": "2026-03-26",
+          "high_target": "TBD - read from chart",
+          "low_target": "TBD - read from chart",
+          "cycle_high": "TBD - read from chart",
+          "cycle_low": "TBD - read from chart",
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          }
+        },
+        {
+          "cycle_number": 3,
+          "from": "2026-03-16",
+          "to": "2026-03-17",
+          "duration_days": 1,
+          "target_time": "2026-03-18",
+          "high_target": "TBD - read from chart",
+          "low_target": "TBD - read from chart",
+          "cycle_high": "TBD - read from chart",
+          "cycle_low": "TBD - read from chart",
+          "expected_direction": "TBD",
+          "is_double": true,
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          }
+        },
+        {
+          "cycle_number": 4,
+          "from": "2026-03-17",
+          "to": "2026-03-20",
+          "duration_days": 3,
+          "target_time": "2026-03-23",
+          "high_target": 72030.29,
+          "low_target": 67332.05,
+          "cycle_high": 72030.29,
+          "cycle_low": 67332.05,
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          }
+        },
+        {
+          "cycle_number": 5,
+          "from": "2026-03-20",
+          "to": "2026-03-26",
+          "duration_days": 6,
+          "target_time": "2026-04-01",
+          "high_target": "TBD - read from chart",
+          "low_target": "TBD - read from chart",
+          "cycle_high": "TBD - read from chart",
+          "cycle_low": "TBD - read from chart",
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          }
+        },
+        {
+          "cycle_number": 6,
+          "from": "2026-03-26",
+          "to": "2026-03-27",
+          "duration_days": 1,
+          "target_time": "2026-03-28",
+          "high_target": "TBD - read from chart",
+          "low_target": "TBD - read from chart",
+          "cycle_high": "TBD - read from chart",
+          "cycle_low": "TBD - read from chart",
+          "expected_direction": "TBD",
+          "is_double": true,
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          }
+        },
+        {
+          "cycle_number": 7,
+          "from": "2026-03-27",
+          "to": "2026-04-03",
+          "duration_days": 7,
+          "target_time": "2026-04-10",
+          "high_target": 69285.99,
+          "low_target": 64938.66,
+          "cycle_high": 69285.99,
+          "cycle_low": 64938.66,
+          "expected_direction": "TBD",
+          "status": "completed",
+          "target_status": {
+            "high": "TBD",
+            "low": "TBD"
+          }
+        },
+        {
+          "cycle_number": 8,
+          "from": "2026-04-03",
+          "to": "2026-04-10",
+          "duration_days": 7,
+          "target_time": "2026-04-17",
+          "high_target": 73147.81,
+          "low_target": 66275.01,
+          "cycle_high": 73147.81,
+          "cycle_low": 66275.01,
+          "expected_direction": "TBD",
+          "status": "active",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          }
+        },
+        {
+          "cycle_number": 9,
+          "from": "2026-04-10",
+          "to": "2026-04-16",
+          "duration_days": 6,
+          "target_time": "2026-04-22",
+          "high_target": "TBD - future cycle",
+          "low_target": "TBD - future cycle",
+          "cycle_high": "TBD - future cycle",
+          "cycle_low": "TBD - future cycle",
+          "expected_direction": "TBD",
+          "status": "future",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          },
+          "notes": "Active cycle Apr 10→16. Double cycle at 16→17 coming."
+        },
+        {
+          "cycle_number": 10,
+          "from": "2026-04-16",
+          "to": "2026-04-17",
+          "duration_days": 1,
+          "target_time": "2026-04-18",
+          "high_target": "TBD - future cycle",
+          "low_target": "TBD - future cycle",
+          "cycle_high": "TBD - future cycle",
+          "cycle_low": "TBD - future cycle",
+          "expected_direction": "TBD",
+          "is_double": true,
+          "status": "future",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          }
+        },
+        {
+          "cycle_number": 11,
+          "from": "2026-04-17",
+          "to": "2026-04-27",
+          "duration_days": 10,
+          "target_time": "2026-05-07",
+          "high_target": "TBD - future cycle",
+          "low_target": "TBD - future cycle",
+          "cycle_high": "TBD - future cycle",
+          "cycle_low": "TBD - future cycle",
+          "expected_direction": "TBD",
+          "status": "future",
+          "target_status": {
+            "high": "pending",
+            "low": "pending"
+          }
+        }
+      ],
+      "persistent_targets": [
+        {
+          "source_cycle": 8,
+          "high_target": 73147.81,
+          "low_target": 66275.01,
+          "target_time": "2026-04-22",
+          "status": "active",
+          "notes": "Down target at 66,275 - major if BTC breaks lower"
+        },
+        {
+          "source_cycle": 7,
+          "high_target": 69285.99,
+          "low_target": 64938.66,
+          "target_time": "2026-04-20",
+          "status": "active",
+          "notes": "Down target at 64,939 - deep target"
+        }
+      ],
+      "current_projected_magnets": {
+        "source_cycle": "8 (Apr 3→10)",
+        "mag_25": 67993.21,
+        "mag_50": 69711.41,
+        "mag_75": 71429.61,
+        "projected_onto": "cycle 9 (Apr 10→16)",
+        "notes": "Price at 72362 above all magnets. BTC structurally weak per report."
+      }
+    }
+  }
+}

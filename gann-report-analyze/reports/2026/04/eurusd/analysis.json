@@ -1,0 +1,49 @@
+{
+  "asset": "EUR/USD",
+  "key_dates": [
+    {"date": "2026-04-02", "description": "First turning point, aligns with first weekly cycle of April"},
+    {"date": "2026-04-10", "description": "Turning point date with daily cycle alignment"},
+    {"date": "2026-04-16", "description": "Double cycle date (April 16-17), aligns with weekly cycle"},
+    {"date": "2026-04-17", "description": "Double cycle date (April 16-17)"},
+    {"date": "2026-04-28", "description": "Turning point date near end of month, strong seasonal date"}
+  ],
+  "seasonal": "April is a positive month for the EUR/USD pair. It is one of the more favorable months of the year for the pair.",
+  "statistics": [
+    {"date": "2026-04-07", "probability": "79%", "direction": "down", "description": "Over the last 20 years, approximately 79% probability of decline around April 7"},
+    {"date": "2026-04-24", "probability": "73%", "direction": "up", "description": "Over the last 20 years, approximately 73% probability of upward movement around April 24"},
+    {"date": "2026-04-29", "probability": "86%", "direction": "up", "description": "Over the last 20 years, approximately 86% probability of upward movement around April 29"},
+    {"date": "2026-04-07", "probability": "85%", "direction": "up", "description": "Over the last 20 years, the pair closed higher on April 13 than on April 7 in ~85% of cases (range statistic)"},
+    {"date": "2026-04-13", "probability": "85%", "direction": "up", "description": "Over the last 20 years, the pair closed higher on April 13 than on April 7 in ~85% of cases - range endpoint"}
+  ],
+  "insights": [
+    "April is a positive month seasonally for the EUR/USD pair, and the positive bias is relatively strong",
+    "The weekly chart has not yet signaled strength, but is also blocking the braking zone. EUR/USD is at a critical juncture between resistance zones and support",
+    "March dates review showed 3 out of 4 dates worked - the second date (12-13 March double cycle) shifted direction upward, the third (March 20) served as the high with one day delay, the fourth (March 30) served as the low of the movement",
+    "Daily chart shows EUR/USD testing a key area - the 13.03 resistance level. There is a clear battle between bulls and bears at this zone",
+    "Key resistance zone between 1.1612-1.1640 - this is where the continuation move upward could face significant resistance from long-term levels",
+    "The area between support and resistance on the daily chart is what creates the best trading opportunity - not the level itself, but the interplay between them",
+    "Support and resistance levels are noted on the attached chart - real-time updates will be posted on the Discord community during the weekly live sessions",
+    "Between April 10 and 20, there appears to be the most concentrated period for significant moves based on cycle convergence",
+    "The pair is between 1.10 and 1.20 in a broad range, and the direction from here will be determined by how turning point dates interact with these levels"
+  ],
+  "technical": {
+    "support": [
+      {"level": "1.1390", "description": "Near-term support level on daily chart"},
+      {"level": "1.1414", "description": "Additional support level, potential retracement target from central pivot area"},
+      {"level": "1.1300", "description": "Psychological support level and weekly chart reference"}
+    ],
+    "resistance": [
+      {"level": "1.1612-1.1640", "description": "Key resistance zone on the upside, long-term levels"},
+      {"level": "1.1390-area", "description": "The 13.03 level serves as both support and resistance depending on approach direction"}
+    ],
+    "indicators": "Weekly chart shows EUR/USD in an area of potential mean reversion, with the key question being whether the pair can hold above recent lows. Daily chart shows a clearer picture of the battle at key levels. The daily chart is more sensitive to news and sentiment shifts, showing the initial direction changes before the weekly chart confirms."
+  },
+  "summary": "April 2026 for EUR/USD features 5 turning point dates (2, 10, 16-17, 28) with strong seasonal bias to the upside. The most notable statistic is the 86% probability of upward movement around April 29, and the 85% range statistic showing the pair tends to close higher on April 13 than April 7. Key resistance at 1.1612-1.1640 and support around 1.1390-1.1414 define the trading range. The mid-month window around April 10-17 concentrates the most turning point activity.",
+  "previous_month_review": "March 2026 had four turning point dates. Date 1 (March 3): Did not work. Date 2 (March 12-13, double cycle): Worked. The second date shifted direction upward. Date 3 (March 20): Worked. Served as the high of the movement with a one-day delay. Date 4 (March 30): Worked. Served as the low of the movement.",
+  "risk_notes": [
+    "When turning point dates come as daily dates aligning with weekly cycle boundaries, this amplifies their significance",
+    "April appears positive seasonally but the current complex geopolitical environment could amplify moves in either direction",
+    "Important note: these are presented for educational purposes only - not investment advice",
+    "Stay connected to the Discord community for real-time updates throughout the month"
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "report": "Cycles Trading Monthly Report - April 2026",
+  "generated": "2026-04-10",
+  "overall_theme": "April 2026 is a month of strong seasonal bullishness across most assets (especially Oil and S&P 500) against a backdrop of heightened geopolitical risk from the US/Israel-Iran conflict and extreme fear sentiment. The convergence of turning point dates around April 2-3, 9-10, 16-17, and 27-28 across multiple assets creates high-impact windows where significant moves are expected.",
+
+  "key_dates_calendar": {
+    "2026-04-02": ["S&P500 (turning point, 68% down statistic)", "Bitcoin (early April window)", "EUR/USD (first turning point)", "Gold (first turning point)", "Oil (first turning point)"],
+    "2026-04-03": ["Bitcoin (turning point)"],
+    "2026-04-06": ["S&P500 (daily turning point)", "Gold (74% up statistic)"],
+    "2026-04-07": ["EUR/USD (79% down statistic)", "Gold (73% down range start)"],
+    "2026-04-08": ["Gold (71% up statistic)", "Oil (77% up range start)"],
+    "2026-04-09": ["S&P500 (daily turning point)", "Oil (turning point)"],
+    "2026-04-10": ["S&P500 (68% down statistic)", "Bitcoin (turning point)", "EUR/USD (turning point)", "Gold (turning point, 74% up statistic)"],
+    "2026-04-13": ["EUR/USD (85% up range end)", "Gold (75% up statistic, 73% down range end)", "Oil (68% up statistic)"],
+    "2026-04-14": ["Gold (79% down statistic)", "Oil (77% up range end)"],
+    "2026-04-15": ["S&P500 (83% up range start)", "Oil (turning point, weekly cycle alignment)"],
+    "2026-04-16": ["Bitcoin (double cycle)", "EUR/USD (double cycle)", "Gold (turning point)"],
+    "2026-04-17": ["S&P500 (daily turning point)", "Bitcoin (double cycle)"],
+    "2026-04-23": ["Oil (73% up statistic)"],
+    "2026-04-24": ["EUR/USD (73% up statistic)", "Gold (turning point)", "Oil (turning point, weekly cycle)"],
+    "2026-04-27": ["S&P500 (turning point)", "Bitcoin (turning point)"],
+    "2026-04-28": ["S&P500 (turning point, 83% up range end)", "EUR/USD (turning point)"],
+    "2026-04-29": ["EUR/USD (86% up statistic)", "Gold (turning point)"],
+    "2026-04-30": ["Oil (turning point)"]
+  },
+
+  "assets": {
+    "sp500": {
+      "bias": "Seasonally positive - three out of four decade patterns point upward. Currently in a 7.5-8.5% correction from highs with extreme fear sentiment (CNN Fear & Greed at 19)",
+      "key_dates": ["April 2", "April 6-9", "April 17", "April 27-28"],
+      "critical_window": "April 15-28 has 83% probability of closing higher on the 28th than the 15th",
+      "support": ["6720-6792", "6550", "6536", "6175", "6147-6095"],
+      "resistance": ["6725", "6785", "6976-6999"],
+      "top_insights": [
+        "CNN Fear & Greed at 19 (Extreme Fear) - works as contrarian indicator",
+        "7.5-8.5% correction is normal, not crash territory",
+        "AB=CD pattern on weekly targeting 6,175 area (38.2% Fib + 100-week MA)",
+        "2026 annual report described this as psychologically sensitive year",
+        "D9 indicator previously lit extreme reading"
+      ],
+      "summary": "Seasonally strong month but currently in correction mode. The 83% statistic for April 15-28 suggests second half of month tends to be bullish. Key support at 6,175 (Fib 38.2% + 100-week MA) is the critical line in the sand."
+    },
+    "bitcoin": {
+      "bias": "Weak seasonal statistics - only 53% positive in last 15 years. Currently showing structural weakness on weekly chart",
+      "key_dates": ["April 3", "April 10", "April 16-17 (double)", "April 27"],
+      "critical_window": "April 2-8 has 75% probability of decline (lower on April 8 than April 2)",
+      "support": ["70000-78000", "53300", "49000"],
+      "resistance": ["74600-76000", "80400-84400"],
+      "top_insights": [
+        "Weekly chart shows structural weakness after January high breakdown",
+        "Key braking zone at 70,000-78,000 is the critical support",
+        "Fibonacci 38.2% of entire bull rally at 49,000 is major downside target",
+        "75% probability of decline in first week of April"
+      ],
+      "summary": "Weakest seasonal profile among the five assets. Current structural weakness with the 70,000-78,000 braking zone as the key battle line. First week of April statistically bearish."
+    },
+    "eurusd": {
+      "bias": "Seasonally positive - one of the stronger months for the pair",
+      "key_dates": ["April 2", "April 10", "April 16-17 (double)", "April 28"],
+      "critical_window": "April 7-13 has 85% probability of closing higher on the 13th than the 7th. April 29 has 86% probability of upward movement",
+      "support": ["1.1390", "1.1414", "1.1300"],
+      "resistance": ["1.1612-1.1640"],
+      "top_insights": [
+        "86% upward probability around April 29 - strongest single statistic in the report for this asset",
+        "85% probability of closing higher on April 13 than April 7",
+        "Key resistance at 1.1612-1.1640 defines the upside target",
+        "3 out of 4 March dates worked"
+      ],
+      "summary": "Strong seasonal and statistical support for upward moves, particularly in the April 7-13 window (85%) and around April 29 (86%). Key resistance at 1.1612-1.1640."
+    },
+    "gold": {
+      "bias": "Slightly positive seasonal bias - no strong standout but positive overall",
+      "key_dates": ["April 2", "April 10", "April 16", "April 24", "April 29"],
+      "critical_window": "April 6-13 concentration of upward statistics (71-75%), followed by 79% down probability at April 14",
+      "support": ["4381", "4080", "3610", "3500", "2790"],
+      "resistance": ["4519-4861", "5000-5100"],
+      "top_insights": [
+        "Gains from February slowing around $4,519 - key pivot level",
+        "Competing weekly chart scenarios: shallow vs. deep Wave C correction",
+        "79% probability of decline around April 14 - strongest bearish statistic",
+        "Multiple Fibonacci levels create complex support structure",
+        "First half of April bullish, second half more cautious"
+      ],
+      "summary": "Complex picture with strong upward statistics early in the month (74-75% on April 6-13) turning to bearish at April 14 (79% down). The $4,519 pivot is key - above targets $5,000+, below risks revisiting $4,381 and deeper."
+    },
+    "oil": {
+      "bias": "Strongest seasonal month of the year - all three decade patterns point upward with high intensity",
+      "key_dates": ["April 2", "April 9", "April 15", "April 24", "April 30"],
+      "critical_window": "April 8-14 has 77% probability of closing higher on the 14th than the 8th",
+      "support": ["55.36-56.00", "93.75", "86.65-83.70"],
+      "resistance": ["98.30-100.47", "120"],
+      "top_insights": [
+        "April is the MOST positive month of the year for oil",
+        "All three decade patterns point upward with strong intensity",
+        "77% probability of higher close on April 14 vs April 8",
+        "Geopolitical Iran situation adds supply disruption premium",
+        "Two important weekly cycles: ending April 3 and April 24"
+      ],
+      "summary": "Strongest seasonal profile among all five assets for April. The 77% range statistic (April 8-14) and 73% up probability on April 23 support the bullish case. Geopolitical tensions add further upside potential."
+    }
+  },
+
+  "cross_asset_themes": [
+    "HIGH-IMPACT DATE - April 2: ALL five assets have turning points on this date. This is the most concentrated multi-asset date of the month",
+    "HIGH-IMPACT DATE - April 10: Four assets converge (S&P500, Bitcoin, EUR/USD, Gold) with turning points on this date",
+    "HIGH-IMPACT DATE - April 16-17: Three assets have double/turning point dates (Bitcoin double cycle, EUR/USD double cycle, Gold turning point)",
+    "Mid-month reversal pattern: Statistics show upward bias in the first half of April across Gold (74-75% up on April 6-13), Oil (77% up on April 8-14), and EUR/USD (85% up on April 7-13), followed by potential reversal around April 14-15",
+    "End-of-month bullish convergence: S&P500 (83% up on April 15-28), EUR/USD (86% up on April 29), and Oil seasonal strength all point to a positive end of April",
+    "Geopolitical overlay: The US/Israel-Iran situation continues from the February attack, creating a supply disruption risk for Oil and safe-haven demand for Gold, while adding uncertainty for equity markets",
+    "Extreme fear creates opportunity: CNN Fear & Greed at 19 (Extreme Fear) for S&P 500 works as a contrarian indicator - historically, extreme fear levels often precede market recoveries",
+    "Bitcoin divergence: Bitcoin has the weakest seasonal profile and structural weakness, potentially lagging the recovery seen in other risk assets"
+  ],
+
+  "risk_management_rules": [
+    "Maximum risk per trade on futures contracts should not exceed 1% of account",
+    "In stocks, maintain elevated liquidity (30-40%) during this correction period",
+    "Do not hold open positions over weekends without understanding gap risk from geopolitical events",
+    "Stop loss must be set within the system with clear risk from the outset",
+    "A correction of 10-15% in indices does not negate the positive primary trend",
+    "Timing is a method-based system that rewards patience and punishes impulsive behavior",
+    "Do not buy blindly at support - first confirm what is happening there (controlled vs panic decline)",
+    "Take care of mental health during volatile months - not just the account is at risk",
+    "Stay connected to the Discord community for real-time updates and date adjustments",
+    "All information is for educational and learning purposes only - not investment advice"
+  ]
+}

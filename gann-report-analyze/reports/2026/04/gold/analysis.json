@@ -1,0 +1,55 @@
+{
+  "asset": "Gold",
+  "key_dates": [
+    {"date": "2026-04-02", "description": "First turning point, aligns with beginning of April and weekly cycle"},
+    {"date": "2026-04-10", "description": "Turning point date with daily cycle alignment"},
+    {"date": "2026-04-16", "description": "Turning point date in mid-month"},
+    {"date": "2026-04-24", "description": "Turning point date aligning with weekly cycle"},
+    {"date": "2026-04-29", "description": "Turning point date near end of month"}
+  ],
+  "seasonal": "From a seasonal perspective, April is considered a slightly positive month for gold, with no clear strong bias. Among the decade patterns, three out of four point slightly positive with some neutral. However, April itself does not have a significant monthly cycle standout.",
+  "statistics": [
+    {"date": "2026-04-06", "probability": "74%", "direction": "up", "description": "Over the last 30 years, approximately 74% probability of upward movement around April 6"},
+    {"date": "2026-04-08", "probability": "71%", "direction": "up", "description": "Over the last 30 years, approximately 71% probability of upward movement around April 8"},
+    {"date": "2026-04-10", "probability": "74%", "direction": "up", "description": "Over the last 30 years, approximately 74% probability of upward movement around April 10"},
+    {"date": "2026-04-13", "probability": "75%", "direction": "up", "description": "Over the last 30 years, approximately 75% probability of upward movement around April 13"},
+    {"date": "2026-04-14", "probability": "79%", "direction": "down", "description": "Over the last 30 years, approximately 79% probability of downward movement around April 14"},
+    {"date": "2026-04-07", "probability": "73%", "direction": "down", "description": "Over the last 30 years, gold closed lower on April 13 than on April 7 in ~73% of cases (range statistic)"},
+    {"date": "2026-04-13", "probability": "73%", "direction": "down", "description": "Over the last 30 years, gold closed lower on April 13 than on April 7 - range endpoint"}
+  ],
+  "insights": [
+    "The gains from February are beginning to slow down at the start of April, around $4,519. This is approximately where the correction wave was expected to reach",
+    "The decline to $4,381 area previously was not deep enough from the perspective of the full-resolution cycle. The retracement of the ABC pattern needs to reach at least the Fibonacci 38.2% level before the next leg begins",
+    "Gold currently sits in a weekly channel (Elliot Wave analysis) where wave C of pattern completion may target around $3,500 or the 38.2% Fibonacci area, while closer support sits around $4,080",
+    "From the March 23 area, the decline was sharp, and gold started to digest this correction. The structure is becoming more complex with multiple possibilities for the next move",
+    "The weekly chart shows Gold in an area that still does not provide a clear unambiguous answer. On one hand, the decline during March was in line with one scenario, but on the other, the recovery suggests the other scenario where the correction was shallow",
+    "Daily chart shows that since the March 23 correction, gold has been trying to stabilize but the 200-day moving average and other key levels create uncertainty about direction",
+    "The pivot at $4,519 is key - a sustained break above targets the $5,000-5,100 zone, while failure opens the door to revisiting the $4,381 area and potentially the Fibonacci levels around $3,610",
+    "Key Fibonacci levels: 38.2% retracement of the entire rally sits around the $2,790 area. Intermediate Fibonacci at $3,500. Near-term correction target at $4,080",
+    "Gold is in a period where the monthly cycles and daily cycles don't perfectly align, creating more complex trading conditions than usual",
+    "The Gann approach on gold: look for confluence between turning point dates and existing support/resistance zones - when they overlap, that is where the highest probability setups occur"
+  ],
+  "technical": {
+    "support": [
+      {"level": "4381", "description": "Recent correction low, first strong support level"},
+      {"level": "4080", "description": "Next major support if $4,381 breaks, Fibonacci level"},
+      {"level": "3610", "description": "Fibonacci 50% retracement area, significant weekly support"},
+      {"level": "3500", "description": "Wave C target area and Fibonacci level"},
+      {"level": "2790", "description": "Fibonacci 38.2% of entire bull rally, major structural level"}
+    ],
+    "resistance": [
+      {"level": "4519-4861", "description": "Recent high area and initial resistance zone"},
+      {"level": "5000-5100", "description": "Upper target zone if breakout above 4,861 occurs, Fibonacci extension area"}
+    ],
+    "indicators": "Weekly chart shows complex Elliot Wave pattern with multiple scenarios still viable. Daily chart shows stabilization attempts since the March 23 correction. 200-day moving average is a key reference on the daily chart. RSI and MACD show mixed signals with potential divergence. The weekly trendline from the 2022-2023 lows is a critical structural level to watch."
+  },
+  "summary": "April 2026 for Gold features 5 turning point dates (2, 10, 16, 24, 29) with a notably strong concentration of upward statistics in the first half of the month (74-79% probabilities), followed by a 79% probability of decline around April 14. The key level is $4,519 as a pivot - above targets $5,000-5,100, below opens $4,381 and potentially $3,610. The weekly chart presents competing scenarios between a shallow correction completion and a deeper Wave C toward $3,500. April is a slightly positive month seasonally but not a standout.",
+  "previous_month_review": "March 2026 had four turning point dates for Gold. Date 1 (March 3): Worked. Marked the high of the movement. Date 2 (March 10): Worked, arrived one day late. Served as the low of the movement from the previous cycle. Date 3 (March 13): Marked the high of the movement, and from there a decline of approximately 15% began toward the next turning point. Date 4 (March 26-27): Served as the low of the movement (but did not go lower significantly beyond the previous correction).",
+  "risk_notes": [
+    "Gold's current position between scenarios makes it essential to wait for confirmation before taking directional positions",
+    "The combination of gold not yet falling enough for a clear correction and the multiple Fibonacci levels creates a zone of high uncertainty",
+    "April is expected to be a month where the signal is not just about direction but also about timing - being early can be costly",
+    "Risk should be managed tightly as the resolution of the weekly chart pattern could lead to sharp moves in either direction",
+    "For educational and informational purposes only - not investment advice"
+  ]
+}

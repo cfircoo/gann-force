@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>דוח מחזורים - אפריל 2026</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --card-hover: #222633;
+    --border: #2a2e3d;
+    --text: #e4e4e7;
+    --text-dim: #9ca3af;
+    --green: #22c55e;
+    --green-bg: rgba(34,197,94,0.12);
+    --red: #ef4444;
+    --red-bg: rgba(239,68,68,0.12);
+    --blue: #3b82f6;
+    --blue-bg: rgba(59,130,246,0.12);
+    --yellow: #eab308;
+    --yellow-bg: rgba(234,179,8,0.12);
+    --purple: #a855f7;
+    --purple-bg: rgba(168,85,247,0.12);
+    --orange: #f97316;
+    --orange-bg: rgba(249,115,22,0.12);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 2rem; margin-bottom: 8px; }
+  h2 { font-size: 1.5rem; margin-bottom: 12px; color: var(--blue); border-bottom: 2px solid var(--border); padding-bottom: 8px; }
+  h3 { font-size: 1.15rem; margin-bottom: 8px; color: var(--text); }
+
+  .header {
+    text-align: center;
+    padding: 40px 20px 30px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 30px;
+  }
+  .header h1 { font-size: 2.4rem; }
+  .header .subtitle { color: var(--text-dim); font-size: 1.1rem; margin-top: 8px; }
+
+  .theme-box {
+    background: linear-gradient(135deg, var(--blue-bg), var(--purple-bg));
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+  }
+
+  /* Fear gauge */
+  .fear-gauge {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--red-bg);
+    border: 1px solid rgba(239,68,68,0.3);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 30px;
+  }
+  .fear-gauge .number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--red);
+    min-width: 70px;
+    text-align: center;
+  }
+  .fear-gauge .label { font-size: 1.1rem; }
+  .fear-gauge .label strong { color: var(--red); }
+
+  /* Calendar */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+  .cal-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+  .cal-date {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--yellow);
+    margin-bottom: 6px;
+  }
+  .cal-item.high-impact { border-color: var(--red); border-width: 2px; }
+  .cal-item.high-impact .cal-date { color: var(--red); }
+  .cal-assets { font-size: 0.9rem; color: var(--text-dim); }
+  .cal-assets span {
+    display: inline-block;
+    background: var(--card-hover);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin: 2px;
+    font-size: 0.82rem;
+  }
+
+  /* Asset sections */
+  .asset-section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+  .asset-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .asset-icon {
+    width: 48px; height: 48px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; font-weight: 700;
+  }
+  .asset-bias {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .bias-bullish { background: var(--green-bg); color: var(--green); }
+  .bias-bearish { background: var(--red-bg); color: var(--red); }
+  .bias-neutral { background: var(--yellow-bg); color: var(--yellow); }
+
+  .subsection { margin-bottom: 20px; }
+  .subsection:last-child { margin-bottom: 0; }
+
+  /* Stats table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 0.95rem;
+  }
+  th {
+    background: var(--card-hover);
+    padding: 10px 14px;
+    text-align: right;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  tr:hover td { background: rgba(255,255,255,0.03); }
+  .dir-up { color: var(--green); font-weight: 700; }
+  .dir-down { color: var(--red); font-weight: 700; }
+  .prob { font-weight: 700; font-size: 1.05rem; }
+
+  /* Levels */
+  .levels-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 10px 0;
+  }
+  .level-group h4 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
+  .level-group.support h4 { background: var(--green-bg); color: var(--green); }
+  .level-group.resistance h4 { background: var(--red-bg); color: var(--red); }
+  .level-item {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.9rem;
+  }
+  .level-price { font-weight: 700; font-family: monospace; font-size: 1rem; }
+  .level-desc { color: var(--text-dim); font-size: 0.82rem; }
+
+  /* Insights */
+  .insight-list {
+    list-style: none;
+    padding: 0;
+  }
+  .insight-list li {
+    padding: 8px 0 8px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    position: relative;
+    font-size: 0.95rem;
+  }
+  .insight-list li::before {
+    content: '▸';
+    position: absolute;
+    right: 0;
+    color: var(--blue);
+  }
+
+  /* Review */
+  .review-box {
+    background: var(--card-hover);
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    border-right: 3px solid var(--purple);
+  }
+
+  /* Summary box */
+  .summary-box {
+    background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(168,85,247,0.08));
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  /* Risk */
+  .risk-section {
+    background: var(--card);
+    border: 2px solid rgba(239,68,68,0.3);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+  .risk-list {
+    list-style: none; padding: 0;
+  }
+  .risk-list li {
+    padding: 8px 0 8px 24px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .risk-list li::before {
+    content: '⚠';
+    position: absolute;
+    right: 0;
+    color: var(--yellow);
+  }
+
+  /* Cross-asset themes */
+  .themes-grid {
+    display: grid;
+    gap: 12px;
+    margin: 10px 0;
+  }
+  .theme-item {
+    padding: 14px 18px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+  }
+  .theme-item.highlight {
+    border-color: var(--orange);
+    background: var(--orange-bg);
+  }
+
+  /* March review */
+  .march-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .march-card {
+    background: var(--card-hover);
+    border-radius: 8px;
+    padding: 14px;
+    text-align: center;
+  }
+  .march-card .score {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--green);
+  }
+  .march-card .asset-name {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 28px;
+    margin-bottom: 30px;
+  }
+  .toc a {
+    color: var(--blue);
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    font-size: 0.95rem;
+  }
+  .toc a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    body { padding: 12px; }
+    .levels-grid { grid-template-columns: 1fr; }
+    .calendar-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 1.8rem; }
+    .asset-section { padding: 18px; }
+  }
+
+  @media print {
+    body { background: #fff; color: #111; }
+    .asset-section, .theme-box, .toc, .risk-section { border-color: #ccc; background: #fafafa; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>דוח מחזורים חודשי — אפריל 2026</h1>
+  <div class="subtitle">Cycles Trading | ניתוח 5 נכסים | תאריכי מפנה, סטטיסטיקות ורמות מפתח</div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <h3>תוכן עניינים</h3>
+  <a href="#theme">תמונה כללית</a>
+  <a href="#calendar">לוח תאריכי מפנה</a>
+  <a href="#sp500">S&P 500</a>
+  <a href="#bitcoin">ביטקוין</a>
+  <a href="#eurusd">EUR/USD</a>
+  <a href="#gold">זהב</a>
+  <a href="#oil">נפט</a>
+  <a href="#cross">נושאים חוצי-נכסים</a>
+  <a href="#march">סיכום מרץ</a>
+  <a href="#risk">ניהול סיכונים</a>
+</div>
+
+<!-- Overall Theme -->
+<div class="theme-box" id="theme">
+  <h2 style="border:none; padding:0; margin-bottom:12px;">התמונה הכללית</h2>
+  <p>אפריל 2026 הוא חודש עם <strong>עונתיות חיובית חזקה</strong> ברוב הנכסים (במיוחד נפט ו-S&P 500), על רקע <strong>סיכון גיאופוליטי מוגבר</strong> מהעימות ארה"ב/ישראל-איראן ו<strong>סנטימנט פחד קיצוני</strong>.</p>
+  <p style="margin-top:10px;">התכנסות תאריכי מפנה סביב <strong>2-3, 9-10, 16-17 ו-27-28 באפריל</strong> על פני מספר נכסים יוצרת חלונות זמן משמעותיים עם פוטנציאל לתנועות חדות.</p>
+</div>
+
+<!-- Fear Gauge -->
+<div class="fear-gauge">
+  <div class="number">19</div>
+  <div class="label">
+    <strong>CNN Fear & Greed — פחד קיצוני</strong><br>
+    ירד מ-57 בסוף ינואר ל-43 בסוף פברואר ל-19 בסוף מרץ. פועל כאינדיקטור קונטרריאני — רמות פחד קיצוני מהוות היסטורית הזדמנויות קנייה.
+  </div>
+</div>
+
+<!-- Calendar -->
+<section id="calendar">
+  <h2>לוח תאריכי מפנה — אפריל 2026</h2>
+  <div class="calendar-grid">
+
+    <div class="cal-item high-impact">
+      <div class="cal-date">2 באפריל — כל 5 הנכסים</div>
+      <div class="cal-assets">
+        <span>S&P 500 (68% ירידה)</span>
+        <span>ביטקוין</span>
+        <span>EUR/USD</span>
+        <span>זהב</span>
+        <span>נפט</span>
+      </div>
+    </div>
+
+    <div class="cal-item">
+      <div class="cal-date">3 באפריל</div>
+      <div class="cal-assets"><span>ביטקוין (מפנה ראשון)</span></div>
+    </div>
+
+    <div class="cal-item">
+      <div class="cal-date">6 באפריל</div>
+      <div class="cal-assets">
+        <span>S&P 500 (מפנה יומי)</span>
+        <span>זהב (74% עלייה)</span>
+      </div>
+    </div>
+
+    <div class="cal-item">
+      <div class="cal-date">7 באפריל</div>
+      <div class="cal-assets">
+        <span>EUR/USD (79% ירידה)</span>
+        <span>זהב (73% ירידה — תחילת טווח)</span>
+      </div>
+    </div>
+
+    <div class="cal-item">
+      <div class="cal-date">8 באפריל</div>
+      <div class="cal-assets">
+        <span>זהב (71% עלייה)</span>
+        <span>נפט (77% עלייה — תחילת טווח)</span>
+      </div>
+    </div>
+
+    <div class="cal-item">
+      <div class="cal-date">9 באפריל</div>
+      <div class="cal-assets">
+        <span>S&P 500 (מפנה יומי)</span>
+        <span>נפט (מפנה)</span>
+      </div>
+    </div>
+
+    <div class="cal-item high-impact">
+      <div class="cal-date">10 באפריל — 4 נכסים</div>
+      <div class="cal-assets">
+        <span>S&P 500 (68% ירידה)</span>
+        <span>ביטקוין (מפנה)</span>
+        <span>EUR/USD (מפנה)</span>
+        <span>זהב (74% עלייה)</span>
+      </div>
+    </div>
+
+    <div class="cal-item">
+      <div class="cal-date">13 באפריל</div>
+      <div class="cal-assets">
+        <span>EUR/USD (85% עלייה — סוף טווח)</span>
+        <span>זהב (75% עלייה)</span>
+        <span>נפט (68% עלייה)</span>
+      </div>
+    </div>
+
+    <div class="cal-item">
+      <div class="cal-date">14 באפריל</div>
+      <div class="cal-assets">
+        <span>זהב (79% ירידה — הכי חזק)</span>
+        <span>נפט (77% עלייה — סוף טווח)</span>
+      </div>
+    </div>
+
+    <div class="cal-item">
+      <div class="cal-date">15 באפריל</div>
+      <div class="cal-assets">
+        <span>S&P 500 (83% עלייה — תחילת טווח)</span>
+        <span>נפט (מפנה + מחזור שבועי)</span>
+      </div>
+    </div>
+
+    <div class="cal-item high-impact">
+      <div class="cal-date">16-17 באפריל — מחזור כפול</div>
+      <div class="cal-assets">
+        <span>ביטקוין (מחזור כפול)</span>
+        <span>EUR/USD (מחזור כפול)</span>
+        <span>זהב (מפנה)</span>
+        <span>S&P 500 (מפנה יומי — 17)</span>
+      </div>
+    </div>
+
+    <div class="cal-item">
+      <div class="cal-date">23 באפריל</div>
+      <div class="cal-assets"><span>נפט (73% עלייה)</span></div>
+    </div>
+
+    <div class="cal-item">
+      <div class="cal-date">24 באפריל</div>
+      <div class="cal-assets">
+        <span>EUR/USD (73% עלייה)</span>
+        <span>זהב (מפנה)</span>
+        <span>נפט (מפנה + מחזור שבועי)</span>
+      </div>
+    </div>
+
+    <div class="cal-item high-impact">
+      <div class="cal-date">27-28 באפריל</div>
+      <div class="cal-assets">
+        <span>S&P 500 (מפנה + 83% עלייה סוף טווח)</span>
+        <span>ביטקוין (מפנה)</span>
+        <span>EUR/USD (מפנה)</span>
+      </div>
+    </div>
+
+    <div class="cal-item">
+      <div class="cal-date">29 באפריל</div>
+      <div class="cal-assets">
+        <span>EUR/USD (86% עלייה — חזק ביותר)</span>
+        <span>זהב (מפנה)</span>
+      </div>
+    </div>
+
+    <div class="cal-item">
+      <div class="cal-date">30 באפריל</div>
+      <div class="cal-assets"><span>נפט (מפנה)</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== S&P 500 ==================== -->
+<section class="asset-section" id="sp500">
+  <div class="asset-header">
+    <div class="asset-icon" style="background:var(--blue-bg); color:var(--blue);">SP</div>
+    <div>
+      <h2 style="border:none; padding:0; margin:0;">S&P 500</h2>
+      <span class="asset-bias bias-bullish">עונתיות חיובית — 3 מתוך 4 דפוסי עשור למעלה</span>
+    </div>
+  </div>
+
+  <div class="summary-box subsection">
+    אפריל הוא חודש חיובי מאוד עונתית ל-S&P 500. כרגע בתיקון של 7.5-8.5% מהשיאים עם סנטימנט פחד קיצוני (CNN F&G=19). <strong>הסטטיסטיקה המרכזית:</strong> ב-83% מהשנים המדד סגר גבוה יותר ב-28 באפריל מאשר ב-15 באפריל — המחצית השנייה של החודש נוטה להיות חיובית. אזור 6,175 (פיבו 38.2% + ממוצע 100 שבועות) הוא קו ההגנה המרכזי.
+  </div>
+
+  <div class="subsection">
+    <h3>תאריכי מפנה</h3>
+    <table>
+      <tr><th>תאריך</th><th>תיאור</th></tr>
+      <tr><td>2 באפריל</td><td>חלון רגיש להיפוך או האצה, מתיישב עם מחזור שבועי ראשון</td></tr>
+      <tr><td>6 באפריל</td><td>מפנה יומי, חופף עם סיום מחזור שבועי</td></tr>
+      <tr><td>9 באפריל</td><td>מפנה יומי, מתיישב עם מחזור שבועי</td></tr>
+      <tr><td>17 באפריל</td><td>מפנה יומי חזק — סוף שבוע + יישור מחזור שבועי</td></tr>
+      <tr><td>27-28 באפריל</td><td>מפנה כפול לקראת סוף החודש, פוטנציאל לשינוי כיוון</td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>סטטיסטיקות (30 שנה)</h3>
+    <table>
+      <tr><th>תאריך</th><th>הסתברות</th><th>כיוון</th><th>פירוט</th></tr>
+      <tr><td>2 באפריל</td><td class="prob">68%</td><td class="dir-down">↓ ירידה</td><td>סביב ה-2 באפריל</td></tr>
+      <tr><td>10 באפריל</td><td class="prob">68%</td><td class="dir-down">↓ ירידה</td><td>סביב ה-10 באפריל</td></tr>
+      <tr><td>15→28 באפריל</td><td class="prob">83%</td><td class="dir-up">↑ עלייה</td><td>סגר גבוה יותר ב-28 מאשר ב-15 (25 מתוך 30 שנים)</td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>רמות מפתח</h3>
+    <div class="levels-grid">
+      <div class="level-group support">
+        <h4>תמיכות</h4>
+        <div class="level-item"><span class="level-price">6,720 - 6,792</span><br><span class="level-desc">תמיכה מיידית בגרף יומי</span></div>
+        <div class="level-item"><span class="level-price">6,550</span><br><span class="level-desc">ממוצע 20 שבועות — תמיכה חזקה, אחרונה לפני תיקון עמוק</span></div>
+        <div class="level-item"><span class="level-price">6,536</span><br><span class="level-desc">שבירה = מעבר מתיקון רדוד לעמוק</span></div>
+        <div class="level-item"><span class="level-price" style="color:var(--yellow);">6,175 ★</span><br><span class="level-desc">יעד תיקון מרכזי — פיבו 38.2% + ממוצע 100 שבועות + AB=CD</span></div>
+        <div class="level-item"><span class="level-price">6,147 - 6,095</span><br><span class="level-desc">אזור ריטסט שבועי מהשיאים הקודמים</span></div>
+        <div class="level-item"><span class="level-price">6,053</span><br><span class="level-desc">פיבונאצ'י, שבירה מתחת = ירידה איכותית עמוקה</span></div>
+      </div>
+      <div class="level-group resistance">
+        <h4>התנגדויות</h4>
+        <div class="level-item"><span class="level-price">6,725</span><br><span class="level-desc">התנגדות ביניים</span></div>
+        <div class="level-item"><span class="level-price">6,785</span><br><span class="level-desc">התנגדות ביניים מעל 6,725</span></div>
+        <div class="level-item"><span class="level-price">6,976 - 6,999</span><br><span class="level-desc">אזור התנגדות ליד שיאים היסטוריים</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>תובנות מרכזיות</h3>
+    <ul class="insight-list">
+      <li>CNN Fear & Greed ב-19 (פחד קיצוני) — עובד כאינדיקטור קונטרריאני: פחד קיצוני מסמן הזדמנות קנייה, לא מכירה</li>
+      <li>תיקון של 7.5-8.5% הוא נורמלי — לא קריסה. תיקון של 10-15% לא שולל מגמה ראשית חיובית</li>
+      <li>דפוס AB=CD בגרף שבועי מכוון ל-6,175 (פיבו 38.2% + ממוצע 100 שבועות)</li>
+      <li>2026 תוארה בדוח השנתי כשנה רגישה פסיכולוגית מאוד לשווקים</li>
+      <li>אינדיקטור D9 הראה קריאה קיצונית (טווח 8-9) בעבר</li>
+      <li>מחזור 90 שנים מצביע על 1936 (גרמניה הנאצית) — מקבילות גיאופוליטיות. מתקפת איראן התממשה כפי שנחזה בדוח השנתי</li>
+      <li>כניסה לשוק — לא על לתפוס את התחתית המדויקת, אלא לחכות לאישור אחרי תאריך מפנה</li>
+    </ul>
+  </div>
+
+  <div class="subsection">
+    <h3>סיכום מרץ</h3>
+    <div class="review-box">
+      <strong>4 מתוך 4 תאריכים עבדו:</strong> תאריך 1 (2 במרץ) — עבד, סימן תחילת מחזור ירידה. תאריך 2 (12 במרץ) — עבד עם יום אחד סטייה, סימן את ה"מגנט" (50%). תאריך 3 (18 במרץ) — עבד, סימן את השיא. תאריך 4 (27 במרץ) — עבד, סביב האזור הזה החלה עלייה לכיוון תאריך המפנה הראשון באפריל.
+    </div>
+  </div>
+</section>
+
+<!-- ==================== Bitcoin ==================== -->
+<section class="asset-section" id="bitcoin">
+  <div class="asset-header">
+    <div class="asset-icon" style="background:var(--orange-bg); color:var(--orange);">₿</div>
+    <div>
+      <h2 style="border:none; padding:0; margin:0;">ביטקוין</h2>
+      <span class="asset-bias bias-bearish">עונתיות חלשה — רק 53% חיובי ב-15 שנים</span>
+    </div>
+  </div>
+
+  <div class="summary-box subsection">
+    הנכס החלש ביותר מבין החמישה. עונתיות חלשה (53%) ומבנה חולשה בגרף שבועי. אזור הבלימה 70,000-78,000$ הוא קו ההגנה העיקרי. שבוע ראשון של אפריל סטטיסטית דובי (75% ירידה). אם נשבר — יעד ביניים ב-53,300$ ויעד עיקרי ב-49,000$ (פיבו 38.2% של כל העלייה).
+  </div>
+
+  <div class="subsection">
+    <h3>תאריכי מפנה</h3>
+    <table>
+      <tr><th>תאריך</th><th>תיאור</th></tr>
+      <tr><td>3 באפריל</td><td>מפנה ראשון של החודש, חלון תחילת אפריל</td></tr>
+      <tr><td>10 באפריל</td><td>מפנה עם יישור מחזור יומי</td></tr>
+      <tr><td>16-17 באפריל</td><td>מחזור כפול — חלון זמן מוגבר</td></tr>
+      <tr><td>27 באפריל</td><td>מפנה סוף חודש, מתיישב עם מחזור שבועי</td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>סטטיסטיקות</h3>
+    <table>
+      <tr><th>טווח</th><th>הסתברות</th><th>כיוון</th><th>פירוט</th></tr>
+      <tr><td>2→8 באפריל</td><td class="prob">75%</td><td class="dir-down">↓ ירידה</td><td>ב-6 מתוך 8 שנים אחרונות סגר נמוך יותר ב-8 מאשר ב-2</td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>רמות מפתח</h3>
+    <div class="levels-grid">
+      <div class="level-group support">
+        <h4>תמיכות</h4>
+        <div class="level-item"><span class="level-price" style="color:var(--yellow);">70,000 - 78,000 ★</span><br><span class="level-desc">אזור בלימה ראשי בגרף שבועי — קו ההגנה</span></div>
+        <div class="level-item"><span class="level-price">53,300</span><br><span class="level-desc">תמיכת ביניים אם מתרחשת ירידה משמעותית</span></div>
+        <div class="level-item"><span class="level-price" style="color:var(--red);">49,000</span><br><span class="level-desc">פיבו 38.2% של כל ראלי השוורים — יעד ירידה מרכזי</span></div>
+      </div>
+      <div class="level-group resistance">
+        <h4>התנגדויות</h4>
+        <div class="level-item"><span class="level-price">74,600 - 76,000</span><br><span class="level-desc">אזור התנגדות מהשבירה בגרף שבועי</span></div>
+        <div class="level-item"><span class="level-price">80,400 - 84,400</span><br><span class="level-desc">התנגדות עליונה אם פריצה מעל 76,000</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>תובנות מרכזיות</h3>
+    <ul class="insight-list">
+      <li>לביטקוין אין מספיק היסטוריה לסטטיסטיקות חזקות — אפריל לא חודש בולט</li>
+      <li>גרף שבועי מראה מבנה חולשה — הירידה מהשיא של ינואר כבר החלה</li>
+      <li>אם אזור 70k-78k נשבר: ביניים ב-53,300$ → יעד מרכזי 49,000$ (פיבו 38.2%)</li>
+      <li>פריצה מעל 76,000$ → יעד 80,400-84,400$</li>
+      <li>סביבה דובית כרגע — גם אם יש תנועות חזקות קצרות טווח</li>
+      <li>אפריל לפי דפוס עשור הוא החודש הכי חיובי, אבל בהינתן החולשה — מדובר בהזדמנות קפיצה תיקונית, לא היפוך מגמה</li>
+    </ul>
+  </div>
+
+  <div class="subsection">
+    <h3>סיכום מרץ</h3>
+    <div class="review-box">
+      <strong>3 מתוך 5 תאריכים עבדו (+ 1 חלקית):</strong> תאריך 1 (2 במרץ) — לא עבד. תאריך 2 (6 במרץ) — עבד עם יום עיכוב, סימן שיא וירידה של ~10%. תאריך 3 (16-17 כפול) — עבד, שיא + ירידה של ~9%. תאריך 4 (20 במרץ) — חלקית, ירידה קטנה וחזרה. תאריך 5 (26-27 כפול) — הראשון סימן שיא, השני סימן שפל.
+    </div>
+  </div>
+</section>
+
+<!-- ==================== EUR/USD ==================== -->
+<section class="asset-section" id="eurusd">
+  <div class="asset-header">
+    <div class="asset-icon" style="background:var(--green-bg); color:var(--green);">€$</div>
+    <div>
+      <h2 style="border:none; padding:0; margin:0;">EUR/USD</h2>
+      <span class="asset-bias bias-bullish">עונתיות חיובית חזקה</span>
+    </div>
+  </div>
+
+  <div class="summary-box subsection">
+    חודש חיובי עונתית עם סטטיסטיקות חזקות מאוד למעלה. <strong>86% הסתברות עלייה סביב 29 באפריל</strong> — הסטטיסטיקה הכי חזקה בדוח לנכס הזה. <strong>85% סגירה גבוהה יותר ב-13 מאשר ב-7 באפריל.</strong> התנגדות מפתח ב-1.1612-1.1640.
+  </div>
+
+  <div class="subsection">
+    <h3>תאריכי מפנה</h3>
+    <table>
+      <tr><th>תאריך</th><th>תיאור</th></tr>
+      <tr><td>2 באפריל</td><td>מפנה ראשון, מתיישב עם מחזור שבועי ראשון</td></tr>
+      <tr><td>10 באפריל</td><td>מפנה עם יישור מחזור יומי</td></tr>
+      <tr><td>16-17 באפריל</td><td>מחזור כפול</td></tr>
+      <tr><td>28 באפריל</td><td>מפנה סוף חודש, תאריך עונתי חזק</td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>סטטיסטיקות (20 שנה)</h3>
+    <table>
+      <tr><th>תאריך</th><th>הסתברות</th><th>כיוון</th><th>פירוט</th></tr>
+      <tr><td>7 באפריל</td><td class="prob">79%</td><td class="dir-down">↓ ירידה</td><td>סביב ה-7 באפריל</td></tr>
+      <tr><td>7→13 באפריל</td><td class="prob">85%</td><td class="dir-up">↑ עלייה</td><td>סגר גבוה יותר ב-13 מאשר ב-7</td></tr>
+      <tr><td>24 באפריל</td><td class="prob">73%</td><td class="dir-up">↑ עלייה</td><td>סביב ה-24 באפריל</td></tr>
+      <tr><td style="background:var(--green-bg);">29 באפריל</td><td class="prob" style="font-size:1.2rem;">86%</td><td class="dir-up">↑ עלייה</td><td><strong>הסטטיסטיקה הכי חזקה בדוח!</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>רמות מפתח</h3>
+    <div class="levels-grid">
+      <div class="level-group support">
+        <h4>תמיכות</h4>
+        <div class="level-item"><span class="level-price">1.1390</span><br><span class="level-desc">תמיכה קרובה בגרף יומי</span></div>
+        <div class="level-item"><span class="level-price">1.1414</span><br><span class="level-desc">תמיכה נוספת, יעד ריטרייסמנט מציר מרכזי</span></div>
+        <div class="level-item"><span class="level-price">1.1300</span><br><span class="level-desc">רמה פסיכולוגית + ייחוס שבועי</span></div>
+      </div>
+      <div class="level-group resistance">
+        <h4>התנגדויות</h4>
+        <div class="level-item"><span class="level-price" style="color:var(--yellow);">1.1612 - 1.1640 ★</span><br><span class="level-desc">אזור התנגדות מפתח — רמות ארוכות טווח</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>תובנות מרכזיות</h3>
+    <ul class="insight-list">
+      <li>אפריל הוא אחד החודשים הטובים ביותר לזוג — הטיה חיובית חזקה יחסית</li>
+      <li>בין 10-20 באפריל — התקופה הכי מרוכזת לתנועות משמעותיות על בסיס התכנסות מחזורים</li>
+      <li>גרף שבועי עדיין לא סימן חוזק, אבל גם חוסם את אזור הבלימה</li>
+      <li>הזוג בטווח רחב בין 1.10 ל-1.20 — הכיוון ייקבע לפי אינטראקציה של תאריכי מפנה עם הרמות</li>
+      <li>3 מתוך 4 תאריכים של מרץ עבדו — אמינות גבוהה</li>
+    </ul>
+  </div>
+
+  <div class="subsection">
+    <h3>סיכום מרץ</h3>
+    <div class="review-box">
+      <strong>3 מתוך 4 תאריכים עבדו:</strong> תאריך 1 (3 במרץ) — לא עבד. תאריך 2 (12-13 כפול) — עבד, שינוי כיוון למעלה. תאריך 3 (20 במרץ) — עבד עם יום עיכוב, שיא התנועה. תאריך 4 (30 במרץ) — עבד, שפל התנועה.
+    </div>
+  </div>
+</section>
+
+<!-- ==================== Gold ==================== -->
+<section class="asset-section" id="gold">
+  <div class="asset-header">
+    <div class="asset-icon" style="background:var(--yellow-bg); color:var(--yellow);">Au</div>
+    <div>
+      <h2 style="border:none; padding:0; margin:0;">זהב</h2>
+      <span class="asset-bias bias-neutral">עונתיות חיובית קלה — לא בולט</span>
+    </div>
+  </div>
+
+  <div class="summary-box subsection">
+    תמונה מורכבת: <strong>ריכוז סטטיסטיקות חיוביות חזקות במחצית הראשונה</strong> (71-75% עלייה באפריל 6-13), ואז <strong>היפוך חד ב-14 באפריל (79% ירידה)</strong>. רמת <strong>$4,519</strong> היא הציר — מעליה יעד $5,000+, מתחתיה חזרה ל-$4,381 ומטה. שני תרחישים מתחרים בגרף שבועי: תיקון רדוד vs. גל C עמוק.
+  </div>
+
+  <div class="subsection">
+    <h3>תאריכי מפנה</h3>
+    <table>
+      <tr><th>תאריך</th><th>תיאור</th></tr>
+      <tr><td>2 באפריל</td><td>מפנה ראשון, מתיישב עם מחזור שבועי</td></tr>
+      <tr><td>10 באפריל</td><td>מפנה עם יישור מחזור יומי</td></tr>
+      <tr><td>16 באפריל</td><td>מפנה אמצע חודש</td></tr>
+      <tr><td>24 באפריל</td><td>מפנה עם מחזור שבועי</td></tr>
+      <tr><td>29 באפריל</td><td>מפנה סוף חודש</td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>סטטיסטיקות (30 שנה)</h3>
+    <table>
+      <tr><th>תאריך</th><th>הסתברות</th><th>כיוון</th><th>פירוט</th></tr>
+      <tr><td>6 באפריל</td><td class="prob">74%</td><td class="dir-up">↑ עלייה</td><td>סביב ה-6 באפריל</td></tr>
+      <tr><td>8 באפריל</td><td class="prob">71%</td><td class="dir-up">↑ עלייה</td><td>סביב ה-8 באפריל</td></tr>
+      <tr><td>10 באפריל</td><td class="prob">74%</td><td class="dir-up">↑ עלייה</td><td>סביב ה-10 באפריל</td></tr>
+      <tr><td>13 באפריל</td><td class="prob">75%</td><td class="dir-up">↑ עלייה</td><td>סביב ה-13 באפריל</td></tr>
+      <tr style="background:var(--red-bg);"><td>14 באפריל</td><td class="prob" style="font-size:1.2rem;">79%</td><td class="dir-down">↓ ירידה</td><td><strong>היפוך חד! הסטטיסטיקה הדובית הכי חזקה</strong></td></tr>
+      <tr><td>7→13 באפריל</td><td class="prob">73%</td><td class="dir-down">↓ ירידה</td><td>סטטיסטיקת טווח (סגר נמוך ב-13 מאשר ב-7)</td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>רמות מפתח</h3>
+    <div class="levels-grid">
+      <div class="level-group support">
+        <h4>תמיכות</h4>
+        <div class="level-item"><span class="level-price">$4,381</span><br><span class="level-desc">שפל תיקון אחרון — תמיכה חזקה ראשונה</span></div>
+        <div class="level-item"><span class="level-price">$4,080</span><br><span class="level-desc">תמיכה מרכזית הבאה, רמת פיבונאצ'י</span></div>
+        <div class="level-item"><span class="level-price">$3,610</span><br><span class="level-desc">פיבו 50% — תמיכה שבועית משמעותית</span></div>
+        <div class="level-item"><span class="level-price">$3,500</span><br><span class="level-desc">יעד גל C + רמת פיבונאצ'י</span></div>
+        <div class="level-item"><span class="level-price">$2,790</span><br><span class="level-desc">פיבו 38.2% של כל ראלי השוורים — רמה מבנית מרכזית</span></div>
+      </div>
+      <div class="level-group resistance">
+        <h4>התנגדויות</h4>
+        <div class="level-item"><span class="level-price" style="color:var(--yellow);">$4,519 - $4,861 ★</span><br><span class="level-desc">ציר מפתח — שיא אחרון + התנגדות ראשונית</span></div>
+        <div class="level-item"><span class="level-price">$5,000 - $5,100</span><br><span class="level-desc">יעד עליון אם פריצה מעל $4,861</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>תובנות מרכזיות</h3>
+    <ul class="insight-list">
+      <li>הרווחים מפברואר מתחילים להאט סביב $4,519 — בערך איפה שגל התיקון צפוי להגיע</li>
+      <li>הירידה ל-$4,381 לא הייתה עמוקה מספיק מבחינת מחזור מלא — הריטרייסמנט צריך להגיע לפחות לפיבו 38.2%</li>
+      <li>שני תרחישים מתחרים בגרף שבועי: תיקון רדוד (כבר הסתיים) vs. גל C עמוק (לכיוון $3,500)</li>
+      <li>$4,519 הוא הציר — מעלה ליעד $5,000+, מטה ל-$4,381 ומעמיק</li>
+      <li>מחזורים חודשיים ויומיים לא מתיישרים לחלוטין — תנאי מסחר מורכבים מהרגיל</li>
+      <li>הגישה: לחפש התכנסות בין תאריכי מפנה ואזורי תמיכה/התנגדות — שם הסטאפים הכי טובים</li>
+    </ul>
+  </div>
+
+  <div class="subsection">
+    <h3>סיכום מרץ</h3>
+    <div class="review-box">
+      <strong>4 מתוך 4 תאריכים עבדו:</strong> תאריך 1 (3 במרץ) — עבד, סימן שיא. תאריך 2 (10 במרץ) — עבד עם יום עיכוב, שפל המחזור. תאריך 3 (13 במרץ) — שיא, משם ירידה של ~15%. תאריך 4 (26-27) — שפל התנועה.
+    </div>
+  </div>
+</section>
+
+<!-- ==================== Oil ==================== -->
+<section class="asset-section" id="oil">
+  <div class="asset-header">
+    <div class="asset-icon" style="background:var(--purple-bg); color:var(--purple);">Oil</div>
+    <div>
+      <h2 style="border:none; padding:0; margin:0;">נפט</h2>
+      <span class="asset-bias bias-bullish">החודש הכי חיובי בשנה! כל 3 דפוסי עשור למעלה</span>
+    </div>
+  </div>
+
+  <div class="summary-box subsection">
+    <strong>אפריל הוא החודש הכי חיובי בשנה לנפט.</strong> כל שלושת דפוסי העשור מצביעים למעלה בעוצמה גבוהה, במיוחד דפוס 20 שנים. 77% הסתברות שנפט סוגר גבוה ב-14 מאשר ב-8 באפריל. המצב הגיאופוליטי עם איראן מוסיף פרמיית הפרעת אספקה. שני מחזורים שבועיים (סוף 3 וסוף 24 באפריל) מגדירים את מסגרת התזמון.
+  </div>
+
+  <div class="subsection">
+    <h3>תאריכי מפנה</h3>
+    <table>
+      <tr><th>תאריך</th><th>תיאור</th></tr>
+      <tr><td>2 באפריל</td><td>מפנה ראשון של החודש</td></tr>
+      <tr><td>9 באפריל</td><td>מפנה עם יישור מחזור יומי</td></tr>
+      <tr><td>15 באפריל</td><td>מפנה עם סיום מחזור שבועי ראשון</td></tr>
+      <tr><td>24 באפריל</td><td>מפנה עם מחזור שבועי שני</td></tr>
+      <tr><td>30 באפריל</td><td>מפנה סוף חודש</td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>סטטיסטיקות (30 שנה)</h3>
+    <table>
+      <tr><th>תאריך</th><th>הסתברות</th><th>כיוון</th><th>פירוט</th></tr>
+      <tr><td>8→14 באפריל</td><td class="prob">77%</td><td class="dir-up">↑ עלייה</td><td>סגר גבוה יותר ב-14 מאשר ב-8</td></tr>
+      <tr><td>13 באפריל</td><td class="prob">68%</td><td class="dir-up">↑ עלייה</td><td>סביב ה-13 באפריל</td></tr>
+      <tr><td>23 באפריל</td><td class="prob">73%</td><td class="dir-up">↑ עלייה</td><td>סביב ה-23 באפריל</td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>רמות מפתח</h3>
+    <div class="levels-grid">
+      <div class="level-group support">
+        <h4>תמיכות</h4>
+        <div class="level-item"><span class="level-price" style="color:var(--yellow);">$55.36 - $56.00 ★</span><br><span class="level-desc">אזור החזקה ראשי — המשכיות</span></div>
+        <div class="level-item"><span class="level-price">$86.65 - $83.70</span><br><span class="level-desc">תמיכת קו מגמה תחתון בגרף יומי</span></div>
+        <div class="level-item"><span class="level-price">$93.75</span><br><span class="level-desc">פיבונאצ'י ביניים בגרף יומי</span></div>
+      </div>
+      <div class="level-group resistance">
+        <h4>התנגדויות</h4>
+        <div class="level-item"><span class="level-price">$98.30 - $100.47</span><br><span class="level-desc">אזור התנגדות ארוך טווח מגרף שבועי</span></div>
+        <div class="level-item"><span class="level-price">$120</span><br><span class="level-desc">הרחבת פיבונאצ'י מרכזית — פריצה = תנועה מסיבית (מקבילה ל-2008)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>תובנות מרכזיות</h3>
+    <ul class="insight-list">
+      <li>אפריל הוא החודש הכי חיובי בשנה לנפט — כל שלושת דפוסי העשור מצביעים למעלה</li>
+      <li>דפוס 20 שנים חזק במיוחד בהטיה השורית שלו</li>
+      <li>אזור תמיכה $55.36-56 — אם מחזיק, המבנה השורי נשמר</li>
+      <li>המצב הגיאופוליטי עם איראן מוסיף פוטנציאל לעלייה חדה מהפרעת אספקה</li>
+      <li>שני מחזורים שבועיים חשובים: שבועות שמסתיימים ב-3 וב-24 באפריל</li>
+      <li>תאריכים 23-24 באפריל מתיישרים עם המחזור השבועי השני — הסתברות גבוהה להיפוכים</li>
+      <li>פריצה מעל $120 (הרחבת פיבו) = תרחיש חזרה ל-2008, אם כי לא סביר בטווח הקרוב</li>
+    </ul>
+  </div>
+
+  <div class="subsection">
+    <h3>סיכום מרץ</h3>
+    <div class="review-box">
+      <strong>3 מתוך 5 תאריכים עבדו:</strong> תאריך 1 (4 במרץ) — לא עבד. תאריך 2 (11 במרץ) — עבד, יום מוקדם, שפל התנועה. תאריך 3 (16 במרץ) — עבד, שיא מהמחזור הקודם. תאריך 4 (20 במרץ) — עבד עם יום עיכוב, שפל. תאריך 5 (26-27 כפול) — לא עבד.
+    </div>
+  </div>
+</section>
+
+<!-- ==================== Cross-Asset Themes ==================== -->
+<section id="cross">
+  <h2>נושאים חוצי-נכסים</h2>
+  <div class="themes-grid">
+    <div class="theme-item highlight">
+      <strong>📅 2 באפריל — כל 5 הנכסים!</strong><br>
+      התאריך הכי מרוכז של החודש. כל חמשת הנכסים עם נקודות מפנה. תשומת לב מירבית.
+    </div>
+    <div class="theme-item highlight">
+      <strong>📅 10 באפריל — 4 נכסים</strong><br>
+      S&P 500, ביטקוין, EUR/USD וזהב עם נקודות מפנה באותו תאריך.
+    </div>
+    <div class="theme-item highlight">
+      <strong>📅 16-17 באפריל — מחזורים כפולים</strong><br>
+      ביטקוין (כפול), EUR/USD (כפול), זהב (מפנה), S&P 500 (מפנה יומי ב-17).
+    </div>
+    <div class="theme-item">
+      <strong>דפוס היפוך אמצע חודש</strong><br>
+      הטיה שורית במחצית הראשונה: זהב (74-75% למעלה 6-13), נפט (77% למעלה 8-14), EUR/USD (85% למעלה 7-13). היפוך פוטנציאלי סביב 14-15 באפריל.
+    </div>
+    <div class="theme-item">
+      <strong>התכנסות שורית סוף חודש</strong><br>
+      S&P 500 (83% למעלה 15-28), EUR/USD (86% למעלה 29 באפריל), ועוצמה עונתית של נפט — הכול מצביע על סוף חודש חיובי.
+    </div>
+    <div class="theme-item">
+      <strong>שכבת גיאופוליטיקה</strong><br>
+      עימות ארה"ב/ישראל-איראן ממשיך ממתקפת פברואר. יוצר סיכון הפרעת אספקה לנפט, ביקוש מקלט בטוח לזהב, ואי-ודאות לשווקי מניות.
+    </div>
+    <div class="theme-item">
+      <strong>פחד קיצוני = הזדמנות</strong><br>
+      CNN Fear & Greed ב-19 (פחד קיצוני) ל-S&P 500. היסטורית, רמות פחד קיצוניות מקדימות לעתים קרובות התאוששות שוק.
+    </div>
+    <div class="theme-item">
+      <strong>ביטקוין בדיברגנס</strong><br>
+      לביטקוין הפרופיל העונתי הכי חלש + חולשה מבנית. עלול לפגר אחרי ההתאוששות של נכסי סיכון אחרים.
+    </div>
+  </div>
+</section>
+
+<!-- ==================== March Summary ==================== -->
+<section id="march" style="margin-top:30px;">
+  <h2>ביצועי תאריכי מרץ 2026</h2>
+  <div class="march-summary">
+    <div class="march-card">
+      <div class="score">4/4</div>
+      <div class="asset-name">S&P 500</div>
+    </div>
+    <div class="march-card">
+      <div class="score" style="color:var(--yellow);">3.5/5</div>
+      <div class="asset-name">ביטקוין</div>
+    </div>
+    <div class="march-card">
+      <div class="score">3/4</div>
+      <div class="asset-name">EUR/USD</div>
+    </div>
+    <div class="march-card">
+      <div class="score">4/4</div>
+      <div class="asset-name">זהב</div>
+    </div>
+    <div class="march-card">
+      <div class="score">3/5</div>
+      <div class="asset-name">נפט</div>
+    </div>
+  </div>
+  <p style="text-align:center; color:var(--text-dim); margin-top:8px;">שיעור הצלחה כולל: ~17.5 מתוך 22 תאריכים (~80%)</p>
+</section>
+
+<!-- ==================== Risk ==================== -->
+<section class="risk-section" id="risk" style="margin-top:30px;">
+  <h2 style="color:var(--red); border-color:rgba(239,68,68,0.3);">כללי ניהול סיכונים</h2>
+  <ul class="risk-list">
+    <li>סיכון מקסימלי לעסקה על חוזים עתידיים: לא יותר מ-<strong>1%</strong> מהחשבון</li>
+    <li>במניות — שמרו על <strong>נזילות גבוהה (30-40%)</strong> בתקופת תיקון זו</li>
+    <li><strong>אל תחזיקו פוזיציות פתוחות על סופי שבוע</strong> ללא הבנת סיכון הגאפ מאירועים גיאופוליטיים</li>
+    <li>סטופ לוס חייב להיות מוגדר במערכת עם סיכון ברור מההתחלה</li>
+    <li>תיקון של 10-15% במדדים לא שולל את המגמה הראשית החיובית</li>
+    <li>תזמון הוא מערכת מבוססת שיטה — <strong>מתגמלת סבלנות ומענישה אימפולסיביות</strong></li>
+    <li><strong>אל תקנו באופן עיוור בתמיכה</strong> — קודם וודאו מה קורה שם (ירידה מבוקרת vs. פאניקה)</li>
+    <li>שמרו על בריאות נפשית — בחודשים כאלה, לא רק החשבון בסיכון</li>
+    <li>הישארו מחוברים לקהילת הדיסקורד לעדכונים בזמן אמת והתאמות תאריכים</li>
+    <li><em>כל המידע הוא למטרות לימוד וחינוך בלבד — אינו מהווה ייעוץ השקעות</em></li>
+  </ul>
+</section>
+
+<footer style="text-align:center; padding:30px; color:var(--text-dim); font-size:0.85rem; border-top:1px solid var(--border); margin-top:30px;">
+  נוצר מדוח Cycles Trading — אפריל 2026 | למטרות לימוד בלבד
+</footer>
+
+</body>
+</html>

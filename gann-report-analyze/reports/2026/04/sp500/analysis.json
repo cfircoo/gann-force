@@ -1,0 +1,59 @@
+{
+  "asset": "S&P 500",
+  "key_dates": [
+    {"date": "2026-04-02", "description": "Sensitive time window for reversal or acceleration, aligns with first weekly cycle of April"},
+    {"date": "2026-04-06", "description": "Daily turning point, coincides with weekly cycle ending week of April 3-6"},
+    {"date": "2026-04-09", "description": "Daily turning point, aligns with weekly cycle"},
+    {"date": "2026-04-17", "description": "Daily turning point falling on end of week, strong date with weekly cycle alignment"},
+    {"date": "2026-04-27", "description": "Turning point date near end of month"},
+    {"date": "2026-04-28", "description": "Turning point date, potential for direction change or acceleration"}
+  ],
+  "seasonal": "From a seasonal perspective, April is considered a very positive month for the S&P 500. Three out of four decade patterns point upward, and even if two of them are slightly positive, the overall bias is bullish. April is not a regular month - when the market starts to lose shape, this is exactly where the real value of the approach lies.",
+  "statistics": [
+    {"date": "2026-04-02", "probability": "68%", "direction": "down", "description": "Over the last 30 years, approximately 68% probability of decline around April 2"},
+    {"date": "2026-04-10", "probability": "68%", "direction": "down", "description": "Over the last 30 years, approximately 68% probability of decline around April 10"},
+    {"date": "2026-04-15", "probability": "83%", "direction": "up", "description": "Over the last 30 years, the index closed higher on April 28 than on April 15 in ~83% of cases (25 out of 30)"},
+    {"date": "2026-04-28", "probability": "83%", "direction": "up", "description": "Over the last 30 years, the index closed higher on April 28 than on April 15 in ~83% of cases (range statistic)"}
+  ],
+  "insights": [
+    "April 2026 continues to be a very positive month for the S&P 500 from a seasonal perspective, with three out of four decade patterns pointing upward",
+    "Historical cycle analysis: 90-year cycle points to 1936 (Nazi Germany remilitarization), and other significant geopolitical parallels. The Iran attack materialized as forecasted in the annual and February reports",
+    "CNN Fear & Greed Index dropped to 19 points (Extreme Fear) by end of March - down from 57 at end of January and 43 at end of February. The index works as a contrarian indicator: extreme fear can signal buying opportunities, not selling",
+    "The S&P 500 decline from the highs reached 7.5-8.5% - this is still within the range of a normal correction, not a crash. A correction of 10-15% does not negate the positive primary trend",
+    "When risk starts to accumulate and take shape, the report is not an apocalyptic prediction - no fear, no drama. This is all part of the cycle, and sometimes what follows is an opportunity",
+    "The weekly chart shows an AB=CD pattern with potential completion around the 100-week moving average area near 6,175 and Fibonacci 38.2% retracement zone around 6,147-6,095",
+    "Daily chart weakness is where it starts to show first - the daily graph absorbs news and sentiment changes before weekly or monthly charts",
+    "When the market does not react to clearly bad news, it often means something worse is coming. But also: when sentiment reaches extreme fear levels, it can be a contrarian signal",
+    "2026 was described in the annual report as a psychologically very sensitive year for markets, and this is starting to materialize",
+    "Entry timing is not about catching the exact bottom - it is about waiting for confirmation after a turning point date, not jumping ahead of it",
+    "The discord community is recommended for real-time updates throughout the month as things develop"
+  ],
+  "technical": {
+    "support": [
+      {"level": "6720-6792", "description": "Immediate daily chart support zone"},
+      {"level": "6550", "description": "20-week moving average area, strong weekly support, last strong support before deeper correction"},
+      {"level": "6536", "description": "Clear break below signals transition from shallow to deep correction"},
+      {"level": "6175", "description": "Major correction target - Fibonacci 38.2% retracement of rally from April 2025, overlaps with 100-week moving average"},
+      {"level": "6147-6095", "description": "Weekly retest zone from previous highs, potential AB=CD pattern completion area"},
+      {"level": "6053", "description": "Fibonacci level, break below triggers deeper quality decline"}
+    ],
+    "resistance": [
+      {"level": "6976-6999", "description": "Resistance zone near all-time highs on daily chart"},
+      {"level": "6785", "description": "Intermediate resistance above 6725"},
+      {"level": "6725", "description": "Additional resistance level"}
+    ],
+    "indicators": "Weekly chart shows AB=CD pattern potentially completing near 6,175 area. 100-week moving average and Fibonacci 38.2% coincide at this zone. Daily chart shows clear weakness with fading buyer strength. D9 indicator previously lit extreme reading (8-9 range). CNN Fear & Greed at 19 (Extreme Fear). MACD remained below action line throughout last rally wave. 100-day and 200-day moving averages are important on the daily chart. The weekly cycle alignment in the first and third weeks of April is notable."
+  },
+  "summary": "April 2026 continues to be a very positive month seasonally for the S&P 500, with three out of four decade patterns pointing upward. However, the current correction (7.5-8.5% from highs) combined with extreme fear sentiment (CNN Fear & Greed at 19) creates a complex environment. Key turning dates are April 2, 6-9, 17, and 27-28. The important statistic shows that in 83% of the last 30 years, the index closed higher on April 28 than on April 15, suggesting the second half of April tends to be stronger. The 6,175 area (Fibonacci 38.2% + 100-week MA) is the major downside target if the correction deepens.",
+  "previous_month_review": "March 2026 had four turning point dates. Date 1 (March 2): Worked. Initially appeared as if the price stalled and was stuck, but ultimately it marked the beginning of the next cycle downward. Date 2 (March 12): Worked, with a one-day offset. Marked the 'magnet' (50% of the movement) and from there the decline continued to the next turning date. Date 3 (March 18): Worked. Marked the high of the movement from the previous cycle to the next turning point. Date 4 (March 27): Worked. Even though the low was received a few trading days earlier, from around this area the upward movement began toward the next turning date in early April.",
+  "risk_notes": [
+    "Maximum risk per trade should not exceed 1% of account on futures contracts",
+    "In times of futures, there is no place for interpretation - only numbers and execution",
+    "When the market begins to break down, the rules become more important than the data itself",
+    "Do not hold open positions over weekends without understanding the risk - one event outside trading hours can open the week with an aggressive gap",
+    "A correction of 10-15% does not negate a positive primary trend - it restores balance and reduces accumulated risk",
+    "Also take care of yourselves and your mental health - in months like these, not just the account is at risk",
+    "The information is for educational and learning purposes only - not investment advice",
+    "It is very important to be connected to the Discord community for real-time updates throughout the month"
+  ]
+}

@@ -1,0 +1,182 @@
+//@version=6
+indicator("Gann Trend Rules", shorttitle="GannTrend", overlay=true, max_bars_back=500)
+
+// ============================================================================
+// Gann Trend Identification Rules (חוקי זיהוי מגמה)
+// ============================================================================
+// Candle-level rules to confirm trend direction.
+// Designed to work alongside GannCycles indicator.
+// ============================================================================
+
+// ============================================================================
+// INPUTS
+// ============================================================================
+
+i_show_bullish = input.bool(true, "Show Bullish Signals", group="Signals")
+i_show_bearish = input.bool(true, "Show Bearish Signals", group="Signals")
+i_show_engulf = input.bool(true, "Show Engulfing (4-bar) Signals", group="Signals")
+i_show_wick = input.bool(true, "Show Wick Rejection Signals", group="Signals")
+i_wick_ratio = input.float(0.6, "Wick Rejection Ratio", minval=0.3, maxval=0.9, step=0.05, group="Signals", tooltip="Minimum wick length as ratio of total candle range to trigger rejection signal")
+
+i_label_size = input.string("small", "Label Size", options=["tiny", "small", "normal", "large", "huge"], group="Style")
+i_bull_color = input.color(color.new(#00E676, 0), "Bullish Color", group="Style")
+i_bear_color = input.color(color.new(#FF5252, 0), "Bearish Color", group="Style")
+i_engulf_color = input.color(color.new(#FFAB40, 0), "Engulfing Color", group="Style")
+i_wick_color = input.color(color.new(#40C4FF, 0), "Wick Rejection Color", group="Style")
+
+// ============================================================================
+// HELPERS
+// ============================================================================
+
+get_size(s) =>
+    switch s
+        "tiny" => size.tiny
+        "small" => size.small
+        "normal" => size.normal
+        "large" => size.large
+        "huge" => size.huge
+        => size.small
+
+lbl_size = get_size(i_label_size)
+
+// ============================================================================
+// RULE 1: Close > Previous High (Bullish) / Close < Previous Low (Bearish)
+// ============================================================================
+// Strongest signal. The close breaks beyond the previous candle's range.
+
+bull_close_above_high = close > high[1] and close > open  // Close above prev high + green candle
+bear_close_below_low = close < low[1] and close < open    // Close below prev low + red candle
+
+// ============================================================================
+// RULE 2: First New High / New Low
+// ============================================================================
+// First candle making a new high (or low) after a series of lower highs (or higher lows)
+
+// New high: current high > highest of previous 3 candles, and previous 3 were declining
+new_high = high > ta.highest(high[1], 3) and high[1] < high[2]
+new_low = low < ta.lowest(low[1], 3) and low[1] > low[2]
+
+// ============================================================================
+// RULE 3: Close > Previous Close (weaker bullish/bearish)
+// ============================================================================
+// Not drawn separately — too noisy. Used as confluence only.
+
+// ============================================================================
+// RULE 4: Wick Rejection
+// ============================================================================
+// Long lower wick → rejection of lower prices → expect up
+// Long upper wick → rejection of higher prices → expect down
+
+candle_range = high - low
+lower_wick = math.min(open, close) - low
+upper_wick = high - math.max(open, close)
+body_size = math.abs(close - open)
+
+// Rejection: wick is dominant part of the candle
+bull_wick_reject = candle_range > 0 and (lower_wick / candle_range >= i_wick_ratio) and lower_wick > body_size * 2
+bear_wick_reject = candle_range > 0 and (upper_wick / candle_range >= i_wick_ratio) and upper_wick > body_size * 2
+
+// ============================================================================
+// RULE 5: Engulfing 4 Candles
+// ============================================================================
+// Current candle's range captures the range of previous 4 candles — power signal
+
+prev4_high = ta.highest(high[1], 4)
+prev4_low = ta.lowest(low[1], 4)
+engulf_4 = high >= prev4_high and low <= prev4_low and candle_range > 0
+
+// Direction of engulfing
+engulf_bull = engulf_4 and close > open
+engulf_bear = engulf_4 and close < open
+
+// ============================================================================
+// RULE 6: WMA(30) Trend Confirmation
+// ============================================================================
+// 2 consecutive candles closing above/below WMA(30) confirms trend direction.
+// Works on any timeframe (4H, Daily, etc.)
+
+i_show_wma = input.bool(true, "Show WMA(30) Signals", group="Signals")
+i_wma_len = input.int(30, "WMA Length", minval=5, maxval=100, group="Signals")
+i_wma_color = input.color(color.new(#E040FB, 0), "WMA Signal Color", group="Style")
+i_show_wma_line = input.bool(true, "Show WMA Line", group="Signals")
+
+wma_30 = ta.wma(close, i_wma_len)
+
+// 2 consecutive closes above/below WMA = confirmed trend
+wma_bull = close > wma_30 and close[1] > wma_30 and close[2] <= wma_30  // Just crossed: 2 bars above after being below
+wma_bear = close < wma_30 and close[1] < wma_30 and close[2] >= wma_30  // Just crossed: 2 bars below after being above
+
+// WMA as Support: price pulls back to WMA and bounces UP (trend continuation)
+// Conditions: price was above WMA, low touches/dips to WMA area, close stays above
+wma_support = close[2] > wma_30[2] and low <= wma_30 * 1.002 and close > wma_30 and close > open
+
+// WMA as Resistance: price rallies to WMA and rejects DOWN (trend continuation)
+// Conditions: price was below WMA, high touches/reaches WMA area, close stays below
+wma_resist = close[2] < wma_30[2] and high >= wma_30 * 0.998 and close < wma_30 and close < open
+
+// Plot WMA line
+plot(i_show_wma_line ? wma_30 : na, "WMA(30)", color=color.new(#E040FB, 30), linewidth=2)
+
+// ============================================================================
+// COMBINED SIGNALS — avoid duplicate labels on same bar
+// ============================================================================
+
+// Priority: Engulfing > Close beyond range > New high/low > Wick rejection
+// Only show the highest priority signal per bar
+
+bool drew_signal = false
+
+// Engulfing (highest priority)
+if i_show_engulf and engulf_bull and not drew_signal
+    label.new(bar_index, low, "ENG ▲", xloc=xloc.bar_index, color=color.new(i_engulf_color, 70), textcolor=i_engulf_color, style=label.style_label_up, size=lbl_size)
+    drew_signal := true
+
+if i_show_engulf and engulf_bear and not drew_signal
+    label.new(bar_index, high, "ENG ▼", xloc=xloc.bar_index, color=color.new(i_engulf_color, 70), textcolor=i_engulf_color, style=label.style_label_down, size=lbl_size)
+    drew_signal := true
+
+// Close > Previous High / Close < Previous Low
+if i_show_bullish and bull_close_above_high and not drew_signal
+    label.new(bar_index, low, "C>H ▲", xloc=xloc.bar_index, color=color.new(i_bull_color, 80), textcolor=i_bull_color, style=label.style_label_up, size=lbl_size)
+    drew_signal := true
+
+if i_show_bearish and bear_close_below_low and not drew_signal
+    label.new(bar_index, high, "C<L ▼", xloc=xloc.bar_index, color=color.new(i_bear_color, 80), textcolor=i_bear_color, style=label.style_label_down, size=lbl_size)
+    drew_signal := true
+
+// New High / New Low
+if i_show_bullish and new_high and not bull_close_above_high and not drew_signal
+    label.new(bar_index, low, "NH ▲", xloc=xloc.bar_index, color=color.new(i_bull_color, 85), textcolor=i_bull_color, style=label.style_label_up, size=lbl_size)
+    drew_signal := true
+
+if i_show_bearish and new_low and not bear_close_below_low and not drew_signal
+    label.new(bar_index, high, "NL ▼", xloc=xloc.bar_index, color=color.new(i_bear_color, 85), textcolor=i_bear_color, style=label.style_label_down, size=lbl_size)
+    drew_signal := true
+
+// WMA(30) crossover confirmation (2 bars)
+if i_show_wma and wma_bull and not drew_signal
+    label.new(bar_index, low, "WMA ▲", xloc=xloc.bar_index, color=color.new(i_wma_color, 75), textcolor=i_wma_color, style=label.style_label_up, size=lbl_size)
+    drew_signal := true
+
+if i_show_wma and wma_bear and not drew_signal
+    label.new(bar_index, high, "WMA ▼", xloc=xloc.bar_index, color=color.new(i_wma_color, 75), textcolor=i_wma_color, style=label.style_label_down, size=lbl_size)
+    drew_signal := true
+
+// WMA Support bounce (pullback to WMA in uptrend → continuation)
+if i_show_wma and wma_support and not drew_signal
+    label.new(bar_index, low, "WMA S▲", xloc=xloc.bar_index, color=color.new(i_bull_color, 75), textcolor=i_wma_color, style=label.style_label_up, size=lbl_size)
+    drew_signal := true
+
+// WMA Resistance rejection (rally to WMA in downtrend → continuation)
+if i_show_wma and wma_resist and not drew_signal
+    label.new(bar_index, high, "WMA R▼", xloc=xloc.bar_index, color=color.new(i_bear_color, 75), textcolor=i_wma_color, style=label.style_label_down, size=lbl_size)
+    drew_signal := true
+
+// Wick Rejection (lowest priority)
+if i_show_wick and bull_wick_reject and not drew_signal
+    label.new(bar_index, low, "WR ▲", xloc=xloc.bar_index, color=color.new(i_wick_color, 85), textcolor=i_wick_color, style=label.style_label_up, size=lbl_size)
+    drew_signal := true
+
+if i_show_wick and bear_wick_reject and not drew_signal
+    label.new(bar_index, high, "WR ▼", xloc=xloc.bar_index, color=color.new(i_wick_color, 85), textcolor=i_wick_color, style=label.style_label_down, size=lbl_size)
+    drew_signal := true

@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>תוכנית מסחר חודשית — אפריל 2026</title>
+<style>
+  :root {
+    --bg: #0c0e14;
+    --card: #151821;
+    --card2: #1c1f2e;
+    --border: #262a3a;
+    --text: #e4e4e7;
+    --dim: #8b8fa3;
+    --green: #22c55e;
+    --green-bg: rgba(34,197,94,0.10);
+    --red: #ef4444;
+    --red-bg: rgba(239,68,68,0.10);
+    --blue: #3b82f6;
+    --blue-bg: rgba(59,130,246,0.10);
+    --yellow: #eab308;
+    --yellow-bg: rgba(234,179,8,0.10);
+    --purple: #a855f7;
+    --purple-bg: rgba(168,85,247,0.10);
+    --orange: #f97316;
+    --orange-bg: rgba(249,115,22,0.10);
+    --cyan: #06b6d4;
+    --cyan-bg: rgba(6,182,212,0.10);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 16px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 36px 20px 28px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 28px;
+  }
+  .header h1 { font-size: 2.2rem; }
+  .header .sub { color: var(--dim); margin-top: 6px; }
+
+  /* TOC */
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 24px;
+    margin-bottom: 28px;
+    columns: 2;
+    column-gap: 24px;
+  }
+  .toc a { color: var(--blue); text-decoration: none; display: block; padding: 4px 0; font-size: 0.92rem; break-inside: avoid; }
+  .toc a:hover { text-decoration: underline; }
+
+  h2 { font-size: 1.4rem; margin-bottom: 14px; color: var(--blue); border-bottom: 2px solid var(--border); padding-bottom: 8px; }
+  h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  h4 { font-size: 0.95rem; margin-bottom: 6px; color: var(--dim); }
+
+  /* Theme box */
+  .theme-box {
+    background: linear-gradient(135deg, var(--blue-bg), var(--purple-bg));
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 28px;
+  }
+
+  /* Sentiment strip */
+  .sentiment-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .sent-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  .sent-card .val { font-size: 2rem; font-weight: 800; }
+  .sent-card .lbl { font-size: 0.82rem; color: var(--dim); margin-top: 4px; }
+
+  /* Calendar table */
+  .cal-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin-bottom: 28px;
+  }
+  .cal-table th {
+    background: var(--card2);
+    padding: 10px 8px;
+    text-align: right;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .cal-table td {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: top;
+  }
+  .cal-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .cal-table tr.high-impact { background: rgba(239,68,68,0.06); }
+  .cal-table tr.high-impact td:first-child { font-weight: 700; color: var(--red); }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin: 1px;
+  }
+  .badge-up { background: var(--green-bg); color: var(--green); }
+  .badge-down { background: var(--red-bg); color: var(--red); }
+  .badge-turn { background: var(--yellow-bg); color: var(--yellow); }
+  .badge-double { background: var(--purple-bg); color: var(--purple); }
+  .badge-corr { background: var(--cyan-bg); color: var(--cyan); font-size: 0.75rem; }
+
+  /* Asset sections */
+  .asset-section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 22px;
+  }
+  .asset-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .asset-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .bias-tag {
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+  .bias-bull { background: var(--green-bg); color: var(--green); }
+  .bias-bear { background: var(--red-bg); color: var(--red); }
+  .bias-neut { background: var(--yellow-bg); color: var(--yellow); }
+
+  .sub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+  }
+  .sub-box {
+    background: var(--card2);
+    border-radius: 8px;
+    padding: 14px;
+  }
+
+  /* Best setup highlight */
+  .best-setup {
+    background: linear-gradient(135deg, var(--green-bg), var(--blue-bg));
+    border: 1px solid rgba(34,197,94,0.25);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  .best-setup .pct { font-size: 2rem; font-weight: 800; color: var(--green); }
+
+  /* Correlated */
+  .corr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .corr-chip {
+    background: var(--card2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+  .corr-chip .sym { font-weight: 700; font-family: monospace; }
+  .corr-chip .note { font-size: 0.72rem; color: var(--dim); }
+
+  /* Levels compact */
+  .lvl-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin: 4px 0;
+  }
+  .lvl {
+    font-family: monospace;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.88rem;
+  }
+  .lvl-s { background: var(--green-bg); color: var(--green); }
+  .lvl-r { background: var(--red-bg); color: var(--red); }
+  .lvl-key { background: var(--yellow-bg); color: var(--yellow); border: 1px solid rgba(234,179,8,0.3); }
+
+  /* Weekly plan */
+  .week-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .week-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .week-card h3 { color: var(--blue); margin-bottom: 10px; }
+  .week-card ul { padding-right: 18px; font-size: 0.9rem; }
+  .week-card li { margin-bottom: 6px; }
+
+  /* Risk */
+  .risk-box {
+    background: var(--card);
+    border: 2px solid rgba(239,68,68,0.25);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 22px;
+  }
+  .risk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 14px;
+    margin-top: 12px;
+  }
+  .risk-item {
+    background: var(--card2);
+    border-radius: 8px;
+    padding: 14px;
+    border-right: 3px solid var(--red);
+  }
+
+  /* Quick ref */
+  .quick-ref {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 22px;
+  }
+  .qr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .qr-item {
+    background: var(--card2);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 0.88rem;
+  }
+  .qr-item strong { display: block; margin-bottom: 4px; }
+
+  table.mini { width:100%; border-collapse:collapse; font-size:0.85rem; }
+  table.mini th { background:var(--card2); padding:6px 8px; text-align:right; border-bottom:1px solid var(--border); }
+  table.mini td { padding:6px 8px; border-bottom:1px solid rgba(255,255,255,0.03); }
+
+  @media (max-width: 768px) {
+    .sub-grid { grid-template-columns: 1fr; }
+    .toc { columns: 1; }
+    .week-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>תוכנית מסחר חודשית — אפריל 2026</h1>
+  <div class="sub">מבוסס על דוח Cycles Trading | 5 נכסי ליבה + נכסים מתואמים | תאריכי מפנה, סטטיסטיקות, רמות מפתח</div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <a href="#overview">1. סקירה כללית</a>
+  <a href="#calendar">2. לוח תאריכים מלא</a>
+  <a href="#sp500">3. S&P 500 + מניות גדולות</a>
+  <a href="#gold">4. זהב + כסף + כורים</a>
+  <a href="#bitcoin">5. ביטקוין + קריפטו</a>
+  <a href="#oil">6. נפט + מניות אנרגיה</a>
+  <a href="#eurusd">7. EUR/USD + מט"ח</a>
+  <a href="#weekly">8. תוכנית שבועית</a>
+  <a href="#risk">9. ניהול סיכונים</a>
+  <a href="#quickref">10. דף עזר מהיר</a>
+</div>
+
+<!-- ===== 1. OVERVIEW ===== -->
+<section id="overview">
+<h2>1. סקירה כללית — אפריל 2026</h2>
+
+<div class="theme-box">
+  <p><strong>נושא מרכזי:</strong> עונתיות חיובית חזקה ברוב הנכסים (במיוחד נפט ו-S&P) נגד רקע של סיכון גיאופוליטי מוגבר (ארה"ב/ישראל-איראן) וסנטימנט פחד קיצוני. התכנסות תאריכי מפנה ב-2, 10, 16-17 ו-27-28 באפריל יוצרת חלונות זמן גדולים.</p>
+  <p style="margin-top:10px;"><strong>דפוס החודש:</strong> מחצית ראשונה שורית (סטטיסטיקות 71-85% למעלה), היפוך פוטנציאלי סביב 14-15, ואז מחצית שנייה שורית שוב (83-86%).</p>
+</div>
+
+<div class="sentiment-strip">
+  <div class="sent-card">
+    <div class="val" style="color:var(--red);">19</div>
+    <div class="lbl">CNN Fear & Greed<br>פחד קיצוני = קונטרריאני שורי</div>
+  </div>
+  <div class="sent-card">
+    <div class="val" style="color:var(--yellow);">~80%</div>
+    <div class="lbl">אחוז הצלחת תאריכי מרץ<br>17.5 מתוך 22 תאריכים</div>
+  </div>
+  <div class="sent-card">
+    <div class="val" style="color:var(--orange);">5/5</div>
+    <div class="lbl">נכסים מתכנסים ב-2 באפריל<br>התאריך הכי מרוכז</div>
+  </div>
+  <div class="sent-card">
+    <div class="val" style="color:var(--green);">86%</div>
+    <div class="lbl">סטטיסטיקה חזקה ביותר<br>EUR/USD — 29 באפריל</div>
+  </div>
+  <div class="sent-card">
+    <div class="val" style="color:var(--purple);">83%</div>
+    <div class="lbl">S&P 500 — 15→28<br>מחצית שנייה שורית</div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 2. CALENDAR ===== -->
+<section id="calendar">
+<h2>2. לוח תאריכי מפנה — כל הנכסים + מתואמים</h2>
+
+<table class="cal-table">
+<thead>
+<tr>
+  <th style="width:85px;">תאריך</th>
+  <th>נכסי ליבה</th>
+  <th>סטטיסטיקות</th>
+  <th>נכסים מתואמים מושפעים</th>
+</tr>
+</thead>
+<tbody>
+<tr class="high-impact">
+  <td>2 אפריל</td>
+  <td><span class="badge badge-turn">S&P</span> <span class="badge badge-turn">BTC</span> <span class="badge badge-turn">EUR/USD</span> <span class="badge badge-turn">זהב</span> <span class="badge badge-turn">נפט</span></td>
+  <td><span class="badge badge-down">S&P 68%↓</span> <span class="badge badge-down">BTC 75%↓ (תחילת טווח)</span></td>
+  <td><span class="badge badge-corr">QQQ</span> <span class="badge badge-corr">NVDA</span> <span class="badge badge-corr">ETH</span> <span class="badge badge-corr">XAG</span> <span class="badge badge-corr">XLE</span> <span class="badge badge-corr">DXY</span> <span class="badge badge-corr">כולם!</span></td>
+</tr>
+<tr>
+  <td>3 אפריל</td>
+  <td><span class="badge badge-turn">BTC</span></td>
+  <td></td>
+  <td><span class="badge badge-corr">ETH</span> <span class="badge badge-corr">SOL</span> <span class="badge badge-corr">MARA</span> <span class="badge badge-corr">RIOT</span></td>
+</tr>
+<tr>
+  <td>6 אפריל</td>
+  <td><span class="badge badge-turn">S&P</span> <span class="badge badge-turn">זהב</span></td>
+  <td><span class="badge badge-up">זהב 74%↑</span></td>
+  <td><span class="badge badge-corr">QQQ</span> <span class="badge badge-corr">XAG</span> <span class="badge badge-corr">GDX</span></td>
+</tr>
+<tr>
+  <td>7 אפריל</td>
+  <td><span class="badge badge-turn">EUR/USD</span> <span class="badge badge-turn">זהב</span></td>
+  <td><span class="badge badge-down">EUR/USD 79%↓</span> <span class="badge badge-down">זהב 73%↓ טווח→13</span></td>
+  <td><span class="badge badge-corr">DXY↑</span> <span class="badge badge-corr">GBP/USD↓</span> <span class="badge badge-corr">XAG</span></td>
+</tr>
+<tr>
+  <td>8 אפריל</td>
+  <td><span class="badge badge-turn">זהב</span> <span class="badge badge-turn">נפט</span></td>
+  <td><span class="badge badge-up">זהב 71%↑</span> <span class="badge badge-up">נפט 77%↑ טווח→14</span></td>
+  <td><span class="badge badge-corr">XAG</span> <span class="badge badge-corr">GDX</span> <span class="badge badge-corr">XLE</span> <span class="badge badge-corr">XOM</span> <span class="badge badge-corr">CVX</span></td>
+</tr>
+<tr>
+  <td>9 אפריל</td>
+  <td><span class="badge badge-turn">S&P</span> <span class="badge badge-turn">נפט</span></td>
+  <td></td>
+  <td><span class="badge badge-corr">QQQ</span> <span class="badge badge-corr">IWM</span> <span class="badge badge-corr">XLE</span> <span class="badge badge-corr">USO</span></td>
+</tr>
+<tr class="high-impact">
+  <td>10 אפריל</td>
+  <td><span class="badge badge-turn">S&P</span> <span class="badge badge-turn">BTC</span> <span class="badge badge-turn">EUR/USD</span> <span class="badge badge-turn">זהב</span></td>
+  <td><span class="badge badge-down">S&P 68%↓</span> <span class="badge badge-up">זהב 74%↑</span></td>
+  <td><span class="badge badge-corr">NVDA</span> <span class="badge badge-corr">AAPL</span> <span class="badge badge-corr">ETH</span> <span class="badge badge-corr">XAG</span> <span class="badge badge-corr">DXY</span></td>
+</tr>
+<tr>
+  <td>13 אפריל</td>
+  <td><span class="badge badge-turn">EUR/USD</span> <span class="badge badge-turn">זהב</span> <span class="badge badge-turn">נפט</span></td>
+  <td><span class="badge badge-up">EUR/USD 85%↑ סוף טווח</span> <span class="badge badge-up">זהב 75%↑</span> <span class="badge badge-up">נפט 68%↑</span></td>
+  <td><span class="badge badge-corr">DXY↓</span> <span class="badge badge-corr">GBP/USD↑</span> <span class="badge badge-corr">XAG</span> <span class="badge badge-corr">XLE</span></td>
+</tr>
+<tr>
+  <td>14 אפריל</td>
+  <td><span class="badge badge-turn">זהב</span> <span class="badge badge-turn">נפט</span></td>
+  <td><span class="badge badge-down" style="font-weight:800;">זהב 79%↓ !!</span> <span class="badge badge-up">נפט 77%↑ סוף טווח</span></td>
+  <td><span class="badge badge-corr">XAG↓</span> <span class="badge badge-corr">GDX↓</span> <span class="badge badge-corr">XLE↑</span> <span class="badge badge-corr">XOM↑</span></td>
+</tr>
+<tr>
+  <td>15 אפריל</td>
+  <td><span class="badge badge-turn">S&P</span> <span class="badge badge-turn">נפט</span></td>
+  <td><span class="badge badge-up">S&P 83%↑ תחילת טווח→28</span></td>
+  <td><span class="badge badge-corr">QQQ↑</span> <span class="badge badge-corr">NVDA↑</span> <span class="badge badge-corr">AAPL↑</span> <span class="badge badge-corr">XLE</span></td>
+</tr>
+<tr class="high-impact">
+  <td>16-17 אפריל</td>
+  <td><span class="badge badge-double">BTC כפול</span> <span class="badge badge-double">EUR/USD כפול</span> <span class="badge badge-turn">זהב</span> <span class="badge badge-turn">S&P (17)</span></td>
+  <td></td>
+  <td><span class="badge badge-corr">ETH</span> <span class="badge badge-corr">SOL</span> <span class="badge badge-corr">COIN</span> <span class="badge badge-corr">DXY</span> <span class="badge badge-corr">XAG</span> <span class="badge badge-corr">QQQ</span></td>
+</tr>
+<tr>
+  <td>23 אפריל</td>
+  <td><span class="badge badge-turn">נפט</span></td>
+  <td><span class="badge badge-up">נפט 73%↑</span></td>
+  <td><span class="badge badge-corr">XLE↑</span> <span class="badge badge-corr">XOM↑</span> <span class="badge badge-corr">CVX↑</span> <span class="badge badge-corr">HAL↑</span></td>
+</tr>
+<tr>
+  <td>24 אפריל</td>
+  <td><span class="badge badge-turn">EUR/USD</span> <span class="badge badge-turn">זהב</span> <span class="badge badge-turn">נפט</span></td>
+  <td><span class="badge badge-up">EUR/USD 73%↑</span></td>
+  <td><span class="badge badge-corr">DXY↓</span> <span class="badge badge-corr">XAG</span> <span class="badge badge-corr">GDX</span> <span class="badge badge-corr">XLE</span></td>
+</tr>
+<tr class="high-impact">
+  <td>27-28 אפריל</td>
+  <td><span class="badge badge-turn">S&P</span> <span class="badge badge-turn">BTC</span> <span class="badge badge-turn">EUR/USD</span></td>
+  <td><span class="badge badge-up">S&P 83%↑ סוף טווח</span></td>
+  <td><span class="badge badge-corr">QQQ↑</span> <span class="badge badge-corr">NVDA↑</span> <span class="badge badge-corr">META↑</span> <span class="badge badge-corr">ETH</span> <span class="badge badge-corr">DXY</span></td>
+</tr>
+<tr>
+  <td>29 אפריל</td>
+  <td><span class="badge badge-turn">EUR/USD</span> <span class="badge badge-turn">זהב</span></td>
+  <td><span class="badge badge-up" style="font-weight:800;">EUR/USD 86%↑ !!</span></td>
+  <td><span class="badge badge-corr">DXY↓</span> <span class="badge badge-corr">GBP/USD↑</span> <span class="badge badge-corr">UUP↓</span> <span class="badge badge-corr">XAG</span></td>
+</tr>
+<tr>
+  <td>30 אפריל</td>
+  <td><span class="badge badge-turn">נפט</span></td>
+  <td></td>
+  <td><span class="badge badge-corr">XLE</span> <span class="badge badge-corr">USO</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<!-- ===== 3. S&P 500 ===== -->
+<section class="asset-section" id="sp500">
+<div class="asset-head">
+  <div class="asset-icon" style="background:var(--blue-bg); color:var(--blue);">SP</div>
+  <div>
+    <h2 style="border:none; padding:0; margin:0;">S&P 500 + מניות גדולות</h2>
+    <span class="bias-tag bias-bull">הטיה שורית — 3/4 דפוסי עשור למעלה</span>
+  </div>
+</div>
+
+<div class="best-setup">
+  <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+    <div class="pct">83%</div>
+    <div>
+      <strong>הסטאפ הכי חזק: 15→28 באפריל</strong><br>
+      ב-25 מתוך 30 שנים המדד סגר גבוה יותר ב-28 מאשר ב-15 באפריל.<br>
+      <span style="color:var(--dim);">חלון הזדמנות למניות הגדולות: AAPL, NVDA, MSFT, AMZN, GOOGL, META, TSLA</span>
+    </div>
+  </div>
+</div>
+
+<div class="sub-grid">
+  <div class="sub-box">
+    <h4>חלונות מסחר</h4>
+    <table class="mini">
+      <tr><td>1-6 אפריל</td><td>זהירות — 68% ירידה סביב ה-2. חכו לאישור</td></tr>
+      <tr><td>6-10 אפריל</td><td>מפנים יומיים ב-6 ו-9. 68% ירידה ב-10</td></tr>
+      <tr><td style="background:var(--green-bg);">15-28 אפריל</td><td><strong>חלון שורי ראשי — 83% למעלה</strong></td></tr>
+      <tr><td>27-28 אפריל</td><td>מפנה כפול — פוטנציאל לשינוי כיוון</td></tr>
+    </table>
+  </div>
+  <div class="sub-box">
+    <h4>רמות מפתח</h4>
+    <div style="margin-bottom:6px;"><strong>תמיכות:</strong></div>
+    <div class="lvl-row">
+      <span class="lvl lvl-s">6,720-6,792</span>
+      <span class="lvl lvl-s">6,550</span>
+      <span class="lvl lvl-key">6,175 ★</span>
+      <span class="lvl lvl-s">6,095</span>
+    </div>
+    <div style="margin:6px 0;"><strong>התנגדויות:</strong></div>
+    <div class="lvl-row">
+      <span class="lvl lvl-r">6,725</span>
+      <span class="lvl lvl-r">6,785</span>
+      <span class="lvl lvl-r">6,976-6,999</span>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:14px;">
+  <h4>נכסים מתואמים — עוקבים אחרי תאריכי S&P</h4>
+  <div class="corr-grid">
+    <div class="corr-chip"><div class="sym">QQQ</div><div class="note">נאסד"ק — בטא גבוהה</div></div>
+    <div class="corr-chip"><div class="sym">NVDA</div><div class="note">מובילה/מפגרת 1-2 ימים</div></div>
+    <div class="corr-chip"><div class="sym">AAPL</div><div class="note">מגיבה לתאריכי מפנה</div></div>
+    <div class="corr-chip"><div class="sym">MSFT</div><div class="note">ביטא בינונית</div></div>
+    <div class="corr-chip"><div class="sym">AMZN</div><div class="note">ביטא גבוהה</div></div>
+    <div class="corr-chip"><div class="sym">GOOGL</div><div class="note">ביטא בינונית</div></div>
+    <div class="corr-chip"><div class="sym">META</div><div class="note">ביטא גבוהה</div></div>
+    <div class="corr-chip"><div class="sym">TSLA</div><div class="note">ביטא מאוד גבוהה!</div></div>
+    <div class="corr-chip"><div class="sym">DIA</div><div class="note">דאו ג'ונס</div></div>
+    <div class="corr-chip"><div class="sym">IWM</div><div class="note">ראסל 2000</div></div>
+  </div>
+  <p style="font-size:0.82rem; color:var(--dim); margin-top:8px;">גודל פוזיציה: 1x לנכס ליבה, 0.5x למניות בטא גבוהה (TSLA, NVDA). מניות טק עלולות להוביל/לפגר ב-1-2 ימים.</p>
+</div>
+</section>
+
+<!-- ===== 4. GOLD ===== -->
+<section class="asset-section" id="gold">
+<div class="asset-head">
+  <div class="asset-icon" style="background:var(--yellow-bg); color:var(--yellow);">Au</div>
+  <div>
+    <h2 style="border:none; padding:0; margin:0;">זהב + כסף + כורים</h2>
+    <span class="bias-tag bias-neut">מורכב — שורי עד 13, דובי ב-14, ואז תלוי ציר $4,519</span>
+  </div>
+</div>
+
+<div class="best-setup">
+  <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+    <div class="pct" style="color:var(--red);">79%</div>
+    <div>
+      <strong>זהירות! 14 באפריל — 79% ירידה</strong><br>
+      הסטטיסטיקה הדובית החזקה ביותר בדוח. לאחר שבוע של סטטיסטיקות שוריות (74-75%), היפוך חד.<br>
+      <span style="color:var(--dim);">כסף (XAG) ומניות כורים (GDX) יגיבו בעוצמה כפולה!</span>
+    </div>
+  </div>
+</div>
+
+<div class="sub-grid">
+  <div class="sub-box">
+    <h4>חלונות מסחר</h4>
+    <table class="mini">
+      <tr><td style="background:var(--green-bg);">6-13 אפריל</td><td><strong>חלון שורי — 71-75% למעלה</strong></td></tr>
+      <tr><td style="background:var(--red-bg);">14 אפריל</td><td><strong>היפוך! 79% ירידה</strong></td></tr>
+      <tr><td>16-24 אפריל</td><td>מפנים ב-16 ו-24 — כיוון לא ברור</td></tr>
+      <tr><td>29 אפריל</td><td>מפנה סוף חודש</td></tr>
+    </table>
+  </div>
+  <div class="sub-box">
+    <h4>רמות מפתח</h4>
+    <div style="margin-bottom:6px;"><strong>תמיכות:</strong></div>
+    <div class="lvl-row">
+      <span class="lvl lvl-s">$4,381</span>
+      <span class="lvl lvl-s">$4,080</span>
+      <span class="lvl lvl-s">$3,610</span>
+      <span class="lvl lvl-s">$3,500</span>
+    </div>
+    <div style="margin:6px 0;"><strong>ציר:</strong></div>
+    <div class="lvl-row">
+      <span class="lvl lvl-key">$4,519 ★ ציר</span>
+    </div>
+    <div style="margin:6px 0;"><strong>התנגדויות:</strong></div>
+    <div class="lvl-row">
+      <span class="lvl lvl-r">$4,861</span>
+      <span class="lvl lvl-r">$5,000-5,100</span>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:14px;">
+  <h4>נכסים מתואמים — כסף מגביר, כורים מובילים</h4>
+  <div class="corr-grid">
+    <div class="corr-chip"><div class="sym">XAGUSD</div><div class="note">כסף — ביטא 1.5-2x</div></div>
+    <div class="corr-chip"><div class="sym">GDX</div><div class="note">כורי זהב — מוביל בהיפוכים</div></div>
+    <div class="corr-chip"><div class="sym">SLV</div><div class="note">ETF כסף</div></div>
+    <div class="corr-chip"><div class="sym">NEM</div><div class="note">ניומונט — כורה</div></div>
+    <div class="corr-chip"><div class="sym">GOLD</div><div class="note">באריק — כורה</div></div>
+  </div>
+  <p style="font-size:0.82rem; color:var(--dim); margin-top:8px;">כסף מגביר תנועות זהב (ביטא גבוהה) — סטופ רחב יותר, פוזיציה 0.5x. כורים (GDX) נוטים להוביל את זהב בהיפוכים — עקוב אחריהם כאינדיקטור מקדים.</p>
+</div>
+</section>
+
+<!-- ===== 5. BITCOIN ===== -->
+<section class="asset-section" id="bitcoin">
+<div class="asset-head">
+  <div class="asset-icon" style="background:var(--orange-bg); color:var(--orange);">₿</div>
+  <div>
+    <h2 style="border:none; padding:0; margin:0;">ביטקוין + קריפטו</h2>
+    <span class="bias-tag bias-bear">דובי — 53% עונתיות, חולשה מבנית</span>
+  </div>
+</div>
+
+<div class="best-setup">
+  <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+    <div class="pct" style="color:var(--red);">75%</div>
+    <div>
+      <strong>שבוע ראשון דובי: 2→8 באפריל — 75% ירידה</strong><br>
+      ב-6 מתוך 8 שנים אחרונות BTC סגר נמוך ב-8 מאשר ב-2.<br>
+      <span style="color:var(--dim);">ETH, SOL, MARA, RIOT — ירידות מוגברות (ביטא גבוהה יותר)</span>
+    </div>
+  </div>
+</div>
+
+<div class="sub-grid">
+  <div class="sub-box">
+    <h4>חלונות מסחר</h4>
+    <table class="mini">
+      <tr><td style="background:var(--red-bg);">2-8 אפריל</td><td><strong>דובי — 75% ירידה</strong></td></tr>
+      <tr><td>10 אפריל</td><td>מפנה — חפש שינוי כיוון</td></tr>
+      <tr><td>16-17 אפריל</td><td>מחזור כפול — חלון משמעותי</td></tr>
+      <tr><td>27 אפריל</td><td>מפנה סוף חודש</td></tr>
+    </table>
+  </div>
+  <div class="sub-box">
+    <h4>רמות מפתח</h4>
+    <div style="margin-bottom:6px;"><strong>תמיכות:</strong></div>
+    <div class="lvl-row">
+      <span class="lvl lvl-key">$70k-78k ★ בלימה</span>
+      <span class="lvl lvl-s">$53,300</span>
+      <span class="lvl lvl-s">$49,000</span>
+    </div>
+    <div style="margin:6px 0;"><strong>התנגדויות:</strong></div>
+    <div class="lvl-row">
+      <span class="lvl lvl-r">$74.6k-76k</span>
+      <span class="lvl lvl-r">$80.4k-84.4k</span>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:14px;">
+  <h4>נכסים מתואמים — ETH עוקב עם 0-2 ימי עיכוב</h4>
+  <div class="corr-grid">
+    <div class="corr-chip"><div class="sym">ETHUSD</div><div class="note">עוקב BTC + 0-2 ימים</div></div>
+    <div class="corr-chip"><div class="sym">SOLUSD</div><div class="note">ביטא גבוהה מאוד</div></div>
+    <div class="corr-chip"><div class="sym">COIN</div><div class="note">קוינבייס — פרוקסי</div></div>
+    <div class="corr-chip"><div class="sym">MARA</div><div class="note">כורה — ביטא x2</div></div>
+    <div class="corr-chip"><div class="sym">RIOT</div><div class="note">כורה — ביטא x2</div></div>
+    <div class="corr-chip"><div class="sym">BTC.D</div><div class="note">דומיננטיות — אם עולה = אלטים חלשים</div></div>
+  </div>
+  <p style="font-size:0.82rem; color:var(--dim); margin-top:8px;">ETH עוקב אחרי תאריכי BTC עם 0-2 ימי עיכוב. כורי קריפטו (MARA, RIOT) הם ביטא x2 — חצי פוזיציה. אם דומיננטיות BTC עולה, אלטים ירדו חזק יותר.</p>
+</div>
+</section>
+
+<!-- ===== 6. OIL ===== -->
+<section class="asset-section" id="oil">
+<div class="asset-head">
+  <div class="asset-icon" style="background:var(--purple-bg); color:var(--purple);">Oil</div>
+  <div>
+    <h2 style="border:none; padding:0; margin:0;">נפט + מניות אנרגיה</h2>
+    <span class="bias-tag bias-bull">החודש הכי חיובי בשנה! כל 3 דפוסים למעלה</span>
+  </div>
+</div>
+
+<div class="best-setup">
+  <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+    <div class="pct">77%</div>
+    <div>
+      <strong>8→14 באפריל — 77% עלייה</strong><br>
+      נפט סוגר גבוה יותר ב-14 מאשר ב-8 ב-77% מהשנים. + גיאופוליטיקה עם איראן.<br>
+      <span style="color:var(--dim);">XLE, XOM, CVX — ביטא מתונה יותר. HAL, SLB — שירותים, מפגרים.</span>
+    </div>
+  </div>
+</div>
+
+<div class="sub-grid">
+  <div class="sub-box">
+    <h4>חלונות מסחר</h4>
+    <table class="mini">
+      <tr><td>2-3 אפריל</td><td>סיום מחזור שבועי ראשון</td></tr>
+      <tr><td style="background:var(--green-bg);">8-14 אפריל</td><td><strong>חלון שורי ראשי — 77% למעלה</strong></td></tr>
+      <tr><td>15 אפריל</td><td>מפנה + מחזור שבועי</td></tr>
+      <tr><td style="background:var(--green-bg);">23-24 אפריל</td><td><strong>73% למעלה + מחזור שבועי שני</strong></td></tr>
+      <tr><td>30 אפריל</td><td>מפנה סוף חודש</td></tr>
+    </table>
+  </div>
+  <div class="sub-box">
+    <h4>רמות מפתח</h4>
+    <div style="margin-bottom:6px;"><strong>תמיכות:</strong></div>
+    <div class="lvl-row">
+      <span class="lvl lvl-key">$55.36-56 ★</span>
+      <span class="lvl lvl-s">$83.70-86.65</span>
+      <span class="lvl lvl-s">$93.75</span>
+    </div>
+    <div style="margin:6px 0;"><strong>התנגדויות:</strong></div>
+    <div class="lvl-row">
+      <span class="lvl lvl-r">$98.30-100.47</span>
+      <span class="lvl lvl-r">$120</span>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:14px;">
+  <h4>נכסים מתואמים — XLE הפרוקסי הטוב ביותר</h4>
+  <div class="corr-grid">
+    <div class="corr-chip"><div class="sym">XLE</div><div class="note">ETF אנרגיה — פרוקסי #1</div></div>
+    <div class="corr-chip"><div class="sym">XOM</div><div class="note">אקסון — יצרנית</div></div>
+    <div class="corr-chip"><div class="sym">CVX</div><div class="note">שברון — יצרנית</div></div>
+    <div class="corr-chip"><div class="sym">OXY</div><div class="note">אוקסידנטל</div></div>
+    <div class="corr-chip"><div class="sym">DVN</div><div class="note">דבון אנרגי</div></div>
+    <div class="corr-chip"><div class="sym">HAL</div><div class="note">שירותים — מפגר</div></div>
+    <div class="corr-chip"><div class="sym">SLB</div><div class="note">שירותים — מפגר</div></div>
+    <div class="corr-chip"><div class="sym">USO</div><div class="note">ETF נפט</div></div>
+  </div>
+  <p style="font-size:0.82rem; color:var(--dim); margin-top:8px;">XLE הוא הפרוקסי הטוב ביותר לנפט. יצרניות (XOM, CVX) מגיבות ישירות. חברות שירותים (HAL, SLB) מפגרות אחרי היצרניות. פוזיציה 1x על נפט, 0.7x על מניות.</p>
+</div>
+</section>
+
+<!-- ===== 7. EUR/USD ===== -->
+<section class="asset-section" id="eurusd">
+<div class="asset-head">
+  <div class="asset-icon" style="background:var(--green-bg); color:var(--green);">€$</div>
+  <div>
+    <h2 style="border:none; padding:0; margin:0;">EUR/USD + מט"ח</h2>
+    <span class="bias-tag bias-bull">שורי חזק — סטטיסטיקות 85-86% למעלה</span>
+  </div>
+</div>
+
+<div class="best-setup">
+  <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+    <div class="pct">86%</div>
+    <div>
+      <strong>29 באפריל — 86% עלייה — הכי חזק בדוח!</strong><br>
+      הסטטיסטיקה הגבוהה ביותר בכל הנכסים. גם 85% עלייה בטווח 7→13.<br>
+      <span style="color:var(--dim);">DXY הפוך! GBP/USD באותו כיוון. USD/JPY הפוך (בדינמיקה של BoJ).</span>
+    </div>
+  </div>
+</div>
+
+<div class="sub-grid">
+  <div class="sub-box">
+    <h4>חלונות מסחר</h4>
+    <table class="mini">
+      <tr><td>7 אפריל</td><td>79% ירידה — נקודת כניסה פוטנציאלית</td></tr>
+      <tr><td style="background:var(--green-bg);">7→13 אפריל</td><td><strong>חלון שורי — 85% למעלה</strong></td></tr>
+      <tr><td>16-17 אפריל</td><td>מחזור כפול — תשומת לב</td></tr>
+      <tr><td>24 אפריל</td><td>73% למעלה</td></tr>
+      <tr><td style="background:var(--green-bg);">29 אפריל</td><td><strong>86% למעלה — הכי חזק!</strong></td></tr>
+    </table>
+  </div>
+  <div class="sub-box">
+    <h4>רמות מפתח</h4>
+    <div style="margin-bottom:6px;"><strong>תמיכות:</strong></div>
+    <div class="lvl-row">
+      <span class="lvl lvl-s">1.1390</span>
+      <span class="lvl lvl-s">1.1414</span>
+      <span class="lvl lvl-s">1.1300</span>
+    </div>
+    <div style="margin:6px 0;"><strong>התנגדויות:</strong></div>
+    <div class="lvl-row">
+      <span class="lvl lvl-key">1.1612-1.1640 ★</span>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:14px;">
+  <h4>נכסים מתואמים — DXY הפוך</h4>
+  <div class="corr-grid">
+    <div class="corr-chip"><div class="sym">DXY</div><div class="note">הפוך! EUR↑ = DXY↓</div></div>
+    <div class="corr-chip"><div class="sym">GBP/USD</div><div class="note">חיובי — אותו כיוון</div></div>
+    <div class="corr-chip"><div class="sym">USD/JPY</div><div class="note">הפוך + BoJ דינמיקה</div></div>
+    <div class="corr-chip"><div class="sym">UUP</div><div class="note">ETF דולר — הפוך</div></div>
+    <div class="corr-chip"><div class="sym">FXE</div><div class="note">ETF אירו</div></div>
+  </div>
+  <p style="font-size:0.82rem; color:var(--dim); margin-top:8px;">תאריכי מפנה של EUR/USD = היפוכי DXY. כש-EUR עולה, DXY יורד → רוח גבית למתכות ולסחורות (דולר חלש). GBP/USD נוטה לנוע באותו כיוון אבל עם דינמיקה של BoE.</p>
+</div>
+</section>
+
+<!-- ===== 8. WEEKLY PLAN ===== -->
+<section id="weekly">
+<h2>8. תוכנית שבועית</h2>
+<div class="week-grid">
+
+<div class="week-card" style="border-top:3px solid var(--red);">
+  <h3>שבוע 1 — 1-6 אפריל</h3>
+  <ul>
+    <li><strong style="color:var(--red);">2 באפריל — כל 5 הנכסים!</strong> התאריך הכי מרוכז. צפו לתנודתיות גבוהה.</li>
+    <li>S&P: 68% ירידה סביב ה-2. <strong>אל תפתחו לונגים חדשים.</strong></li>
+    <li>BTC: תחילת חלון 75% ירידה (2→8). הימנעו מלונגים על קריפטו.</li>
+    <li>נפט: סיום מחזור שבועי ראשון ב-3.</li>
+    <li>זהב: מ-6 מתחילות סטטיסטיקות שוריות (74% למעלה).</li>
+    <li><strong>מניות מתואמות:</strong> כל הטק, קריפטו מניות, אנרגיה — זהירות.</li>
+  </ul>
+</div>
+
+<div class="week-card" style="border-top:3px solid var(--green);">
+  <h3>שבוע 2 — 7-13 אפריל</h3>
+  <ul>
+    <li><strong style="color:var(--green);">EUR/USD: 85% עלייה 7→13!</strong> חלון שורי מעולה. DXY צפוי לרדת.</li>
+    <li><strong style="color:var(--green);">זהב: 71-75% למעלה כל השבוע.</strong> כסף ו-GDX ביטא כפולה.</li>
+    <li><strong style="color:var(--green);">נפט: 77% עלייה 8→14.</strong> XLE, XOM — כניסה.</li>
+    <li><strong style="color:var(--red);">10 באפריל — 4 נכסים מתכנסים.</strong> S&P 68% ירידה, זהב 74% עלייה.</li>
+    <li>BTC: מפנה ב-10 — סיום חלון הירידה?</li>
+    <li><strong>הטוב ביותר השבוע:</strong> EUR/USD לונג, זהב לונג, נפט לונג.</li>
+  </ul>
+</div>
+
+<div class="week-card" style="border-top:3px solid var(--orange);">
+  <h3>שבוע 3 — 14-20 אפריל</h3>
+  <ul>
+    <li><strong style="color:var(--red);">14 באפריל — זהב 79% ירידה!</strong> סגרו לונגים זהב/כסף מהשבוע הקודם.</li>
+    <li><strong style="color:var(--green);">15 באפריל — S&P 83% עלייה מתחיל!</strong> תחילת החלון השורי הגדול.</li>
+    <li><strong style="color:var(--purple);">16-17 — מחזורים כפולים:</strong> BTC כפול, EUR/USD כפול, זהב מפנה.</li>
+    <li>S&P מפנה יומי ב-17 — חשוב לטק (QQQ, NVDA).</li>
+    <li>נפט: מפנה ב-15 עם מחזור שבועי.</li>
+    <li><strong>אסטרטגיה:</strong> פליפ מזהב לונג → S&P לונג. מניות טק נכנסות.</li>
+  </ul>
+</div>
+
+<div class="week-card" style="border-top:3px solid var(--blue);">
+  <h3>שבוע 4 — 21-30 אפריל</h3>
+  <ul>
+    <li><strong style="color:var(--green);">נפט: 73% למעלה ב-23.</strong> XLE, XOM, CVX — המשך.</li>
+    <li>24 באפריל: EUR/USD 73% למעלה + זהב מפנה + נפט מחזור שבועי שני.</li>
+    <li><strong style="color:var(--green);">27-28: S&P 83% סוף טווח.</strong> מניות גדולות — יעד רווח/סגירה.</li>
+    <li><strong style="color:var(--green);">29 באפריל: EUR/USD 86% למעלה — הסטאפ הכי חזק בכל הדוח!</strong></li>
+    <li>נפט מפנה ב-30 — סוף חודש.</li>
+    <li><strong>אסטרטגיה:</strong> יעדי רווח ב-27-28 על S&P ומניות. EUR/USD שורי עד הסוף.</li>
+  </ul>
+</div>
+
+</div>
+</section>
+
+<!-- ===== 9. RISK ===== -->
+<section class="risk-box" id="risk">
+<h2 style="color:var(--red); border-color:rgba(239,68,68,0.25);">9. ניהול סיכונים — אפריל 2026</h2>
+
+<div class="risk-grid">
+  <div class="risk-item">
+    <strong>גודל פוזיציה</strong>
+    <ul style="padding-right:16px; font-size:0.88rem; margin-top:6px;">
+      <li>נכסי ליבה (חוזים): מקסימום <strong>1%</strong> מהחשבון</li>
+      <li>מניות ביטא גבוהה (TSLA, NVDA, MARA): <strong>0.5x</strong> פוזיציה</li>
+      <li>נכסים מתואמים רגילים: <strong>0.7x</strong> פוזיציה</li>
+      <li>שמרו 30-40% נזילות במניות</li>
+    </ul>
+  </div>
+  <div class="risk-item">
+    <strong>סיכון סוף שבוע</strong>
+    <ul style="padding-right:16px; font-size:0.88rem; margin-top:6px;">
+      <li><strong>אל תחזיקו פוזיציות פתוחות בסוף שבוע</strong> ללא הגנה</li>
+      <li>מצב איראן = סיכון גאפ גדול ביום ראשון</li>
+      <li>במיוחד: נפט, זהב, S&P</li>
+    </ul>
+  </div>
+  <div class="risk-item">
+    <strong>כללי עצירה</strong>
+    <ul style="padding-right:16px; font-size:0.88rem; margin-top:6px;">
+      <li>2 הפסדים ברצף = עצירה ליום</li>
+      <li>מקסימום 2 פוזיציות פתוחות בו-זמנית</li>
+      <li>סטופ לוס מוגדר <strong>לפני</strong> כניסה</li>
+      <li>R:R מינימלי 1:2</li>
+    </ul>
+  </div>
+  <div class="risk-item">
+    <strong>קונפליקטים בין נכסים</strong>
+    <ul style="padding-right:16px; font-size:0.88rem; margin-top:6px;">
+      <li><strong>14 באפריל:</strong> זהב 79%↓ vs נפט 77%↑ — אל תכריחו עסקה מעורבת</li>
+      <li><strong>10 באפריל:</strong> S&P 68%↓ vs זהב 74%↑ — סותרים, עדיפות לזהב (חזק יותר)</li>
+      <li>כשנכסים מתואמים מקבלים אותות סותרים — <strong>אל תיכנסו</strong></li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- ===== 10. QUICK REF ===== -->
+<section class="quick-ref" id="quickref">
+<h2>10. דף עזר מהיר — הדפס ושמור ליד המסך</h2>
+
+<div class="qr-grid">
+  <div class="qr-item" style="border-right:3px solid var(--red);">
+    <strong>תאריכי השפעה גבוהה</strong>
+    2 אפריל — 5 נכסים<br>
+    10 אפריל — 4 נכסים<br>
+    16-17 אפריל — 4 נכסים<br>
+    27-28 אפריל — 3 נכסים
+  </div>
+  <div class="qr-item" style="border-right:3px solid var(--green);">
+    <strong>סטטיסטיקות > 80%</strong>
+    EUR/USD 29 אפריל: <strong>86%↑</strong><br>
+    EUR/USD 7→13: <strong>85%↑</strong><br>
+    S&P 15→28: <strong>83%↑</strong>
+  </div>
+  <div class="qr-item" style="border-right:3px solid var(--green);">
+    <strong>סטטיסטיקות > 70%</strong>
+    נפט 8→14: <strong>77%↑</strong><br>
+    זהב 6-13: <strong>71-75%↑</strong><br>
+    BTC 2→8: <strong>75%↓</strong><br>
+    EUR/USD 24: <strong>73%↑</strong><br>
+    נפט 23: <strong>73%↑</strong>
+  </div>
+  <div class="qr-item" style="border-right:3px solid var(--red);">
+    <strong>אזהרות</strong>
+    זהב 14 אפריל: <strong>79%↓</strong><br>
+    S&P 2,10 אפריל: <strong>68%↓</strong><br>
+    EUR/USD 7 אפריל: <strong>79%↓</strong>
+  </div>
+  <div class="qr-item" style="border-right:3px solid var(--yellow);">
+    <strong>רמות ציר מפתח</strong>
+    S&P: <strong>6,175</strong> (פיבו 38.2%)<br>
+    זהב: <strong>$4,519</strong> (ציר)<br>
+    BTC: <strong>$70k-78k</strong> (בלימה)<br>
+    EUR/USD: <strong>1.1612-40</strong> (התנגדות)<br>
+    נפט: <strong>$55.36-56</strong> (תמיכה)
+  </div>
+  <div class="qr-item" style="border-right:3px solid var(--blue);">
+    <strong>סדר עדיפויות השבוע</strong>
+    שבוע 1: הישמרות — ירידות<br>
+    שבוע 2: שורי — EUR/USD, זהב, נפט<br>
+    שבוע 3: פליפ — S&P שורי, זהב דובי<br>
+    שבוע 4: סגירות + EUR/USD 86%
+  </div>
+</div>
+</section>
+
+<footer style="text-align:center; padding:24px; color:var(--dim); font-size:0.82rem; border-top:1px solid var(--border); margin-top:24px;">
+  תוכנית מסחר מבוססת דוח Cycles Trading — אפריל 2026 | למטרות לימוד בלבד — אינו מהווה ייעוץ השקעות
+</footer>
+
+</body>
+</html>

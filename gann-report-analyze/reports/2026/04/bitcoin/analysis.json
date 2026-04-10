@@ -1,0 +1,49 @@
+{
+  "asset": "Bitcoin",
+  "key_dates": [
+    {"date": "2026-04-03", "description": "First turning point of the month, aligns with early April time window"},
+    {"date": "2026-04-10", "description": "Turning point date with daily cycle alignment"},
+    {"date": "2026-04-16", "description": "Double cycle date (April 16-17), aligns with weekly cycle"},
+    {"date": "2026-04-17", "description": "Double cycle date (April 16-17), second date of double cycle window"},
+    {"date": "2026-04-27", "description": "Turning point date near end of month, aligns with weekly cycle ending week of April 24"}
+  ],
+  "seasonal": "Bitcoin finished April higher than its opening in only about 53% of the last 15 years - the seasonal statistics are less attractive compared to other assets. In the last 8 years, Bitcoin tended to close lower on April 8 than it was on April 2 in approximately 75% of cases.",
+  "statistics": [
+    {"date": "2026-04-02", "probability": "75%", "direction": "down", "description": "In 6 out of 8 recent years, Bitcoin closed lower on April 8 than on April 2 (~75%)"},
+    {"date": "2026-04-08", "probability": "75%", "direction": "down", "description": "In 6 out of 8 recent years, Bitcoin closed lower on April 8 than on April 2 (~75%) - range endpoint"}
+  ],
+  "insights": [
+    "Despite historical model discussions, Bitcoin does not have a long enough history for robust statistics. The seasonal statistics are less attractive compared to other assets in the report",
+    "The weekly chart still shows a structure of weakness but also blocks the braking zone. Key support between 70,000-78,000 dollars is the main support area in recent months",
+    "The decline from the January high has already begun, creating a downward turning point pattern. With order structure breakdown, Bitcoin has already broken below one support level and is testing lower areas",
+    "From a weekly perspective, the pattern suggests further decline is possible but the braking zone near 70,000 may hold",
+    "The first weekly cycle of the month aligns with the April 2-3 dates and the 6 March to 6 April range, making this a significant time window",
+    "Daily chart continues to reflect a weak structure - even if in the short term strong moves are registered, this is a bearish environment for now",
+    "Levels between 74,600 to 76,000 dollars is the recent resistance area from the weekly chart. A breakout above could target 80,400-84,400 dollars zone",
+    "On the downside, the Fibonacci 38.2% of the entire bull rally sits around 49,000 dollars, with intermediate support at 53,300 dollars. These are theoretical targets if the decline deepens significantly",
+    "April appears to be the most positive month seasonally based on decade pattern, but given the current weakness, this represents more of a corrective bounce opportunity than a trend reversal",
+    "The discord community is recommended for real-time tracking throughout the month"
+  ],
+  "technical": {
+    "support": [
+      {"level": "70000-78000", "description": "Main support zone on weekly chart, key braking area"},
+      {"level": "53300", "description": "Intermediate support level if major decline occurs"},
+      {"level": "49000", "description": "Fibonacci 38.2% of entire bull rally, major downside target"}
+    ],
+    "resistance": [
+      {"level": "74600-76000", "description": "Recent resistance zone from weekly chart breakdown area"},
+      {"level": "80400-84400", "description": "Upper resistance zone if breakout above 76,000 occurs"},
+      {"level": "Fibonacci levels on weekly", "description": "Multiple Fibonacci retracement and extension levels visible on chart"}
+    ],
+    "indicators": "Weekly chart shows weak structure with broken support levels. Daily chart confirms weakness with bearish pattern. The 200-day moving average is an important reference. RSI showing divergence potential on the daily chart. The daily chart pattern suggests the possibility of a lower high forming."
+  },
+  "summary": "April 2026 in Bitcoin features 5 turning point dates (3, 10, 16-17, 27) with relatively weak seasonal statistics (only 53% positive in the last 15 years). The weekly chart continues to show structural weakness after the January high breakdown. Key support lies at 70,000-78,000 dollars where the braking zone sits. If broken, intermediate support at 53,300 and the Fibonacci 38.2% at 49,000 become targets. Resistance at 74,600-76,000 must be reclaimed for any bullish reversal. The first week of April and mid-month (16-17) are the key timing windows.",
+  "previous_month_review": "March 2026 had five turning point dates for Bitcoin. Date 1 (March 2): Did not work, failed to contain the upward price movement. Date 2 (March 6): Worked, after a one-day delay, served as the 'high' of the movement and from there a decline of approximately 10% began. However, it did not hold as a true reversal and continued to fluctuate above this level until the next turning point, showing the area was significant. Date 3 (March 16-17, double cycle): Worked. The second date marked the high of the movement and from there a decline of approximately 9% began. Date 4 (March 20): Worked partially, as it was a small dip and returned quickly from above. Date 5 (March 26-27, double cycle): The first date marked the high of the movement and the second marked the low of the new movement toward the first turning point of April.",
+  "risk_notes": [
+    "Bitcoin is a high-volatility asset with rapid and sharp movements - manage position sizes accordingly",
+    "April is not going to be a simple theme for Bitcoin - many daily turning dates are clustered, requiring focused attention",
+    "Important to note: timing is not magic - it is a method-based system that rewards patience",
+    "Stay connected to the Discord community for real-time updates during the month",
+    "For educational and informational purposes only - not investment advice"
+  ]
+}
